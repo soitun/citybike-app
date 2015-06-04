@@ -21,11 +21,7 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         self.locationManager.requestWhenInUseAuthorization()
         
-        self.locateMeButton.layer.cornerRadius = 6
-        self.locateMeButton.layer.shadowColor = UIColor.blackColor().CGColor
-        self.locateMeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.locateMeButton.layer.shadowRadius = 1
-        self.locateMeButton.layer.shadowOpacity = 0.4
+        self.locateMeButton.makeRoundedAndShadowed()
     }
     
     private func addStationsToMap(stations: [CBStation]!) {
@@ -61,9 +57,9 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if annotation is CBAnnotation {
             let view = CBAnnotationView(annotation: annotation, reuseIdentifier: "CBStation")
-            view.noneColor = UIColor(red:1, green:0.42, blue:0.49, alpha:1)
-            view.fewColor = UIColor(red:1, green:0.94, blue:0.23, alpha:1)
-            view.plentyColor = UIColor(red:0.6, green:0.92, blue:0.24, alpha:1)
+            view.noneColor = UIColor.noneColor()
+            view.fewColor = UIColor.fewColor()
+            view.plentyColor = UIColor.plentyColor()
             
             view.configure((annotation as! CBAnnotation).station)
             return view
