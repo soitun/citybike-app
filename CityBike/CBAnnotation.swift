@@ -14,7 +14,7 @@ class CBAnnotation: NSObject, MKAnnotation {
     let title: String?
     let subtitle: String?
 
-    let station: CBStation!
+    var station: CBStation!
     
     var coordinate: CLLocationCoordinate2D {
         return self.station.coordinate

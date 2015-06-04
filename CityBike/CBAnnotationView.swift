@@ -14,6 +14,9 @@ class CBAnnotationView: MKAnnotationView {
     var plentyColor: UIColor!
     var fewColor: UIColor!
     var noneColor: UIColor!
+    
+    private var previousFreeBikes = 0
+    private var previousEmptySlots = 0
 
     @IBOutlet weak var leftValueBackground: UIImageView!
     @IBOutlet weak var rightValueBackground: UIImageView!
@@ -42,9 +45,6 @@ class CBAnnotationView: MKAnnotationView {
     }
     
     func configure(station: CBStation!) {
-        self.leftValue.text = "\(station.freeBikes)"
-        self.rightValue.text = "\(station.emptySlots)"
-        
         /// Set free bikes color
         if station.freeBikes > 5 {
             self.leftValueBackground.tintColor = self.plentyColor
@@ -66,5 +66,25 @@ class CBAnnotationView: MKAnnotationView {
         } else if station.emptySlots == 0 {
             self.rightValueBackground.tintColor = self.noneColor
         }
+        
+        self.leftValue.text = "\(station.freeBikes)"
+        self.rightValue.text = "\(station.emptySlots)"
+
+        if self.previousFreeBikes != station.freeBikes {
+            self.previousFreeBikes = station.freeBikes
+            self.animateView(self.leftValueBackground)
+        }
+        
+        if self.previousEmptySlots != station.emptySlots {
+            self.previousEmptySlots = station.emptySlots
+            self.animateView(self.rightValueBackground)
+        }
+    }
+    
+    private func animateView(view: UIView) {
+        view.alpha = 0
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            view.alpha = 1
+        })
     }
 }

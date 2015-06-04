@@ -22,10 +22,13 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     private func addStationsToMap(stations: [CBStation]!) {
         self.mapView.removeAnnotations(self.mapView.annotations)
         
+        var updated = [CBAnnotation]()
         for station in stations {
             let annotation = CBAnnotation(station: station)
-            self.mapView.addAnnotation(annotation)
+            updated.append(annotation)
         }
+        
+        self.mapView.addAnnotations(updated)
     }
     
     @IBAction func refreshPressed(sender: AnyObject) {
