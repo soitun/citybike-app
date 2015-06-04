@@ -13,6 +13,7 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var locateMeButton: UIButton!
+    @IBOutlet private weak var networksButton: UIButton!
     
     private var network: CBNetwork?
     private var locationManager = CLLocationManager()
@@ -22,6 +23,7 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
         self.locationManager.requestWhenInUseAuthorization()
         
         self.locateMeButton.makeRoundedAndShadowed()
+        self.networksButton.makeRoundedAndShadowed()
     }
     
     private func addStationsToMap(stations: [CBStation]!) {
@@ -51,6 +53,9 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     @IBAction func locateMePressed(sender: AnyObject) {
         let region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000)
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    @IBAction func networksPressed(sender: AnyObject) {
     }
     
     /// MARK: MKMapViewDelegate

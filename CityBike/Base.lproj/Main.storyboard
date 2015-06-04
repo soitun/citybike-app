@@ -38,14 +38,31 @@
                                     <action selector="locateMePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YT6-mT-NWL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agU-hI-6N2">
+                                <rect key="frame" x="62" y="74" width="44" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="bII-GU-J0J"/>
+                                    <constraint firstAttribute="height" constant="44" id="frX-yn-CqP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" image="networks-icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="networksPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="04R-gt-T9z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lC2-iy-4he" secondAttribute="trailing" id="4Jd-Yk-QmR"/>
                             <constraint firstItem="aIJ-qt-oMU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="5Ft-0k-BUQ"/>
+                            <constraint firstItem="agU-hI-6N2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="8nL-Sj-hop"/>
                             <constraint firstItem="lC2-iy-4he" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="CFD-MS-5ji"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lC2-iy-4he" secondAttribute="bottom" id="I0R-MZ-ite"/>
                             <constraint firstItem="lC2-iy-4he" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="deX-kp-uIF"/>
+                            <constraint firstItem="agU-hI-6N2" firstAttribute="leading" secondItem="aIJ-qt-oMU" secondAttribute="trailing" constant="8" id="nG4-82-WC5"/>
                             <constraint firstItem="aIJ-qt-oMU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="qg3-xB-Blp"/>
                         </constraints>
                     </view>
@@ -59,11 +76,12 @@
                     <connections>
                         <outlet property="locateMeButton" destination="aIJ-qt-oMU" id="QeB-As-kcW"/>
                         <outlet property="mapView" destination="lC2-iy-4he" id="9MT-6I-oE3"/>
+                        <outlet property="networksButton" destination="agU-hI-6N2" id="4Ns-mt-g1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="1197"/>
+            <point key="canvasLocation" x="1858" y="1302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpZ-xi-z33">
@@ -224,6 +242,7 @@
         <image name="availability-placeholder" width="30" height="30"/>
         <image name="locate-me" width="34" height="34"/>
         <image name="map-placeholder" width="320" height="326"/>
+        <image name="networks-icon" width="34" height="34"/>
         <image name="pin-placeholder" width="104" height="70"/>
     </resources>
 </document>
