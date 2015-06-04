@@ -12,11 +12,20 @@ import MapKit
 class CBMainViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var locateMeButton: UIButton!
     
     private var network: CBNetwork?
+    private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        self.locateMeButton.layer.cornerRadius = 6
+        self.locateMeButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.locateMeButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.locateMeButton.layer.shadowRadius = 1
+        self.locateMeButton.layer.shadowOpacity = 0.4
     }
     
     private func addStationsToMap(stations: [CBStation]!) {
@@ -41,6 +50,11 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
                 self.addStationsToMap(self.network?.stations ?? [CBStation]())
             })
         })
+    }
+    
+    @IBAction func locateMePressed(sender: AnyObject) {
+        let region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000)
+        self.mapView.setRegion(region, animated: true)
     }
     
     /// MARK: MKMapViewDelegate
