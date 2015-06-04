@@ -10,17 +10,17 @@ import UIKit
 
 class CBHowToViewController: UIViewController {
 
-    @IBOutlet weak var welcomeToLabel: UILabel!
-    @IBOutlet weak var cityBikeLabel: UILabel!
+    @IBOutlet private weak var welcomeToLabel: UILabel!
+    @IBOutlet private weak var cityBikeLabel: UILabel!
     @IBOutlet private weak var bikesLabel: UILabel!
     @IBOutlet private weak var slotsLabel: UILabel!
-    @IBOutlet weak var manyLabel: UILabel!
-    @IBOutlet weak var fewLabel: UILabel!
-    @IBOutlet weak var noneLabel: UILabel!
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var manyImageView: UIImageView!
-    @IBOutlet weak var fewImageView: UIImageView!
-    @IBOutlet weak var noneImageView: UIImageView!
+    @IBOutlet private weak var manyLabel: UILabel!
+    @IBOutlet private weak var fewLabel: UILabel!
+    @IBOutlet private weak var noneLabel: UILabel!
+    @IBOutlet private weak var continueButton: UIButton!
+    @IBOutlet private weak var manyImageView: UIImageView!
+    @IBOutlet private weak var fewImageView: UIImageView!
+    @IBOutlet private weak var noneImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,5 @@ class CBHowToViewController: UIViewController {
         self.noneImageView.tintColor = UIColor.noneColor()
         
         self.continueButton.makeRoundedAndShadowed()
-    }
-    
-    @IBAction func continuePressed(sender: AnyObject) {
     }
 }

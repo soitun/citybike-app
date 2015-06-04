@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="606"/>
+            <point key="canvasLocation" x="1735" y="1197"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpZ-xi-z33">
@@ -81,7 +81,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1a-9U-7A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="535" y="606"/>
+            <point key="canvasLocation" x="1091" y="1302"/>
         </scene>
         <!--How To View Controller-->
         <scene sceneID="PTj-AU-1EJ">
@@ -165,7 +165,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="continuePressed:" destination="avE-bp-OeI" eventType="touchUpInside" id="Bkm-UW-cLs"/>
+                                    <segue destination="EoM-Pb-0Vl" kind="modal" modalTransitionStyle="coverVertical" id="f3D-LZ-MTk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xg0-sD-qgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324" y="1302"/>
+            <point key="canvasLocation" x="274" y="1302"/>
         </scene>
     </scenes>
     <resources>
