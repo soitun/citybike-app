@@ -9,11 +9,16 @@
 import UIKit
 
 extension UIView {
-    func makeRoundedAndShadowed() {
-        self.layer.cornerRadius = 6
+
+    func makeShadowed() {
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowOffset = CGSize(width: 0, height: 2)
         self.layer.shadowRadius = 1
         self.layer.shadowOpacity = 0.4
+    }
+    
+    func makeRoundedAndShadowed() {
+        self.layer.cornerRadius = 6
+        self.makeShadowed()
     }
 }

@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dXh-Up-Txd">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dXh-Up-Txd">
                     <rect key="frame" x="80" y="37" width="320" height="326"/>
                 </imageView>
             </subviews>

@@ -17,6 +17,7 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     
     private var network: CBNetwork?
     private var locationManager = CLLocationManager()
+    private var noNetworksSelectedPopupPresented = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,15 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
         self.mapView.addAnnotations(updated)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.noNetworksSelectedPopupPresented == false {
+            self.noNetworksSelectedPopupPresented = true
+            self.presentNoNetworksSelectedPopup()
+        }
+    }
+    
     @IBAction func refreshPressed(sender: AnyObject) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         CBService.sharedInstance.fetchNetwork(CBNetworkType.BikesSRM, completion: { (network: CBNetwork?) -> Void in
@@ -55,7 +65,15 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
         self.mapView.setRegion(region, animated: true)
     }
     
-    @IBAction func networksPressed(sender: AnyObject) {
+    private func presentNoNetworksSelectedPopup() {
+        self.performSegueWithIdentifier("ShowSelectBikeNetworks", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowSelectBikeNetworks" {
+            let vc = segue.destinationViewController as! UIViewController
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        }
     }
     
     /// MARK: MKMapViewDelegate
