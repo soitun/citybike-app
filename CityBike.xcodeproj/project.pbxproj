@@ -18,6 +18,9 @@
 		6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */; };
 		6D0EBE851B20401F003ED872 /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE841B20401F003ED872 /* CBStation.swift */; };
 		6D0EBE871B20402D003ED872 /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE861B20402D003ED872 /* CBNetwork.swift */; };
+		6D0EBE8C1B2052BE003ED872 /* CBAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE8B1B2052BE003ED872 /* CBAnnotationView.swift */; };
+		6D0EBE8E1B2054DE003ED872 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE8D1B2054DE003ED872 /* CBAnnotation.swift */; };
+		6D0EBE901B205FFE003ED872 /* CBAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBJSONParser.swift; sourceTree = "<group>"; };
 		6D0EBE841B20401F003ED872 /* CBStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStation.swift; sourceTree = "<group>"; };
 		6D0EBE861B20402D003ED872 /* CBNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetwork.swift; sourceTree = "<group>"; };
+		6D0EBE8B1B2052BE003ED872 /* CBAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAnnotationView.swift; sourceTree = "<group>"; };
+		6D0EBE8D1B2054DE003ED872 /* CBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAnnotation.swift; sourceTree = "<group>"; };
+		6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBAnnotationView.xib; path = Resources/CBAnnotationView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,7 @@
 			children = (
 				6D0EBE591B2033FB003ED872 /* AppDelegate.swift */,
 				6D0EBE7D1B203891003ED872 /* Controllers */,
+				6D0EBE8A1B2052A6003ED872 /* Components */,
 				6D0EBE7B1B20386B003ED872 /* CityBikes API */,
 				6D0EBE7C1B20387B003ED872 /* Resources */,
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
@@ -129,6 +136,7 @@
 				6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */,
 				6D0EBE861B20402D003ED872 /* CBNetwork.swift */,
 				6D0EBE841B20401F003ED872 /* CBStation.swift */,
+				6D0EBE8D1B2054DE003ED872 /* CBAnnotation.swift */,
 			);
 			name = "CityBikes API";
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 		6D0EBE7C1B20387B003ED872 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */,
 				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
 				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
 				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
@@ -149,6 +158,14 @@
 				6D0EBE791B203704003ED872 /* CBMainViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6D0EBE8A1B2052A6003ED872 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6D0EBE8B1B2052BE003ED872 /* CBAnnotationView.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D0EBE901B205FFE003ED872 /* CBAnnotationView.xib in Resources */,
 				6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */,
 				6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */,
 				6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */,
@@ -254,8 +272,10 @@
 			files = (
 				6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */,
 				6D0EBE7A1B203704003ED872 /* CBMainViewController.swift in Sources */,
+				6D0EBE8E1B2054DE003ED872 /* CBAnnotation.swift in Sources */,
 				6D0EBE5A1B2033FB003ED872 /* AppDelegate.swift in Sources */,
 				6D0EBE7F1B2038AF003ED872 /* CBService.swift in Sources */,
+				6D0EBE8C1B2052BE003ED872 /* CBAnnotationView.swift in Sources */,
 				6D0EBE871B20402D003ED872 /* CBNetwork.swift in Sources */,
 				6D0EBE811B203F13003ED872 /* CBNetworkType.swift in Sources */,
 				6D0EBE851B20401F003ED872 /* CBStation.swift in Sources */,

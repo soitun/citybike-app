@@ -33,15 +33,13 @@ class CBService {
         let request = NSURLRequest(URL: url)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            
-            println(response)
-            
             var parseError: NSError? = nil
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError)
             
             if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
                 let network = CBJSONParser.parseNetwork(jsonResult["network"] as! CBJSONParser.JSON)
                 completion(network: network)
+                
             } else {
                 println(parseError)
                 completion(network: nil)
