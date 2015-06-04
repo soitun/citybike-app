@@ -17,12 +17,6 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        CBService.sharedInstance.fetchNetwork(CBNetworkType.BikesSRM, completion: { (network: CBNetwork?) -> Void in
-            println(network)
-            self.network = network
-            self.addStationsToMap(self.network?.stations ?? [CBStation]())
-        })
     }
     
     private func addStationsToMap(stations: [CBStation]!) {
@@ -34,6 +28,17 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    @IBAction func refreshPressed(sender: AnyObject) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        CBService.sharedInstance.fetchNetwork(CBNetworkType.BikesSRM, completion: { (network: CBNetwork?) -> Void in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            self.network = network
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.addStationsToMap(self.network?.stations ?? [CBStation]())
+            })
+        })
+    }
     
     /// MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
