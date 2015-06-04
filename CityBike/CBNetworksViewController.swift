@@ -20,7 +20,13 @@ class CBNetworksViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.selectedNetworkIDs = NSUserDefaults.getNetworkIDs()
         self.tableView.registerNib(UINib(nibName: CBNoItemsCell.Identifier, bundle: nil), forCellReuseIdentifier: CBNoItemsCell.Identifier)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSUserDefaults.saveNetworkIDs(self.selectedNetworkIDs)
     }
     
     @IBAction func refreshPressed(sender: AnyObject) {
@@ -44,6 +50,13 @@ class CBNetworksViewController: UIViewController, UITableViewDelegate, UITableVi
             let cell = tableView.dequeueReusableCellWithIdentifier("NetworkCell") as! UITableViewCell
             cell.textLabel?.text = network.name
             cell.detailTextLabel?.text = "\(network.location.country), \(network.location.city)"
+            
+            if let idx = find(self.selectedNetworkIDs, network.id) {
+                cell.accessoryType = .Checkmark
+            } else {
+                cell.accessoryType = .None
+            }
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(CBNoItemsCell.Identifier) as! CBNoItemsCell

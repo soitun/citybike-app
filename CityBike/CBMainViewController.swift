@@ -42,7 +42,8 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if self.noNetworksSelectedPopupPresented == false {
+        
+        if self.noNetworksSelectedPopupPresented == false && NSUserDefaults.getNetworkIDs().count == 0 {
             self.noNetworksSelectedPopupPresented = true
             self.presentNoNetworksSelectedPopup()
         }
