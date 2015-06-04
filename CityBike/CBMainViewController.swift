@@ -15,7 +15,7 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet private weak var locateMeButton: UIButton!
     @IBOutlet private weak var networksButton: UIButton!
     
-    private var network: CBNetwork?
+    private var stations = [CBStation]()
     private var locationManager = CLLocationManager()
     private var noNetworksSelectedPopupPresented = false
     
@@ -42,7 +42,6 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         if self.noNetworksSelectedPopupPresented == false && NSUserDefaults.getNetworkIDs().count == 0 {
             self.noNetworksSelectedPopupPresented = true
             self.presentNoNetworksSelectedPopup()
@@ -50,13 +49,31 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func refreshPressed(sender: AnyObject) {
+        self.refreshAllNetworks()
+    }
+    
+    private func refreshAllNetworks() {
+        let networkIDs = NSUserDefaults.getNetworkIDs()
+        
+        var networkTypes = [CBNetworkType]()
+        for networkID in networkIDs {
+            if let type = CBNetworkType(rawValue: networkID) {
+                networkTypes.append(type)
+            }
+        }
+        
+        if networkIDs.count == 0 || networkTypes.count == 0 {
+            return
+        }
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        CBService.sharedInstance.fetchNetwork(CBNetworkType.BikesSRM, completion: { (network: CBNetwork?) -> Void in
+        
+        CBService.sharedInstance.fetchStationsForNetworkTypes(networkTypes, completion: { (stations) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            self.network = network
+            self.stations = stations
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.addStationsToMap(self.network?.stations ?? [CBStation]())
+                self.addStationsToMap(self.stations)
             })
         })
     }

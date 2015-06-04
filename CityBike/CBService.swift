@@ -49,8 +49,13 @@ class CBService {
         }
     }
     
+    /// Get stations for passed network types
+    func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (stations: [CBStation]) -> Void) {
+        
+    }
+    
     /// Get latest info about specified network
-    func fetchNetwork(type: CBNetworkType, completion: (network: CBNetwork?) -> Void) {
+    func fetchNetworkForType(type: CBNetworkType, completion: (network: CBNetwork?) -> Void) {
         let baseURL = NSURL(string: CBService.CBServiceBaseURL)
         let url = NSURL(string: type.rawValue, relativeToURL: baseURL)!
         let request = NSURLRequest(URL: url)
