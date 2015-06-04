@@ -15,8 +15,12 @@ class CBNetworksViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private var networks = [CBNetwork]()
     
+    private var selectedNetworkIDs = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.registerNib(UINib(nibName: CBNoItemsCell.Identifier, bundle: nil), forCellReuseIdentifier: CBNoItemsCell.Identifier)
     }
     
     @IBAction func refreshPressed(sender: AnyObject) {
@@ -31,18 +35,39 @@ class CBNetworksViewController: UIViewController, UITableViewDelegate, UITableVi
     
     /// MARK: Table View
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.networks.count
+        return max(self.networks.count, 1)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let network = self.networks[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("NetworkCell") as! UITableViewCell
-        cell.textLabel?.text = network.name
-        cell.detailTextLabel?.text = "\(network.location.country), \(network.location.city)"
-        return cell
+        if self.networks.count > 0 {
+            let network = self.networks[indexPath.row]
+            let cell = tableView.dequeueReusableCellWithIdentifier("NetworkCell") as! UITableViewCell
+            cell.textLabel?.text = network.name
+            cell.detailTextLabel?.text = "\(network.location.country), \(network.location.city)"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(CBNoItemsCell.Identifier) as! CBNoItemsCell
+            cell.label.text = "No bike networks."
+            return cell
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if self.networks.count > 0 {
+            let networkId = self.networks[indexPath.row].id
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell!
+            if cell.accessoryType == .Checkmark {
+                cell.accessoryType = .None
+                
+                if let idIndex = find(self.selectedNetworkIDs, networkId) {
+                    self.selectedNetworkIDs.removeAtIndex(idIndex)
+                }
+            } else {
+                cell.accessoryType = .Checkmark
+                self.selectedNetworkIDs.append(networkId)
+            }            
+        }
     }
 }

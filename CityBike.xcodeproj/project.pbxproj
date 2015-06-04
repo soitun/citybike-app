@@ -21,6 +21,8 @@
 		6D0EBE8C1B2052BE003ED872 /* CBAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE8B1B2052BE003ED872 /* CBAnnotationView.swift */; };
 		6D0EBE8E1B2054DE003ED872 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE8D1B2054DE003ED872 /* CBAnnotation.swift */; };
 		6D0EBE901B205FFE003ED872 /* CBAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */; };
+		6DB84B031B20CEFC005DBDAD /* CBNoItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB84B021B20CEFC005DBDAD /* CBNoItemsCell.xib */; };
+		6DB84B051B20CF33005DBDAD /* CBNoItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B041B20CF33005DBDAD /* CBNoItemsCell.swift */; };
 		6DD4609F1B20889F0070E163 /* CBHowToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD4609E1B20889F0070E163 /* CBHowToViewController.swift */; };
 		6DD460A21B20891D0070E163 /* CBUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */; };
 		6DD460A41B208A040070E163 /* CBUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* CBUIColorExtension.swift */; };
@@ -56,6 +58,8 @@
 		6D0EBE8B1B2052BE003ED872 /* CBAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAnnotationView.swift; sourceTree = "<group>"; };
 		6D0EBE8D1B2054DE003ED872 /* CBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAnnotation.swift; sourceTree = "<group>"; };
 		6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBAnnotationView.xib; path = Resources/CBAnnotationView.xib; sourceTree = "<group>"; };
+		6DB84B021B20CEFC005DBDAD /* CBNoItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBNoItemsCell.xib; sourceTree = "<group>"; };
+		6DB84B041B20CF33005DBDAD /* CBNoItemsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNoItemsCell.swift; sourceTree = "<group>"; };
 		6DBD866F1B206CBB009AFA47 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
 		6DD4609E1B20889F0070E163 /* CBHowToViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBHowToViewController.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIViewExtension.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */,
+				6DB84B021B20CEFC005DBDAD /* CBNoItemsCell.xib */,
 				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
 				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
 				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				6D0EBE8B1B2052BE003ED872 /* CBAnnotationView.swift */,
+				6DB84B041B20CF33005DBDAD /* CBNoItemsCell.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 			files = (
 				6D0EBE901B205FFE003ED872 /* CBAnnotationView.xib in Resources */,
 				6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */,
+				6DB84B031B20CEFC005DBDAD /* CBNoItemsCell.xib in Resources */,
 				6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */,
 				6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */,
 			);
@@ -301,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB84B051B20CF33005DBDAD /* CBNoItemsCell.swift in Sources */,
 				6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */,
 				6DD4609F1B20889F0070E163 /* CBHowToViewController.swift in Sources */,
 				6DD460A41B208A040070E163 /* CBUIColorExtension.swift in Sources */,
