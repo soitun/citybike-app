@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		6D0EBE5A1B2033FB003ED872 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE591B2033FB003ED872 /* AppDelegate.swift */; };
-		6D0EBE5C1B2033FB003ED872 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE5B1B2033FB003ED872 /* ViewController.swift */; };
 		6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE5D1B2033FB003ED872 /* Main.storyboard */; };
 		6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE601B2033FB003ED872 /* Images.xcassets */; };
 		6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */; };
 		6D0EBE701B2033FB003ED872 /* CityBikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE6F1B2033FB003ED872 /* CityBikeTests.swift */; };
+		6D0EBE7A1B203704003ED872 /* CBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE791B203704003ED872 /* CBMainViewController.swift */; };
+		6D0EBE7F1B2038AF003ED872 /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE7E1B2038AF003ED872 /* CBService.swift */; };
+		6D0EBE811B203F13003ED872 /* CBNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE801B203F13003ED872 /* CBNetworkType.swift */; };
+		6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */; };
+		6D0EBE851B20401F003ED872 /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE841B20401F003ED872 /* CBStation.swift */; };
+		6D0EBE871B20402D003ED872 /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE861B20402D003ED872 /* CBNetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +34,18 @@
 		6D0EBE541B2033FB003ED872 /* CityBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0EBE581B2033FB003ED872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D0EBE591B2033FB003ED872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6D0EBE5B1B2033FB003ED872 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6D0EBE5E1B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D0EBE601B2033FB003ED872 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D0EBE631B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6D0EBE691B2033FB003ED872 /* CityBikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityBikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0EBE6E1B2033FB003ED872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D0EBE6F1B2033FB003ED872 /* CityBikeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBikeTests.swift; sourceTree = "<group>"; };
+		6D0EBE791B203704003ED872 /* CBMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMainViewController.swift; sourceTree = "<group>"; };
+		6D0EBE7E1B2038AF003ED872 /* CBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBService.swift; sourceTree = "<group>"; };
+		6D0EBE801B203F13003ED872 /* CBNetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetworkType.swift; sourceTree = "<group>"; };
+		6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBJSONParser.swift; sourceTree = "<group>"; };
+		6D0EBE841B20401F003ED872 /* CBStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStation.swift; sourceTree = "<group>"; };
+		6D0EBE861B20402D003ED872 /* CBNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				6D0EBE591B2033FB003ED872 /* AppDelegate.swift */,
-				6D0EBE5B1B2033FB003ED872 /* ViewController.swift */,
-				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
-				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
-				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
+				6D0EBE7D1B203891003ED872 /* Controllers */,
+				6D0EBE7B1B20386B003ED872 /* CityBikes API */,
+				6D0EBE7C1B20387B003ED872 /* Resources */,
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
 			);
 			path = CityBike;
@@ -110,6 +119,36 @@
 				6D0EBE6E1B2033FB003ED872 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D0EBE7B1B20386B003ED872 /* CityBikes API */ = {
+			isa = PBXGroup;
+			children = (
+				6D0EBE7E1B2038AF003ED872 /* CBService.swift */,
+				6D0EBE801B203F13003ED872 /* CBNetworkType.swift */,
+				6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */,
+				6D0EBE861B20402D003ED872 /* CBNetwork.swift */,
+				6D0EBE841B20401F003ED872 /* CBStation.swift */,
+			);
+			name = "CityBikes API";
+			sourceTree = "<group>";
+		};
+		6D0EBE7C1B20387B003ED872 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
+				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
+				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D0EBE7D1B203891003ED872 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D0EBE791B203704003ED872 /* CBMainViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +195,7 @@
 		6D0EBE4C1B2033FB003ED872 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CB;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Tomasz Szulc";
 				TargetAttributes = {
@@ -212,8 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D0EBE5C1B2033FB003ED872 /* ViewController.swift in Sources */,
+				6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */,
+				6D0EBE7A1B203704003ED872 /* CBMainViewController.swift in Sources */,
 				6D0EBE5A1B2033FB003ED872 /* AppDelegate.swift in Sources */,
+				6D0EBE7F1B2038AF003ED872 /* CBService.swift in Sources */,
+				6D0EBE871B20402D003ED872 /* CBNetwork.swift in Sources */,
+				6D0EBE811B203F13003ED872 /* CBNetworkType.swift in Sources */,
+				6D0EBE851B20401F003ED872 /* CBStation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
