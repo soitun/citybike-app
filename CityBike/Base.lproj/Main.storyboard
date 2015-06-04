@@ -5,6 +5,74 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Bike Networks-->
+        <scene sceneID="0Wc-Vq-z5C">
+            <objects>
+                <viewController id="HYR-aG-RxG" customClass="CBNetworksViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W0j-e0-nlS"/>
+                        <viewControllerLayoutGuide type="bottom" id="mJZ-yJ-tsm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PhY-4t-ZX1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-Va-0Mv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NetworkCell" textLabel="ldD-2L-ygf" detailTextLabel="rxW-Ir-Cy0" style="IBUITableViewCellStyleSubtitle" id="znG-Kt-xrJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="znG-Kt-xrJ" id="To1-Eg-kZ4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ldD-2L-ygf">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rxW-Ir-Cy0">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HYR-aG-RxG" id="6lV-AO-FO9"/>
+                                    <outlet property="delegate" destination="HYR-aG-RxG" id="bcT-WS-zbb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mJZ-yJ-tsm" firstAttribute="top" secondItem="JDv-Va-0Mv" secondAttribute="bottom" id="2GE-2T-TFf"/>
+                            <constraint firstAttribute="trailing" secondItem="JDv-Va-0Mv" secondAttribute="trailing" id="MS2-Ek-cgA"/>
+                            <constraint firstItem="JDv-Va-0Mv" firstAttribute="leading" secondItem="PhY-4t-ZX1" secondAttribute="leading" id="TjT-iE-rt6"/>
+                            <constraint firstItem="JDv-Va-0Mv" firstAttribute="top" secondItem="PhY-4t-ZX1" secondAttribute="top" id="x19-YW-gJ0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bike Networks" id="4iz-2s-xdf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="d3O-nO-bEs">
+                            <connections>
+                                <action selector="refreshPressed:" destination="HYR-aG-RxG" id="6Dl-ap-1z0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshButton" destination="d3O-nO-bEs" id="x40-hE-1E8"/>
+                        <outlet property="tableView" destination="JDv-Va-0Mv" id="qj8-Qj-6F5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0H-bD-LjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2615" y="1302"/>
+        </scene>
         <!--Stations-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -51,6 +119,7 @@
                                 </state>
                                 <connections>
                                     <action selector="networksPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="04R-gt-T9z"/>
+                                    <segue destination="HYR-aG-RxG" kind="push" id="IM3-kN-nCj"/>
                                 </connections>
                             </button>
                         </subviews>

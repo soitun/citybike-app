@@ -26,6 +26,29 @@ class CBService {
         return Static.instance!
     }
     
+    func fetchNetworks(completion: (networks: [CBNetwork]) -> Void) {
+        let baseURL = NSURL(string: CBService.CBServiceBaseURL)
+        let request = NSURLRequest(URL: baseURL!)
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            var parseError: NSError? = nil
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError)
+            
+            if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
+                var networks = [CBNetwork]()
+                for jsonNetwork in jsonResult["networks"] as! [CBJSONParser.JSON] {
+                    networks.append(CBJSONParser.parseNetwork(jsonNetwork))
+                }
+                
+                completion(networks: networks)
+            
+            } else {
+                println(parseError)
+                completion(networks: [])
+            }
+        }
+    }
+    
     /// Get latest info about specified network
     func fetchNetwork(type: CBNetworkType, completion: (network: CBNetwork?) -> Void) {
         let baseURL = NSURL(string: CBService.CBServiceBaseURL)
