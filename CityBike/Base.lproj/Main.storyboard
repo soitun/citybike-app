@@ -57,15 +57,8 @@
                             <constraint firstItem="JDv-Va-0Mv" firstAttribute="top" secondItem="PhY-4t-ZX1" secondAttribute="top" id="x19-YW-gJ0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Countries" id="4iz-2s-xdf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="d3O-nO-bEs">
-                            <connections>
-                                <action selector="refreshPressed:" destination="HYR-aG-RxG" id="6Dl-ap-1z0"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Countries" id="4iz-2s-xdf"/>
                     <connections>
-                        <outlet property="refreshButton" destination="d3O-nO-bEs" id="x40-hE-1E8"/>
                         <outlet property="tableView" destination="JDv-Va-0Mv" id="qj8-Qj-6F5"/>
                         <segue destination="SQV-l9-hQf" kind="push" identifier="ShowBikeNetworks" id="bfD-LO-iue"/>
                     </connections>

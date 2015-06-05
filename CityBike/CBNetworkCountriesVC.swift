@@ -30,7 +30,6 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var refreshButton: UIBarButtonItem!
     
     private var objects = [CountryCode: [CBNetwork]]()
     private var orderedObjects = [OObject]()
@@ -46,15 +45,6 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(animated)
         self.prepareContent()
         self.tableView.reloadData()
-    }
-    
-    @IBAction func refreshPressed(sender: AnyObject) {
-        CBContentManager.sharedInstance.fetchAllNetworks {
-            self.prepareContent()
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.tableView.reloadData()
-            })
-        }
     }
     
     private func prepareContent() {

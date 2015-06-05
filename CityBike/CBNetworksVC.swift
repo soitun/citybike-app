@@ -56,7 +56,6 @@ class CBNetworksVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
         }
     
-        println(networkIDsToSave)
         NSUserDefaults.saveNetworkIDs(networkIDsToSave)
     }
     
