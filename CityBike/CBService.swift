@@ -34,11 +34,13 @@ class CBService {
     /**
     Get stations of specified network types.
     */
-    func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (result: Dictionary<CBNetworkType, [CBStation]>) -> Void) {
+    func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (result: Dictionary<CBNetworkType, [CBStation]>, error: NSError?) -> Void) {
         
         /// stations will be grouped by type and stored here.
         var results = Dictionary<CBNetworkType, [CBStation]>()
     
+        var operationError: NSError?
+        
         /// create semaphore to be able to control flow of the method
         var semaphore = dispatch_semaphore_create(0)
         
@@ -52,10 +54,12 @@ class CBService {
             let networkType = types[idx]
             
             queue.addOperation(NSBlockOperation(block: { () -> Void in
-                self.fetchNetworkForType(networkType, completion: { (network: CBNetwork?) -> Void in
+                self.fetchNetworkForType(networkType, completion: { (network: CBNetwork?, error: NSError?) -> Void in
                     if let network = network {
                         results[network.networkType] = network.stations
                     }
+                    
+                    operationError = error
                     
                     /// unlock when last operation is finished
                     if idx == types.count - 1 {
@@ -70,20 +74,20 @@ class CBService {
         /// lock
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         
-        completion(result: results)
+        completion(result: results, error: operationError)
     }
     
     
     /**
     Get bike network object of specified type
     */
-    func fetchNetworkForType(type: CBNetworkType!, completion: (network: CBNetwork?) -> Void) {
-        self.makeRequest(type.rawValue, completion: { (response) -> Void in
+    func fetchNetworkForType(type: CBNetworkType!, completion: (network: CBNetwork?, error: NSError?) -> Void) {
+        self.makeRequest(type.rawValue, completion: { (response, error) -> Void in
             if let jsonResult = response as? Dictionary<String, AnyObject> {
                 let network = CBJSONParser.parseNetwork(jsonResult["network"] as! CBJSONParser.JSON)
-                completion(network: network)
+                completion(network: network, error: error)
             } else {
-                completion(network: nil)
+                completion(network: nil, error: error)
             }
         })
     }
@@ -92,17 +96,17 @@ class CBService {
     /**
     Get every network available on the server without stations data. Just networks infos.
     */
-    func fetchNetworks(completion: (networks: [CBNetwork]) -> Void) {
-        self.makeRequest(nil, completion: { (response) -> Void in
+    func fetchNetworks(completion: (networks: [CBNetwork], error: NSError?) -> Void) {
+        self.makeRequest(nil, completion: { (response, error) -> Void in
             if let jsonResult = response as? CBJSONParser.JSON {
                 var networks = [CBNetwork]()
                 for jsonNetwork in jsonResult["networks"] as! [CBJSONParser.JSON] {
                     networks.append(CBJSONParser.parseNetwork(jsonNetwork))
                 }
                 
-                completion(networks: networks)
+                completion(networks: networks, error: error)
             } else {
-                completion(networks: [CBNetwork]())
+                completion(networks: [CBNetwork](), error: error)
             }
         })
 
@@ -111,7 +115,7 @@ class CBService {
     
     
     /// MARK: - Private
-    private func makeRequest(path: String?, completion: (response: AnyObject?) -> Void) {
+    private func makeRequest(path: String?, completion: (response: AnyObject?, error:NSError?) -> Void) {
         let url: NSURL?
         let baseURL = NSURL(string: CBService.CBServiceBaseURL)
         
@@ -123,15 +127,18 @@ class CBService {
         
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var parseError: NSError? = nil
-            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError)
-        
-            if let jsonResult: AnyObject = jsonResult {
-                completion(response: jsonResult)
+            
+            if let data = data {
+                var parseError: NSError? = nil
+                if let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError) {
+                    completion(response: jsonResult, error: error)
+                    
+                } else if let parseError = parseError {
+                    completion(response: nil, error: parseError)
+                }
                 
-            } else if let parseError = parseError {
-                println(parseError)
-                completion(response: nil)
+            } else if let error = error {
+                completion(response: nil, error: error)
             }
         }
     }

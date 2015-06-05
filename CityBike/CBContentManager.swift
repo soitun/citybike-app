@@ -58,10 +58,14 @@ class CBContentManager: NSObject {
     
     /// MARK: Private
     func refreshNetworks() {
-        CBService.sharedInstance.fetchNetworks { (networks) -> Void in
-            println("Fetched all networks")
-            self.networks = networks
-            NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateNetworksNotification, object: nil, userInfo: ["networks": networks])
+        CBService.sharedInstance.fetchNetworks { (networks, error) -> Void in
+            if error == nil {
+                println("Fetched all networks")
+                self.networks = networks
+                NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateNetworksNotification, object: nil, userInfo: ["networks": networks])
+            } else {
+                println(error!.localizedDescription)
+            }
         }
     }
     
@@ -73,17 +77,21 @@ class CBContentManager: NSObject {
         }
         
         if types.count > 0 {
-            CBService.sharedInstance.fetchStationsForNetworkTypes(types, completion: { (results: Dictionary<CBNetworkType, [CBStation]>) -> Void in
-                println("Fetched selected stations")
+            CBService.sharedInstance.fetchStationsForNetworkTypes(types, completion: { (results: Dictionary<CBNetworkType, [CBStation]>, error: NSError?) -> Void in
+                if error == nil {
+                    println("Fetched selected stations")
 
-                /// collect stations from every network
-                var stations = Array<CBStation>()
-                for (_, stationsInNetwork) in results {
-                    stations += stationsInNetwork
+                    /// collect stations from every network
+                    var stations = Array<CBStation>()
+                    for (_, stationsInNetwork) in results {
+                        stations += stationsInNetwork
+                    }
+                    
+                    self.stations = stations
+                    self.postStationUpdate(stations)
+                } else {
+                    println(error!.localizedDescription)
                 }
-                
-                self.stations = stations
-                self.postStationUpdate(stations)
             })
         } else {
             self.stations = [CBStation]()
