@@ -29,7 +29,7 @@ class CBService {
     func fetchNetworks(completion: (networks: [CBNetwork]) -> Void) {
         let baseURL = NSURL(string: CBService.CBServiceBaseURL)
         let request = NSURLRequest(URL: baseURL!)
-        
+                
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             var parseError: NSError? = nil
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError)
@@ -50,8 +50,28 @@ class CBService {
     }
     
     /// Get stations for passed network types
-    func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (stations: [CBStation]) -> Void) {
+    func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (result: Dictionary<CBNetworkType, [CBStation]>) -> Void) {
         
+        var result = Dictionary<CBNetworkType, [CBStation]>()
+        
+        let semaphore = dispatch_semaphore_create(types.count)
+        
+        for networkType in types {
+            
+            self.fetchNetworkForType(networkType, completion: { (network: CBNetwork?) -> Void in
+                if let network = network {
+                    result[network.networkType] = network.stations
+                }
+                
+                dispatch_semaphore_signal(semaphore)
+            })
+        }
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        
+        println(result)
+        
+        completion(result: result)
     }
     
     /// Get latest info about specified network

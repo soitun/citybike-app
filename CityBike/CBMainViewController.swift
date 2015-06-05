@@ -21,22 +21,18 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationManager.requestWhenInUseAuthorization()
-        
         self.locateMeButton.makeRoundedAndShadowed()
         self.networksButton.makeRoundedAndShadowed()
-    }
-    
-    private func addStationsToMap(stations: [CBStation]!) {
-        self.mapView.removeAnnotations(self.mapView.annotations)
-        
-        var updated = [CBAnnotation]()
-        for station in stations {
-            let annotation = CBAnnotation(station: station)
-            updated.append(annotation)
+
+        self.locationManager.requestWhenInUseAuthorization()
+
+        /// Download networks
+        self.networksButton.enabled = false
+        CBContentManager.sharedInstance.fetchAllNetworks {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.networksButton.enabled = true
+            })
         }
-        
-        self.mapView.addAnnotations(updated)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,10 +45,10 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func refreshPressed(sender: AnyObject) {
-        self.refreshAllNetworks()
+        self.refreshSelectedNetworks()
     }
     
-    private func refreshAllNetworks() {
+    private func refreshSelectedNetworks() {
         let networkIDs = NSUserDefaults.getNetworkIDs()
         
         var networkTypes = [CBNetworkType]()
@@ -67,8 +63,7 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
         }
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        CBService.sharedInstance.fetchStationsForNetworkTypes(networkTypes, completion: { (stations) -> Void in
+        CBContentManager.sharedInstance.fetchStationsForNetworkTypes(networkTypes, completion: { (stations) -> Void in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             self.stations = stations
             
@@ -76,6 +71,18 @@ class CBMainViewController: UIViewController, MKMapViewDelegate {
                 self.addStationsToMap(self.stations)
             })
         })
+    }
+    
+    private func addStationsToMap(stations: [CBStation]!) {
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        
+        var updated = [CBAnnotation]()
+        for station in stations {
+            let annotation = CBAnnotation(station: station)
+            updated.append(annotation)
+        }
+        
+        self.mapView.addAnnotations(updated)
     }
     
     @IBAction func locateMePressed(sender: AnyObject) {

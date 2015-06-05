@@ -11,3 +11,20 @@ for i in 0..<arr.count {
 }
 
 arr
+
+
+
+class ArrObj {
+    var internalObjects = [ArrObj]()
+}
+
+var objects = [ArrObj(), ArrObj()]
+
+
+for obj in objects {
+    obj.internalObjects.append(ArrObj())
+}
+
+for obj in objects {
+    println(obj.internalObjects.count)
+}

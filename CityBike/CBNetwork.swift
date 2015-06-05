@@ -27,4 +27,8 @@ class CBNetwork {
     var location: CBLocation!
     var name: String!
     var stations: [CBStation]! = [CBStation]()
+    
+    var networkType: CBNetworkType {
+        return CBNetworkType(rawValue: id)!
+    }
 }
