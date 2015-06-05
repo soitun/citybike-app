@@ -10,9 +10,13 @@ import Foundation
 
 class CBService {
     
+    /// Base URL of the backend in current version
     static private let CBServiceBaseURL = "http://api.citybik.es/v2/networks/"
     
-    /// Get shared instance
+    
+    /**
+    Singleton of CBService
+    */
     class var sharedInstance: CBService {
         struct Static {
             static var onceToken: dispatch_once_t = 0
@@ -26,46 +30,54 @@ class CBService {
         return Static.instance!
     }
     
-    /// Get stations for passed network types
+    
+    /**
+    Get stations of specified network types.
+    */
     func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (result: Dictionary<CBNetworkType, [CBStation]>) -> Void) {
         
-        var result = Dictionary<CBNetworkType, [CBStation]>()
+        /// stations will be grouped by type and stored here.
+        var results = Dictionary<CBNetworkType, [CBStation]>()
     
+        /// create semaphore to be able to control flow of the method
         var semaphore = dispatch_semaphore_create(0)
         
+        /// create queue when all requests will be planned.
         var queue = NSOperationQueue()
         queue.maxConcurrentOperationCount = 1
         queue.suspended = true
         
+        /// add block operation for every type
         for idx in 0..<types.count {
             let networkType = types[idx]
             
-            var operation = NSBlockOperation()
-            var x = idx
-            operation.addExecutionBlock({ () -> Void in
+            queue.addOperation(NSBlockOperation(block: { () -> Void in
                 self.fetchNetworkForType(networkType, completion: { (network: CBNetwork?) -> Void in
                     if let network = network {
-                        result[network.networkType] = network.stations
+                        results[network.networkType] = network.stations
                     }
                     
-                    if x == types.count - 1 {
+                    /// unlock when last operation is finished
+                    if idx == types.count - 1 {
                         dispatch_semaphore_signal(semaphore)
                     }
                 })
-            })
-            
-            queue.addOperation(operation)
+            }))
         }
         
         queue.suspended = false
         
+        /// lock
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         
-        completion(result: result)
+        completion(result: results)
     }
     
-    /// Get latest info about specified network
-    func fetchNetworkForType(type: CBNetworkType, completion: (network: CBNetwork?) -> Void) {
+    
+    /**
+    Get bike network object of specified type
+    */
+    func fetchNetworkForType(type: CBNetworkType!, completion: (network: CBNetwork?) -> Void) {
         self.makeRequest(type.rawValue, completion: { (response) -> Void in
             if let jsonResult = response as? Dictionary<String, AnyObject> {
                 let network = CBJSONParser.parseNetwork(jsonResult["network"] as! CBJSONParser.JSON)
@@ -76,6 +88,10 @@ class CBService {
         })
     }
     
+    
+    /**
+    Get every network available on the server without stations data. Just networks infos.
+    */
     func fetchNetworks(completion: (networks: [CBNetwork]) -> Void) {
         self.makeRequest(nil, completion: { (response) -> Void in
             if let jsonResult = response as? CBJSONParser.JSON {
@@ -92,6 +108,9 @@ class CBService {
 
     }
     
+    
+    
+    /// MARK: - Private
     private func makeRequest(path: String?, completion: (response: AnyObject?) -> Void) {
         let url: NSURL?
         let baseURL = NSURL(string: CBService.CBServiceBaseURL)
