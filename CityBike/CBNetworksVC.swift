@@ -17,6 +17,9 @@ class CBNetworksVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        networks.sort { $0.name < $1.name } /// sort networks
+        
         self.tableView.registerNib(UINib(nibName: CBNoItemsCell.Identifier, bundle: nil), forCellReuseIdentifier: CBNoItemsCell.Identifier)
         self.selectedNetworkIDs = NSUserDefaults.getNetworkIDs()
     }
