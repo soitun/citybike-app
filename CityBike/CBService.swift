@@ -26,29 +26,6 @@ class CBService {
         return Static.instance!
     }
     
-    func fetchNetworks(completion: (networks: [CBNetwork]) -> Void) {
-        let baseURL = NSURL(string: CBService.CBServiceBaseURL)
-        let request = NSURLRequest(URL: baseURL!)
-                
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var parseError: NSError? = nil
-            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError)
-            
-            if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
-                var networks = [CBNetwork]()
-                for jsonNetwork in jsonResult["networks"] as! [CBJSONParser.JSON] {
-                    networks.append(CBJSONParser.parseNetwork(jsonNetwork))
-                }
-                
-                completion(networks: networks)
-            
-            } else {
-                println(parseError)
-                completion(networks: [])
-            }
-        }
-    }
-    
     /// Get stations for passed network types
     func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (result: Dictionary<CBNetworkType, [CBStation]>) -> Void) {
         
@@ -83,27 +60,59 @@ class CBService {
         queue.suspended = false
         
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-                
+        
         completion(result: result)
     }
     
     /// Get latest info about specified network
     func fetchNetworkForType(type: CBNetworkType, completion: (network: CBNetwork?) -> Void) {
+        self.makeRequest(type.rawValue, completion: { (response) -> Void in
+            if let jsonResult = response as? Dictionary<String, AnyObject> {
+                let network = CBJSONParser.parseNetwork(jsonResult["network"] as! CBJSONParser.JSON)
+                completion(network: network)
+            } else {
+                completion(network: nil)
+            }
+        })
+    }
+    
+    func fetchNetworks(completion: (networks: [CBNetwork]) -> Void) {
+        self.makeRequest(nil, completion: { (response) -> Void in
+            if let jsonResult = response as? CBJSONParser.JSON {
+                var networks = [CBNetwork]()
+                for jsonNetwork in jsonResult["networks"] as! [CBJSONParser.JSON] {
+                    networks.append(CBJSONParser.parseNetwork(jsonNetwork))
+                }
+                
+                completion(networks: networks)
+            } else {
+                completion(networks: [CBNetwork]())
+            }
+        })
+
+    }
+    
+    private func makeRequest(path: String?, completion: (response: AnyObject?) -> Void) {
+        let url: NSURL?
         let baseURL = NSURL(string: CBService.CBServiceBaseURL)
-        let url = NSURL(string: type.rawValue, relativeToURL: baseURL)!
-        let request = NSURLRequest(URL: url)
         
+        if let path = path {
+            url = NSURL(string: path, relativeToURL: baseURL)!
+        } else {
+            url = baseURL
+        }
+        
+        let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             var parseError: NSError? = nil
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &parseError)
-            
-            if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
-                let network = CBJSONParser.parseNetwork(jsonResult["network"] as! CBJSONParser.JSON)
-                completion(network: network)
+        
+            if let jsonResult: AnyObject = jsonResult {
+                completion(response: jsonResult)
                 
-            } else {
+            } else if let parseError = parseError {
                 println(parseError)
-                completion(network: nil)
+                completion(response: nil)
             }
         }
     }
