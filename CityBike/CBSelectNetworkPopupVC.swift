@@ -1,5 +1,5 @@
 //
-//  CBSelectNetworkPopupViewController.swift
+//  CBSelectNetworkPopupVC.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 04/06/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CBSelectNetworkPopupViewController: UIViewController {
+class CBSelectNetworkPopupVC: UIViewController {
     
     @IBOutlet private weak var visualEffectView: UIVisualEffectView!
     @IBOutlet private weak var containerView: UIView!
