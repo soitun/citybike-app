@@ -53,24 +53,37 @@ class CBService {
     func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (result: Dictionary<CBNetworkType, [CBStation]>) -> Void) {
         
         var result = Dictionary<CBNetworkType, [CBStation]>()
+    
+        var semaphore = dispatch_semaphore_create(0)
         
-        let semaphore = dispatch_semaphore_create(types.count)
+        var queue = NSOperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        queue.suspended = true
         
-        for networkType in types {
+        for idx in 0..<types.count {
+            let networkType = types[idx]
             
-            self.fetchNetworkForType(networkType, completion: { (network: CBNetwork?) -> Void in
-                if let network = network {
-                    result[network.networkType] = network.stations
-                }
-                
-                dispatch_semaphore_signal(semaphore)
+            var operation = NSBlockOperation()
+            var x = idx
+            operation.addExecutionBlock({ () -> Void in
+                self.fetchNetworkForType(networkType, completion: { (network: CBNetwork?) -> Void in
+                    if let network = network {
+                        result[network.networkType] = network.stations
+                    }
+                    
+                    if x == types.count - 1 {
+                        dispatch_semaphore_signal(semaphore)
+                    }
+                })
             })
+            
+            queue.addOperation(operation)
         }
         
+        queue.suspended = false
+        
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-        
-        println(result)
-        
+                
         completion(result: result)
     }
     
