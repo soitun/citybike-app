@@ -8,9 +8,17 @@
 
 import Foundation
 
-class CBContentManager {
+class CBContentManager: NSObject {
     
+    static let DidUpdateNetworksNotification = "DidUpdateNetworksNotification"
+    static let DidUpdateStationsNotification = "DidUpdateStationsNotification"
+    
+    /// recently received
     var networks = [CBNetwork]()
+    var stations = [CBStation]()
+
+    private var networksTimer: NSTimer?
+    private var stationsTimer: NSTimer?
     
     /// Get shared instance
     class var sharedInstance: CBContentManager {
@@ -25,26 +33,65 @@ class CBContentManager {
         
         return Static.instance!
     }
-
-    /// Use to fetch all networks. Do this before fetching stations
-    func fetchAllNetworks(completion: (Void -> Void)?) {
+    
+    func start() {
+        self.refreshNetworks()
+        self.refreshStations()
+        
+        /// Refersh networks every 5 minutes
+        self.networksTimer?.invalidate()
+        self.networksTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(60), target: self, selector: Selector("refreshNetworks"), userInfo: nil, repeats: true)
+        
+        self.stationsTimer?.invalidate()
+        self.stationsTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(15), target: self, selector: Selector("refreshStations"), userInfo: nil, repeats: true)
+    }
+    
+    func stop() {
+        self.networksTimer?.invalidate()
+        self.stationsTimer?.invalidate()
+    }
+    
+    func forceStationsUpdate() {
+        self.refreshStations()
+    }
+    
+    
+    /// MARK: Private
+    func refreshNetworks() {
         CBService.sharedInstance.fetchNetworks { (networks) -> Void in
-            self.networks = networks
             println("Fetched all networks")
-            completion?()
+            self.networks = networks
+            NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateNetworksNotification, object: nil, userInfo: ["networks": networks])
         }
     }
     
-    /// Fetch stations for specified types
-    func fetchStationsForNetworkTypes(types: [CBNetworkType], completion: (stations: [CBStation]) -> Void) {
-        CBService.sharedInstance.fetchStationsForNetworkTypes(types, completion: { (results: Dictionary<CBNetworkType, [CBStation]>) -> Void in
-            
-            var stations = Array<CBStation>()
-            for (_, stationsInNetwork) in results {
-                stations += stationsInNetwork
-            }
-            
-            completion(stations: stations)
-        })
+    func refreshStations() {
+        let savedTypes = NSUserDefaults.getNetworkIDs() as [String]
+        var types = [CBNetworkType]()
+        for savedType in savedTypes {
+            types.append(CBNetworkType(rawValue: savedType)!)
+        }
+        
+        if types.count > 0 {
+            CBService.sharedInstance.fetchStationsForNetworkTypes(types, completion: { (results: Dictionary<CBNetworkType, [CBStation]>) -> Void in
+                println("Fetched selected stations")
+
+                /// collect stations from every network
+                var stations = Array<CBStation>()
+                for (_, stationsInNetwork) in results {
+                    stations += stationsInNetwork
+                }
+                
+                self.stations = stations
+                self.postStationUpdate(stations)
+            })
+        } else {
+            self.stations = [CBStation]()
+            self.postStationUpdate(self.stations)
+        }
+    }
+    
+    private func postStationUpdate(stations: [CBStation]) {
+        NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateStationsNotification, object: nil, userInfo: ["stations": stations])
     }
 }

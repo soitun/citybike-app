@@ -23,14 +23,14 @@ class CBNetworksVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        if self.selectedNetworkIDs.count == 0 {
-            return
-        }
-        
+
+        self.saveSelectedNetworks()
+    }
+    
+    private func saveSelectedNetworks() {
         var savedNetworkIDs = NSUserDefaults.getNetworkIDs()
         var networkIDsToSave = self.selectedNetworkIDs
-
+        
         for savedNetworkID in savedNetworkIDs {
             /// check if local network contains saved network ID
             var foundInLocalNetwork = false
@@ -39,10 +39,9 @@ class CBNetworksVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 if network.id == savedNetworkID {
                     foundInLocalNetwork = true
                     
-                    if find(self.selectedNetworkIDs, savedNetworkID) != nil {
-                        if find(networkIDsToSave, savedNetworkID) == nil {
-                            networkIDsToSave.append(savedNetworkID)
-                        }
+                    if find(self.selectedNetworkIDs, savedNetworkID) != nil &&
+                        find(networkIDsToSave, savedNetworkID) == nil {
+                        networkIDsToSave.append(savedNetworkID)
                     }
                     
                     break
@@ -55,9 +54,13 @@ class CBNetworksVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 }
             }
         }
-    
+        
         NSUserDefaults.saveNetworkIDs(networkIDsToSave)
+        
+        /// Force content update. Redownload stations
+        CBContentManager.sharedInstance.forceStationsUpdate()
     }
+    
     
     /// MARK: UITableView
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

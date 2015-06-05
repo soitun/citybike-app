@@ -128,13 +128,7 @@
                             <constraint firstItem="aIJ-qt-oMU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="qg3-xB-Blp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Stations" id="PTa-rr-z5i">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="hnq-Zk-HbM">
-                            <connections>
-                                <action selector="refreshPressed:" destination="vXZ-lx-hvc" id="ABW-Mb-g9F"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Stations" id="PTa-rr-z5i"/>
                     <connections>
                         <outlet property="locateMeButton" destination="aIJ-qt-oMU" id="QeB-As-kcW"/>
                         <outlet property="mapView" destination="lC2-iy-4he" id="9MT-6I-oE3"/>

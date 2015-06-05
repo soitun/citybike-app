@@ -9,7 +9,7 @@
 import Foundation
 
 extension NSUserDefaults {
-    
+        
     private static let CityBikeNetworks = "CityBikeNetworks"
     private static let CityBikeDoNotShowAgainNoBikeNetworks = "CityBikeDoNotShowAgainNoBikeNetworks"
     
@@ -22,18 +22,16 @@ extension NSUserDefaults {
     }
     
     
-    
     class func getNetworkIDs() -> [String] {
         let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeNetworks) as! NSData
         return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String]
     }
     
-    class func saveNetworkIDs(networks: [String]) {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(networks)
+    class func saveNetworkIDs(ids: [String]) {
+        let data = NSKeyedArchiver.archivedDataWithRootObject(ids)
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: CityBikeNetworks)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
-    
     
     
     class func getDoNotShowAgainNoBikeNetworks() -> Bool {

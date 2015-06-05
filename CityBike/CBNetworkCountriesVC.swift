@@ -8,33 +8,31 @@
 
 import UIKit
 
+typealias CountryCode = String
+
+class OrderedObject {
+    var countryCode: CountryCode!
+    var selectedNetworks: Int = 0
+    
+    lazy var countryString: String! = {
+        let identifier = NSLocale.localeIdentifierFromComponents([NSLocaleCountryCode: self.countryCode])
+        return NSLocale.currentLocale().displayNameForKey(NSLocaleIdentifier, value: identifier)!
+    }()
+}
+
 class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     enum SegueIdentifiers: String {
         case ShowBikeNetworksSegue = "ShowBikeNetworks"
     }
     
-    class OrderedObject {
-        var countryCode: CountryCode!
-        var selectedNetworks: Int = 0
-        
-        lazy var countryString: String! = {
-            let identifier = NSLocale.localeIdentifierFromComponents([NSLocaleCountryCode: self.countryCode])
-            return NSLocale.currentLocale().displayNameForKey(NSLocaleIdentifier, value: identifier)!
-        }()
-    }
-    
-    typealias OObject = CBNetworkCountriesVC.OrderedObject
-    typealias CountryCode = String
-
-    
-    
     @IBOutlet private weak var tableView: UITableView!
     
-    private var objects = [CountryCode: [CBNetwork]]()
-    private var orderedObjects = [OObject]()
+    private var networksByCountryCode = [CountryCode: [CBNetwork]]()
+    private var orderedNetworksByCountryCode = [OrderedObject]()
     
     
+    /// MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerNib(UINib(nibName: CBRightDetailCell.Identifier, bundle: nil), forCellReuseIdentifier: CBRightDetailCell.Identifier)
@@ -43,33 +41,39 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.prepareContent()
-        self.tableView.reloadData()
+        self.refreshContent(CBContentManager.sharedInstance.networks)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBContentManager.DidUpdateNetworksNotification, object: nil)
     }
     
-    private func prepareContent() {
-        
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    
+    /// MARK: Private
+    private func refreshContent(inputNetworks: [CBNetwork]) {
         /// Get networks and collect them in pairs by country code
-        var result = [CountryCode: [CBNetwork]]()
-        var networks = CBContentManager.sharedInstance.networks
-
-        for network in networks {
+        var networksByCountryCode = [CountryCode: [CBNetwork]]()
+        var networksFromContentProvider = inputNetworks
+        
+        for network in networksFromContentProvider {
             let key = network.location.country
-            if result[key] == nil {
-                result[key] = [CBNetwork]()
+            if networksByCountryCode[key] == nil {
+                networksByCountryCode[key] = [CBNetwork]()
             }
             
-            result[key]!.append(network)
+            networksByCountryCode[key]!.append(network)
         }
         
-        self.objects = result
-
+        self.networksByCountryCode = networksByCountryCode
+        
         /// Sort using countryString.
         var selectedNetworkIDs = NSUserDefaults.getNetworkIDs()
         
-        self.orderedObjects = [OObject]()
-        for (countryCode, networks) in result {
-            let orderedObject = OObject()
+        self.orderedNetworksByCountryCode = [OrderedObject]()
+        for (countryCode, networks) in networksByCountryCode {
+            let orderedObject = OrderedObject()
             orderedObject.countryCode = countryCode
             
             /// Get number of selected networks
@@ -78,39 +82,50 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
                     orderedObject.selectedNetworks += 1
                 }
             }
-                        
-            self.orderedObjects.append(orderedObject)
+            self.orderedNetworksByCountryCode.append(orderedObject)
         }
         
-        self.orderedObjects.sort {$0.countryString < $1.countryString}
+        self.orderedNetworksByCountryCode.sort {$0.countryString < $1.countryString}
+        self.tableView.reloadData()
     }
     
+    
+    /// MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueIdentifiers.ShowBikeNetworksSegue.rawValue {
             let vc = segue.destinationViewController as! CBNetworksVC
-            vc.networks = self.objects[(sender as! OObject).countryCode]
+            vc.networks = self.networksByCountryCode[(sender as! OrderedObject).countryCode]
         }
     }
     
+    
+    /// MARK: Notifications
+    func didUpdateNetworksNotification(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            let networks = notification.userInfo!["networks"]! as! [CBNetwork]
+            self.refreshContent(networks)
+        })
+    }
+    
+    
     /// MARK: Table View
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(self.orderedObjects.count, 1)
+        return max(self.orderedNetworksByCountryCode.count, 1)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if self.orderedObjects.count > 0 {
-            let orderedObject = self.orderedObjects[indexPath.row]
+        if self.orderedNetworksByCountryCode.count > 0 {
+            let orderedObject = self.orderedNetworksByCountryCode[indexPath.row]
             
             let cell = tableView.dequeueReusableCellWithIdentifier(CBRightDetailCell.Identifier) as! CBRightDetailCell
             cell.label?.text = orderedObject.countryString
-            
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+
             if orderedObject.selectedNetworks == 0 {
                 cell.detailLabel?.text = nil
             } else {
                 cell.detailLabel?.text = String.localizedStringWithFormat("%d selected", orderedObject.selectedNetworks)
             }
-            
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
             return cell
         } else {
@@ -123,8 +138,8 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if self.orderedObjects.count > 0 {
-            let oobject = self.orderedObjects[indexPath.row]
+        if self.orderedNetworksByCountryCode.count > 0 {
+            let oobject = self.orderedNetworksByCountryCode[indexPath.row]
             self.performSegueWithIdentifier(SegueIdentifiers.ShowBikeNetworksSegue.rawValue, sender: oobject)
         }
     }
