@@ -8,7 +8,7 @@
         <!--Bike Networks-->
         <scene sceneID="0Wc-Vq-z5C">
             <objects>
-                <viewController id="HYR-aG-RxG" customClass="CBNetworkCountriesViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HYR-aG-RxG" customClass="CBNetworkCountriesVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W0j-e0-nlS"/>
                         <viewControllerLayoutGuide type="bottom" id="mJZ-yJ-tsm"/>
@@ -76,7 +76,7 @@
         <!--Stations-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="CBMainViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="CBMainVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="1858" y="1302"/>
         </scene>
-        <!--Select Network Popup View Controller-->
+        <!--Select Network PopupVC-->
         <scene sceneID="oGM-zy-B3T">
             <objects>
-                <viewController id="ij7-U4-qFi" customClass="CBSelectNetworkPopupViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ij7-U4-qFi" customClass="CBSelectNetworkPopupVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L1H-uy-Xp2"/>
                         <viewControllerLayoutGuide type="bottom" id="v9e-OX-AnZ"/>
@@ -257,10 +257,10 @@
             </objects>
             <point key="canvasLocation" x="1091" y="1302"/>
         </scene>
-        <!--How To View Controller-->
+        <!--How ToVC-->
         <scene sceneID="PTj-AU-1EJ">
             <objects>
-                <viewController id="avE-bp-OeI" customClass="CBHowToViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="avE-bp-OeI" customClass="CBHowToVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fEA-8b-zCe"/>
                         <viewControllerLayoutGuide type="bottom" id="PeY-f6-zYX"/>

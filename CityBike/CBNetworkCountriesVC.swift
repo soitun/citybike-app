@@ -1,5 +1,5 @@
 //
-//  CBNetworkCountriesViewController.swift
+//  CBNetworkCountriesVC.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 04/06/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CBNetworkCountriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     class OrderedObject {
         var countryCode: CountryCode!
@@ -20,7 +20,7 @@ class CBNetworkCountriesViewController: UIViewController, UITableViewDelegate, U
         }()
     }
     
-    typealias OObject = CBNetworkCountriesViewController.OrderedObject
+    typealias OObject = CBNetworkCountriesVC.OrderedObject
     typealias CountryCode = String
 
     

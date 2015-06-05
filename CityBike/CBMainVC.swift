@@ -1,5 +1,5 @@
 //
-//  CBMainViewController.swift
+//  CBMainVC.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 04/06/15.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class CBMainViewController: UIViewController, MKMapViewDelegate {
+class CBMainVC: UIViewController, MKMapViewDelegate {
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var locateMeButton: UIButton!

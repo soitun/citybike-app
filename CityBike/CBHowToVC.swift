@@ -1,5 +1,5 @@
 //
-//  CBHowToViewController.swift
+//  CBHowToVC.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 04/06/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CBHowToViewController: UIViewController {
+class CBHowToVC: UIViewController {
 
     @IBOutlet private weak var welcomeToLabel: UILabel!
     @IBOutlet private weak var cityBikeLabel: UILabel!
