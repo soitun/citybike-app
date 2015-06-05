@@ -15,6 +15,11 @@ class CBMainVC: UIViewController, MKMapViewDelegate {
     @IBOutlet private weak var locateMeButton: UIButton!
     @IBOutlet private weak var networksButton: UIButton!
     
+    @IBOutlet private weak var connectionErrorLabel: UILabel!
+    @IBOutlet private weak var connectionErrorBarHeight: NSLayoutConstraint!
+    @IBOutlet private weak var connectionErrorBarTop: NSLayoutConstraint!
+    @IBOutlet private weak var connectionErrorBar: UIView!
+    
     private var locationManager = CLLocationManager()
     private var noNetworksSelectedPopupPresented = false
     
@@ -88,8 +93,31 @@ class CBMainVC: UIViewController, MKMapViewDelegate {
     /// MARK: Notifications
     func didUpdateStationsNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let stations = notification.userInfo!["stations"]! as! [CBStation]
-            self.updateStations(stations)
+            let error = notification.userInfo!["error"] as? NSError
+            if error != nil {
+                self.connectionErrorLabel.text = "Internet connection problem."
+                
+                /// Animate Error Bar
+                if self.connectionErrorBar.alpha == 0 {
+                    self.connectionErrorBarTop.constant = 0
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        self.view.layoutIfNeeded()
+                        self.connectionErrorBar.alpha = 1
+                    })
+                }
+            } else {
+                let stations = notification.userInfo!["stations"]! as! [CBStation]
+                self.updateStations(stations)
+
+                /// Animate Error Bar
+                if self.connectionErrorBar.alpha != 0 {
+                    self.connectionErrorBarTop.constant = -self.connectionErrorBarHeight.constant
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        self.view.layoutIfNeeded()
+                        self.connectionErrorBar.alpha = 0
+                    })
+                }
+            }
         })
     }
     

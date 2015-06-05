@@ -19,6 +19,7 @@ class CBContentManager: NSObject {
 
     private var networksTimer: NSTimer?
     private var stationsTimer: NSTimer?
+    private var wasConnectionProblem = false
     
     /// Get shared instance
     class var sharedInstance: CBContentManager {
@@ -35,15 +36,11 @@ class CBContentManager: NSObject {
     }
     
     func start() {
+        self.scheduleNetworksTimer(60)
+        self.scheduleStationsTimer(15)
+        
         self.refreshNetworks()
         self.refreshStations()
-        
-        /// Refersh networks every 5 minutes
-        self.networksTimer?.invalidate()
-        self.networksTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(60), target: self, selector: Selector("refreshNetworks"), userInfo: nil, repeats: true)
-        
-        self.stationsTimer?.invalidate()
-        self.stationsTimer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(15), target: self, selector: Selector("refreshStations"), userInfo: nil, repeats: true)
     }
     
     func stop() {
@@ -57,6 +54,20 @@ class CBContentManager: NSObject {
     
     
     /// MARK: Private
+    private func scheduleNetworksTimer(interval: NSTimeInterval) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.networksTimer?.invalidate()
+            self.networksTimer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("refreshNetworks"), userInfo: nil, repeats: true)
+        })
+    }
+    
+    private func scheduleStationsTimer(interval: NSTimeInterval) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.stationsTimer?.invalidate()
+            self.stationsTimer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("refreshStations"), userInfo: nil, repeats: true)
+        })
+    }
+    
     func refreshNetworks() {
         CBService.sharedInstance.fetchNetworks { (networks, error) -> Void in
             if error == nil {
@@ -88,18 +99,35 @@ class CBContentManager: NSObject {
                     }
                     
                     self.stations = stations
-                    self.postStationUpdate(stations)
+                    self.postStationUpdate(stations, error: nil)
+                    
+                    if self.wasConnectionProblem == true {
+                        self.wasConnectionProblem == false
+                        self.scheduleStationsTimer(15)
+                    }
                 } else {
                     println(error!.localizedDescription)
+                    self.stations = [CBStation]()
+                    self.postStationUpdate(self.stations, error: error)
+                    
+                    if self.wasConnectionProblem == false {
+                        self.wasConnectionProblem = true
+                        self.scheduleStationsTimer(3)
+                    }
                 }
             })
         } else {
             self.stations = [CBStation]()
-            self.postStationUpdate(self.stations)
+            self.postStationUpdate(self.stations, error: nil)
         }
     }
     
-    private func postStationUpdate(stations: [CBStation]) {
-        NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateStationsNotification, object: nil, userInfo: ["stations": stations])
+    private func postStationUpdate(stations: [CBStation], error: NSError?) {
+        var userInfo: [String: AnyObject] = ["stations": stations]
+        if let error = error {
+            userInfo["error"] = error
+        }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateStationsNotification, object: nil, userInfo: userInfo)
     }
 }
