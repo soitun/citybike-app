@@ -10,6 +10,10 @@ import UIKit
 
 class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    enum SegueIdentifiers: String {
+        case ShowBikeNetworksSegue = "ShowBikeNetworks"
+    }
+    
     class OrderedObject {
         var countryCode: CountryCode!
         var selectedNetworks: Int = 0
@@ -32,9 +36,9 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
     private var orderedObjects = [OObject]()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.registerNib(UINib(nibName: CBRightDetailCell.Identifier, bundle: nil), forCellReuseIdentifier: CBRightDetailCell.Identifier)
         self.tableView.registerNib(UINib(nibName: CBNoItemsCell.Identifier, bundle: nil), forCellReuseIdentifier: CBNoItemsCell.Identifier)
     }
     
@@ -84,13 +88,19 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
                     orderedObject.selectedNetworks += 1
                 }
             }
-            
+                        
             self.orderedObjects.append(orderedObject)
         }
         
         self.orderedObjects.sort {$0.countryString < $1.countryString}
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SegueIdentifiers.ShowBikeNetworksSegue.rawValue {
+            let vc = segue.destinationViewController as! CBNetworksVC
+            vc.networks = self.objects[(sender as! OObject).countryCode]
+        }
+    }
     
     /// MARK: Table View
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,17 +108,19 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if self.objects.count > 0 {
+        if self.orderedObjects.count > 0 {
             let orderedObject = self.orderedObjects[indexPath.row]
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("NetworkCell") as! UITableViewCell
-            cell.textLabel?.text = orderedObject.countryString
+            let cell = tableView.dequeueReusableCellWithIdentifier(CBRightDetailCell.Identifier) as! CBRightDetailCell
+            cell.label?.text = orderedObject.countryString
             
             if orderedObject.selectedNetworks == 0 {
-                cell.detailTextLabel?.text = nil
+                cell.detailLabel?.text = nil
             } else {
-                cell.detailTextLabel?.text = String.localizedStringWithFormat("%d selected", orderedObject.selectedNetworks)
+                cell.detailLabel?.text = String.localizedStringWithFormat("%d selected", orderedObject.selectedNetworks)
             }
+            
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
             return cell
         } else {
@@ -120,5 +132,10 @@ class CBNetworkCountriesVC: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if self.orderedObjects.count > 0 {
+            let oobject = self.orderedObjects[indexPath.row]
+            self.performSegueWithIdentifier(SegueIdentifiers.ShowBikeNetworksSegue.rawValue, sender: oobject)
+        }
     }
 }

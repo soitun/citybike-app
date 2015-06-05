@@ -5,7 +5,7 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Bike Networks-->
+        <!--Countries-->
         <scene sceneID="0Wc-Vq-z5C">
             <objects>
                 <viewController id="HYR-aG-RxG" customClass="CBNetworkCountriesVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <constraint firstItem="JDv-Va-0Mv" firstAttribute="top" secondItem="PhY-4t-ZX1" secondAttribute="top" id="x19-YW-gJ0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bike Networks" id="4iz-2s-xdf">
+                    <navigationItem key="navigationItem" title="Countries" id="4iz-2s-xdf">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="d3O-nO-bEs">
                             <connections>
                                 <action selector="refreshPressed:" destination="HYR-aG-RxG" id="6Dl-ap-1z0"/>
@@ -67,6 +67,7 @@
                     <connections>
                         <outlet property="refreshButton" destination="d3O-nO-bEs" id="x40-hE-1E8"/>
                         <outlet property="tableView" destination="JDv-Va-0Mv" id="qj8-Qj-6F5"/>
+                        <segue destination="SQV-l9-hQf" kind="push" identifier="ShowBikeNetworks" id="bfD-LO-iue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0H-bD-LjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,6 +393,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xg0-sD-qgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="274" y="1302"/>
+        </scene>
+        <!--Bike Networks-->
+        <scene sceneID="gG2-qF-aEI">
+            <objects>
+                <viewController id="SQV-l9-hQf" customClass="CBNetworksVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eVO-Wg-Bll"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Zu-dq-jmV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hcQ-YD-xEL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XlK-tW-Idx">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NetworkCell" textLabel="wFY-Wv-yWS" detailTextLabel="RbP-Xf-IrY" style="IBUITableViewCellStyleSubtitle" id="Ysp-Ec-4ov">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ysp-Ec-4ov" id="sQP-Hc-I7j">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wFY-Wv-yWS">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RbP-Xf-IrY">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SQV-l9-hQf" id="zwI-ou-poC"/>
+                                    <outlet property="delegate" destination="SQV-l9-hQf" id="jUI-DF-o91"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XlK-tW-Idx" secondAttribute="trailing" id="CqF-ez-rOd"/>
+                            <constraint firstItem="XlK-tW-Idx" firstAttribute="leading" secondItem="hcQ-YD-xEL" secondAttribute="leading" id="EUJ-Be-tlF"/>
+                            <constraint firstItem="XlK-tW-Idx" firstAttribute="top" secondItem="hcQ-YD-xEL" secondAttribute="top" id="hb3-pQ-AMR"/>
+                            <constraint firstItem="5Zu-dq-jmV" firstAttribute="top" secondItem="XlK-tW-Idx" secondAttribute="bottom" id="iHa-iq-pQt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bike Networks" id="OK4-1g-csA"/>
+                    <connections>
+                        <outlet property="tableView" destination="XlK-tW-Idx" id="Guq-bw-4oZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBu-t0-NY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3377" y="1302"/>
         </scene>
     </scenes>
     <resources>

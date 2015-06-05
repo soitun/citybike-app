@@ -28,3 +28,16 @@ for obj in objects {
 for obj in objects {
     println(obj.internalObjects.count)
 }
+
+
+var arr1 = [1, 2, 3]
+var arr2 = [1]
+
+var set1 = Set(arr1)
+var set2 = Set(arr2)
+
+set1.subtract(set2)
+
+
+
+
