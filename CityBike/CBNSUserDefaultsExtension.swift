@@ -11,11 +11,17 @@ import Foundation
 extension NSUserDefaults {
     
     private static let CityBikeNetworks = "CityBikeNetworks"
+    private static let CityBikeDoNotShowAgainNoBikeNetworks = "CityBikeDoNotShowAgainNoBikeNetworks"
     
     class func registerCityBikeDefaults() {
-        let defaults = [CityBikeNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]())]
+        let defaults = [
+            CityBikeNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]()),
+            CityBikeDoNotShowAgainNoBikeNetworks: 0
+        ]
         NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
     }
+    
+    
     
     class func getNetworkIDs() -> [String] {
         let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeNetworks) as! NSData
@@ -25,6 +31,17 @@ extension NSUserDefaults {
     class func saveNetworkIDs(networks: [String]) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(networks)
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: CityBikeNetworks)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    
+    
+    class func getDoNotShowAgainNoBikeNetworks() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey(CityBikeDoNotShowAgainNoBikeNetworks)
+    }
+    
+    class func setDoNotShowAgainNoBikeNetworks(doNotShow: Bool) {
+        NSUserDefaults.standardUserDefaults().setBool(doNotShow, forKey: CityBikeDoNotShowAgainNoBikeNetworks)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

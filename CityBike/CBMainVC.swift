@@ -38,7 +38,10 @@ class CBMainVC: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if self.noNetworksSelectedPopupPresented == false && NSUserDefaults.getNetworkIDs().count == 0 {
+        if self.noNetworksSelectedPopupPresented == false &&
+            NSUserDefaults.getNetworkIDs().count == 0 &&
+            NSUserDefaults.getDoNotShowAgainNoBikeNetworks() == false {
+            
             self.noNetworksSelectedPopupPresented = true
             self.presentNoNetworksSelectedPopup()
         }

@@ -167,7 +167,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ks-eM-I40" userLabel="Container">
-                                <rect key="frame" x="160" y="163" width="280" height="274"/>
+                                <rect key="frame" x="160" y="138" width="280" height="324"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="network-icon-big" translatesAutoresizingMaskIntoConstraints="NO" id="nau-at-aL9">
                                         <rect key="frame" x="105" y="30" width="71" height="83"/>
@@ -183,7 +183,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKC-1U-SO1">
-                                        <rect key="frame" x="10" y="220" width="260" height="44"/>
+                                        <rect key="frame" x="10" y="270" width="260" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="leg-RI-SRS"/>
@@ -195,17 +195,33 @@
                                             <action selector="closePressed:" destination="ij7-U4-qFi" eventType="touchUpInside" id="RK3-le-hST"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJq-78-gLD">
+                                        <rect key="frame" x="10" y="220" width="260" height="44"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="aVI-2V-EV6"/>
+                                        </constraints>
+                                        <state key="normal" title="Don't show again">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doNotShowPressed:" destination="ij7-U4-qFi" eventType="touchUpInside" id="Cu0-SS-hvd"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="FKC-1U-SO1" firstAttribute="top" secondItem="uJq-78-gLD" secondAttribute="bottom" constant="6" id="1gS-jy-Du7"/>
                                     <constraint firstItem="FKC-1U-SO1" firstAttribute="leading" secondItem="5Ks-eM-I40" secondAttribute="leading" constant="10" id="8SY-9b-pwD"/>
                                     <constraint firstAttribute="bottom" secondItem="FKC-1U-SO1" secondAttribute="bottom" constant="10" id="PEh-xf-Cr9"/>
+                                    <constraint firstAttribute="trailing" secondItem="uJq-78-gLD" secondAttribute="trailing" constant="10" id="Qr6-ow-Umu"/>
                                     <constraint firstAttribute="width" constant="280" id="SGY-b5-CJw"/>
                                     <constraint firstItem="9ff-j8-FDo" firstAttribute="leading" secondItem="5Ks-eM-I40" secondAttribute="leading" constant="10" id="X7Q-af-q52"/>
+                                    <constraint firstItem="uJq-78-gLD" firstAttribute="leading" secondItem="5Ks-eM-I40" secondAttribute="leading" constant="10" id="Zcx-6L-Ba7"/>
                                     <constraint firstAttribute="trailing" secondItem="FKC-1U-SO1" secondAttribute="trailing" constant="10" id="ec9-G8-EE7"/>
                                     <constraint firstItem="9ff-j8-FDo" firstAttribute="top" secondItem="nau-at-aL9" secondAttribute="bottom" constant="30" id="f4Q-HF-5bh"/>
                                     <constraint firstAttribute="trailing" secondItem="9ff-j8-FDo" secondAttribute="trailing" constant="10" id="fhN-Fo-klS"/>
-                                    <constraint firstItem="FKC-1U-SO1" firstAttribute="top" secondItem="9ff-j8-FDo" secondAttribute="bottom" constant="30" id="sbz-Oz-XLt"/>
+                                    <constraint firstItem="uJq-78-gLD" firstAttribute="top" secondItem="9ff-j8-FDo" secondAttribute="bottom" constant="30" id="tCp-ye-PXO"/>
                                     <constraint firstAttribute="centerX" secondItem="nau-at-aL9" secondAttribute="centerX" id="uVj-CP-j9F"/>
                                     <constraint firstItem="nau-at-aL9" firstAttribute="top" secondItem="5Ks-eM-I40" secondAttribute="top" constant="30" id="vtQ-N4-fUa"/>
                                 </constraints>
@@ -225,6 +241,7 @@
                         <outlet property="closeButton" destination="FKC-1U-SO1" id="msx-N7-qzH"/>
                         <outlet property="containerCenterYConstraint" destination="eKL-u6-dbZ" id="B9c-rd-a2q"/>
                         <outlet property="containerView" destination="5Ks-eM-I40" id="dgD-a2-ARU"/>
+                        <outlet property="doNotShowAgainButton" destination="uJq-78-gLD" id="Hb6-oo-Etd"/>
                         <outlet property="textLabel" destination="9ff-j8-FDo" id="F4M-yN-Var"/>
                         <outlet property="visualEffectView" destination="VHz-uQ-rRl" id="4zw-bb-eto"/>
                     </connections>
