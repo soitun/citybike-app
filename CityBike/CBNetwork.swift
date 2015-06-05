@@ -7,18 +7,6 @@
 //
 
 import Foundation
-import CoreLocation
-
-class CBLocation {
-    var city: String!
-    var country: String!
-    var latitude: CLLocationDegrees!
-    var longitude: CLLocationDegrees!
-    
-    var coordinate: CLLocationCoordinate2D {
-        return CLLocationCoordinate2DMake(self.latitude, self.longitude)
-    }
-}
 
 class CBNetwork {
     var company: String!
