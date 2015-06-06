@@ -12,6 +12,7 @@ extension NSUserDefaults {
         
     private static let CityBikeNetworks = "CityBikeNetworks"
     private static let CityBikeDoNotShowAgainNoBikeNetworks = "CityBikeDoNotShowAgainNoBikeNetworks"
+    private static let CityBikeStartRideTimeInterval = "CityBikeStartRideTimeInterval"
     
     class func registerCityBikeDefaults() {
         let defaults = [
@@ -40,6 +41,26 @@ extension NSUserDefaults {
     
     class func setDoNotShowAgainNoBikeNetworks(doNotShow: Bool) {
         NSUserDefaults.standardUserDefaults().setBool(doNotShow, forKey: CityBikeDoNotShowAgainNoBikeNetworks)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    
+    class func getStartRideTimeInterval() -> NSTimeInterval? {
+        let value = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeStartRideTimeInterval) as? NSTimeInterval
+        if value != nil {
+            return value
+        } else {
+            return nil
+        }
+    }
+    
+    class func setStartRideTimeInterval(ti: NSTimeInterval) {
+        NSUserDefaults.standardUserDefaults().setDouble(ti, forKey: CityBikeStartRideTimeInterval)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    class func removeStartRideTimeInterval() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(CityBikeStartRideTimeInterval)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

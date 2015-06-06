@@ -9,11 +9,12 @@
 import UIKit
 import MapKit
 
-class CBMainVC: UIViewController, MKMapViewDelegate {
+class CBMainVC: UIViewController, MKMapViewDelegate, CBRideButtonDelegate {
 
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var locateMeButton: UIButton!
     @IBOutlet private weak var networksButton: UIButton!
+    @IBOutlet weak var rideButton: CBRideButton!
     
     @IBOutlet private weak var connectionErrorLabel: UILabel!
     @IBOutlet private weak var connectionErrorBarHeight: NSLayoutConstraint!
@@ -27,8 +28,17 @@ class CBMainVC: UIViewController, MKMapViewDelegate {
     /// MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locateMeButton.makeRoundedAndShadowed()
-        self.networksButton.makeRoundedAndShadowed()
+        self.locateMeButton.makeStyleShadowedWhite()
+        self.networksButton.makeStyleShadowedWhite()
+        
+        /// Configure Ride Button
+        self.rideButton.makeStyleShadowedWhite()
+        self.rideButton.delegate = self
+        self.rideButton.onStopText = "Start a ride"
+        if let ti = NSUserDefaults.getStartRideTimeInterval() {
+            self.rideButton.startTimeInterval = ti
+            self.rideButton.startTimer()
+        }
 
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -133,5 +143,15 @@ class CBMainVC: UIViewController, MKMapViewDelegate {
         
         view.configure((annotation as! CBAnnotation).station)
         return view
+    }
+    
+    
+    /// MARK: CBRideButtonDelegate
+    func rideButtonDidStartAtTime(button: CBRideButton, timeInterval: NSTimeInterval) {
+        NSUserDefaults.setStartRideTimeInterval(timeInterval)
+    }
+    
+    func rideButtonDidStopAfterTime(button: CBRideButton, timeInterval: NSTimeInterval) {
+        NSUserDefaults.removeStartRideTimeInterval()
     }
 }

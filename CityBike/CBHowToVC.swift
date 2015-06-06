@@ -29,6 +29,6 @@ class CBHowToVC: UIViewController {
         self.fewImageView.tintColor = UIColor.fewColor()
         self.noneImageView.tintColor = UIColor.noneColor()
         
-        self.continueButton.makeRoundedAndShadowed()
+        self.continueButton.makeStyleReddish()
     }
 }

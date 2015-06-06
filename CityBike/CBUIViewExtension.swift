@@ -12,13 +12,12 @@ extension UIView {
 
     func makeShadowed() {
         self.layer.shadowColor = UIColor.blackColor().CGColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 2)
-        self.layer.shadowRadius = 1
-        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowRadius = 0
+        self.layer.shadowOpacity = 0.3
     }
-    
-    func makeRoundedAndShadowed() {
-        self.layer.cornerRadius = 6
-        self.makeShadowed()
+
+    func makeRounded() {
+        self.layer.cornerRadius = 8
     }
 }

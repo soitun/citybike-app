@@ -20,4 +20,16 @@ extension UIColor {
     class func plentyColor() -> UIColor {
         return UIColor(red:0.6, green:0.92, blue:0.24, alpha:1)
     }
+    
+    class func flamePeaColor() -> UIColor {
+        return UIColor(red:0.76, green:0.39, blue:0.25, alpha:1)
+    }
+    
+    class func summerGreenColor() -> UIColor {
+        return UIColor(red:0.53, green:0.72, blue:0.6, alpha:1)
+    }
+    
+    class func blueGrayColor() -> UIColor {
+        return UIColor(red:0.39, green:0.64, blue:0.77, alpha:1)
+    }
 }

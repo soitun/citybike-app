@@ -67,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="2615" y="1302"/>
         </scene>
-        <!--Stations-->
+        <!--Map-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="CBMainVC" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-qt-oMU" userLabel="Locate Me">
-                                <rect key="frame" x="10" y="74" width="44" height="44"/>
+                                <rect key="frame" x="5" y="69" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="LU6-Tm-e0p"/>
@@ -122,37 +122,51 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agU-hI-6N2" userLabel="Networks">
-                                <rect key="frame" x="62" y="74" width="44" height="44"/>
+                                <rect key="frame" x="54" y="69" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="bII-GU-J0J"/>
                                     <constraint firstAttribute="height" constant="44" id="frX-yn-CqP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" image="networks-icon">
+                                <state key="normal" image="network-icon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="HYR-aG-RxG" kind="push" id="IM3-kN-nCj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-Y0-ctx" customClass="CBRideButton" customModule="CityBike" customModuleProvider="target">
+                                <rect key="frame" x="5" y="555" width="109" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gVr-Ba-GwE"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Start a ride">
+                                    <color key="titleColor" red="0.91764705879999997" green="0.30980392159999998" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VB2-7y-ide" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-30" id="0Dm-Gi-mUj"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ekn-Y0-ctx" secondAttribute="bottom" constant="5" id="0sh-ef-fCb"/>
                             <constraint firstAttribute="trailing" secondItem="lC2-iy-4he" secondAttribute="trailing" id="4Jd-Yk-QmR"/>
-                            <constraint firstItem="aIJ-qt-oMU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="5Ft-0k-BUQ"/>
+                            <constraint firstItem="aIJ-qt-oMU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="5Ft-0k-BUQ"/>
                             <constraint firstItem="lC2-iy-4he" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="CFD-MS-5ji"/>
                             <constraint firstAttribute="trailing" secondItem="VB2-7y-ide" secondAttribute="trailing" id="Cwp-9J-hQG"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lC2-iy-4he" secondAttribute="bottom" id="I0R-MZ-ite"/>
-                            <constraint firstItem="aIJ-qt-oMU" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="10" id="M9J-nn-UWK"/>
+                            <constraint firstItem="aIJ-qt-oMU" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="5" id="M9J-nn-UWK"/>
+                            <constraint firstItem="ekn-Y0-ctx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="Ywf-5f-9Gp"/>
                             <constraint firstItem="lC2-iy-4he" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="deX-kp-uIF"/>
-                            <constraint firstItem="agU-hI-6N2" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="10" id="fAa-zR-qtF"/>
+                            <constraint firstItem="agU-hI-6N2" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="5" id="fAa-zR-qtF"/>
                             <constraint firstItem="VB2-7y-ide" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="mXp-6x-JCT"/>
-                            <constraint firstItem="agU-hI-6N2" firstAttribute="leading" secondItem="aIJ-qt-oMU" secondAttribute="trailing" constant="8" id="nG4-82-WC5"/>
+                            <constraint firstItem="agU-hI-6N2" firstAttribute="leading" secondItem="aIJ-qt-oMU" secondAttribute="trailing" constant="5" id="nG4-82-WC5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Stations" id="PTa-rr-z5i"/>
+                    <navigationItem key="navigationItem" title="Map" id="PTa-rr-z5i"/>
                     <connections>
                         <outlet property="connectionErrorBar" destination="VB2-7y-ide" id="Z72-Jb-PDv"/>
                         <outlet property="connectionErrorBarHeight" destination="DMq-uS-4Gq" id="IGg-Cu-Az5"/>
@@ -161,6 +175,7 @@
                         <outlet property="locateMeButton" destination="aIJ-qt-oMU" id="QeB-As-kcW"/>
                         <outlet property="mapView" destination="lC2-iy-4he" id="9MT-6I-oE3"/>
                         <outlet property="networksButton" destination="agU-hI-6N2" id="4Ns-mt-g1Z"/>
+                        <outlet property="rideButton" destination="ekn-Y0-ctx" id="a65-5e-oD4"/>
                         <segue destination="ij7-U4-qFi" kind="modal" identifier="ShowSelectBikeNetworks" modalPresentationStyle="currentContext" id="Ii9-HL-WAW"/>
                     </connections>
                 </viewController>
@@ -305,20 +320,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="j6B-CN-WiW">
                                 <rect key="frame" x="140" y="97" width="320" height="326"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfx-cQ-9YT">
-                                <rect key="frame" x="226" y="52" width="148" height="50"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Italic" family="Avenir Next Condensed" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Bike" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILf-dS-76c">
-                                <rect key="frame" x="243" y="96" width="114" height="50"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-D6-mdt">
-                                <rect key="frame" x="248" y="265" width="104" height="70"/>
+                                <rect key="frame" x="250" y="267" width="100" height="67"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bikes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJw-QQ-OaV">
                                 <rect key="frame" x="258" y="320" width="32" height="24"/>
@@ -375,6 +378,9 @@
                                     <segue destination="EoM-Pb-0Vl" kind="modal" modalTransitionStyle="coverVertical" id="f3D-LZ-MTk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-logo" translatesAutoresizingMaskIntoConstraints="NO" id="zkT-2Z-K2D">
+                                <rect key="frame" x="199" y="51" width="202" height="61"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.95294117647058818" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -384,20 +390,18 @@
                             <constraint firstItem="sAF-DT-wXy" firstAttribute="leading" secondItem="R7r-v3-2Nc" secondAttribute="trailing" constant="50" id="4Ja-ge-qWf"/>
                             <constraint firstItem="Zyd-Lw-Kl1" firstAttribute="top" secondItem="sAF-DT-wXy" secondAttribute="bottom" constant="10" id="7ZC-Cb-GQA"/>
                             <constraint firstItem="QS9-ET-D50" firstAttribute="centerY" secondItem="bVg-D6-mdt" secondAttribute="centerY" constant="32" id="8AA-ic-k91"/>
+                            <constraint firstItem="zkT-2Z-K2D" firstAttribute="top" secondItem="fEA-8b-zCe" secondAttribute="bottom" constant="31" id="BJo-Jb-Nf6"/>
                             <constraint firstAttribute="centerY" secondItem="j6B-CN-WiW" secondAttribute="centerY" constant="40" id="DOY-kB-Mkh"/>
                             <constraint firstItem="CFm-GU-KwL" firstAttribute="leading" secondItem="qXt-gl-XjK" secondAttribute="leading" constant="20" id="Exh-Ms-1bs"/>
                             <constraint firstItem="TJw-QQ-OaV" firstAttribute="trailing" secondItem="bVg-D6-mdt" secondAttribute="centerX" constant="-10" id="HRK-i2-qGm"/>
                             <constraint firstItem="PeY-f6-zYX" firstAttribute="top" secondItem="CFm-GU-KwL" secondAttribute="bottom" constant="20" id="M57-5q-cUn"/>
                             <constraint firstItem="R7r-v3-2Nc" firstAttribute="centerX" secondItem="nlj-Zf-S0x" secondAttribute="centerX" id="O7W-Ti-wxy"/>
                             <constraint firstAttribute="centerX" secondItem="j6B-CN-WiW" secondAttribute="centerX" id="ZFd-kW-jaT"/>
-                            <constraint firstAttribute="centerX" secondItem="Jfx-cQ-9YT" secondAttribute="centerX" id="e84-Vz-mOk"/>
-                            <constraint firstItem="Jfx-cQ-9YT" firstAttribute="top" secondItem="fEA-8b-zCe" secondAttribute="bottom" constant="32" id="h4A-vm-SDZ"/>
                             <constraint firstAttribute="trailing" secondItem="CFm-GU-KwL" secondAttribute="trailing" constant="20" id="k9V-Ag-dYO"/>
                             <constraint firstItem="f5p-C1-x8a" firstAttribute="leading" secondItem="sAF-DT-wXy" secondAttribute="trailing" constant="50" id="miA-Yt-vbt"/>
-                            <constraint firstItem="ILf-dS-76c" firstAttribute="top" secondItem="Jfx-cQ-9YT" secondAttribute="bottom" constant="-6" id="nm6-Gf-O2h"/>
-                            <constraint firstAttribute="centerX" secondItem="ILf-dS-76c" secondAttribute="centerX" id="oOU-6t-JRS"/>
                             <constraint firstItem="1op-wz-r3e" firstAttribute="top" secondItem="f5p-C1-x8a" secondAttribute="bottom" constant="10" id="ouc-lX-2bL"/>
                             <constraint firstItem="1op-wz-r3e" firstAttribute="centerX" secondItem="f5p-C1-x8a" secondAttribute="centerX" id="pcZ-J4-KtG"/>
+                            <constraint firstAttribute="centerX" secondItem="zkT-2Z-K2D" secondAttribute="centerX" id="peE-cd-sSl"/>
                             <constraint firstAttribute="centerX" secondItem="CFm-GU-KwL" secondAttribute="centerX" id="pm0-dz-5bT"/>
                             <constraint firstItem="QS9-ET-D50" firstAttribute="leading" secondItem="bVg-D6-mdt" secondAttribute="centerX" constant="10" id="qFZ-rZ-wKH"/>
                             <constraint firstItem="CFm-GU-KwL" firstAttribute="top" secondItem="sAF-DT-wXy" secondAttribute="bottom" constant="80" id="qTF-Ja-tXi"/>
@@ -410,7 +414,6 @@
                     </view>
                     <connections>
                         <outlet property="bikesLabel" destination="TJw-QQ-OaV" id="Ebv-up-vZ1"/>
-                        <outlet property="cityBikeLabel" destination="ILf-dS-76c" id="NJX-mF-ODH"/>
                         <outlet property="continueButton" destination="CFm-GU-KwL" id="aQf-dC-htC"/>
                         <outlet property="fewImageView" destination="sAF-DT-wXy" id="ntX-Pq-NE3"/>
                         <outlet property="fewLabel" destination="Zyd-Lw-Kl1" id="pEP-2y-x3G"/>
@@ -419,7 +422,6 @@
                         <outlet property="noneImageView" destination="f5p-C1-x8a" id="7v1-uf-WZj"/>
                         <outlet property="noneLabel" destination="1op-wz-r3e" id="QDS-BQ-Nkb"/>
                         <outlet property="slotsLabel" destination="QS9-ET-D50" id="d9h-ZE-fMi"/>
-                        <outlet property="welcomeToLabel" destination="Jfx-cQ-9YT" id="eOS-ML-C0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xg0-sD-qgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,10 +492,11 @@
     </scenes>
     <resources>
         <image name="availability-placeholder" width="30" height="30"/>
+        <image name="city-bike-logo" width="202" height="61"/>
         <image name="locate-me" width="34" height="34"/>
         <image name="map-placeholder" width="320" height="326"/>
+        <image name="network-icon" width="34" height="34"/>
         <image name="network-icon-big" width="71" height="83"/>
-        <image name="networks-icon" width="34" height="34"/>
-        <image name="pin-placeholder" width="104" height="70"/>
+        <image name="pin-placeholder" width="100" height="67"/>
     </resources>
 </document>

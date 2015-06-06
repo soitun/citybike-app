@@ -21,8 +21,9 @@ class CBSelectNetworkPopupVC: UIViewController {
         super.viewDidLoad()
         
         self.containerView.makeShadowed()
-        self.closeButton.makeRoundedAndShadowed()
-        self.doNotShowAgainButton.makeRoundedAndShadowed()
+        
+        self.closeButton.makeStyleReddish()
+        self.doNotShowAgainButton.makeStyleReddish()
     }
     
     @IBAction func closePressed(sender: AnyObject) {
