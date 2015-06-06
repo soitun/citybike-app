@@ -12,8 +12,8 @@ import MapKit
 class CBMainVC: UIViewController, MKMapViewDelegate, CBRideButtonDelegate {
 
     @IBOutlet private weak var mapView: MKMapView!
-    @IBOutlet private weak var locateMeButton: UIButton!
-    @IBOutlet private weak var networksButton: UIButton!
+    @IBOutlet private weak var locateMeButton: CBButton!
+    @IBOutlet private weak var networksButton: CBButton!
     @IBOutlet weak var rideButton: CBRideButton!
     
     @IBOutlet private weak var connectionErrorLabel: UILabel!

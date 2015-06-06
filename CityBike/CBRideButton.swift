@@ -13,7 +13,7 @@ protocol CBRideButtonDelegate {
     func rideButtonDidStopAfterTime(button:CBRideButton, timeInterval: NSTimeInterval) -> Void
 }
 
-class CBRideButton: UIButton {
+class CBRideButton: CBButton {
     
     var delegate: CBRideButtonDelegate?
     

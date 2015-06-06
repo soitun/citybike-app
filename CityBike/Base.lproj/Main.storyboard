@@ -106,7 +106,7 @@
                                     <constraint firstItem="mgF-VI-3c1" firstAttribute="leading" secondItem="VB2-7y-ide" secondAttribute="leading" constant="10" id="qCB-kv-RhN"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-qt-oMU" userLabel="Locate Me">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIJ-qt-oMU" userLabel="Locate Me" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="5" y="69" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -121,7 +121,7 @@
                                     <action selector="locateMePressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YT6-mT-NWL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agU-hI-6N2" userLabel="Networks">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agU-hI-6N2" userLabel="Networks" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="54" y="69" width="44" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -136,7 +136,7 @@
                                     <segue destination="HYR-aG-RxG" kind="push" id="IM3-kN-nCj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-Y0-ctx" customClass="CBRideButton" customModule="CityBike" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekn-Y0-ctx" customClass="CBRideButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="5" y="555" width="109" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -145,6 +145,16 @@
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Start a ride">
                                     <color key="titleColor" red="0.91764705879999997" green="0.30980392159999998" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDv-C4-gyO" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
+                                <rect key="frame" x="106" y="69" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FTv-hj-CQZ"/>
+                                    <constraint firstAttribute="width" constant="44" id="vq3-iv-Nud"/>
+                                </constraints>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -157,6 +167,7 @@
                             <constraint firstItem="aIJ-qt-oMU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="5Ft-0k-BUQ"/>
                             <constraint firstItem="lC2-iy-4he" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="CFD-MS-5ji"/>
                             <constraint firstAttribute="trailing" secondItem="VB2-7y-ide" secondAttribute="trailing" id="Cwp-9J-hQG"/>
+                            <constraint firstItem="bDv-C4-gyO" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="5" id="F3z-30-aUZ"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="lC2-iy-4he" secondAttribute="bottom" id="I0R-MZ-ite"/>
                             <constraint firstItem="aIJ-qt-oMU" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="5" id="M9J-nn-UWK"/>
                             <constraint firstItem="ekn-Y0-ctx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="Ywf-5f-9Gp"/>
@@ -164,6 +175,7 @@
                             <constraint firstItem="agU-hI-6N2" firstAttribute="top" secondItem="VB2-7y-ide" secondAttribute="bottom" constant="5" id="fAa-zR-qtF"/>
                             <constraint firstItem="VB2-7y-ide" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="mXp-6x-JCT"/>
                             <constraint firstItem="agU-hI-6N2" firstAttribute="leading" secondItem="aIJ-qt-oMU" secondAttribute="trailing" constant="5" id="nG4-82-WC5"/>
+                            <constraint firstItem="bDv-C4-gyO" firstAttribute="leading" secondItem="agU-hI-6N2" secondAttribute="trailing" constant="8" id="sbg-Yl-RbE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="PTa-rr-z5i"/>
@@ -219,7 +231,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKC-1U-SO1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKC-1U-SO1" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
                                         <rect key="frame" x="10" y="270" width="260" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -232,7 +244,7 @@
                                             <action selector="closePressed:" destination="ij7-U4-qFi" eventType="touchUpInside" id="RK3-le-hST"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJq-78-gLD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJq-78-gLD" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
                                         <rect key="frame" x="10" y="220" width="260" height="44"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -365,7 +377,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-GU-KwL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFm-GU-KwL" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="20" y="536" width="560" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -375,7 +387,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EoM-Pb-0Vl" kind="modal" modalTransitionStyle="coverVertical" id="f3D-LZ-MTk"/>
+                                    <action selector="continuePressed:" destination="avE-bp-OeI" eventType="touchUpInside" id="zg8-Xq-Ye4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-logo" translatesAutoresizingMaskIntoConstraints="NO" id="zkT-2Z-K2D">
@@ -422,11 +434,12 @@
                         <outlet property="noneImageView" destination="f5p-C1-x8a" id="7v1-uf-WZj"/>
                         <outlet property="noneLabel" destination="1op-wz-r3e" id="QDS-BQ-Nkb"/>
                         <outlet property="slotsLabel" destination="QS9-ET-D50" id="d9h-ZE-fMi"/>
+                        <segue destination="EoM-Pb-0Vl" kind="modal" identifier="ShowMap" id="f51-N0-VYF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xg0-sD-qgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="1302"/>
+            <point key="canvasLocation" x="354" y="1302"/>
         </scene>
         <!--Bike Networks-->
         <scene sceneID="gG2-qF-aEI">

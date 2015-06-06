@@ -13,8 +13,8 @@ class CBSelectNetworkPopupVC: UIViewController {
     @IBOutlet private weak var visualEffectView: UIVisualEffectView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var textLabel: UILabel!
-    @IBOutlet private weak var closeButton: UIButton!
-    @IBOutlet weak var doNotShowAgainButton: UIButton!
+    @IBOutlet private weak var closeButton: CBButton!
+    @IBOutlet weak var doNotShowAgainButton: CBButton!
     @IBOutlet private weak var containerCenterYConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {

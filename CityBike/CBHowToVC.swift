@@ -17,7 +17,7 @@ class CBHowToVC: UIViewController {
     @IBOutlet private weak var manyLabel: UILabel!
     @IBOutlet private weak var fewLabel: UILabel!
     @IBOutlet private weak var noneLabel: UILabel!
-    @IBOutlet private weak var continueButton: UIButton!
+    @IBOutlet private weak var continueButton: CBButton!
     @IBOutlet private weak var manyImageView: UIImageView!
     @IBOutlet private weak var fewImageView: UIImageView!
     @IBOutlet private weak var noneImageView: UIImageView!
@@ -30,5 +30,9 @@ class CBHowToVC: UIViewController {
         self.noneImageView.tintColor = UIColor.noneColor()
         
         self.continueButton.makeStyleReddish()
+    }
+    
+    @IBAction func continuePressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("ShowMap", sender: nil)
     }
 }
