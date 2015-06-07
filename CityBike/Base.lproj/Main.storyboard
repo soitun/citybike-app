@@ -267,7 +267,7 @@
                                     <action selector="thanksPressed:" destination="rhP-tg-att" eventType="touchUpInside" id="qCc-t9-Eqd"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liK-H9-EDk">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liK-H9-EDk">
                                 <rect key="frame" x="0.0" y="96" width="320" height="381"/>
                                 <connections>
                                     <outlet property="delegate" destination="rhP-tg-att" id="jch-UY-1Os"/>
