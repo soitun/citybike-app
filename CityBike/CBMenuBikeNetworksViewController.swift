@@ -38,6 +38,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet weak var noItemsLabel: UILabel!
+    @IBOutlet weak var noItemsIndicator: UIActivityIndicatorView!
     
     private var orderedObjects = [OrderedObject]()
     private var selectedNetworkIDs = [String]()
@@ -63,8 +64,10 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
         self.searchBar.barTintColor = UIColor.concreteColor()
 
         self.noItemsLabel.text = NSLocalizedString("No City Bike Networks", comment: "")
-        self.noItemsLabel.textColor = UIColor.whiteLilac();
+        self.noItemsLabel.textColor = UIColor.whiteLilac()
         self.noItemsLabel.hidden = true
+        self.noItemsIndicator.color = UIColor.whiteLilac()
+        self.noItemsIndicator.stopAnimating()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -99,39 +102,49 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func refreshContent(networksToDisplay: [CBNetwork]) {
-        var updatedOrderedObject = [OrderedObject]()
-        
-        for network in networksToDisplay {
-            /// Check if ordered object exist for country
-            var foundOO : OrderedObject? = nil
-            for orderedObject in updatedOrderedObject {
-                if orderedObject.countryCode == network.location.country {
-                    foundOO = orderedObject
-                    break
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+            var updatedOrderedObject = [OrderedObject]()
+            
+            for network in networksToDisplay {
+                /// Check if ordered object exist for country
+                var foundOO : OrderedObject? = nil
+                for orderedObject in updatedOrderedObject {
+                    if orderedObject.countryCode == network.location.country {
+                        foundOO = orderedObject
+                        break
+                    }
+                }
+                
+                /// add network to such object
+                if let foundOO = foundOO {
+                    foundOO.networks.append(network)
+                } else {
+                    let createdOO = OrderedObject()
+                    createdOO.countryCode = network.location.country
+                    createdOO.networks.append(network)
+                    updatedOrderedObject.append(createdOO)
                 }
             }
             
-            /// add network to such object
-            if let foundOO = foundOO {
-                foundOO.networks.append(network)
-            } else {
-                let createdOO = OrderedObject()
-                createdOO.countryCode = network.location.country
-                createdOO.networks.append(network)
-                updatedOrderedObject.append(createdOO)
+            /// Sort countries and by network name
+            updatedOrderedObject.sort { $0.countryString < $1.countryString }
+            for orderedObject in updatedOrderedObject {
+                orderedObject.networks.sort { $0.name < $1.name }
             }
-        }
-        
-        /// Sort countries and by network name
-        updatedOrderedObject.sort { $0.countryString < $1.countryString }
-        for orderedObject in updatedOrderedObject {
-            orderedObject.networks.sort { $0.name < $1.name }
-        }
-        
-        self.orderedObjects = updatedOrderedObject
-        self.tableView.reloadData()
-        
-        self.noItemsLabel.hidden = self.orderedObjects.count != 0
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.orderedObjects = updatedOrderedObject
+                self.tableView.reloadData()
+                
+                let noItems = self.orderedObjects.count == 0
+                self.noItemsLabel.hidden = !noItems
+                if noItems {
+                    self.noItemsIndicator.startAnimating()
+                } else {
+                    self.noItemsIndicator.stopAnimating()
+                }
+            })
+        })
     }
     
     

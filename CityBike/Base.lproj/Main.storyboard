@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
@@ -255,14 +256,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-OC-IZR">
+                                <rect key="frame" x="142" y="332" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PWb-OC-IZR" firstAttribute="top" secondItem="Z2x-UD-a1X" secondAttribute="bottom" constant="15" id="3ZJ-f7-EgO"/>
                             <constraint firstItem="ReF-17-fS3" firstAttribute="leading" secondItem="cQc-RG-H3s" secondAttribute="leading" id="Enk-Ry-P4Z"/>
                             <constraint firstAttribute="trailing" secondItem="Z2x-UD-a1X" secondAttribute="trailing" constant="30" id="K29-hQ-uUP"/>
                             <constraint firstAttribute="centerX" secondItem="Z2x-UD-a1X" secondAttribute="centerX" id="KOf-bI-1Cc"/>
                             <constraint firstAttribute="centerY" secondItem="Z2x-UD-a1X" secondAttribute="centerY" id="LT0-iL-LEI"/>
                             <constraint firstItem="ReF-17-fS3" firstAttribute="top" secondItem="cQc-RG-H3s" secondAttribute="top" id="Y7s-hm-Rnw"/>
+                            <constraint firstItem="Z2x-UD-a1X" firstAttribute="centerX" secondItem="PWb-OC-IZR" secondAttribute="centerX" constant="-0.5" id="av4-qy-s4a"/>
                             <constraint firstAttribute="trailing" secondItem="ReF-17-fS3" secondAttribute="trailing" id="ivG-hY-v5v"/>
                             <constraint firstItem="Z2x-UD-a1X" firstAttribute="leading" secondItem="cQc-RG-H3s" secondAttribute="leading" constant="30" id="oIk-j1-f5k"/>
                             <constraint firstItem="eld-ZO-sRQ" firstAttribute="top" secondItem="ReF-17-fS3" secondAttribute="bottom" id="wQq-Aq-kBf"/>
@@ -270,6 +276,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="City Bike Networks" id="Vuv-KB-fsF"/>
                     <connections>
+                        <outlet property="noItemsIndicator" destination="PWb-OC-IZR" id="bd7-ui-DlL"/>
                         <outlet property="noItemsLabel" destination="Z2x-UD-a1X" id="ZrW-YN-mm8"/>
                         <outlet property="searchBar" destination="T7a-hY-XVE" id="c8X-hn-Ej4"/>
                         <outlet property="searchDisplayController" destination="JMf-GL-HRS" id="sjZ-o7-aVS"/>
