@@ -65,7 +65,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch Section(rawValue: indexPath.section)! {
         case .Statistics:
             let cell = tableView.dequeueReusableCellWithIdentifier(CBDefaultCell.Identifier) as! CBDefaultCell
-            cell.label.text = NSLocalizedString("Rides History 🏁 🚴🏼", comment: "")
+            cell.label.text = NSLocalizedString("Rides History", comment: "") + " 🏁 🚴🏼"
             cell.accessoryType = .DisclosureIndicator
             return cell
             
@@ -79,13 +79,13 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .HelpUs:
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
-                cell.label.text = NSLocalizedString("Send Feedback ✉️", comment: "")
+                cell.label.text = NSLocalizedString("Send Feedback", comment: "") + " ✉️"
                 cell.detailLabel.text = NSLocalizedString("We’d love to hear your feedback!", comment: "")
                 return cell
                 
             } else if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(CBDefaultCell.Identifier) as! CBDefaultCell
-                cell.label.text = NSLocalizedString("Rate the app ⭐️⭐️⭐️⭐️⭐️", comment: "")
+                cell.label.text = NSLocalizedString("Rate the app", comment: "") + " ⭐️⭐️⭐️⭐️⭐️"
                 return cell
             }
         }
