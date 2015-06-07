@@ -16,7 +16,7 @@ class CBMapViewController: UIViewController {
     @IBOutlet private weak var stopwatchContainerTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var stopwatchTimeLabel: UILabel!
 
-    private var stopwatch = CBRideStopwatch()
+    private var stopwatchManager = CBRideManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +29,7 @@ class CBMapViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = self.stopwatchReadyButton
         
         self.stopwatchContainer.backgroundColor = UIColor.blueGrayColor()
-        
-        /// Check if stopwatch should be turned on
-        if let startTimeInterval = NSUserDefaults.getStartRideTimeInterval() {
-            self.startStopwatch(startTimeInterval, showBar: true, animated: false)
-        } else {
-            self.changeStopwatchContainer(false, animated: false)
-        }
+        self.runStopwatchIfNeeded()
     }
     
     
@@ -44,13 +38,17 @@ class CBMapViewController: UIViewController {
         self.startStopwatch(nil, showBar: true, animated: true)
     }
     
-    private func startStopwatch(var ti: NSTimeInterval?, showBar: Bool, animated: Bool) {
-        if ti == nil {
-            ti = NSDate().timeIntervalSince1970
-            NSUserDefaults.setStartRideTimeInterval(ti!)
+    private func runStopwatchIfNeeded() {
+        /// Check if stopwatch should be turned on
+        if let startTimeInterval = NSUserDefaults.getStartRideTimeInterval() {
+            self.startStopwatch(startTimeInterval, showBar: true, animated: false)
+        } else {
+            self.changeStopwatchContainer(false, animated: false)
         }
-        
-        self.stopwatch.start(ti!, updateBlock: { (duration) -> Void in
+    }
+    
+    private func startStopwatch(var ti: NSTimeInterval?, showBar: Bool, animated: Bool) {
+        self.stopwatchManager.start(ti, updateBlock: { (duration) -> Void in
             self.stopwatchTimeLabel.text = duration.stringTimeRepresentationStyle2
         })
         
@@ -63,34 +61,11 @@ class CBMapViewController: UIViewController {
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
         self.navigationItem.setLeftBarButtonItem(self.stopwatchReadyButton, animated: true)
         self.changeStopwatchContainer(false, animated: true)
-        
-        let duration = self.stopwatch.stop()
-        let startDate = NSDate(timeIntervalSince1970: self.stopwatch.startTimeInterval)
-        let typeComponents = NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit
-        let components = NSCalendar.autoupdatingCurrentCalendar().components(typeComponents, fromDate: startDate)
-        let dayDate = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
-        
-        let rideRecord = CBRideRecord(duration: duration, startTime: self.stopwatch.startTimeInterval)
-        
-        var ridesHistory = NSUserDefaults.getRidesHistory()
-        let key = dayDate.timeIntervalSince1970
-        if ridesHistory[key] != nil {
-            ridesHistory[key]!.append(rideRecord)
-        } else {
-            ridesHistory[key] = [rideRecord]
-        }
-        
-        NSUserDefaults.setRidesHistory(ridesHistory)
-        NSUserDefaults.removeStartRideTimeInterval()
+        self.stopwatchManager.stop()
     }
     
     private func changeStopwatchContainer(show: Bool, animated: Bool) {
-        if show {
-            self.stopwatchContainerTopConstraint.constant = 0
-        } else {
-            self.stopwatchContainerTopConstraint.constant = -CGRectGetHeight(self.stopwatchContainer.frame)
-        }
-        
+        self.stopwatchContainerTopConstraint.constant = show ? 0 : -CGRectGetHeight(self.stopwatchContainer.frame)
         UIView.animateWithDuration(animated ? 0.25 : 0, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
