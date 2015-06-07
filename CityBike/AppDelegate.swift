@@ -28,9 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
         }
-        
-        rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMenuViewControllerNC") as! UINavigationController
-        
+                
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         
