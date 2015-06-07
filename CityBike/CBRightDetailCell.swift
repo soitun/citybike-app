@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CBRightDetailCell: UITableViewCell {
+class CBRightDetailCell: CBCell {
     static let Identifier = "CBRightDetailCell"
     
     @IBOutlet var label: UILabel!

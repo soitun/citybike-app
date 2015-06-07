@@ -51,11 +51,6 @@ class CBMainVC: UIViewController, MKMapViewDelegate, CBRideButtonDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBContentManager.DidUpdateStationsNotification, object: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.presentNoNetworkSelectedIfNecessary()
-    }
-    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -66,16 +61,6 @@ class CBMainVC: UIViewController, MKMapViewDelegate, CBRideButtonDelegate {
     @IBAction func locateMePressed(sender: AnyObject) {
         let region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000)
         self.mapView.setRegion(region, animated: true)
-    }
-    
-    private func presentNoNetworkSelectedIfNecessary() {
-        if self.noNetworksSelectedPopupPresented == false &&
-            NSUserDefaults.getNetworkIDs().count == 0 &&
-            NSUserDefaults.getDoNotShowAgainNoBikeNetworks() == false {
-                
-                self.noNetworksSelectedPopupPresented = true
-                self.performSegueWithIdentifier("ShowSelectBikeNetworks", sender: nil)
-        }
     }
 
     private func updateStations(stations: [CBStation]) {

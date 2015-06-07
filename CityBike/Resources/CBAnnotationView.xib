@@ -76,7 +76,7 @@
         </view>
     </objects>
     <resources>
-        <image name="pin-background" width="54" height="37"/>
+        <image name="pin-background" width="50" height="34"/>
         <image name="value-background" width="19" height="19"/>
     </resources>
 </document>

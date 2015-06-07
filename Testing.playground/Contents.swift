@@ -41,3 +41,9 @@ set1.subtract(set2)
 
 
 
+var dict1 = ["A": 1, "B": 2]
+dict1.keys.array.count
+
+
+
+
