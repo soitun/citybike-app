@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CBNoItemsCell: UITableViewCell {
+class CBNoItemsCell: CBCell {
     static let Identifier = "CBNoItemsCell"
     
     @IBOutlet var label: UILabel!

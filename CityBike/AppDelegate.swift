@@ -22,12 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let rootVC: UIViewController!
+        var rootVC: UIViewController!
         if NSUserDefaults.getDisplayedGettingStarted() {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMainNC") as! UINavigationController
         } else {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
         }
+        
+        rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMenuViewControllerNC") as! UINavigationController
         
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()

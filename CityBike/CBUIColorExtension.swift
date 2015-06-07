@@ -32,4 +32,16 @@ extension UIColor {
     class func blueGrayColor() -> UIColor {
         return UIColor(red:0.39, green:0.64, blue:0.77, alpha:1)
     }
+    
+    class func concreteColor() -> UIColor {
+        return UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
+    }
+    
+    class func springWoodColor() -> UIColor {
+        return UIColor(red:0.97, green:0.96, blue:0.95, alpha:1)
+    }
+    
+    class func jumboColor() -> UIColor {
+        return UIColor(red:0.48, green:0.48, blue:0.5, alpha:1)
+    }
 }
