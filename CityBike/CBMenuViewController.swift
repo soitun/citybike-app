@@ -79,7 +79,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .HelpUs:
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
-                cell.label.text = NSLocalizedString("Send Feedback", comment: "")
+                cell.label.text = NSLocalizedString("Send Feedback ✉️", comment: "")
                 cell.detailLabel.text = NSLocalizedString("We’d love to hear your feedback!", comment: "")
                 return cell
                 
@@ -131,8 +131,12 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if indexPath.section == Section.Settings.rawValue && indexPath.row == 0 {
             self.performSegueWithIdentifier("BikeNetworks", sender: nil)
+            
         } else if indexPath.section == Section.Statistics.rawValue && indexPath.row == 0 {
             self.performSegueWithIdentifier("RidesHistory", sender: nil)
+            
+        } else if indexPath.section == Section.HelpUs.rawValue && indexPath.row == 0 {
+            CBFeedbackMailComposeViewController.presentInViewController(self)
         }
     }
 }
