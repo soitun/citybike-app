@@ -77,9 +77,9 @@ extension NSUserDefaults {
         
         var unarchivedHistory = RidesHistory()
         for (rideDay, archivedRecords) in archivedHistory {
-            var unarchiveRecords = [RideRecord]()
+            var unarchiveRecords = [CBRideRecord]()
             for record in archivedRecords {
-                unarchiveRecords.append(NSKeyedUnarchiver.unarchiveObjectWithData(record) as! RideRecord)
+                unarchiveRecords.append(NSKeyedUnarchiver.unarchiveObjectWithData(record) as! CBRideRecord)
             }
             
             unarchivedHistory[rideDay] = unarchiveRecords

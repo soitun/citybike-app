@@ -8,20 +8,6 @@
 
 import UIKit
 
-class RideRecord: NSObject {
-    var duration: NSTimeInterval = 0
-    var startTime: NSTimeInterval = 0
-    
-    init(duration: NSTimeInterval, startTime: NSTimeInterval) {
-        self.duration = duration
-        self.startTime = startTime
-    }
-}
-
-typealias RideDay = NSTimeInterval /// since 1970 to 00:00 of the day
-typealias RidesHistory = [RideDay: [RideRecord]]
-typealias RidesHistoryArchived = [RideDay: [NSData]]
-
 class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet private weak var tableView: UITableView!
@@ -84,7 +70,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
             sum += record.duration
         }
         
-        header.detailLabel.text = sum.stringTimeRepresentation
+        header.detailLabel.text = sum.stringTimeRepresentationStyle1
         header.label.textColor = UIColor.flamePeaColor()
         header.detailLabel.textColor = UIColor.flamePeaColor()
         header.backgroundView = UIView()
@@ -97,7 +83,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
         let rideRecord = self.history[key]![indexPath.row]
         
         let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
-        cell.label?.text = rideRecord.duration.stringTimeRepresentation
+        cell.label?.text = rideRecord.duration.stringTimeRepresentationStyle1
         cell.detailLabel.text = self.dateTimeFormatter.stringFromDate(NSDate(timeIntervalSince1970: rideRecord.startTime))
         return cell
     }
@@ -112,15 +98,5 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-}
-
-extension NSTimeInterval {
-    var stringTimeRepresentation: String {
-        var seconds: Int = Int(self % 60)
-        var minutes: Int = Int((self / 60) % 60)
-        var hours: Int = Int(self / 3600)
-        
-        return String(format: "%02dh %02dm %02ds", arguments: [hours, minutes, seconds])
     }
 }
