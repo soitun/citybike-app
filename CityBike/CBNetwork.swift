@@ -19,4 +19,20 @@ class CBNetwork {
     var networkType: CBNetworkType {
         return CBNetworkType(rawValue: id)!
     }
+    
+    func copy() -> CBNetwork {
+        var obj = CBNetwork()
+        obj.company = self.company
+        obj.href = self.href
+        obj.id = self.id
+        obj.location = self.location.copy()
+        obj.name = self.name
+        
+        var stations = [CBStation]()
+        for station in self.stations {
+            stations.append(station.copy())
+        }
+        obj.stations = stations
+        return obj
+    }
 }

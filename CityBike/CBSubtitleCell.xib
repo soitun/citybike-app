@@ -12,14 +12,14 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aFg-Zi-SgB" id="HCg-uw-2xD">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3Y-m9-dTk">
-                        <rect key="frame" x="10" y="3" width="43" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3Y-m9-dTk">
+                        <rect key="frame" x="10" y="3" width="302" height="24"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfO-zW-uiA">
-                        <rect key="frame" x="10" y="28" width="33" height="18"/>
+                        <rect key="frame" x="10" y="28" width="302" height="18"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -30,6 +30,8 @@
                     <constraint firstAttribute="centerY" secondItem="OfO-zW-uiA" secondAttribute="centerY" constant="-12.5" id="FzL-SC-DLg"/>
                     <constraint firstItem="OfO-zW-uiA" firstAttribute="leading" secondItem="HCg-uw-2xD" secondAttribute="leading" constant="10" id="dlX-Nd-oBC"/>
                     <constraint firstItem="D3Y-m9-dTk" firstAttribute="leading" secondItem="HCg-uw-2xD" secondAttribute="leading" constant="10" id="wq6-EU-ryx"/>
+                    <constraint firstAttribute="trailing" secondItem="OfO-zW-uiA" secondAttribute="trailing" constant="8" id="xwr-mj-fXB"/>
+                    <constraint firstAttribute="trailing" secondItem="D3Y-m9-dTk" secondAttribute="trailing" constant="8" id="zry-ae-XW9"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

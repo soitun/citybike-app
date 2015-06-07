@@ -10,8 +10,8 @@ import UIKit
 
 class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var cityBikesButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var cityBikesButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,11 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let attrText = NSAttributedString(string: "CityBikes API", attributes: attr)
         self.cityBikesButton.titleLabel?.attributedText = attrText
         self.cityBikesButton.setTitleColor(UIColor.jumboColor(), forState: UIControlState.Normal)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
 
     @IBAction func cityBikesAPIPressed(sender: AnyObject) {
@@ -108,6 +113,14 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if cell.respondsToSelector(Selector("layoutMargins")) {
             cell.layoutMargins = UIEdgeInsetsZero
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.section == Section.Settings.rawValue && indexPath.row == 0 {
+            self.performSegueWithIdentifier("BikeNetworks", sender: nil)
         }
     }
 }

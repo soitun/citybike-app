@@ -12,14 +12,15 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OJi-Kt-zgs" id="5le-C0-RcN">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM3-3W-rA5">
-                        <rect key="frame" x="10" y="13" width="43" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM3-3W-rA5">
+                        <rect key="frame" x="10" y="13" width="302" height="24"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zM3-3W-rA5" secondAttribute="trailing" constant="8" id="igh-Ev-hx7"/>
                     <constraint firstAttribute="centerY" secondItem="zM3-3W-rA5" secondAttribute="centerY" id="une-Bq-ka0"/>
                     <constraint firstItem="zM3-3W-rA5" firstAttribute="leading" secondItem="5le-C0-RcN" secondAttribute="leading" constant="10" id="w5d-pB-SZf"/>
                 </constraints>

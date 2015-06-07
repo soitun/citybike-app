@@ -18,4 +18,13 @@ class CBLocation {
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2DMake(self.latitude, self.longitude)
     }
+    
+    func copy() -> CBLocation {
+        var obj = CBLocation()
+        obj.city = self.city
+        obj.country = self.country
+        obj.latitude = self.latitude
+        obj.longitude = self.longitude
+        return obj
+    }
 }

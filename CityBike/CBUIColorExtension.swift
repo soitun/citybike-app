@@ -44,4 +44,8 @@ extension UIColor {
     class func jumboColor() -> UIColor {
         return UIColor(red:0.48, green:0.48, blue:0.5, alpha:1)
     }
+    
+    class func whiteLilac() -> UIColor {
+        return UIColor(red:0.91, green:0.91, blue:0.91, alpha:1)
+    }
 }

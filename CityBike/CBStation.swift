@@ -22,4 +22,16 @@ class CBStation {
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2DMake(self.latitude, self.longitude)
     }
+    
+    func copy() -> CBStation {
+        var obj = CBStation()
+        obj.emptySlots = self.emptySlots
+        obj.freeBikes = self.freeBikes
+        obj.id = self.id
+        obj.latitude = self.latitude
+        obj.longitude = self.longitude
+        obj.name = self.name
+        obj.timestamp = self.timestamp
+        return obj
+    }
 }

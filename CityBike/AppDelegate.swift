@@ -34,6 +34,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         
+        
+        /// Update UI Style
+        UINavigationBar.appearance().tintColor = UIColor.flamePeaColor()
+        
+        var fontAttributes = [
+            NSForegroundColorAttributeName: UIColor.blackColor(),
+            NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 17.0)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = fontAttributes
+
+        
         return true
     }
 
