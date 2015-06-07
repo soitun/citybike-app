@@ -14,7 +14,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="kaV-UD-ylV">
-                    <rect key="frame" x="59" y="484" width="202" height="58"/>
+                    <rect key="frame" x="59" y="495" width="202" height="58"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.97647058823529409" green="0.95294117647058818" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
@@ -22,7 +22,7 @@
                 <constraint firstAttribute="trailing" secondItem="ynf-4c-GpI" secondAttribute="trailing" id="4Bo-DR-5ws"/>
                 <constraint firstItem="ynf-4c-GpI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4bq-eQ-sTz"/>
                 <constraint firstItem="ynf-4c-GpI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CAx-b4-nb0"/>
-                <constraint firstItem="kaV-UD-ylV" firstAttribute="bottom" secondItem="ynf-4c-GpI" secondAttribute="bottom" constant="-26" id="d49-Hf-e8k"/>
+                <constraint firstItem="kaV-UD-ylV" firstAttribute="bottom" secondItem="ynf-4c-GpI" secondAttribute="bottom" constant="-15" id="d49-Hf-e8k"/>
                 <constraint firstAttribute="bottom" secondItem="ynf-4c-GpI" secondAttribute="bottom" id="g5S-w8-jrT"/>
                 <constraint firstAttribute="centerX" secondItem="kaV-UD-ylV" secondAttribute="centerX" id="t2i-CI-65r"/>
             </constraints>

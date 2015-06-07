@@ -9,15 +9,15 @@
 import Foundation
 
 extension NSUserDefaults {
-        
+    
+    private static let CityBikeDisplayedGettingStarted = "CityBikeDisplayedGettingStarted"
     private static let CityBikeNetworks = "CityBikeNetworks"
-    private static let CityBikeDoNotShowAgainNoBikeNetworks = "CityBikeDoNotShowAgainNoBikeNetworks"
     private static let CityBikeStartRideTimeInterval = "CityBikeStartRideTimeInterval"
     
     class func registerCityBikeDefaults() {
         let defaults = [
-            CityBikeNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]()),
-            CityBikeDoNotShowAgainNoBikeNetworks: 0
+            CityBikeDisplayedGettingStarted: 0,
+            CityBikeNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]())
         ]
         NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
     }
@@ -35,12 +35,12 @@ extension NSUserDefaults {
     }
     
     
-    class func getDoNotShowAgainNoBikeNetworks() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(CityBikeDoNotShowAgainNoBikeNetworks)
+    class func getDisplayedGettingStarted() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey(CityBikeDisplayedGettingStarted)
     }
     
-    class func setDoNotShowAgainNoBikeNetworks(doNotShow: Bool) {
-        NSUserDefaults.standardUserDefaults().setBool(doNotShow, forKey: CityBikeDoNotShowAgainNoBikeNetworks)
+    class func setDisplayedGettingStarted(displayed: Bool) {
+        NSUserDefaults.standardUserDefaults().setBool(displayed, forKey: CityBikeDisplayedGettingStarted)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     

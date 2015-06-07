@@ -26,6 +26,14 @@ class CBButton: UIButton {
         self.makeNormalStyle()
     }
     
+    func makeStyleEndGettingStarted() {
+        self.makeRounded()
+        self.normalBackgroundColor = UIColor(white: 1, alpha: 0.3)
+        self.pressedBackgroundColor = UIColor(white: 1, alpha: 0.1)
+        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.makeNormalStyle()
+    }
+    
     func makeStyleReddish() {
         self.makeRounded()
         self.normalBackgroundColor = UIColor.flamePeaColor()

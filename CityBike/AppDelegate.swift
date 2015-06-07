@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         NSUserDefaults.registerCityBikeDefaults()
+        
+        if self.window == nil {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let rootVC: UIViewController!
+        if NSUserDefaults.getDisplayedGettingStarted() {
+            rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMainNC") as! UINavigationController
+        } else {
+            rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
+        }
+        
+        self.window!.rootViewController = rootVC
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
