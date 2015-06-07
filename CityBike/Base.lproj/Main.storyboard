@@ -207,6 +207,7 @@
                         <outlet property="cityBikesButton" destination="XBn-eB-NGb" id="pbu-jA-Ind"/>
                         <outlet property="tableView" destination="8C1-bU-QIx" id="LA2-Am-em1"/>
                         <segue destination="cCh-TQ-uMI" kind="push" identifier="BikeNetworks" id="4D0-0x-tfx"/>
+                        <segue destination="j2V-SR-b3r" kind="push" identifier="RidesHistory" id="NGd-Fi-nvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23B-BE-pZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +295,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1201" y="2044"/>
+            <point key="canvasLocation" x="1212" y="1785"/>
         </scene>
         <!--Getting Started View Controller-->
         <scene sceneID="krz-CV-DJU">
@@ -615,6 +616,65 @@ You can check your rides history in menu.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0q-aT-83T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="2044"/>
+        </scene>
+        <!--Rides History-->
+        <scene sceneID="aKn-Ve-lY1">
+            <objects>
+                <viewController id="j2V-SR-b3r" customClass="CBMenuRidesHistoryViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sZ3-yf-Qro"/>
+                        <viewControllerLayoutGuide type="bottom" id="hN7-oN-vNA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h2c-Rp-MZx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hS7-pK-kSf">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5Fa-ae-AFg">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fa-ae-AFg" id="Yk3-AB-APd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="j2V-SR-b3r" id="SCr-JS-b9H"/>
+                                    <outlet property="delegate" destination="j2V-SR-b3r" id="3mO-MP-HhE"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Rides History" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNf-4d-OfA">
+                                <rect key="frame" x="30" y="268" width="260" height="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hS7-pK-kSf" firstAttribute="leading" secondItem="h2c-Rp-MZx" secondAttribute="leading" id="6uG-dr-LPj"/>
+                            <constraint firstItem="hS7-pK-kSf" firstAttribute="top" secondItem="h2c-Rp-MZx" secondAttribute="top" id="HAe-wJ-LVH"/>
+                            <constraint firstAttribute="trailing" secondItem="hS7-pK-kSf" secondAttribute="trailing" id="IAX-zy-AJG"/>
+                            <constraint firstAttribute="centerX" secondItem="GNf-4d-OfA" secondAttribute="centerX" id="L26-db-xcX"/>
+                            <constraint firstAttribute="centerY" secondItem="GNf-4d-OfA" secondAttribute="centerY" id="Ms5-xi-joE"/>
+                            <constraint firstAttribute="trailing" secondItem="GNf-4d-OfA" secondAttribute="trailing" constant="30" id="R1D-vy-eJd"/>
+                            <constraint firstItem="hN7-oN-vNA" firstAttribute="top" secondItem="hS7-pK-kSf" secondAttribute="bottom" id="WKx-hC-EJo"/>
+                            <constraint firstItem="GNf-4d-OfA" firstAttribute="leading" secondItem="h2c-Rp-MZx" secondAttribute="leading" constant="30" id="lrQ-Y4-UXA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rides History" id="Fpx-3H-AOD"/>
+                    <connections>
+                        <outlet property="noItemsLabel" destination="GNf-4d-OfA" id="hG8-bQ-FvJ"/>
+                        <outlet property="searchDisplayController" destination="JMf-GL-HRS" id="Nkd-cB-okB"/>
+                        <outlet property="tableView" destination="hS7-pK-kSf" id="jf3-rd-fUB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rE8-oF-Bnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="2432"/>
         </scene>
     </scenes>
     <resources>

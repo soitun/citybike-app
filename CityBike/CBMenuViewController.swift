@@ -41,15 +41,18 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     /// MARK: UITableView
     private enum Section: Int {
-        case Settings, HelpUs
+        case Statistics, Settings, HelpUs
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Section(rawValue: section)! {
+        case .Statistics:
+            return 1
+            
         case .Settings:
             return 1
             
@@ -60,6 +63,12 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch Section(rawValue: indexPath.section)! {
+        case .Statistics:
+            let cell = tableView.dequeueReusableCellWithIdentifier(CBDefaultCell.Identifier) as! CBDefaultCell
+            cell.label.text = NSLocalizedString("Rides History", comment: "")
+            cell.accessoryType = .DisclosureIndicator
+            return cell
+            
         case .Settings:
             let cell = tableView.dequeueReusableCellWithIdentifier(CBRightDetailCell.Identifier) as! CBRightDetailCell
             cell.label.text = NSLocalizedString("City Bike Networks", comment: "")
@@ -86,6 +95,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func headerTitles() -> [String] {
         return [
+            NSLocalizedString("Statistics", comment: ""),
             NSLocalizedString("Settings", comment: ""),
             NSLocalizedString("Help Us", comment: "")
         ]
@@ -121,6 +131,8 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if indexPath.section == Section.Settings.rawValue && indexPath.row == 0 {
             self.performSegueWithIdentifier("BikeNetworks", sender: nil)
+        } else if indexPath.section == Section.Statistics.rawValue && indexPath.row == 0 {
+            self.performSegueWithIdentifier("RidesHistory", sender: nil)
         }
     }
 }
