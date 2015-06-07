@@ -65,7 +65,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         switch Section(rawValue: indexPath.section)! {
         case .Statistics:
             let cell = tableView.dequeueReusableCellWithIdentifier(CBDefaultCell.Identifier) as! CBDefaultCell
-            cell.label.text = NSLocalizedString("Rides History", comment: "")
+            cell.label.text = NSLocalizedString("Rides History 🏁 🚴🏼", comment: "")
             cell.accessoryType = .DisclosureIndicator
             return cell
             

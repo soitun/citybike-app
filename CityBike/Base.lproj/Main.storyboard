@@ -6,6 +6,38 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="3rR-o4-MZF">
+            <objects>
+                <viewController storyboardIdentifier="CBMapViewController" id="UZx-M2-Yfd" customClass="CBMapViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xwI-kE-lwr"/>
+                        <viewControllerLayoutGuide type="bottom" id="OhG-pJ-PUp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qIu-6W-Nop">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FZL-f0-dZd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kxb-2M-efs" userLabel="menu-button">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aiJ-j5-2Yv">
+                                <rect key="frame" x="172" y="223" width="29" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="menu-icon-nav">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="H7y-FH-SKk" kind="push" identifier="Menu" id="RWE-UJ-OFT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAC-94-nDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="1207"/>
+        </scene>
         <!--Map-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -128,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597" y="1375"/>
+            <point key="canvasLocation" x="-267" y="1625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpZ-xi-z33">
@@ -146,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1a-9U-7A4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="1375"/>
+            <point key="canvasLocation" x="-676" y="1625"/>
         </scene>
         <!--Menu-->
         <scene sceneID="Ze1-yz-8eQ">
@@ -212,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23B-BE-pZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="2044"/>
+            <point key="canvasLocation" x="1808" y="1920"/>
         </scene>
         <!--City Bike Networks-->
         <scene sceneID="jXr-Ka-v26">
@@ -295,7 +327,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1212" y="1785"/>
+            <point key="canvasLocation" x="2300" y="1661"/>
         </scene>
         <!--Getting Started View Controller-->
         <scene sceneID="krz-CV-DJU">
@@ -393,7 +425,7 @@
                         <outlet property="scrollView" destination="liK-H9-EDk" id="zgR-kU-9Bq"/>
                         <outlet property="startLogoImageView" destination="43b-uK-b1i" id="W3K-uz-xqh"/>
                         <outlet property="thanksButton" destination="YTI-W0-tBf" id="B4g-F9-8Eb"/>
-                        <segue destination="EoM-Pb-0Vl" kind="modal" identifier="Map" id="WQb-XI-HKR"/>
+                        <segue destination="Aqv-dw-Vuu" kind="modal" identifier="Map" id="mIs-bo-yd6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F12-QI-h3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,24 +631,6 @@ You can check your rides history in menu.</string>
             </objects>
             <point key="canvasLocation" x="1344" y="407"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="k3S-WK-uUK">
-            <objects>
-                <navigationController storyboardIdentifier="CBMenuViewControllerNC" automaticallyAdjustsScrollViewInsets="NO" id="MIw-eN-LZl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wwj-36-5Jm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="H7y-FH-SKk" kind="relationship" relationship="rootViewController" id="IhU-Gq-0gx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W0q-aT-83T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="188" y="2044"/>
-        </scene>
         <!--Rides History-->
         <scene sceneID="aKn-Ve-lY1">
             <objects>
@@ -674,7 +688,25 @@ You can check your rides history in menu.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rE8-oF-Bnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="2432"/>
+            <point key="canvasLocation" x="2300" y="2308"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uFP-93-1y8">
+            <objects>
+                <navigationController storyboardIdentifier="CBMapViewControllerNC" automaticallyAdjustsScrollViewInsets="NO" id="Aqv-dw-Vuu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zaF-N5-1Ka">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UZx-M2-Yfd" kind="relationship" relationship="rootViewController" id="AkZ-ed-hk6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NT1-J2-GQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655" y="1207"/>
         </scene>
     </scenes>
     <resources>
@@ -689,6 +721,7 @@ You can check your rides history in menu.</string>
         <image name="how-to-white-blurred-bg" width="320" height="360"/>
         <image name="launch-screen-background" width="320" height="568"/>
         <image name="locate-me" width="34" height="34"/>
+        <image name="menu-icon-nav" width="29" height="29"/>
         <image name="network-icon" width="34" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
