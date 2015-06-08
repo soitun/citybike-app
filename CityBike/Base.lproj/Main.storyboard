@@ -18,37 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AJI-b7-YUL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UZx-M2-Yfd" id="pCd-R2-YA2"/>
+                                </connections>
+                            </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yg-G3-tks" userLabel="stopwatch-container">
                                 <rect key="frame" x="0.0" y="64" width="320" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-Jn-ffQ" userLabel="bar-container">
-                                        <rect key="frame" x="126" y="7" width="69" height="16"/>
+                                        <rect key="frame" x="124" y="7" width="72" height="17"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch-ready-icon-mini" translatesAutoresizingMaskIntoConstraints="NO" id="TFO-OT-8HB">
                                                 <rect key="frame" x="0.0" y="0.0" width="14" height="17"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-JE-kx2">
-                                                <rect key="frame" x="18" y="1" width="51" height="17"/>
+                                                <rect key="frame" x="19" y="1" width="53" height="17"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="bQz-JE-kx2" firstAttribute="top" secondItem="xnA-Jn-ffQ" secondAttribute="top" constant="1" id="5Q6-lW-FgS"/>
-                                            <constraint firstAttribute="bottom" secondItem="bQz-JE-kx2" secondAttribute="bottom" constant="-2" id="AJU-u4-kE1"/>
-                                            <constraint firstAttribute="trailing" secondItem="bQz-JE-kx2" secondAttribute="trailing" id="Amb-dN-4Vs"/>
-                                            <constraint firstItem="TFO-OT-8HB" firstAttribute="leading" secondItem="bQz-JE-kx2" secondAttribute="leading" constant="-18" id="H6w-Wb-VHj"/>
-                                            <constraint firstAttribute="centerY" secondItem="TFO-OT-8HB" secondAttribute="centerY" constant="-0.5" id="YHR-3o-XjN"/>
-                                            <constraint firstAttribute="centerX" secondItem="TFO-OT-8HB" secondAttribute="centerX" constant="27.5" id="eKk-WG-O6X"/>
-                                            <constraint firstAttribute="height" constant="16" id="lUu-6D-NLH"/>
+                                            <constraint firstAttribute="centerY" secondItem="TFO-OT-8HB" secondAttribute="centerY" id="1Q2-X1-af6"/>
+                                            <constraint firstAttribute="bottom" secondItem="bQz-JE-kx2" secondAttribute="bottom" constant="-1" id="LoV-qc-Vjc"/>
+                                            <constraint firstItem="bQz-JE-kx2" firstAttribute="top" secondItem="xnA-Jn-ffQ" secondAttribute="top" constant="1" id="MgT-G8-5kI"/>
+                                            <constraint firstItem="TFO-OT-8HB" firstAttribute="leading" secondItem="xnA-Jn-ffQ" secondAttribute="leading" id="NBG-dD-OQV"/>
+                                            <constraint firstAttribute="trailing" secondItem="bQz-JE-kx2" secondAttribute="trailing" id="T8H-Z9-QhO"/>
+                                            <constraint firstItem="bQz-JE-kx2" firstAttribute="leading" secondItem="TFO-OT-8HB" secondAttribute="trailing" constant="5" id="YqT-ta-P5f"/>
+                                            <constraint firstAttribute="centerX" secondItem="TFO-OT-8HB" secondAttribute="centerX" constant="29" id="htF-CU-Z0D"/>
+                                            <constraint firstAttribute="height" constant="17" id="lUu-6D-NLH"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92435686080000001" green="0.55318055820000001" blue="0.79626246020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="2Tl-5R-oER"/>
-                                    <constraint firstAttribute="centerY" secondItem="xnA-Jn-ffQ" secondAttribute="centerY" constant="1" id="bnq-T3-VFS"/>
+                                    <constraint firstAttribute="centerY" secondItem="xnA-Jn-ffQ" secondAttribute="centerY" id="bnq-T3-VFS"/>
                                     <constraint firstAttribute="centerX" secondItem="xnA-Jn-ffQ" secondAttribute="centerX" id="iBN-8i-QuD"/>
                                 </constraints>
                             </view>
@@ -56,8 +63,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6yg-G3-tks" firstAttribute="top" secondItem="xwI-kE-lwr" secondAttribute="bottom" id="2Zb-Tc-qoF"/>
+                            <constraint firstItem="OhG-pJ-PUp" firstAttribute="top" secondItem="AJI-b7-YUL" secondAttribute="bottom" id="8K6-AX-Ndk"/>
                             <constraint firstAttribute="trailing" secondItem="6yg-G3-tks" secondAttribute="trailing" id="QFt-sX-hCV"/>
+                            <constraint firstItem="AJI-b7-YUL" firstAttribute="top" secondItem="qIu-6W-Nop" secondAttribute="top" id="RIb-Bb-mu5"/>
                             <constraint firstItem="6yg-G3-tks" firstAttribute="leading" secondItem="qIu-6W-Nop" secondAttribute="leading" id="TF0-GY-Ia3"/>
+                            <constraint firstAttribute="trailing" secondItem="AJI-b7-YUL" secondAttribute="trailing" id="Uo9-eO-6Dd"/>
+                            <constraint firstItem="AJI-b7-YUL" firstAttribute="leading" secondItem="qIu-6W-Nop" secondAttribute="leading" id="qTU-zr-vkX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FZL-f0-dZd">
@@ -75,6 +86,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="mapView" destination="AJI-b7-YUL" id="Xda-9T-1c1"/>
                         <outlet property="stopwatchContainer" destination="6yg-G3-tks" id="pqj-87-923"/>
                         <outlet property="stopwatchContainerTopConstraint" destination="2Zb-Tc-qoF" id="3Cp-ux-D7r"/>
                         <outlet property="stopwatchDoneButton" destination="JMu-I5-JUZ" id="Sj7-bO-w5E"/>

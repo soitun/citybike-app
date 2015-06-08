@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
-class CBMapViewController: UIViewController {
+class CBMapViewController: UIViewController, MKMapViewDelegate {
 
+    @IBOutlet private weak var mapView: MKMapView!
+    
     @IBOutlet private var stopwatchReadyButton: UIBarButtonItem!
     @IBOutlet private var stopwatchDoneButton: UIBarButtonItem!
     @IBOutlet private weak var stopwatchContainer: UIView!
