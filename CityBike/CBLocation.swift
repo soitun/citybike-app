@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class CBLocation {
+class CBLocation: NSObject, NSCopying {
     var city: String!
     var country: String!
     var latitude: CLLocationDegrees!
@@ -19,12 +19,12 @@ class CBLocation {
         return CLLocationCoordinate2DMake(self.latitude, self.longitude)
     }
     
-    func copy() -> CBLocation {
-        var obj = CBLocation()
-        obj.city = self.city
-        obj.country = self.country
-        obj.latitude = self.latitude
-        obj.longitude = self.longitude
-        return obj
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        var copy = CBLocation()
+        copy.city = self.city
+        copy.country = self.country
+        copy.latitude = self.latitude
+        copy.longitude = self.longitude
+        return copy
     }
 }

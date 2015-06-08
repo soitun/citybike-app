@@ -10,7 +10,7 @@ import UIKit
 
 typealias CountryCode = String
 
-class OrderedObject {
+class OrderedObject: NSObject, NSCopying {
     var countryCode: CountryCode!
     var networks = [CBNetwork]()
     
@@ -19,17 +19,12 @@ class OrderedObject {
         return NSLocale.currentLocale().displayNameForKey(NSLocaleIdentifier, value: identifier)!
         }()
     
-    func copy() -> OrderedObject {
-        var obj = OrderedObject()
-        obj.countryCode = self.countryCode
-        
-        var networks = [CBNetwork]()
-        for network in self.networks {
-            networks.append(network.copy())
-        }
-        obj.networks = networks
-        
-        return obj
+    
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        var copy = OrderedObject()
+        copy.countryCode = self.countryCode
+        copy.networks = self.networks
+        return copy
     }
 }
 
@@ -240,7 +235,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
             let matchesCountryString = object.countryString.lowercaseString.rangeOfString(searchPhrase) != nil
             
             if matchesCountryCode || matchesCountryString {
-                newFilteredObjects.append(object.copy())
+                newFilteredObjects.append(object.copy() as! OrderedObject)
                 
             } else {
                 /// If country doesn't match check networks in every country
@@ -250,12 +245,12 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
                     let matchesCity = network.location.city.lowercaseString.rangeOfString(searchPhrase) != nil
                     
                     if matchesName || matchesCity {
-                        filteredNetworks.append(network.copy())
+                        filteredNetworks.append(network.copy() as! CBNetwork)
                     }
                 }
                 
                 if filteredNetworks.count > 0 {
-                    var filteredObject = object.copy()
+                    var filteredObject = object.copy() as! OrderedObject
                     filteredObject.networks = filteredNetworks
                     newFilteredObjects.append(filteredObject)
                 }

@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class CBStation {
+class CBStation: NSObject, NSCopying {
     var emptySlots: Int!
 //    var extra: NSDictionary
     var freeBikes: Int!
@@ -23,15 +23,15 @@ class CBStation {
         return CLLocationCoordinate2DMake(self.latitude, self.longitude)
     }
     
-    func copy() -> CBStation {
-        var obj = CBStation()
-        obj.emptySlots = self.emptySlots
-        obj.freeBikes = self.freeBikes
-        obj.id = self.id
-        obj.latitude = self.latitude
-        obj.longitude = self.longitude
-        obj.name = self.name
-        obj.timestamp = self.timestamp
-        return obj
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        var copy = CBStation()
+        copy.emptySlots = self.emptySlots
+        copy.freeBikes = self.freeBikes
+        copy.id = self.id
+        copy.latitude = self.latitude
+        copy.longitude = self.longitude
+        copy.name = self.name
+        copy.timestamp = self.timestamp
+        return copy
     }
 }

@@ -117,6 +117,7 @@
 		6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDefaultHeader.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIViewExtension.swift; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* CBUIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIColorExtension.swift; sourceTree = "<group>"; };
+		6DD6AA311B25D95400176309 /* TestingStruct.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingStruct.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				6DBD866F1B206CBB009AFA47 /* Testing.playground */,
+				6DD6AA311B25D95400176309 /* TestingStruct.playground */,
 			);
 			name = Testing;
 			path = ..;

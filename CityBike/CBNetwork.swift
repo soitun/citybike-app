@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CBNetwork {
+class CBNetwork: NSObject, NSCopying {
     var company: String!
     var href: String!
     var id: String!
@@ -20,19 +20,14 @@ class CBNetwork {
         return CBNetworkType(rawValue: id)!
     }
     
-    func copy() -> CBNetwork {
-        var obj = CBNetwork()
-        obj.company = self.company
-        obj.href = self.href
-        obj.id = self.id
-        obj.location = self.location.copy()
-        obj.name = self.name
-        
-        var stations = [CBStation]()
-        for station in self.stations {
-            stations.append(station.copy())
-        }
-        obj.stations = stations
-        return obj
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        var copy = CBNetwork()
+        copy.company = self.company
+        copy.href = self.href
+        copy.id = self.id
+        copy.name = self.name
+        copy.location = self.location.copy() as! CBLocation
+        copy.stations = self.stations
+        return copy
     }
 }
