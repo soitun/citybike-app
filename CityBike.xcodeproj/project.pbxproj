@@ -24,7 +24,6 @@
 		6D2834501B243C2200E361A3 /* CBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28344F1B243C2200E361A3 /* CBCell.swift */; };
 		6D2834521B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834511B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift */; };
 		6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834531B24925400E361A3 /* CBMenuRidesHistoryViewController.swift */; };
-		6D2834561B24A69100E361A3 /* CBRightDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2834551B24A69100E361A3 /* CBRightDetailHeader.xib */; };
 		6D2834581B24A71C00E361A3 /* CBRightDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834571B24A71C00E361A3 /* CBRightDetailHeader.swift */; };
 		6D28345A1B24AB3100E361A3 /* CBMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834591B24AB3100E361A3 /* CBMapViewController.swift */; };
 		6D28345C1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */; };
@@ -32,10 +31,14 @@
 		6D2834601B24E89000E361A3 /* CBRideStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28345F1B24E89000E361A3 /* CBRideStopwatch.swift */; };
 		6D2834621B24E8DF00E361A3 /* CBNSTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834611B24E8DF00E361A3 /* CBNSTimeInterval.swift */; };
 		6D31D0FA1B21DFED0034C27B /* CBContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31D0F91B21DFED0034C27B /* CBContentManager.swift */; };
-		6D31D0FE1B221C690034C27B /* CBRightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D31D0FD1B221C690034C27B /* CBRightDetailCell.xib */; };
 		6D31D1001B221CA50034C27B /* CBRightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */; };
 		6D31D1021B2231D60034C27B /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31D1011B2231D60034C27B /* CBLocation.swift */; };
 		6D68019A1B28E323009DE824 /* CBNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6801991B28E323009DE824 /* CBNavigationBar.swift */; };
+		6D6801A01B28E8E2009DE824 /* CBDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019B1B28E8E2009DE824 /* CBDefaultCell.xib */; };
+		6D6801A11B28E8E2009DE824 /* CBDefaultHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019C1B28E8E2009DE824 /* CBDefaultHeader.xib */; };
+		6D6801A21B28E8E2009DE824 /* CBRightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019D1B28E8E2009DE824 /* CBRightDetailCell.xib */; };
+		6D6801A31B28E8E2009DE824 /* CBRightDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019E1B28E8E2009DE824 /* CBRightDetailHeader.xib */; };
+		6D6801A41B28E8E2009DE824 /* CBSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019F1B28E8E2009DE824 /* CBSubtitleCell.xib */; };
 		6DA595451B24F2FD0055D3D6 /* CBRideRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595441B24F2FD0055D3D6 /* CBRideRecord.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB84B091B20E372005DBDAD /* CBNSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */; };
@@ -45,12 +48,9 @@
 		6DC344D11B23BCDB00C29408 /* CBGettingStartedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344D01B23BCDB00C29408 /* CBGettingStartedMapViewController.swift */; };
 		6DC344D31B23C01300C29408 /* CBGettingStartedNetworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344D21B23C01300C29408 /* CBGettingStartedNetworksViewController.swift */; };
 		6DC344D51B23C57300C29408 /* CBGettingStartedStopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344D41B23C57300C29408 /* CBGettingStartedStopwatchViewController.swift */; };
-		6DC344D81B24297800C29408 /* CBSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC344D71B24297800C29408 /* CBSubtitleCell.xib */; };
 		6DC344DA1B2429D400C29408 /* CBSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344D91B2429D400C29408 /* CBSubtitleCell.swift */; };
 		6DC344DC1B242A2000C29408 /* CBDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */; };
-		6DC344DE1B242A3B00C29408 /* CBDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC344DD1B242A3B00C29408 /* CBDefaultCell.xib */; };
 		6DC344E11B242B6E00C29408 /* CBMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */; };
-		6DC344E41B242BCA00C29408 /* CBDefaultHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC344E31B242BCA00C29408 /* CBDefaultHeader.xib */; };
 		6DC344E61B242D6400C29408 /* CBDefaultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */; };
 		6DD460A21B20891D0070E163 /* CBUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */; };
 		6DD460A41B208A040070E163 /* CBUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* CBUIColorExtension.swift */; };
@@ -75,7 +75,6 @@
 		6D28344F1B243C2200E361A3 /* CBCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCell.swift; sourceTree = "<group>"; };
 		6D2834511B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMenuBikeNetworksViewController.swift; sourceTree = "<group>"; };
 		6D2834531B24925400E361A3 /* CBMenuRidesHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMenuRidesHistoryViewController.swift; sourceTree = "<group>"; };
-		6D2834551B24A69100E361A3 /* CBRightDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRightDetailHeader.xib; sourceTree = "<group>"; };
 		6D2834571B24A71C00E361A3 /* CBRightDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRightDetailHeader.swift; sourceTree = "<group>"; };
 		6D2834591B24AB3100E361A3 /* CBMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMapViewController.swift; sourceTree = "<group>"; };
 		6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBFeedbackMailComposeViewController.swift; sourceTree = "<group>"; };
@@ -83,30 +82,29 @@
 		6D28345F1B24E89000E361A3 /* CBRideStopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideStopwatch.swift; sourceTree = "<group>"; };
 		6D2834611B24E8DF00E361A3 /* CBNSTimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNSTimeInterval.swift; sourceTree = "<group>"; };
 		6D31D0F91B21DFED0034C27B /* CBContentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBContentManager.swift; sourceTree = "<group>"; };
-		6D31D0FD1B221C690034C27B /* CBRightDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRightDetailCell.xib; sourceTree = "<group>"; };
 		6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRightDetailCell.swift; sourceTree = "<group>"; };
 		6D31D1011B2231D60034C27B /* CBLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBLocation.swift; sourceTree = "<group>"; };
 		6D6801991B28E323009DE824 /* CBNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNavigationBar.swift; sourceTree = "<group>"; };
+		6D68019B1B28E8E2009DE824 /* CBDefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBDefaultCell.xib; path = Resources/CBDefaultCell.xib; sourceTree = "<group>"; };
+		6D68019C1B28E8E2009DE824 /* CBDefaultHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBDefaultHeader.xib; path = Resources/CBDefaultHeader.xib; sourceTree = "<group>"; };
+		6D68019D1B28E8E2009DE824 /* CBRightDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBRightDetailCell.xib; path = Resources/CBRightDetailCell.xib; sourceTree = "<group>"; };
+		6D68019E1B28E8E2009DE824 /* CBRightDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBRightDetailHeader.xib; path = Resources/CBRightDetailHeader.xib; sourceTree = "<group>"; };
+		6D68019F1B28E8E2009DE824 /* CBSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBSubtitleCell.xib; path = Resources/CBSubtitleCell.xib; sourceTree = "<group>"; };
 		6DA595441B24F2FD0055D3D6 /* CBRideRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideRecord.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideManager.swift; sourceTree = "<group>"; };
 		6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNSUserDefaultsExtension.swift; sourceTree = "<group>"; };
-		6DBD866F1B206CBB009AFA47 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
 		6DC344CA1B230C0C00C29408 /* CBRideButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideButton.swift; sourceTree = "<group>"; };
 		6DC344CC1B233B9E00C29408 /* CBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBButton.swift; sourceTree = "<group>"; };
 		6DC344CE1B23B37C00C29408 /* CBGettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBGettingStartedViewController.swift; sourceTree = "<group>"; };
 		6DC344D01B23BCDB00C29408 /* CBGettingStartedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBGettingStartedMapViewController.swift; sourceTree = "<group>"; };
 		6DC344D21B23C01300C29408 /* CBGettingStartedNetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBGettingStartedNetworksViewController.swift; sourceTree = "<group>"; };
 		6DC344D41B23C57300C29408 /* CBGettingStartedStopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBGettingStartedStopwatchViewController.swift; sourceTree = "<group>"; };
-		6DC344D71B24297800C29408 /* CBSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBSubtitleCell.xib; sourceTree = "<group>"; };
 		6DC344D91B2429D400C29408 /* CBSubtitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBSubtitleCell.swift; sourceTree = "<group>"; };
 		6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDefaultCell.swift; sourceTree = "<group>"; };
-		6DC344DD1B242A3B00C29408 /* CBDefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBDefaultCell.xib; sourceTree = "<group>"; };
 		6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMenuViewController.swift; sourceTree = "<group>"; };
-		6DC344E31B242BCA00C29408 /* CBDefaultHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBDefaultHeader.xib; sourceTree = "<group>"; };
 		6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDefaultHeader.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIViewExtension.swift; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* CBUIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIColorExtension.swift; sourceTree = "<group>"; };
-		6DD6AA311B25D95400176309 /* TestingStruct.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestingStruct.playground; sourceTree = "<group>"; };
 		7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DA90676A2DC38C9EC428943F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,7 +159,6 @@
 				6DD460A01B20890B0070E163 /* Extensions */,
 				6D31D0F81B21DFD20034C27B /* Helpers */,
 				6D0EBE7C1B20387B003ED872 /* Resources */,
-				6DBD86701B206D54009AFA47 /* Testing */,
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
 			);
 			path = CityBike;
@@ -187,19 +184,20 @@
 				6D0EBE841B20401F003ED872 /* CBStation.swift */,
 			);
 			name = "CityBikes API";
+			path = CityBikeAPI;
 			sourceTree = "<group>";
 		};
 		6D0EBE7C1B20387B003ED872 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				6D0EBE8F1B205FFE003ED872 /* CBAnnotationView.xib */,
-				6DC344DD1B242A3B00C29408 /* CBDefaultCell.xib */,
-				6DC344E31B242BCA00C29408 /* CBDefaultHeader.xib */,
-				6D2834551B24A69100E361A3 /* CBRightDetailHeader.xib */,
-				6D31D0FD1B221C690034C27B /* CBRightDetailCell.xib */,
-				6DC344D71B24297800C29408 /* CBSubtitleCell.xib */,
-				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
+				6D68019B1B28E8E2009DE824 /* CBDefaultCell.xib */,
+				6D68019C1B28E8E2009DE824 /* CBDefaultHeader.xib */,
+				6D68019D1B28E8E2009DE824 /* CBRightDetailCell.xib */,
+				6D68019E1B28E8E2009DE824 /* CBRightDetailHeader.xib */,
+				6D68019F1B28E8E2009DE824 /* CBSubtitleCell.xib */,
 				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
+				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
 				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -212,8 +210,9 @@
 				6DC344D61B23C63A00C29408 /* Getting Started */,
 				6DC344DF1B242AFC00C29408 /* Menu */,
 				6D0EBE791B203704003ED872 /* CBMainVC.swift */,
+				6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		6D0EBE8A1B2052A6003ED872 /* Components */ = {
@@ -227,20 +226,19 @@
 				6D6801991B28E323009DE824 /* CBNavigationBar.swift */,
 				6DC344CA1B230C0C00C29408 /* CBRideButton.swift */,
 				6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */,
-				6DC344D91B2429D400C29408 /* CBSubtitleCell.swift */,
 				6D2834571B24A71C00E361A3 /* CBRightDetailHeader.swift */,
+				6DC344D91B2429D400C29408 /* CBSubtitleCell.swift */,
 			);
-			name = Components;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6D31D0F81B21DFD20034C27B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				6D31D0F91B21DFED0034C27B /* CBContentManager.swift */,
-				6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */,
 				6DA595431B24F2E90055D3D6 /* Rides History */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		6DA595431B24F2E90055D3D6 /* Rides History */ = {
@@ -251,16 +249,6 @@
 				6DA595441B24F2FD0055D3D6 /* CBRideRecord.swift */,
 			);
 			name = "Rides History";
-			sourceTree = "<group>";
-		};
-		6DBD86701B206D54009AFA47 /* Testing */ = {
-			isa = PBXGroup;
-			children = (
-				6DBD866F1B206CBB009AFA47 /* Testing.playground */,
-				6DD6AA311B25D95400176309 /* TestingStruct.playground */,
-			);
-			name = Testing;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		6DC344D61B23C63A00C29408 /* Getting Started */ = {
@@ -293,7 +281,7 @@
 				6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */,
 				6D2834611B24E8DF00E361A3 /* CBNSTimeInterval.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A8775754B7360485054AA7FD /* Frameworks */ = {
@@ -365,15 +353,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC344D81B24297800C29408 /* CBSubtitleCell.xib in Resources */,
-				6D31D0FE1B221C690034C27B /* CBRightDetailCell.xib in Resources */,
 				6D0EBE901B205FFE003ED872 /* CBAnnotationView.xib in Resources */,
 				6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */,
-				6DC344DE1B242A3B00C29408 /* CBDefaultCell.xib in Resources */,
-				6DC344E41B242BCA00C29408 /* CBDefaultHeader.xib in Resources */,
 				6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */,
+				6D6801A01B28E8E2009DE824 /* CBDefaultCell.xib in Resources */,
+				6D6801A21B28E8E2009DE824 /* CBRightDetailCell.xib in Resources */,
 				6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */,
-				6D2834561B24A69100E361A3 /* CBRightDetailHeader.xib in Resources */,
+				6D6801A11B28E8E2009DE824 /* CBDefaultHeader.xib in Resources */,
+				6D6801A41B28E8E2009DE824 /* CBSubtitleCell.xib in Resources */,
+				6D6801A31B28E8E2009DE824 /* CBRightDetailHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
