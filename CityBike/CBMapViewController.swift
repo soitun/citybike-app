@@ -13,6 +13,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet private weak var mapView: MKMapView!
     
+    @IBOutlet private var locateMeButton: UIBarButtonItem!
+    
     @IBOutlet private var stopwatchReadyButton: UIBarButtonItem!
     @IBOutlet private var stopwatchDoneButton: UIBarButtonItem!
     @IBOutlet private weak var stopwatchContainer: UIView!
@@ -20,7 +22,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet private weak var stopwatchTimeLabel: UILabel!
 
     private var stopwatchManager = CBRideManager()
-    
+    private var locationManager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,12 +32,21 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         self.navigationItem.titleView = logo
         
         /// Set button initially
-        self.navigationItem.leftBarButtonItem = self.stopwatchReadyButton
+        self.navigationItem.leftBarButtonItems = [self.stopwatchReadyButton, self.locateMeButton]
         
         self.stopwatchContainer.backgroundColor = UIColor.blueGrayColor()
         self.runStopwatchIfNeeded()
+        
+        /// Request content
+        self.locationManager.requestWhenInUseAuthorization()
+        CBContentManager.sharedInstance.start()
     }
     
+    @IBAction func locateMePressed(sender: AnyObject) {
+        let region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000)
+        self.mapView.setRegion(region, animated: true)
+    }
+
     
     /// MARK: Stopwatch
     @IBAction func stopwatchReadyPressed(sender: AnyObject) {
@@ -56,13 +68,13 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         })
         
         if (showBar) {
-            self.navigationItem.setLeftBarButtonItem(self.stopwatchDoneButton, animated: animated)
+            self.navigationItem.setLeftBarButtonItems([self.stopwatchDoneButton, self.locateMeButton], animated: animated)
             self.changeStopwatchContainer(true, animated: animated)
         }
     }
     
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
-        self.navigationItem.setLeftBarButtonItem(self.stopwatchReadyButton, animated: true)
+        self.navigationItem.setLeftBarButtonItems([self.stopwatchReadyButton, self.locateMeButton], animated: true)
         self.changeStopwatchContainer(false, animated: true)
         self.stopwatchManager.stop()
     }

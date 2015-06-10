@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AJI-b7-YUL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJI-b7-YUL">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="UZx-M2-Yfd" id="pCd-R2-YA2"/>
@@ -86,6 +86,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locateMeButton" destination="xas-li-Ahd" id="D4U-R4-9Tg"/>
                         <outlet property="mapView" destination="AJI-b7-YUL" id="Xda-9T-1c1"/>
                         <outlet property="stopwatchContainer" destination="6yg-G3-tks" id="pqj-87-923"/>
                         <outlet property="stopwatchContainerTopConstraint" destination="2Zb-Tc-qoF" id="3Cp-ux-D7r"/>
@@ -94,27 +95,33 @@
                         <outlet property="stopwatchTimeLabel" destination="bQz-JE-kx2" id="n0q-ME-fGi"/>
                     </connections>
                 </viewController>
+                <barButtonItem style="plain" id="JMu-I5-JUZ" userLabel="stopwatch-done-button">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Vr-lU-M3n">
+                        <rect key="frame" x="16" y="7" width="24" height="29"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="stopwatch-done-icon-nav"/>
+                        <connections>
+                            <action selector="stopwatchDonePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="G42-22-rah"/>
+                        </connections>
+                    </button>
+                </barButtonItem>
                 <barButtonItem style="plain" id="Z3i-bX-MOS" userLabel="stopwatch-ready-button">
                     <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mJx-wY-2ak">
                         <rect key="frame" x="16" y="7" width="24" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="stopwatch-ready-icon-nav">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
+                        <state key="normal" image="stopwatch-ready-icon-nav"/>
                         <connections>
                             <action selector="stopwatchReadyPressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="s34-9K-jca"/>
                         </connections>
                     </button>
                 </barButtonItem>
-                <barButtonItem style="plain" id="JMu-I5-JUZ" userLabel="stopwatch-done-button">
-                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Vr-lU-M3n">
+                <barButtonItem style="plain" id="xas-li-Ahd" userLabel="locate-me-button">
+                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o6D-Vf-9uH">
                         <rect key="frame" x="16" y="7" width="24" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="stopwatch-done-icon-nav">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
+                        <state key="normal" image="locate-me-icon-nav"/>
                         <connections>
-                            <action selector="stopwatchDonePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="G42-22-rah"/>
+                            <action selector="locateMePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="rnL-gw-lnZ"/>
                         </connections>
                     </button>
                 </barButtonItem>
@@ -779,7 +786,7 @@ You can check your rides history in menu.</string>
             <objects>
                 <navigationController storyboardIdentifier="CBMapViewControllerNC" automaticallyAdjustsScrollViewInsets="NO" id="Aqv-dw-Vuu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zaF-N5-1Ka">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zaF-N5-1Ka" customClass="CBNavigationBar" customModule="CityBike" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -805,6 +812,7 @@ You can check your rides history in menu.</string>
         <image name="how-to-white-blurred-bg" width="320" height="360"/>
         <image name="launch-screen-background" width="320" height="568"/>
         <image name="locate-me" width="34" height="34"/>
+        <image name="locate-me-icon-nav" width="29" height="29"/>
         <image name="menu-icon-nav" width="29" height="29"/>
         <image name="network-icon" width="34" height="34"/>
         <image name="stopwatch-done-icon-nav" width="24" height="29"/>

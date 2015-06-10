@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6B98D4AD-7C50-43CF-8AD6-0A4795D6EA2B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CityBike</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9101C61E4CC72802F1C1A5C63CB03681506406C7</key>
+		<string>https://github.com/tomkowz/CityBike-App.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CityBike.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9101C61E4CC72802F1C1A5C63CB03681506406C7</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tomkowz/CityBike-App.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9101C61E4CC72802F1C1A5C63CB03681506406C7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9101C61E4CC72802F1C1A5C63CB03681506406C7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CityBike</string>
+		</dict>
+	</array>
+</dict>
+</plist>

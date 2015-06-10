@@ -36,6 +36,7 @@
 		6D31D0FE1B221C690034C27B /* CBRightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D31D0FD1B221C690034C27B /* CBRightDetailCell.xib */; };
 		6D31D1001B221CA50034C27B /* CBRightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */; };
 		6D31D1021B2231D60034C27B /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31D1011B2231D60034C27B /* CBLocation.swift */; };
+		6D68019A1B28E323009DE824 /* CBNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6801991B28E323009DE824 /* CBNavigationBar.swift */; };
 		6DA595451B24F2FD0055D3D6 /* CBRideRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595441B24F2FD0055D3D6 /* CBRideRecord.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB84B091B20E372005DBDAD /* CBNSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */; };
@@ -99,6 +100,7 @@
 		6D31D0FD1B221C690034C27B /* CBRightDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBRightDetailCell.xib; sourceTree = "<group>"; };
 		6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRightDetailCell.swift; sourceTree = "<group>"; };
 		6D31D1011B2231D60034C27B /* CBLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBLocation.swift; sourceTree = "<group>"; };
+		6D6801991B28E323009DE824 /* CBNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNavigationBar.swift; sourceTree = "<group>"; };
 		6DA595441B24F2FD0055D3D6 /* CBRideRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideRecord.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideManager.swift; sourceTree = "<group>"; };
 		6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNSUserDefaultsExtension.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				6D28344F1B243C2200E361A3 /* CBCell.swift */,
 				6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */,
 				6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */,
+				6D6801991B28E323009DE824 /* CBNavigationBar.swift */,
 				6DC344CA1B230C0C00C29408 /* CBRideButton.swift */,
 				6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */,
 				6DC344D91B2429D400C29408 /* CBSubtitleCell.swift */,
@@ -499,6 +502,7 @@
 				6D2834521B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift in Sources */,
 				6D28345A1B24AB3100E361A3 /* CBMapViewController.swift in Sources */,
 				6D2834581B24A71C00E361A3 /* CBRightDetailHeader.swift in Sources */,
+				6D68019A1B28E323009DE824 /* CBNavigationBar.swift in Sources */,
 				6DD460A21B20891D0070E163 /* CBUIViewExtension.swift in Sources */,
 				6D31D1001B221CA50034C27B /* CBRightDetailCell.swift in Sources */,
 				6DC344CF1B23B37C00C29408 /* CBGettingStartedViewController.swift in Sources */,

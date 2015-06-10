@@ -21,29 +21,10 @@ class CBMainVC: UIViewController, MKMapViewDelegate, CBRideButtonDelegate {
     @IBOutlet private weak var connectionErrorBarTop: NSLayoutConstraint!
     @IBOutlet private weak var connectionErrorBar: UIView!
     
-    private var locationManager = CLLocationManager()
     private var noNetworksSelectedPopupPresented = false
     
     
     /// MARK: Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.locateMeButton.makeStyleShadowedWhite()
-        self.networksButton.makeStyleShadowedWhite()
-        
-        /// Configure Ride Button
-        self.rideButton.makeStyleShadowedWhite()
-        self.rideButton.delegate = self
-        self.rideButton.onStopText = "Start a ride"
-        if let ti = NSUserDefaults.getStartRideTimeInterval() {
-            self.rideButton.startTimeInterval = ti
-            self.rideButton.startTimer()
-        }
-
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        CBContentManager.sharedInstance.start()
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
