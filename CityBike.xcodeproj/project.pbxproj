@@ -12,7 +12,6 @@
 		6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE5D1B2033FB003ED872 /* Main.storyboard */; };
 		6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE601B2033FB003ED872 /* Images.xcassets */; };
 		6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */; };
-		6D0EBE7A1B203704003ED872 /* CBMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE791B203704003ED872 /* CBMainVC.swift */; };
 		6D0EBE7F1B2038AF003ED872 /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE7E1B2038AF003ED872 /* CBService.swift */; };
 		6D0EBE811B203F13003ED872 /* CBNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE801B203F13003ED872 /* CBNetworkType.swift */; };
 		6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */; };
@@ -44,7 +43,6 @@
 		6DB84B091B20E372005DBDAD /* CBNSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */; };
 		6DBA50DC1B29F720002ECC3F /* CBStationAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBA50DB1B29F720002ECC3F /* CBStationAnnotationView.xib */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
-		6DC344CB1B230C0C00C29408 /* CBRideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CA1B230C0C00C29408 /* CBRideButton.swift */; };
 		6DC344CD1B233B9E00C29408 /* CBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CC1B233B9E00C29408 /* CBButton.swift */; };
 		6DC344CF1B23B37C00C29408 /* CBGettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CE1B23B37C00C29408 /* CBGettingStartedViewController.swift */; };
 		6DC344D11B23BCDB00C29408 /* CBGettingStartedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344D01B23BCDB00C29408 /* CBGettingStartedMapViewController.swift */; };
@@ -65,7 +63,6 @@
 		6D0EBE5E1B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D0EBE601B2033FB003ED872 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D0EBE631B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6D0EBE791B203704003ED872 /* CBMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMainVC.swift; sourceTree = "<group>"; };
 		6D0EBE7E1B2038AF003ED872 /* CBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBService.swift; sourceTree = "<group>"; };
 		6D0EBE801B203F13003ED872 /* CBNetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNetworkType.swift; sourceTree = "<group>"; };
 		6D0EBE821B203F2F003ED872 /* CBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBJSONParser.swift; sourceTree = "<group>"; };
@@ -97,7 +94,6 @@
 		6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNSUserDefaultsExtension.swift; sourceTree = "<group>"; };
 		6DBA50DB1B29F720002ECC3F /* CBStationAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBStationAnnotationView.xib; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationAnnotationView.swift; sourceTree = "<group>"; };
-		6DC344CA1B230C0C00C29408 /* CBRideButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideButton.swift; sourceTree = "<group>"; };
 		6DC344CC1B233B9E00C29408 /* CBButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBButton.swift; sourceTree = "<group>"; };
 		6DC344CE1B23B37C00C29408 /* CBGettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBGettingStartedViewController.swift; sourceTree = "<group>"; };
 		6DC344D01B23BCDB00C29408 /* CBGettingStartedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBGettingStartedMapViewController.swift; sourceTree = "<group>"; };
@@ -211,11 +207,10 @@
 		6D0EBE7D1B203891003ED872 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */,
 				6D2834591B24AB3100E361A3 /* CBMapViewController.swift */,
 				6DC344D61B23C63A00C29408 /* Getting Started */,
 				6DC344DF1B242AFC00C29408 /* Menu */,
-				6D0EBE791B203704003ED872 /* CBMainVC.swift */,
-				6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,7 +224,6 @@
 				6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */,
 				6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */,
 				6D6801991B28E323009DE824 /* CBNavigationBar.swift */,
-				6DC344CA1B230C0C00C29408 /* CBRideButton.swift */,
 				6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */,
 				6D2834571B24A71C00E361A3 /* CBRightDetailHeader.swift */,
 				6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */,
@@ -412,7 +406,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DC344CB1B230C0C00C29408 /* CBRideButton.swift in Sources */,
 				6D0EBE831B203F2F003ED872 /* CBJSONParser.swift in Sources */,
 				6D31D0FA1B21DFED0034C27B /* CBContentManager.swift in Sources */,
 				6D2834621B24E8DF00E361A3 /* CBNSTimeInterval.swift in Sources */,
@@ -431,7 +424,6 @@
 				6DD460A21B20891D0070E163 /* CBUIViewExtension.swift in Sources */,
 				6D31D1001B221CA50034C27B /* CBRightDetailCell.swift in Sources */,
 				6DC344CF1B23B37C00C29408 /* CBGettingStartedViewController.swift in Sources */,
-				6D0EBE7A1B203704003ED872 /* CBMainVC.swift in Sources */,
 				6D0EBE8E1B2054DE003ED872 /* CBAnnotation.swift in Sources */,
 				6D0EBE5A1B2033FB003ED872 /* AppDelegate.swift in Sources */,
 				6DC344DC1B242A2000C29408 /* CBDefaultCell.swift in Sources */,
