@@ -170,7 +170,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if !(annotation is CBAnnotation) { return nil }
         
-        let view = CBAnnotationView(annotation: annotation, reuseIdentifier: "CBStation")
+        let view = CBStationAnnotationView(annotation: annotation, reuseIdentifier: "CBStationAnnotationView")
         view.noneColor = UIColor.noneColor()
         view.fewColor = UIColor.fewColor()
         view.plentyColor = UIColor.plentyColor()
