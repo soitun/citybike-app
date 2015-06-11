@@ -12,7 +12,13 @@ class CBRideManager {
     
     private var stopwatch = CBRideStopwatch()
     
+    private var _isGoing = false
+    var isGoing: Bool {
+        return _isGoing
+    }
+    
     func start(var ti: NSTimeInterval?, updateBlock: CBRideStopwatch.UpdateBlockType) {
+        _isGoing = true
         if ti == nil {
             ti = NSDate().timeIntervalSince1970
             NSUserDefaults.setStartRideTimeInterval(ti!)
@@ -22,6 +28,7 @@ class CBRideManager {
     }
     
     func stop() {
+        _isGoing = false
         let duration = self.stopwatch.stop()
         let startDate = NSDate(timeIntervalSince1970: self.stopwatch.startTimeInterval)
         let typeComponents = NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit
