@@ -12,6 +12,8 @@
 	<dict>
 		<key>9101C61E4CC72802F1C1A5C63CB03681506406C7</key>
 		<string>https://github.com/tomkowz/CityBike-App.git</string>
+		<key>9A606DA4B0305C6C3E721C28A89831FDB54101CB</key>
+		<string>https://github.com/tomkowz/Nothing-App.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CityBike.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>9101C61E4CC72802F1C1A5C63CB03681506406C7</key>
 		<string>..</string>
+		<key>9A606DA4B0305C6C3E721C28A89831FDB54101CB</key>
+		<string>../../Nothing-App</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/tomkowz/CityBike-App.git</string>
@@ -35,6 +39,14 @@
 			<string>9101C61E4CC72802F1C1A5C63CB03681506406C7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CityBike</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9A606DA4B0305C6C3E721C28A89831FDB54101CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nothing-App</string>
 		</dict>
 	</array>
 </dict>
