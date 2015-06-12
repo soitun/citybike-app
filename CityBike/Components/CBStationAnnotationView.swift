@@ -51,7 +51,9 @@ class CBStationAnnotationView: MKAnnotationView {
         /// Add background view
         let backgroundImage = UIImage(named: "annotation-view-background")
         let resizableImage = backgroundImage?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 20, 0, 20))
-        let backgroundView = UIImageView(image: resizableImage)
+        let backgroundView = UIImageView(frame: CGRectZero)
+        backgroundView.image = resizableImage
+        
         backgroundView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.containerView.addSubview(backgroundView)
         
@@ -99,7 +101,7 @@ class CBStationAnnotationView: MKAnnotationView {
         self.containerView.addSubview(self.slotsCircle)
         
         let widthConstraint = NSLayoutConstraint(item: self.slotsCircle, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: self.slotsCircle.image!.size.width)
-        let leadingConstraint = NSLayoutConstraint(item: self.slotsCircle, attribute: .Leading, relatedBy: .Equal, toItem: self.bikesLabel, attribute: .Trailing, multiplier: 1, constant: 3)
+        let leadingConstraint = NSLayoutConstraint(item: self.slotsCircle, attribute: .Leading, relatedBy: .Equal, toItem: self.bikesLabel, attribute: .Trailing, multiplier: 1, constant: 5)
         let centerYConstraint = NSLayoutConstraint(item: self.slotsCircle, attribute: .CenterY, relatedBy: .Equal, toItem: self.containerView, attribute: .CenterY, multiplier: 1, constant: 0)
         self.containerView.addConstraints([widthConstraint, leadingConstraint, centerYConstraint])
     }
