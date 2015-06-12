@@ -1,0 +1,3 @@
+[submodule "Submodules/citybik.es-api"]
+	path = Submodules/citybik.es-api
+	url = https://github.com/tomkowz/citybik.es-api.git
