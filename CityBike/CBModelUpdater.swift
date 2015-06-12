@@ -28,6 +28,14 @@ class CBModelUpdater: CBUpdaterProtocol {
         self.syncManager.delegate = self
     }
     
+    func start() {
+        self.syncManager.start()
+    }
+    
+    func stop() {
+        self.syncManager.stop()
+    }
+    
     
     /// MARK: - CBUpdaterProtocol
     func updateNetworks(networks: [CBNetwork], completion:() -> Void) {

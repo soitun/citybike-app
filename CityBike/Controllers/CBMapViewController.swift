@@ -45,7 +45,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
 
         /// Request content
         self.locationManager.requestWhenInUseAuthorization()
-        CBContentManager.sharedInstance.start()
+        CBModelUpdater.sharedInstance.start()
     }
     
     override func viewWillAppear(animated: Bool) {
