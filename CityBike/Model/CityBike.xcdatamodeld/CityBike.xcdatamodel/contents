@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="RideHistoryDay" representedClassName="RideHistoryDay" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RideHistoryEntry" inverseName="day" inverseEntity="RideHistoryEntry" syncable="YES"/>
+    <entity name="CBRideHistoryDay" representedClassName="CBRideHistoryDay" syncable="YES">
+        <attribute name="startTimeInterval" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CBRideHistoryEntry" inverseName="day" inverseEntity="CBRideHistoryEntry" syncable="YES"/>
     </entity>
-    <entity name="RideHistoryEntry" representedClassName="RideHistoryEntry" syncable="YES">
+    <entity name="CBRideHistoryEntry" representedClassName="CBRideHistoryEntry" syncable="YES">
         <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="startTime" optional="YES" attributeType="Binary" syncable="YES"/>
-        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RideHistoryDay" inverseName="entries" inverseEntity="RideHistoryDay" syncable="YES"/>
+        <attribute name="startTimeInterval" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CBRideHistoryDay" inverseName="entries" inverseEntity="CBRideHistoryDay" syncable="YES"/>
     </entity>
     <elements>
-        <element name="RideHistoryDay" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="RideHistoryEntry" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="CBRideHistoryDay" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="CBRideHistoryEntry" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>

@@ -13,7 +13,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var noItemsLabel: UILabel!
     
-    private var history = RidesHistory()
+    private var history = [CBRideHistoryDay]()
     private var dateFormatter = NSDateFormatter()
     private var dateTimeFormatter = NSDateFormatter()
     
@@ -39,35 +39,32 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.history = NSUserDefaults.getRidesHistory()
+        self.history = CBRideHistoryDay.allDays()
         self.tableView.reloadData()
         
-        self.noItemsLabel.hidden = self.history.keys.array.count != 0
+        self.noItemsLabel.hidden = self.history.count > 0
     }
     
     
     /// MARK: UITableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.history.keys.array.count
+        return self.history.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = self.history.keys.array[section]
-        return self.history[key]!.count
+        return self.history[section].entries.count
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CBRightDetailHeader.Identifier) as! CBRightDetailHeader
         
-        let key = self.history.keys.array[section]
-        
-        let date = NSDate(timeIntervalSince1970: key)
+        let day = self.history[section]
+        let date = NSDate(timeIntervalSince1970: day.startTimeInterval.doubleValue)
         header.label.text = self.dateFormatter.stringFromDate(date)
         
-        
         var sum: NSTimeInterval = 0
-        for record in self.history[key]! {
-            sum += record.duration
+        for entry in day.entries {
+            sum += (entry as! CBRideHistoryEntry).duration.doubleValue
         }
         
         header.detailLabel.text = sum.stringTimeRepresentationStyle1
@@ -79,12 +76,11 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let key = self.history.keys.array[indexPath.section]
-        let rideRecord = self.history[key]![indexPath.row]
+        let entry = self.history[indexPath.section].entries[indexPath.row] as! CBRideHistoryEntry
         
         let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
-        cell.label?.text = rideRecord.duration.stringTimeRepresentationStyle1
-        cell.detailLabel.text = self.dateTimeFormatter.stringFromDate(NSDate(timeIntervalSince1970: rideRecord.startTime))
+        cell.label?.text = entry.duration.doubleValue.stringTimeRepresentationStyle1
+        cell.detailLabel.text = self.dateTimeFormatter.stringFromDate(NSDate(timeIntervalSince1970: entry.startTimeInterval.doubleValue))
         return cell
     }
     

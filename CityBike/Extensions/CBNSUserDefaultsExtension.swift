@@ -13,14 +13,12 @@ extension NSUserDefaults {
     private static let CityBikeDisplayedGettingStarted = "CityBikeDisplayedGettingStarted"
     private static let CityBikeSelectedNetworks = "CityBikeSelectedNetworks"
     private static let CityBikeStartRideTimeInterval = "CityBikeStartRideTimeInterval"
-    private static let CityBikeRidesHistory = "CityBikeRidesHistory"
     
     class func registerCityBikeDefaults() {
         
         let defaults = [
             CityBikeDisplayedGettingStarted: 0,
-            CityBikeSelectedNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]()),
-            CityBikeRidesHistory: NSKeyedArchiver.archivedDataWithRootObject(RidesHistoryArchived())
+            CityBikeSelectedNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]())
         ]
         NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
     }
@@ -67,41 +65,6 @@ extension NSUserDefaults {
     
     class func removeStartRideTimeInterval() {
         NSUserDefaults.standardUserDefaults().removeObjectForKey(CityBikeStartRideTimeInterval)
-        NSUserDefaults.standardUserDefaults().synchronize()
-    }
-    
-    /// MARK: Rides History
-    class func getRidesHistory() -> RidesHistory {
-        let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeRidesHistory) as! NSData
-        let archivedHistory = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! RidesHistoryArchived
-        
-        var unarchivedHistory = RidesHistory()
-        for (rideDay, archivedRecords) in archivedHistory {
-            var unarchiveRecords = [CBRideRecord]()
-            for record in archivedRecords {
-                unarchiveRecords.append(NSKeyedUnarchiver.unarchiveObjectWithData(record) as! CBRideRecord)
-            }
-            
-            unarchivedHistory[rideDay] = unarchiveRecords
-        }
-        
-        return unarchivedHistory
-    }
-    
-    class func setRidesHistory(history: RidesHistory) {
-        var historyToStore = RidesHistoryArchived()
-        
-        for (rideDay, records) in history {
-            var archivedRecords = [NSData]()
-            for record in records {
-                archivedRecords.append(NSKeyedArchiver.archivedDataWithRootObject(record))
-            }
-            
-            historyToStore[rideDay] = archivedRecords
-        }
-        
-        let archivedHistory = NSKeyedArchiver.archivedDataWithRootObject(historyToStore)
-        NSUserDefaults.standardUserDefaults().setObject(archivedHistory, forKey: CityBikeRidesHistory)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

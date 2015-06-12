@@ -33,19 +33,24 @@ class CBRideManager {
         let startDate = NSDate(timeIntervalSince1970: self.stopwatch.startTimeInterval)
         let typeComponents = NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit
         let components = NSCalendar.autoupdatingCurrentCalendar().components(typeComponents, fromDate: startDate)
-        let dayDate = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
+        let dateOfTheStartDay = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
         
-        let rideRecord = CBRideRecord(duration: duration, startTime: self.stopwatch.startTimeInterval)
+        let timeIntervalOfStartDay = dateOfTheStartDay.timeIntervalSince1970
+
         
-        var ridesHistory = NSUserDefaults.getRidesHistory()
-        let key = dayDate.timeIntervalSince1970
-        if ridesHistory[key] != nil {
-            ridesHistory[key]!.append(rideRecord)
+        let entry: CBRideHistoryEntry = CBRideHistoryEntry.create(CoreDataHelper.mainContext)
+        entry.startTimeInterval = self.stopwatch.startTimeInterval
+        entry.duration = duration
+        
+        if let day = CBRideHistoryDay.findDayForStartTimeInterval(timeIntervalOfStartDay) {
+            day.addEntry(entry)
         } else {
-            ridesHistory[key] = [rideRecord]
+            var day: CBRideHistoryDay = CBRideHistoryDay.create(CoreDataHelper.mainContext)
+            day.startTimeInterval = timeIntervalOfStartDay
+            day.addEntry(entry)
         }
         
-        NSUserDefaults.setRidesHistory(ridesHistory)
+        CoreDataHelper.mainContext.save(nil)
         NSUserDefaults.removeStartRideTimeInterval()
     }
 }
