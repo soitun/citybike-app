@@ -13,7 +13,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var noItemsLabel: UILabel!
     
-    private var history = [CBRideHistoryDay]()
+    private var history = [CDRideHistoryDay]()
     private var dateFormatter = NSDateFormatter()
     private var dateTimeFormatter = NSDateFormatter()
     
@@ -39,7 +39,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.history = CBRideHistoryDay.allDays()
+        self.history = CDRideHistoryDay.allDays()
         self.tableView.reloadData()
         
         self.noItemsLabel.hidden = self.history.count > 0
@@ -64,7 +64,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
         
         var sum: NSTimeInterval = 0
         for entry in day.entries {
-            sum += (entry as! CBRideHistoryEntry).duration.doubleValue
+            sum += (entry as! CDRideHistoryEntry).duration.doubleValue
         }
         
         header.detailLabel.text = sum.stringTimeRepresentationStyle1
@@ -76,7 +76,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let entry = self.history[indexPath.section].entries[indexPath.row] as! CBRideHistoryEntry
+        let entry = self.history[indexPath.section].entries[indexPath.row] as! CDRideHistoryEntry
         
         let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
         cell.label?.text = entry.duration.doubleValue.stringTimeRepresentationStyle1

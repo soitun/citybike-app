@@ -38,14 +38,14 @@ class CBRideManager {
         let timeIntervalOfStartDay = dateOfTheStartDay.timeIntervalSince1970
 
         
-        let entry: CBRideHistoryEntry = CBRideHistoryEntry.create(CoreDataHelper.mainContext)
+        let entry: CDRideHistoryEntry = CDRideHistoryEntry.create(CoreDataHelper.mainContext)
         entry.startTimeInterval = self.stopwatch.startTimeInterval
         entry.duration = duration
         
-        if let day = CBRideHistoryDay.findDayForStartTimeInterval(timeIntervalOfStartDay) {
+        if let day = CDRideHistoryDay.findDayForStartTimeInterval(timeIntervalOfStartDay) {
             day.addEntry(entry)
         } else {
-            var day: CBRideHistoryDay = CBRideHistoryDay.create(CoreDataHelper.mainContext)
+            var day: CDRideHistoryDay = CDRideHistoryDay.create(CoreDataHelper.mainContext)
             day.startTimeInterval = timeIntervalOfStartDay
             day.addEntry(entry)
         }
