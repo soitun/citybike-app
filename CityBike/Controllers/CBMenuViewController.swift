@@ -50,14 +50,9 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Section(rawValue: section)! {
-        case .Statistics:
-            return 1
-            
-        case .Settings:
-            return 1
-            
-        case .HelpUs:
-            return 1 /// Turn on Rate the app after it is available in the store
+        case .Statistics: return 1
+        case .Settings: return 1
+        case .HelpUs: return 1 /// Turn on Rate the app after it is available in the store
         }
     }
     
@@ -90,7 +85,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        return UITableViewCell() /// just to return something, will not be visible
+        return UITableViewCell() /// just return something, will not be visible
     }
     
     func headerTitles() -> [String] {

@@ -8,26 +8,6 @@
 
 import UIKit
 
-typealias CountryCode = String
-
-class OrderedObject: NSObject, NSCopying {
-    var countryCode: CountryCode!
-    var networks = [CBNetwork]()
-    
-    lazy var countryString: String! = {
-        let identifier = NSLocale.localeIdentifierFromComponents([NSLocaleCountryCode: self.countryCode])
-        return NSLocale.currentLocale().displayNameForKey(NSLocaleIdentifier, value: identifier)!
-        }()
-    
-    
-    func copyWithZone(zone: NSZone) -> AnyObject {
-        var copy = OrderedObject()
-        copy.countryCode = self.countryCode
-        copy.networks = self.networks
-        return copy
-    }
-}
-
 class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet private weak var tableView: UITableView!
@@ -35,17 +15,14 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var noItemsLabel: UILabel!
     @IBOutlet weak var noItemsIndicator: UIActivityIndicatorView!
     
-    private var orderedObjects = [OrderedObject]()
+    private var orderedNetworks = [CBOrderedNetworksGroup]()
     private var selectedNetworkIDs = [String]()
-    
-    private var filteredObjects = [OrderedObject]()
+    private var filteredNetworks = [CBFilteredNetworksGroupProxy]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.selectedNetworkIDs = NSUserDefaults.getNetworkIDs()
-
-        CBContentManager.sharedInstance.start()
         
         self.tableView.contentOffset = CGPointMake(0, CGRectGetHeight(self.searchBar.frame))
         self.tableView.tableFooterView = UIView()
@@ -67,10 +44,8 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBContentManager.DidUpdateNetworksNotification, object: nil)
-
-        self.refreshContent(CBContentManager.sharedInstance.networks)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManager.DidUpdateNetworksNotification, object: nil)
+        self.refreshContent(CDNetwork.allNetworks(CoreDataHelper.mainContext))
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -83,8 +58,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     /// MARK: Notifications
     func didUpdateNetworksNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let networks = notification.userInfo!["networks"]! as! [CBNetwork]
-            self.refreshContent(networks)
+            self.refreshContent(CDNetwork.allNetworks(CoreDataHelper.mainContext))
         })
     }
     
@@ -93,111 +67,90 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
         NSUserDefaults.saveNetworkIDs(self.selectedNetworkIDs)
         
         /// Force content update. Redownload stations
-        CBContentManager.sharedInstance.forceStationsUpdate()
+        CBModelUpdater.sharedInstance.forceUpdate()
     }
     
-    private func refreshContent(networksToDisplay: [CBNetwork]) {
+    private func refreshContent(networksToDisplay: [CDNetwork]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-            var updatedOrderedObject = [OrderedObject]()
-            
-            for network in networksToDisplay {
-                /// Check if ordered object exist for country
-                var foundOO : OrderedObject? = nil
-                for orderedObject in updatedOrderedObject {
-                    if orderedObject.countryCode == network.location.country {
-                        foundOO = orderedObject
-                        break
-                    }
-                }
-                
-                /// add network to such object
-                if let foundOO = foundOO {
-                    foundOO.networks.append(network)
-                } else {
-                    let createdOO = OrderedObject()
-                    createdOO.countryCode = network.location.country
-                    createdOO.networks.append(network)
-                    updatedOrderedObject.append(createdOO)
-                }
-            }
-            
-            /// Sort countries and by network name
-            updatedOrderedObject.sort { $0.countryString < $1.countryString }
-            for orderedObject in updatedOrderedObject {
-                orderedObject.networks.sort { $0.name < $1.name }
-            }
+            self.orderedNetworks = CBNetworksSort.orderNetworks(networksToDisplay)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.orderedObjects = updatedOrderedObject
                 self.tableView.reloadData()
                 
-                let noItems = self.orderedObjects.count == 0
+                let noItems = self.orderedNetworks.count == 0
                 self.noItemsLabel.hidden = !noItems
-                if noItems {
-                    self.noItemsIndicator.startAnimating()
-                } else {
-                    self.noItemsIndicator.stopAnimating()
-                }
+                noItems ? self.noItemsIndicator.startAnimating() : self.noItemsIndicator.stopAnimating()
             })
         })
     }
     
     
     /// MARK: UITableView
-    func content(tableView: UITableView) -> [OrderedObject] {
-        if tableView == self.tableView {
-            return self.orderedObjects
-        } else {
-            return self.filteredObjects
-        }
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.content(tableView).count
+        return tableView == self.tableView ? self.orderedNetworks.count : self.filteredNetworks.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.content(tableView)[section].networks.count
+        if tableView == self.tableView {
+            return self.orderedNetworks[section].networks.count
+        } else {
+            return self.filteredNetworks[section].networks.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let network = self.content(tableView)[indexPath.section].networks[indexPath.row]
-
-        let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
-        cell.label?.text = network.name
-        cell.detailLabel.text = network.location.city
-        
-        if find(self.selectedNetworkIDs, network.id) != nil {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
+        func createCell(name: String, city: String, id: String) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
+            cell.label?.text = name
+            cell.detailLabel.text = city
+            cell.accessoryType = (find(self.selectedNetworkIDs, id) != nil) ? .Checkmark : .None
+            return cell
         }
         
-        return cell
+        if tableView == self.tableView {
+            let network = self.orderedNetworks[indexPath.section].networks[indexPath.row]
+            return createCell(network.name, network.location.city, network.id)
+        } else {
+            let networkProxy = self.filteredNetworks[indexPath.section].networks[indexPath.row]
+            return createCell(networkProxy.name, networkProxy.city, networkProxy.id)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        func update(id: String) {
+            let cell = tableView.cellForRowAtIndexPath(indexPath)!
+            if let idx = find(self.selectedNetworkIDs, id) {
+                cell.accessoryType = .None
+                self.selectedNetworkIDs.removeAtIndex(idx)
+            } else {
+                cell.accessoryType = .Checkmark
+                self.selectedNetworkIDs.append(id)
+            }
+        }
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath)!
-        let network = self.content(tableView)[indexPath.section].networks[indexPath.row]
-        if let idx = find(self.selectedNetworkIDs, network.id) {
-            cell.accessoryType = .None
-            self.selectedNetworkIDs.removeAtIndex(idx)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if tableView == self.tableView {
+            update(self.orderedNetworks[indexPath.section].networks[indexPath.row].id)
         } else {
-            cell.accessoryType = .Checkmark
-            self.selectedNetworkIDs.append(network.id)
+            update(self.filteredNetworks[indexPath.section].networks[indexPath.row].id)
         }
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CBDefaultHeader.Identifier) as! CBDefaultHeader
+        func createHeader(countryName: String) -> CBDefaultHeader {
+            let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CBDefaultHeader.Identifier) as! CBDefaultHeader
+            header.label.text = countryName.uppercaseString
+            header.label.textColor = UIColor.flamePeaColor()
+            header.backgroundView = UIView()
+            header.backgroundView?.backgroundColor = UIColor.concreteColor()
+            return header
+        }
         
-        header.label.text = self.content(tableView)[section].countryString.uppercaseString
-        header.label.textColor = UIColor.flamePeaColor()
-        header.backgroundView = UIView()
-        header.backgroundView?.backgroundColor = UIColor.concreteColor()
-        return header
+        if tableView == self.tableView {
+            return createHeader(self.orderedNetworks[section].countryName)
+        } else {
+            return createHeader(self.filteredNetworks[section].countryName)
+        }
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -219,44 +172,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filterObjectsMatchingText(searchText)
+        self.filteredNetworks = CBFilterNetworks.filteredNetworks(self.orderedNetworks, phrase: searchText)
         self.searchDisplayController?.searchResultsTableView.reloadData()
-    }
-    
-    private func filterObjectsMatchingText(text: String) {
-        var searchPhrase = text.lowercaseString
-        
-        var allObjects = self.orderedObjects
-        var newFilteredObjects = [OrderedObject]()
-        
-        for object in allObjects {
-            /// If country matches add all networks
-            let matchesCountryCode = object.countryCode.lowercaseString.rangeOfString(searchPhrase) != nil
-            let matchesCountryString = object.countryString.lowercaseString.rangeOfString(searchPhrase) != nil
-            
-            if matchesCountryCode || matchesCountryString {
-                newFilteredObjects.append(object.copy() as! OrderedObject)
-                
-            } else {
-                /// If country doesn't match check networks in every country
-                var filteredNetworks = [CBNetwork]()
-                for network in object.networks {
-                    let matchesName = network.name.lowercaseString.rangeOfString(searchPhrase) != nil
-                    let matchesCity = network.location.city.lowercaseString.rangeOfString(searchPhrase) != nil
-                    
-                    if matchesName || matchesCity {
-                        filteredNetworks.append(network.copy() as! CBNetwork)
-                    }
-                }
-                
-                if filteredNetworks.count > 0 {
-                    var filteredObject = object.copy() as! OrderedObject
-                    filteredObject.networks = filteredNetworks
-                    newFilteredObjects.append(filteredObject)
-                }
-            }
-        }
-
-        self.filteredObjects = newFilteredObjects
     }
 }

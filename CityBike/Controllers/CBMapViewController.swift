@@ -52,7 +52,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.mapUpdater.update(self.mapView, updatedStations: CDStation.allStations(CoreDataHelper.mainContext))
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBContentManager.DidUpdateStationsNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManager.DidUpdateStationsNotification, object: nil)
     }
 
     override func viewDidDisappear(animated: Bool) {

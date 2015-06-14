@@ -20,7 +20,6 @@ class CBModelUpdater: CBUpdaterProtocol {
         }
         
         dispatch_once(&Static.onceToken, { Static.instance = CBModelUpdater() })
-        
         return Static.instance!
     }
 
@@ -35,6 +34,10 @@ class CBModelUpdater: CBUpdaterProtocol {
     
     func stop() {
         self.syncManager.stop()
+    }
+    
+    func forceUpdate() {
+        self.syncManager.forceUpdate()
     }
     
     

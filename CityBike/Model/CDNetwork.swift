@@ -22,6 +22,12 @@ class CDNetwork: NSManagedObject {
         return "CDNetwork"
     }
     
+    class func allNetworks(context: NSManagedObjectContext) -> [CDNetwork] {
+        let request = NSFetchRequest(entityName: self.entityName())
+        var stations = context.executeFetchRequest(request, error: nil) as? [CDNetwork]
+        return stations ?? [CDNetwork]()
+    }
+    
     class func networkWithID(id: String, context: NSManagedObjectContext) -> CDNetwork? {
         let request = NSFetchRequest(entityName: self.entityName())
         request.predicate = NSPredicate(format: "id == %@", id)

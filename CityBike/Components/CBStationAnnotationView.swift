@@ -138,6 +138,9 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         super.init(coder: aDecoder)
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
     
     /// MARK: Logic

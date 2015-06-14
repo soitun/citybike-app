@@ -49,7 +49,7 @@ class CBMapUpdater {
                     let updatedStationProxy = CBStationProxy(id: station.id, timestamp: station.timestamp, coordinate: station.coordinate)
                     updatedProxies.append(updatedStationProxy)
                 } else {
-                    println("NOT: \(station.name), \(station.timestamp) > \(stationProxy.timestamp)")
+//                    println("NOT: \(station.name), \(station.timestamp) > \(stationProxy.timestamp)")
                     notUpdatedProxies.append(stationProxy)
                 }
 
