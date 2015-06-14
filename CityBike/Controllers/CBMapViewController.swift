@@ -50,7 +50,10 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateStations(CBContentManager.sharedInstance.stations)
+        
+        let stations = CDStation.allStations(CoreDataHelper.mainContext)
+        self.updateStations(stations)
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBContentManager.DidUpdateStationsNotification, object: nil)
     }
     
@@ -64,13 +67,13 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.setRegion(region, animated: true)
     }
 
-    private func updateStations(stations: [CBStation]) {
+    private func updateStations(stations: [CDStation]) {
         self.mapView.removeAnnotations(self.mapView.annotations)
         
-        var updatedAnnotations = [CBAnnotation]()
+        var updatedAnnotations = [CDAnnotation]()
         
         for station in stations {
-            let annotation = CBAnnotation(station: station)
+            let annotation = CDAnnotation(station: station)
             updatedAnnotations.append(annotation)
         }
         
@@ -80,13 +83,15 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     /// MARK: Notifications
     func didUpdateStationsNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let error = notification.userInfo!["error"] as? NSError
-            if error != nil {
-                self.connectionErrorLabel.text = "Internet connection problem."
-                self.showConnectionErrorLabel(true)
+            if let userInfo = notification.userInfo {
+                let error = notification.userInfo!["error"] as? NSError
+                if error != nil {
+                    self.connectionErrorLabel.text = "Internet connection problem."
+                    self.showConnectionErrorLabel(true)
+                }
                 
             } else {
-                let stations = notification.userInfo!["stations"]! as! [CBStation]
+                let stations = CDStation.allStations(CoreDataHelper.mainContext)
                 self.updateStations(stations)
                 self.hideConnectionErrorLabel(true)
             }
@@ -168,14 +173,14 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     /// MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if !(annotation is CBAnnotation) { return nil }
+        if !(annotation is CDAnnotation) { return nil }
         
-        let view = CBStationAnnotationView(annotation: annotation, reuseIdentifier: "CBStationAnnotationView")
+        let view = CDStationAnnotationView(annotation: annotation, reuseIdentifier: "CDStationAnnotationView")
         view.noneColor = UIColor.noneColor()
         view.fewColor = UIColor.fewColor()
         view.plentyColor = UIColor.plentyColor()
         
-        view.configure((annotation as! CBAnnotation).station)
+        view.configure((annotation as! CDAnnotation).station)
         return view
     }
 }

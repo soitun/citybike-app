@@ -40,6 +40,8 @@ class CBSyncManager: CBScheduledDownloaderDelegate {
                     NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateNetworksNotification, object: nil, userInfo: nil)
                 })
             })
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateNetworksNotification, object: nil, userInfo: ["error": error!])
         }
     }
     
@@ -50,6 +52,8 @@ class CBSyncManager: CBScheduledDownloaderDelegate {
                     NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateStationsNotification, object: nil, userInfo: nil)
                 })
             })
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName(CBContentManager.DidUpdateStationsNotification, object: nil, userInfo: ["error": error!])
         }
     }
 }

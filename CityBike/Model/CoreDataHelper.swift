@@ -39,7 +39,7 @@ class CoreDataHelper: NSObject {
     }
     
     func contextDidSaveContext(notification: NSNotification) {
-        println("contextDidSaveContext:")
+//        println("contextDidSaveContext:")
     }
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {

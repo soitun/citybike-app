@@ -1,5 +1,5 @@
 //
-//  CBStationAnnotationView.swift
+//  CDStationAnnotationView.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 11/06/15.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class CBStationAnnotationView: MKAnnotationView {
+class CDStationAnnotationView: MKAnnotationView {
     
     var plentyColor: UIColor!
     var fewColor: UIColor!
@@ -143,39 +143,41 @@ class CBStationAnnotationView: MKAnnotationView {
     }
     
     
-    func configure(station: CBStation!) {
+    func configure(station: CDStation) {
         /// Set free bikes color
-        if station.freeBikes > 5 {
+        let freeBikes = station.freeBikes.integerValue
+        if freeBikes > 5 {
             self.bikesCircle.tintColor = self.plentyColor
             
-        } else if station.freeBikes <= 5 && station.freeBikes > 0 {
+        } else if freeBikes <= 5 && freeBikes > 0 {
             self.bikesCircle.tintColor = self.fewColor
             
-        } else if station.freeBikes == 0 {
+        } else if freeBikes == 0 {
             self.bikesCircle.tintColor = self.noneColor
         }
         
         /// Set empty slots color
-        if station.emptySlots > 5 {
+        let emptySlots = station.emptySlots.integerValue
+        if emptySlots > 5 {
             self.slotsCircle.tintColor = self.plentyColor
             
-        } else if station.emptySlots <= 5 && station.emptySlots > 0 {
+        } else if emptySlots <= 5 && emptySlots > 0 {
             self.slotsCircle.tintColor = self.fewColor
             
-        } else if station.emptySlots == 0 {
+        } else if emptySlots == 0 {
             self.slotsCircle.tintColor = self.noneColor
         }
         
-        self.bikesLabel.text = "\(station.freeBikes)"
-        self.slotsLabel.text = "\(station.emptySlots)"
+        self.bikesLabel.text = "\(freeBikes)"
+        self.slotsLabel.text = "\(emptySlots)"
         
-        if self.previousFreeBikes != station.freeBikes {
-            self.previousFreeBikes = station.freeBikes
+        if self.previousFreeBikes != freeBikes {
+            self.previousFreeBikes = freeBikes
             self.animateView(self.bikesCircle)
         }
         
-        if self.previousEmptySlots != station.emptySlots {
-            self.previousEmptySlots = station.emptySlots
+        if self.previousEmptySlots != emptySlots {
+            self.previousEmptySlots = emptySlots
             self.animateView(self.slotsCircle)
         }
     }

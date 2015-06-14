@@ -57,7 +57,6 @@ class CBScheduledDownloader: NSObject {
     
     func refreshNetworks() {
         CBService.sharedInstance.fetchNetworks { (networks, error) -> Void in
-            println("Fetched networks")
             self.delegate?.cbdownloaderDidDownloadNetworks(networks, error: error)
         }
     }
@@ -72,8 +71,6 @@ class CBScheduledDownloader: NSObject {
         if types.count > 0 {
             CBService.sharedInstance.fetchNetworksWithStationsForNetworkTypes(types, completion: { (results: [CBNetwork], error: NSError?) -> Void in
                 if error == nil {
-                    println("Fetched selected stations")
-
                     self.delegate?.cbdownloaderDidDownloadNetworksWithStations(results, error: error)
                     
                     if self.wasConnectionProblem == true {
