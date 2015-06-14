@@ -9,7 +9,6 @@
 import UIKit
 
 class CBDefaultCell: CBCell {
-
     static let Identifier = "CBDefaultCell"
     
     @IBOutlet var label: UILabel!

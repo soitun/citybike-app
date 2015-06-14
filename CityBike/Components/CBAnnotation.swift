@@ -15,10 +15,8 @@ class CBAnnotation: NSObject, MKAnnotation {
     let subtitle: String?
     var stationProxy: CBStationProxy
     
-    var coordinate: CLLocationCoordinate2D {
-        return self.stationProxy.coordinate
-    }
-    
+    var coordinate: CLLocationCoordinate2D { return self.stationProxy.coordinate }
+
     init(stationProxy: CBStationProxy, title: String? = nil, subtitle: String? = nil) {
         self.stationProxy = stationProxy
         self.title = title

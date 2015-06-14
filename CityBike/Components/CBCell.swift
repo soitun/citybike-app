@@ -11,12 +11,7 @@ import UIKit
 class CBCell: UITableViewCell {
 
     override var layoutMargins: UIEdgeInsets {
-        set {
-            super.layoutMargins = newValue
-        }
-        
-        get {
-            return UIEdgeInsetsZero
-        }
+        set { super.layoutMargins = newValue }
+        get { return UIEdgeInsetsZero }
     }
 }

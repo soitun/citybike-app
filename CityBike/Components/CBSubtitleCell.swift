@@ -9,7 +9,6 @@
 import UIKit
 
 class CBSubtitleCell: CBCell {
-
     static let Identifier = "CBSubtitleCell"
     
     @IBOutlet var label: UILabel!
