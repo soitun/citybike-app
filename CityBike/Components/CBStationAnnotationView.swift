@@ -174,13 +174,11 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         if self.previousFreeBikes != freeBikes {
             self.previousFreeBikes = freeBikes
             self.animateView(self.bikesCircle)
-            println("new bikes!")
         }
         
         if self.previousEmptySlots != emptySlots {
             self.previousEmptySlots = emptySlots
             self.animateView(self.slotsCircle)
-            println("new slots!")
         }
     }
     
@@ -199,6 +197,5 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
     /// MARK: CBMapUpdaterProtocol
     func update(station: CDStation) {
         self.configure(station)
-        println("update annotation point")
     }
 }
