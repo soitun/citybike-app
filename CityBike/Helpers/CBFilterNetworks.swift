@@ -62,6 +62,3 @@ class CBFilterNetworks {
         return result
     }
 }
-
-//
-//            return $0.networks.count > 0
