@@ -53,6 +53,10 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         super.viewWillAppear(animated)
         self.mapUpdater.update(self.mapView, updatedStations: CDStation.allStations(CoreDataHelper.mainContext))
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManager.DidUpdateStationsNotification, object: nil)
+        
+        if let savedRegion = NSUserDefaults.getMapRegion() {
+            self.mapView.setRegion(savedRegion, animated: false)
+        }
     }
 
     override func viewDidDisappear(animated: Bool) {
@@ -166,5 +170,9 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         let station = CDStation.stationWithID(cbAnnotation.stationProxy.id, context: CoreDataHelper.mainContext)!
         view.configure(station)
         return view
+    }
+    
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        NSUserDefaults.setMapRegion(mapView.region)
     }
 }

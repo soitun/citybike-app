@@ -7,12 +7,37 @@
 //
 
 import Foundation
+import MapKit
+
+class CBCoordinateRegionSerializable: NSObject, NSCoding {
+    var latitude: CLLocationDegrees = 0
+    var longitude: CLLocationDegrees = 0
+    var latitudeDelta: CLLocationDegrees = 0
+    var longitudeDelta: CLLocationDegrees = 0
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeDouble(self.latitude, forKey: "latitude")
+        aCoder.encodeDouble(self.longitude, forKey: "longitude")
+        aCoder.encodeDouble(self.latitudeDelta, forKey: "latitudeDelta")
+        aCoder.encodeDouble(self.longitudeDelta, forKey: "longitudeDelta")
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        self.latitude = aDecoder.decodeDoubleForKey("latitude")
+        self.longitude = aDecoder.decodeDoubleForKey("longitude")
+        self.latitudeDelta = aDecoder.decodeDoubleForKey("latitudeDelta")
+        self.longitudeDelta = aDecoder.decodeDoubleForKey("longitudeDelta")
+    }
+    
+    override init() { super.init() }
+}
 
 extension NSUserDefaults {
     
     private static let CityBikeDisplayedGettingStarted = "CityBikeDisplayedGettingStarted"
     private static let CityBikeSelectedNetworks = "CityBikeSelectedNetworks"
     private static let CityBikeStartRideTimeInterval = "CityBikeStartRideTimeInterval"
+    private static let CityBikeMapRegion = "CityBikeMapRegion"
     
     class func registerCityBikeDefaults() {
         
@@ -65,6 +90,31 @@ extension NSUserDefaults {
     
     class func removeStartRideTimeInterval() {
         NSUserDefaults.standardUserDefaults().removeObjectForKey(CityBikeStartRideTimeInterval)
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    
+    /// MARK: Map Region
+    class func getMapRegion() -> MKCoordinateRegion? {
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeMapRegion) as? NSData {
+            let serialized = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! CBCoordinateRegionSerializable
+            let center = CLLocationCoordinate2D(latitude: serialized.latitude, longitude: serialized.longitude)
+            let span = MKCoordinateSpan(latitudeDelta: serialized.latitudeDelta, longitudeDelta: serialized.longitudeDelta)
+            return MKCoordinateRegionMake(center, span)
+        } else {
+            return nil
+        }
+    }
+    
+    class func setMapRegion(region: MKCoordinateRegion) {
+        let serialized = CBCoordinateRegionSerializable()
+        serialized.latitude = region.center.latitude
+        serialized.longitude = region.center.longitude
+        serialized.latitudeDelta = region.span.latitudeDelta
+        serialized.longitudeDelta = region.span.longitudeDelta
+        
+        let data = NSKeyedArchiver.archivedDataWithRootObject(serialized)
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: CityBikeMapRegion)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 }
