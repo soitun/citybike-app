@@ -15,22 +15,14 @@ class CBFeedbackMailComposeViewController: MFMailComposeViewController, UINaviga
         if self.canSendMail() {
             let composer = CBFeedbackMailComposeViewController()
             composer.mailComposeDelegate = composer
-            composer.setToRecipients([self.supportEmail()])
-            composer.setSubject(self.messageSubject())
-            composer.setMessageBody(self.messageBody(), isHTML: false)
+            composer.setToRecipients(["mail+citybike@szulctomasz.com"])
+            composer.setSubject("In-App Support")
+            composer.setMessageBody(self.generateMessageBody(), isHTML: false)
             vc.presentViewController(composer, animated: true, completion: nil)
         }
     }
     
-    private class func supportEmail() -> String {
-        return "mail+citybike@szulctomasz.com"
-    }
-    
-    private class func messageSubject() -> String {
-        return "In-App Support"
-    }
-    
-    private class func messageBody() -> String {
+    private class func generateMessageBody() -> String {
         var mutableString = NSMutableString()
         mutableString.appendString("System Details: \n")
         mutableString.appendFormat("Device: %@\n", UIDevice.currentDevice().modelName)
@@ -43,8 +35,7 @@ class CBFeedbackMailComposeViewController: MFMailComposeViewController, UINaviga
     }
     
     private func showFailure(error: String) {
-        let alertView = UIAlertView(title: NSLocalizedString("Feedback", comment: ""), message: error, delegate: nil, cancelButtonTitle: NSLocalizedString("Close", comment: ""))
-        alertView.show()
+        UIAlertView(title: NSLocalizedString("Feedback", comment: ""), message: error, delegate: nil, cancelButtonTitle: NSLocalizedString("Close", comment: "")).show()
     }
     
     /// MARK: MFMAilComposeViewControllerDelegate

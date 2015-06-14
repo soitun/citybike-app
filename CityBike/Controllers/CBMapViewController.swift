@@ -51,10 +51,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let stations = CDStation.allStations(CoreDataHelper.mainContext)
-        self.mapUpdater.update(self.mapView, updatedStations: stations)
-
+        self.mapUpdater.update(self.mapView, updatedStations: CDStation.allStations(CoreDataHelper.mainContext))
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBContentManager.DidUpdateStationsNotification, object: nil)
     }
 
@@ -64,19 +61,15 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func locateMePressed(sender: AnyObject) {
-        let region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000)
-        self.mapView.setRegion(region, animated: true)
+        self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000), animated: true)
     }
 
     /// MARK: Notifications
     func didUpdateStationsNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            if let userInfo = notification.userInfo {
-                let error = notification.userInfo!["error"] as? NSError
-                if error != nil {
-                    self.connectionErrorLabel.text = "Internet connection problem."
-                    self.showConnectionErrorLabel(true)
-                }
+            if let error = notification.userInfo?["error"] as? NSError {
+                self.connectionErrorLabel.text = "Internet connection problem."
+                self.showConnectionErrorLabel(true)
                 
             } else {
                 let stations = CDStation.allStations(CoreDataHelper.mainContext)
@@ -96,6 +89,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         /// Check if stopwatch should be turned on
         if let startTimeInterval = NSUserDefaults.getStartRideTimeInterval() {
             self.startStopwatch(startTimeInterval, showBar: true, animated: false)
+            
         } else {
             self.changeStopwatchContainer(false, animated: false)
         }
