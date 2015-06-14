@@ -138,61 +138,41 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         super.init(coder: aDecoder)
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
     
     
+    /// MARK: Logic
     func configure(station: CDStation) {
-        /// Set free bikes color
-        let freeBikes = station.freeBikes.integerValue
-        if freeBikes > 5 {
-            self.bikesCircle.tintColor = self.plentyColor
-            
-        } else if freeBikes <= 5 && freeBikes > 0 {
-            self.bikesCircle.tintColor = self.fewColor
-            
-        } else if freeBikes == 0 {
-            self.bikesCircle.tintColor = self.noneColor
+        func colorForValue(value: Int, min: Int, max: Int) -> UIColor {
+            if value > max { return self.plentyColor }
+            else if value == 0 { return self.noneColor }
+            else { return self.fewColor }
         }
         
-        /// Set empty slots color
-        let emptySlots = station.emptySlots.integerValue
-        if emptySlots > 5 {
-            self.slotsCircle.tintColor = self.plentyColor
-            
-        } else if emptySlots <= 5 && emptySlots > 0 {
-            self.slotsCircle.tintColor = self.fewColor
-            
-        } else if emptySlots == 0 {
-            self.slotsCircle.tintColor = self.noneColor
-        }
+        var bikes = station.freeBikes.integerValue
+        var slots = station.emptySlots.integerValue
+        self.bikesCircle.tintColor = colorForValue(bikes, 0, 5)
+        self.slotsCircle.tintColor = colorForValue(slots, 0, 5)
+
+        self.bikesLabel.text = "\(bikes)"
+        self.slotsLabel.text = "\(slots)"
         
-        self.bikesLabel.text = "\(freeBikes)"
-        self.slotsLabel.text = "\(emptySlots)"
-        
-        if self.previousFreeBikes != freeBikes {
-            self.previousFreeBikes = freeBikes
+        if self.previousFreeBikes != bikes {
+            self.previousFreeBikes = bikes
             self.animateView(self.bikesCircle)
         }
         
-        if self.previousEmptySlots != emptySlots {
-            self.previousEmptySlots = emptySlots
+        if self.previousEmptySlots != slots {
+            self.previousEmptySlots = slots
             self.animateView(self.slotsCircle)
         }
     }
     
     private func animateView(view: UIView) {
-//        view.alpha = 0
-//        UIView.animateWithDuration(0.25, animations: { () -> Void in
-//            view.alpha = 1
-//        })
-        
-        self.alpha = 0
-        UIView.animateWithDuration(1, animations: { () -> Void in
-            self.alpha = 1
-        })
+        view.alpha = 0
+        UIView.animateWithDuration(0.25, animations: { view.alpha = 1 })
     }
+    
+    
     
     /// MARK: CBMapUpdaterProtocol
     func update(station: CDStation) {
