@@ -88,14 +88,14 @@ class CBContentManager: NSObject {
         }
         
         if types.count > 0 {
-            CBService.sharedInstance.fetchStationsForNetworkTypes(types, completion: { (results: Dictionary<CBNetworkType, [CBStation]>, error: NSError?) -> Void in
+            CBService.sharedInstance.fetchNetworksWithStationsForNetworkTypes(types, completion: { (results: [CBNetwork], error: NSError?) -> Void in
                 if error == nil {
                     println("Fetched selected stations")
 
                     /// collect stations from every network
                     var stations = Array<CBStation>()
-                    for (_, stationsInNetwork) in results {
-                        stations += stationsInNetwork
+                    for network in results {
+                        stations += network.stations
                     }
                     
                     self.stations = stations

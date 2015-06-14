@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-@objc(CBRideHistoryEntry)
-class CBRideHistoryEntry: NSManagedObject {
+@objc(CDRideHistoryEntry)
+class CDRideHistoryEntry: NSManagedObject {
 
     @NSManaged var duration: NSNumber
     @NSManaged var startTimeInterval: NSNumber
-    @NSManaged var day: CBRideHistoryDay
+    @NSManaged var day: CDRideHistoryDay
 
 }
