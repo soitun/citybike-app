@@ -60,6 +60,8 @@
 		6DF07F281B2D613B00A8F796 /* CDLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F271B2D613B00A8F796 /* CDLocation.swift */; };
 		6DF07F2A1B2D613B00A8F796 /* CDNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F291B2D613B00A8F796 /* CDNetwork.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CDAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CDAnnotation.swift */; };
+		6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
+		6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +119,8 @@
 		6DF07F271B2D613B00A8F796 /* CDLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDLocation.swift; sourceTree = "<group>"; };
 		6DF07F291B2D613B00A8F796 /* CDNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetwork.swift; sourceTree = "<group>"; };
 		6DF07F2D1B2D71DD00A8F796 /* CDAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDAnnotation.swift; sourceTree = "<group>"; };
+		6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBScheduledDownloader.swift; path = "Submodules/citybik.es-api/CBScheduledDownloader.swift"; sourceTree = "<group>"; };
+		6DF07F301B2D830500A8F796 /* CBSyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBSyncManager.swift; path = "Submodules/citybik.es-api/CBSyncManager.swift"; sourceTree = "<group>"; };
 		7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DA90676A2DC38C9EC428943F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +277,8 @@
 		6DBA51121B2B8454002ECC3F /* citybik.es-api */ = {
 			isa = PBXGroup;
 			children = (
+				6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */,
+				6DF07F301B2D830500A8F796 /* CBSyncManager.swift */,
 				6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */,
 				6DBA51151B2B8465002ECC3F /* CBLocation.swift */,
 				6DBA51161B2B8465002ECC3F /* CBNetwork.swift */,
@@ -449,6 +455,7 @@
 				6DBA50F21B2B4042002ECC3F /* CoreDataHelper.swift in Sources */,
 				6D2834601B24E89000E361A3 /* CBRideStopwatch.swift in Sources */,
 				6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */,
+				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
 				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,
 				6D2834501B243C2200E361A3 /* CBCell.swift in Sources */,
 				6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */,
@@ -481,6 +488,7 @@
 				6DC344DA1B2429D400C29408 /* CBSubtitleCell.swift in Sources */,
 				6DB84B091B20E372005DBDAD /* CBNSUserDefaultsExtension.swift in Sources */,
 				6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */,
+				6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
