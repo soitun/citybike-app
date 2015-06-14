@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class CBMapViewController: UIViewController, MKMapViewDelegate {
-
+    
     @IBOutlet private weak var mapView: MKMapView!
     
     @IBOutlet private var locateMeButton: UIBarButtonItem!
@@ -28,6 +28,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
 
     private var stopwatchManager = CBRideManager()
     private var locationManager = CLLocationManager()
+    private var mapUpdater = CBMapUpdater()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +53,11 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         super.viewWillAppear(animated)
         
         let stations = CDStation.allStations(CoreDataHelper.mainContext)
-        self.updateStations(stations)
+        self.mapUpdater.update(self.mapView, updatedStations: stations)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBContentManager.DidUpdateStationsNotification, object: nil)
     }
-    
+
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -67,19 +68,6 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.setRegion(region, animated: true)
     }
 
-    private func updateStations(stations: [CDStation]) {
-        self.mapView.removeAnnotations(self.mapView.annotations)
-        
-        var updatedAnnotations = [CDAnnotation]()
-        
-        for station in stations {
-            let annotation = CDAnnotation(station: station)
-            updatedAnnotations.append(annotation)
-        }
-        
-        self.mapView.addAnnotations(updatedAnnotations)
-    }
-    
     /// MARK: Notifications
     func didUpdateStationsNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -92,7 +80,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
                 
             } else {
                 let stations = CDStation.allStations(CoreDataHelper.mainContext)
-                self.updateStations(stations)
+                self.mapUpdater.update(self.mapView, updatedStations: stations)
                 self.hideConnectionErrorLabel(true)
             }
         })
@@ -173,14 +161,16 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     /// MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if !(annotation is CDAnnotation) { return nil }
+        if !(annotation is CBAnnotation) { return nil }
         
-        let view = CDStationAnnotationView(annotation: annotation, reuseIdentifier: "CDStationAnnotationView")
+        let cbAnnotation = (annotation as! CBAnnotation)
+        let view = self.mapUpdater.viewForAnnotation(cbAnnotation)
         view.noneColor = UIColor.noneColor()
         view.fewColor = UIColor.fewColor()
         view.plentyColor = UIColor.plentyColor()
         
-        view.configure((annotation as! CDAnnotation).station)
+        let station = CDStation.stationWithID(cbAnnotation.stationProxy.id, context: CoreDataHelper.mainContext)!
+        view.configure(station)
         return view
     }
 }

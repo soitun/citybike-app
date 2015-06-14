@@ -32,7 +32,6 @@
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB84B091B20E372005DBDAD /* CBNSUserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
-		6DBA50ED1B2B4009002ECC3F /* CBStationAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBA50EC1B2B4009002ECC3F /* CBStationAnnotationView.xib */; };
 		6DBA50F21B2B4042002ECC3F /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */; };
 		6DBA50F31B2B4042002ECC3F /* CityBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */; };
 		6DBA50F41B2B4042002ECC3F /* CBNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F11B2B4042002ECC3F /* CBNSManagedObject.swift */; };
@@ -62,6 +61,8 @@
 		6DF07F2E1B2D71DD00A8F796 /* CDAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CDAnnotation.swift */; };
 		6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
 		6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
+		6DF07F341B2D973A00A8F796 /* CBStationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F331B2D973A00A8F796 /* CBStationProxy.swift */; };
+		6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +92,6 @@
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideManager.swift; sourceTree = "<group>"; };
 		6DB84B081B20E372005DBDAD /* CBNSUserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNSUserDefaultsExtension.swift; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationAnnotationView.swift; sourceTree = "<group>"; };
-		6DBA50EC1B2B4009002ECC3F /* CBStationAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBStationAnnotationView.xib; path = Resources/CBStationAnnotationView.xib; sourceTree = "<group>"; };
 		6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityBike.xcdatamodel; sourceTree = "<group>"; };
 		6DBA50F11B2B4042002ECC3F /* CBNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNSManagedObject.swift; path = ../Model/CBNSManagedObject.swift; sourceTree = "<group>"; };
@@ -121,6 +121,8 @@
 		6DF07F2D1B2D71DD00A8F796 /* CDAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDAnnotation.swift; sourceTree = "<group>"; };
 		6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBScheduledDownloader.swift; path = "Submodules/citybik.es-api/CBScheduledDownloader.swift"; sourceTree = "<group>"; };
 		6DF07F301B2D830500A8F796 /* CBSyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBSyncManager.swift; path = "Submodules/citybik.es-api/CBSyncManager.swift"; sourceTree = "<group>"; };
+		6DF07F331B2D973A00A8F796 /* CBStationProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationProxy.swift; sourceTree = "<group>"; };
+		6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMapUpdater.swift; sourceTree = "<group>"; };
 		7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DA90676A2DC38C9EC428943F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +198,6 @@
 				6D68019C1B28E8E2009DE824 /* CBDefaultHeader.xib */,
 				6D68019D1B28E8E2009DE824 /* CBRightDetailCell.xib */,
 				6D68019E1B28E8E2009DE824 /* CBRightDetailHeader.xib */,
-				6DBA50EC1B2B4009002ECC3F /* CBStationAnnotationView.xib */,
 				6D68019F1B28E8E2009DE824 /* CBSubtitleCell.xib */,
 				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
 				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
@@ -229,6 +230,8 @@
 				6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */,
 				6DC344D91B2429D400C29408 /* CBSubtitleCell.swift */,
 				6DF07F2D1B2D71DD00A8F796 /* CDAnnotation.swift */,
+				6DF07F331B2D973A00A8F796 /* CBStationProxy.swift */,
+				6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -395,7 +398,6 @@
 				6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */,
 				6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */,
 				6D6801A01B28E8E2009DE824 /* CBDefaultCell.xib in Resources */,
-				6DBA50ED1B2B4009002ECC3F /* CBStationAnnotationView.xib in Resources */,
 				6D6801A21B28E8E2009DE824 /* CBRightDetailCell.xib in Resources */,
 				6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */,
 				6D6801A11B28E8E2009DE824 /* CBDefaultHeader.xib in Resources */,
@@ -444,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF07F341B2D973A00A8F796 /* CBStationProxy.swift in Sources */,
 				6D31D0FA1B21DFED0034C27B /* CBContentManager.swift in Sources */,
 				6D2834621B24E8DF00E361A3 /* CBNSTimeInterval.swift in Sources */,
 				6DC344D11B23BCDB00C29408 /* CBGettingStartedMapViewController.swift in Sources */,
@@ -454,6 +457,7 @@
 				6DD460A41B208A040070E163 /* CBUIColorExtension.swift in Sources */,
 				6DBA50F21B2B4042002ECC3F /* CoreDataHelper.swift in Sources */,
 				6D2834601B24E89000E361A3 /* CBRideStopwatch.swift in Sources */,
+				6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */,
 				6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */,
 				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
 				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,

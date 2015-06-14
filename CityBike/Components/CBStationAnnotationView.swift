@@ -1,5 +1,5 @@
 //
-//  CDStationAnnotationView.swift
+//  CBStationAnnotationView.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 11/06/15.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class CDStationAnnotationView: MKAnnotationView {
+class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
     
     var plentyColor: UIColor!
     var fewColor: UIColor!
@@ -174,18 +174,31 @@ class CDStationAnnotationView: MKAnnotationView {
         if self.previousFreeBikes != freeBikes {
             self.previousFreeBikes = freeBikes
             self.animateView(self.bikesCircle)
+            println("new bikes!")
         }
         
         if self.previousEmptySlots != emptySlots {
             self.previousEmptySlots = emptySlots
             self.animateView(self.slotsCircle)
+            println("new slots!")
         }
     }
     
     private func animateView(view: UIView) {
-        view.alpha = 0
-        UIView.animateWithDuration(0.25, animations: { () -> Void in
-            view.alpha = 1
+//        view.alpha = 0
+//        UIView.animateWithDuration(0.25, animations: { () -> Void in
+//            view.alpha = 1
+//        })
+        
+        self.alpha = 0
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            self.alpha = 1
         })
+    }
+    
+    /// MARK: CBMapUpdaterProtocol
+    func update(station: CDStation) {
+        self.configure(station)
+        println("update annotation point")
     }
 }

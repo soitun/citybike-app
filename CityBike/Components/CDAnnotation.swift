@@ -1,5 +1,5 @@
 //
-//  CDAnnotation.swift
+//  CBAnnotation.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 14/06/15.
@@ -9,18 +9,18 @@
 import Foundation
 import MapKit
 
-class CDAnnotation: NSObject, MKAnnotation {
+class CBAnnotation: NSObject, MKAnnotation {
     
     let title: String?
     let subtitle: String?
-    var station: CDStation
+    var stationProxy: CBStationProxy
     
     var coordinate: CLLocationCoordinate2D {
-        return self.station.coordinate
+        return self.stationProxy.coordinate
     }
     
-    init(station: CDStation, title: String? = nil, subtitle: String? = nil) {
-        self.station = station
+    init(stationProxy: CBStationProxy, title: String? = nil, subtitle: String? = nil) {
+        self.stationProxy = stationProxy
         self.title = title
         self.subtitle = subtitle
     }
