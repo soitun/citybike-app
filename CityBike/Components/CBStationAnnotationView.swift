@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CBModel
 
 class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
     

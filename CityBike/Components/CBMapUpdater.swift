@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 import CoreLocation
-
+import CBModel
 
 struct CBStationProxy {
     var id: String

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CBModel
 
 class CBRideManager {
     
@@ -36,21 +37,20 @@ class CBRideManager {
         let dateOfTheStartDay = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
         
         let timeIntervalOfStartDay = dateOfTheStartDay.timeIntervalSince1970
-
         
-        let entry: CDRideHistoryEntry = CDRideHistoryEntry.create(CoreDataHelper.mainContext)
+        let entry: CDRideHistoryEntry = CDRideHistoryEntry(context:CoreDataHelper.sharedInstance().mainContext)
         entry.startTimeInterval = self.stopwatch.startTimeInterval
         entry.duration = duration
         
-        if let day = CDRideHistoryDay.findDayForStartTimeInterval(timeIntervalOfStartDay) {
+        if let day = CDRideHistoryDay.fetchWithAttribute("startTimeInterval", value: timeIntervalOfStartDay, context: CoreDataHelper.sharedInstance().mainContext).first as? CDRideHistoryDay {
             day.addEntry(entry)
         } else {
-            var day: CDRideHistoryDay = CDRideHistoryDay.create(CoreDataHelper.mainContext)
+            var day: CDRideHistoryDay = CDRideHistoryDay(context: CoreDataHelper.sharedInstance().mainContext)
             day.startTimeInterval = timeIntervalOfStartDay
             day.addEntry(entry)
         }
         
-        CoreDataHelper.mainContext.save(nil)
+        CoreDataHelper.sharedInstance().mainContext.save(nil)
         NSUserDefaults.removeStartRideTimeInterval()
     }
 }

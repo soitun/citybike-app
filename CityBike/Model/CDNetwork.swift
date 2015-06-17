@@ -7,42 +7,19 @@
 //
 
 import Foundation
-import CoreData
 
 @objc(CDNetwork)
-class CDNetwork: NSManagedObject {
+public class CDNetwork: NSManagedObject {
 
-    @NSManaged var company: String
-    @NSManaged var id: String
-    @NSManaged var name: String
-    @NSManaged var location: CDLocation
-    @NSManaged var stations: NSSet
-
-    private class func entityName() -> String {
-        return "CDNetwork"
-    }
+    @NSManaged public var company: String
+    @NSManaged public var id: String
+    @NSManaged public var name: String
+    @NSManaged public var location: CDLocation
+    @NSManaged public var stations: NSSet
     
-    class func allNetworks(context: NSManagedObjectContext) -> [CDNetwork] {
-        let request = NSFetchRequest(entityName: self.entityName())
-        var stations = context.executeFetchRequest(request, error: nil) as? [CDNetwork]
-        return stations ?? [CDNetwork]()
-    }
-    
-    class func networkWithID(id: String, context: NSManagedObjectContext) -> CDNetwork? {
-        let request = NSFetchRequest(entityName: self.entityName())
-        request.predicate = NSPredicate(format: "id == %@", id)
-        return context.executeFetchRequest(request, error: nil)?.first as! CDNetwork?
-    }
-    
-    func addStation(station: CDStation) {
+    public func addStation(station: CDStation) {
         var mutableStations = NSMutableSet(set: self.stations as Set<NSObject>, copyItems: false)
         mutableStations.addObject(station)
         self.stations = NSSet(set: mutableStations as Set<NSObject>, copyItems: false)
-    }
-    
-    func fill(network: CBNetwork) {
-        self.company = network.company ?? ""
-        self.id = network.id
-        self.name = network.name
     }
 }

@@ -28,14 +28,22 @@
 		6D6801A21B28E8E2009DE824 /* CBRightDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019D1B28E8E2009DE824 /* CBRightDetailCell.xib */; };
 		6D6801A31B28E8E2009DE824 /* CBRightDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019E1B28E8E2009DE824 /* CBRightDetailHeader.xib */; };
 		6D6801A41B28E8E2009DE824 /* CBSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019F1B28E8E2009DE824 /* CBSubtitleCell.xib */; };
+		6D6DB51E1B31D1E500342179 /* CityBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */; };
+		6D6DB5291B31DD6B00342179 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DB5281B31DD6B00342179 /* NSManagedObject+Extension.swift */; };
+		6D80630F1B31BF0900E2F7FF /* CBModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D80630E1B31BF0900E2F7FF /* CBModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D8063151B31BF0A00E2F7FF /* CBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */; };
+		6D80631E1B31BF0A00E2F7FF /* CBModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */; };
+		6D8063211B31BF0A00E2F7FF /* CBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */; };
+		6D8063221B31BF0A00E2F7FF /* CBModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D80637E1B31C2C900E2F7FF /* CDLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F271B2D613B00A8F796 /* CDLocation.swift */; };
+		6D80637F1B31C2C900E2F7FF /* CDNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F291B2D613B00A8F796 /* CDNetwork.swift */; };
+		6D8063801B31C2C900E2F7FF /* CDRideHistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */; };
+		6D8063811B31C2C900E2F7FF /* CDRideHistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */; };
+		6D8063821B31C2C900E2F7FF /* CDStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F251B2D613A00A8F796 /* CDStation.swift */; };
+		6D8063831B31C2C900E2F7FF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB84B091B20E372005DBDAD /* CBNSUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* CBNSUserDefaults.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
-		6DBA50F21B2B4042002ECC3F /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */; };
-		6DBA50F31B2B4042002ECC3F /* CityBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */; };
-		6DBA50F41B2B4042002ECC3F /* CBNSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F11B2B4042002ECC3F /* CBNSManagedObject.swift */; };
-		6DBA50F71B2B40A1002ECC3F /* CDRideHistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */; };
-		6DBA50F81B2B40A1002ECC3F /* CDRideHistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */; };
 		6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
 		6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
 		6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51161B2B8465002ECC3F /* CBNetwork.swift */; };
@@ -54,9 +62,6 @@
 		6DC344E61B242D6400C29408 /* CBDefaultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */; };
 		6DD460A21B20891D0070E163 /* CBUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */; };
 		6DD460A41B208A040070E163 /* CBUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* CBUIColorExtension.swift */; };
-		6DF07F261B2D613A00A8F796 /* CDStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F251B2D613A00A8F796 /* CDStation.swift */; };
-		6DF07F281B2D613B00A8F796 /* CDLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F271B2D613B00A8F796 /* CDLocation.swift */; };
-		6DF07F2A1B2D613B00A8F796 /* CDNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F291B2D613B00A8F796 /* CDNetwork.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
 		6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
 		6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
@@ -64,6 +69,44 @@
 		6DF07F381B2DD78300A8F796 /* CBFilterNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */; };
 		6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D8063161B31BF0A00E2F7FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8063091B31BF0900E2F7FF;
+			remoteInfo = CBModel;
+		};
+		6D8063181B31BF0A00E2F7FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D0EBE531B2033FB003ED872;
+			remoteInfo = CityBike;
+		};
+		6D80631F1B31BF0A00E2F7FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8063091B31BF0900E2F7FF;
+			remoteInfo = CBModel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6D8062F91B31BC4600E2F7FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6D8063221B31BF0A00E2F7FF /* CBModel.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6D0EBE541B2033FB003ED872 /* CityBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,14 +131,20 @@
 		6D68019D1B28E8E2009DE824 /* CBRightDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBRightDetailCell.xib; path = Resources/CBRightDetailCell.xib; sourceTree = "<group>"; };
 		6D68019E1B28E8E2009DE824 /* CBRightDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBRightDetailHeader.xib; path = Resources/CBRightDetailHeader.xib; sourceTree = "<group>"; };
 		6D68019F1B28E8E2009DE824 /* CBSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBSubtitleCell.xib; path = Resources/CBSubtitleCell.xib; sourceTree = "<group>"; };
+		6D6DB5281B31DD6B00342179 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		6D80630A1B31BF0900E2F7FF /* CBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D80630D1B31BF0900E2F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D80630E1B31BF0900E2F7FF /* CBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBModel.h; sourceTree = "<group>"; };
+		6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D80631C1B31BF0A00E2F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBModelTests.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBRideManager.swift; sourceTree = "<group>"; };
 		6DB84B081B20E372005DBDAD /* CBNSUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNSUserDefaults.swift; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationAnnotationView.swift; sourceTree = "<group>"; };
-		6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataHelper.swift; path = ../CityBike/Model/CoreDataHelper.swift; sourceTree = "<group>"; };
 		6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityBike.xcdatamodel; sourceTree = "<group>"; };
-		6DBA50F11B2B4042002ECC3F /* CBNSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNSManagedObject.swift; path = ../Model/CBNSManagedObject.swift; sourceTree = "<group>"; };
-		6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRideHistoryEntry.swift; sourceTree = "<group>"; };
-		6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDRideHistoryDay.swift; sourceTree = "<group>"; };
+		6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRideHistoryEntry.swift; path = ../CityBike/Model/CDRideHistoryEntry.swift; sourceTree = "<group>"; };
+		6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRideHistoryDay.swift; path = ../CityBike/Model/CDRideHistoryDay.swift; sourceTree = "<group>"; };
 		6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBJSONParser.swift; path = "Submodules/citybik.es-api/CBJSONParser.swift"; sourceTree = "<group>"; };
 		6DBA51151B2B8465002ECC3F /* CBLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBLocation.swift; path = "Submodules/citybik.es-api/CBLocation.swift"; sourceTree = "<group>"; };
 		6DBA51161B2B8465002ECC3F /* CBNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNetwork.swift; path = "Submodules/citybik.es-api/CBNetwork.swift"; sourceTree = "<group>"; };
@@ -114,9 +163,9 @@
 		6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBDefaultHeader.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* CBUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIViewExtension.swift; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* CBUIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUIColorExtension.swift; sourceTree = "<group>"; };
-		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStation.swift; sourceTree = "<group>"; };
-		6DF07F271B2D613B00A8F796 /* CDLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDLocation.swift; sourceTree = "<group>"; };
-		6DF07F291B2D613B00A8F796 /* CDNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDNetwork.swift; sourceTree = "<group>"; };
+		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDStation.swift; path = ../CityBike/Model/CDStation.swift; sourceTree = "<group>"; };
+		6DF07F271B2D613B00A8F796 /* CDLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDLocation.swift; path = ../CityBike/Model/CDLocation.swift; sourceTree = "<group>"; };
+		6DF07F291B2D613B00A8F796 /* CDNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDNetwork.swift; path = ../CityBike/Model/CDNetwork.swift; sourceTree = "<group>"; };
 		6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAnnotation.swift; sourceTree = "<group>"; };
 		6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBScheduledDownloader.swift; path = "Submodules/citybik.es-api/CBScheduledDownloader.swift"; sourceTree = "<group>"; };
 		6DF07F301B2D830500A8F796 /* CBSyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBSyncManager.swift; path = "Submodules/citybik.es-api/CBSyncManager.swift"; sourceTree = "<group>"; };
@@ -134,6 +183,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC3F560E715978E7353AFA9 /* libPods.a in Frameworks */,
+				6D8063211B31BF0A00E2F7FF /* CBModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8063061B31BF0900E2F7FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8063111B31BF0900E2F7FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8063151B31BF0A00E2F7FF /* CBModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +219,8 @@
 			children = (
 				6D0EBE561B2033FB003ED872 /* CityBike */,
 				6DBA510F1B2B8425002ECC3F /* Externals */,
+				6D80630B1B31BF0900E2F7FF /* CBModel */,
+				6D80631A1B31BF0A00E2F7FF /* CBModelTests */,
 				6D0EBE551B2033FB003ED872 /* Products */,
 				1AA46FD4589E04156EFD982A /* Pods */,
 				A8775754B7360485054AA7FD /* Frameworks */,
@@ -164,6 +231,8 @@
 			isa = PBXGroup;
 			children = (
 				6D0EBE541B2033FB003ED872 /* CityBike.app */,
+				6D80630A1B31BF0900E2F7FF /* CBModel.framework */,
+				6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,7 +245,6 @@
 				6D0EBE8A1B2052A6003ED872 /* Components */,
 				6DD460A01B20890B0070E163 /* Extensions */,
 				6D31D0F81B21DFD20034C27B /* Helpers */,
-				6DBA50E21B2B3D87002ECC3F /* Model */,
 				6D0EBE7C1B20387B003ED872 /* Resources */,
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
 			);
@@ -247,9 +315,25 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6DBA50E21B2B3D87002ECC3F /* Model */ = {
+		6D6DB5211B31D9BB00342179 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		6D6DB5221B31DA9200342179 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6D6DB5281B31DD6B00342179 /* NSManagedObject+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6D80630B1B31BF0900E2F7FF /* CBModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D80630E1B31BF0900E2F7FF /* CBModel.h */,
 				6DF07F271B2D613B00A8F796 /* CDLocation.swift */,
 				6DF07F291B2D613B00A8F796 /* CDNetwork.swift */,
 				6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */,
@@ -257,8 +341,36 @@
 				6DF07F251B2D613A00A8F796 /* CDStation.swift */,
 				6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */,
 				6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */,
+				6D6DB5221B31DA9200342179 /* Extensions */,
+				6D6DB5211B31D9BB00342179 /* Protocols */,
+				6D80630C1B31BF0900E2F7FF /* Supporting Files */,
 			);
-			path = Model;
+			path = CBModel;
+			sourceTree = "<group>";
+		};
+		6D80630C1B31BF0900E2F7FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D80630D1B31BF0900E2F7FF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D80631A1B31BF0A00E2F7FF /* CBModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */,
+				6D80631B1B31BF0A00E2F7FF /* Supporting Files */,
+			);
+			path = CBModelTests;
+			sourceTree = "<group>";
+		};
+		6D80631B1B31BF0A00E2F7FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D80631C1B31BF0A00E2F7FF /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		6DBA510F1B2B8425002ECC3F /* Externals */ = {
@@ -308,7 +420,6 @@
 		6DD460A01B20890B0070E163 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6DBA50F11B2B4042002ECC3F /* CBNSManagedObject.swift */,
 				6D2834611B24E8DF00E361A3 /* CBNSTimeInterval.swift */,
 				6DB84B081B20E372005DBDAD /* CBNSUserDefaults.swift */,
 				6DD460A31B208A040070E163 /* CBUIColorExtension.swift */,
@@ -328,6 +439,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6D8063071B31BF0900E2F7FF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D80630F1B31BF0900E2F7FF /* CBModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		6D0EBE531B2033FB003ED872 /* CityBike */ = {
 			isa = PBXNativeTarget;
@@ -338,15 +460,54 @@
 				6D0EBE511B2033FB003ED872 /* Frameworks */,
 				6D0EBE521B2033FB003ED872 /* Resources */,
 				55673F5A179B6B47C89B9FEA /* Copy Pods Resources */,
+				6D8062F91B31BC4600E2F7FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6D8063201B31BF0A00E2F7FF /* PBXTargetDependency */,
 			);
 			name = CityBike;
 			productName = CityBike;
 			productReference = 6D0EBE541B2033FB003ED872 /* CityBike.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6D8063091B31BF0900E2F7FF /* CBModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8063231B31BF0A00E2F7FF /* Build configuration list for PBXNativeTarget "CBModel" */;
+			buildPhases = (
+				6D8063051B31BF0900E2F7FF /* Sources */,
+				6D8063061B31BF0900E2F7FF /* Frameworks */,
+				6D8063071B31BF0900E2F7FF /* Headers */,
+				6D8063081B31BF0900E2F7FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CBModel;
+			productName = CBModel;
+			productReference = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6D8063131B31BF0900E2F7FF /* CBModelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8063261B31BF0A00E2F7FF /* Build configuration list for PBXNativeTarget "CBModelTests" */;
+			buildPhases = (
+				6D8063101B31BF0900E2F7FF /* Sources */,
+				6D8063111B31BF0900E2F7FF /* Frameworks */,
+				6D8063121B31BF0900E2F7FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8063171B31BF0A00E2F7FF /* PBXTargetDependency */,
+				6D8063191B31BF0A00E2F7FF /* PBXTargetDependency */,
+			);
+			name = CBModelTests;
+			productName = CBModelTests;
+			productReference = 6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -361,6 +522,13 @@
 				TargetAttributes = {
 					6D0EBE531B2033FB003ED872 = {
 						CreatedOnToolsVersion = 6.3.2;
+					};
+					6D8063091B31BF0900E2F7FF = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					6D8063131B31BF0900E2F7FF = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 6D0EBE531B2033FB003ED872;
 					};
 				};
 			};
@@ -378,6 +546,8 @@
 			projectRoot = "";
 			targets = (
 				6D0EBE531B2033FB003ED872 /* CityBike */,
+				6D8063091B31BF0900E2F7FF /* CBModel */,
+				6D8063131B31BF0900E2F7FF /* CBModelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -395,6 +565,20 @@
 				6D6801A11B28E8E2009DE824 /* CBDefaultHeader.xib in Resources */,
 				6D6801A41B28E8E2009DE824 /* CBSubtitleCell.xib in Resources */,
 				6D6801A31B28E8E2009DE824 /* CBRightDetailHeader.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8063081B31BF0900E2F7FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8063121B31BF0900E2F7FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,9 +627,7 @@
 				6D28345E1B24B5E100E361A3 /* CBUIDeviceExtension.swift in Sources */,
 				6DC344D31B23C01300C29408 /* CBGettingStartedNetworksViewController.swift in Sources */,
 				6DC344E61B242D6400C29408 /* CBDefaultHeader.swift in Sources */,
-				6DBA50F41B2B4042002ECC3F /* CBNSManagedObject.swift in Sources */,
 				6DD460A41B208A040070E163 /* CBUIColorExtension.swift in Sources */,
-				6DBA50F21B2B4042002ECC3F /* CoreDataHelper.swift in Sources */,
 				6D2834601B24E89000E361A3 /* CBRideStopwatch.swift in Sources */,
 				6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */,
 				6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */,
@@ -454,10 +636,8 @@
 				6D2834501B243C2200E361A3 /* CBCell.swift in Sources */,
 				6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */,
 				6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */,
-				6DF07F281B2D613B00A8F796 /* CDLocation.swift in Sources */,
 				6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */,
 				6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */,
-				6DF07F261B2D613A00A8F796 /* CDStation.swift in Sources */,
 				6D2834521B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift in Sources */,
 				6D28345A1B24AB3100E361A3 /* CBMapViewController.swift in Sources */,
 				6D2834581B24A71C00E361A3 /* CBRightDetailHeader.swift in Sources */,
@@ -470,8 +650,6 @@
 				6DC344DC1B242A2000C29408 /* CBDefaultCell.swift in Sources */,
 				6D28345C1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift in Sources */,
 				6DC344D51B23C57300C29408 /* CBGettingStartedStopwatchViewController.swift in Sources */,
-				6DF07F2A1B2D613B00A8F796 /* CDNetwork.swift in Sources */,
-				6DBA50F31B2B4042002ECC3F /* CityBike.xcdatamodeld in Sources */,
 				6DC344E11B242B6E00C29408 /* CBMenuViewController.swift in Sources */,
 				6DBA511E1B2B8465002ECC3F /* CBNetworkType.swift in Sources */,
 				6DBA51271B2B8D39002ECC3F /* CBModelUpdater.swift in Sources */,
@@ -479,8 +657,6 @@
 				6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */,
 				6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */,
-				6DBA50F71B2B40A1002ECC3F /* CDRideHistoryEntry.swift in Sources */,
-				6DBA50F81B2B40A1002ECC3F /* CDRideHistoryDay.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* CBSubtitleCell.swift in Sources */,
 				6DB84B091B20E372005DBDAD /* CBNSUserDefaults.swift in Sources */,
 				6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */,
@@ -488,7 +664,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D8063051B31BF0900E2F7FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D6DB5291B31DD6B00342179 /* NSManagedObject+Extension.swift in Sources */,
+				6D8063831B31C2C900E2F7FF /* CoreDataHelper.swift in Sources */,
+				6D6DB51E1B31D1E500342179 /* CityBike.xcdatamodeld in Sources */,
+				6D8063811B31C2C900E2F7FF /* CDRideHistoryDay.swift in Sources */,
+				6D8063821B31C2C900E2F7FF /* CDStation.swift in Sources */,
+				6D8063801B31C2C900E2F7FF /* CDRideHistoryEntry.swift in Sources */,
+				6D80637E1B31C2C900E2F7FF /* CDLocation.swift in Sources */,
+				6D80637F1B31C2C900E2F7FF /* CDNetwork.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8063101B31BF0900E2F7FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D80631E1B31BF0A00E2F7FF /* CBModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D8063171B31BF0A00E2F7FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8063091B31BF0900E2F7FF /* CBModel */;
+			targetProxy = 6D8063161B31BF0A00E2F7FF /* PBXContainerItemProxy */;
+		};
+		6D8063191B31BF0A00E2F7FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D0EBE531B2033FB003ED872 /* CityBike */;
+			targetProxy = 6D8063181B31BF0A00E2F7FF /* PBXContainerItemProxy */;
+		};
+		6D8063201B31BF0A00E2F7FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8063091B31BF0900E2F7FF /* CBModel */;
+			targetProxy = 6D80631F1B31BF0A00E2F7FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6D0EBE5D1B2033FB003ED872 /* Main.storyboard */ = {
@@ -597,7 +814,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CityBike/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -609,9 +826,85 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CityBike/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6D8063241B31BF0A00E2F7FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CBModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D8063251B31BF0A00E2F7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CBModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6D8063271B31BF0A00E2F7FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CBModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
+			};
+			name = Debug;
+		};
+		6D8063281B31BF0A00E2F7FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CBModelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
 			};
 			name = Release;
 		};
@@ -636,6 +929,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6D8063231B31BF0A00E2F7FF /* Build configuration list for PBXNativeTarget "CBModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8063241B31BF0A00E2F7FF /* Debug */,
+				6D8063251B31BF0A00E2F7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8063261B31BF0A00E2F7FF /* Build configuration list for PBXNativeTarget "CBModelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8063271B31BF0A00E2F7FF /* Debug */,
+				6D8063281B31BF0A00E2F7FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
@@ -645,7 +956,8 @@
 				6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */,
 			);
 			currentVersion = 6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */;
-			path = CityBike.xcdatamodeld;
+			name = CityBike.xcdatamodeld;
+			path = ../CityBike/Model/CityBike.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CBModel
 
 class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -39,7 +40,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.history = CDRideHistoryDay.allDays()
+        self.history = CDRideHistoryDay.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDRideHistoryDay]
         self.tableView.reloadData()
         
         self.noItemsLabel.hidden = self.history.count > 0

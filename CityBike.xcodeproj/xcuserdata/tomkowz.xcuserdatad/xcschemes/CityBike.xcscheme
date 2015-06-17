@@ -34,6 +34,34 @@
                ReferencedContainer = "container:CityBike.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D8062E61B31BC4600E2F7FF"
+               BuildableName = "ModelTests.xctest"
+               BlueprintName = "ModelTests"
+               ReferencedContainer = "container:CityBike.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D8063131B31BF0900E2F7FF"
+               BuildableName = "CBModelTests.xctest"
+               BlueprintName = "CBModelTests"
+               ReferencedContainer = "container:CityBike.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +77,26 @@
                BlueprintIdentifier = "6D0EBE681B2033FB003ED872"
                BuildableName = "CityBikeTests.xctest"
                BlueprintName = "CityBikeTests"
+               ReferencedContainer = "container:CityBike.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D8062E61B31BC4600E2F7FF"
+               BuildableName = "ModelTests.xctest"
+               BlueprintName = "ModelTests"
+               ReferencedContainer = "container:CityBike.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6D8063131B31BF0900E2F7FF"
+               BuildableName = "CBModelTests.xctest"
+               BlueprintName = "CBModelTests"
                ReferencedContainer = "container:CityBike.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CBModel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+
         NSUserDefaults.registerCityBikeDefaults()
+        
+        let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataHelper.self))
+        let cdStack = CoreDataHelper(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
+        CoreDataHelper.setSharedInstance(cdStack)
         
         if self.window == nil {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

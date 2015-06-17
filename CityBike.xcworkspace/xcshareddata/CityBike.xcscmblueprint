@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9101C61E4CC72802F1C1A5C63CB03681506406C7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9A606DA4B0305C6C3E721C28A89831FDB54101CB" : 0,
+    "9101C61E4CC72802F1C1A5C63CB03681506406C7" : 0,
+    "12197543E416C4C0093FDCCF0005DE07FC7780F9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6B98D4AD-7C50-43CF-8AD6-0A4795D6EA2B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9A606DA4B0305C6C3E721C28A89831FDB54101CB" : "Nothing-App",
+    "9101C61E4CC72802F1C1A5C63CB03681506406C7" : "CityBike",
+    "12197543E416C4C0093FDCCF0005DE07FC7780F9" : "citybike-app\/Submodules\/citybik.es-api"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CityBike",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CityBike.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tomkowz\/citybik.es-api.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "12197543E416C4C0093FDCCF0005DE07FC7780F9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tomkowz\/CityBike-App.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9101C61E4CC72802F1C1A5C63CB03681506406C7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tomkowz\/Nothing-App.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9A606DA4B0305C6C3E721C28A89831FDB54101CB"
+    }
+  ]
+}

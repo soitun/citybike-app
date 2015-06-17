@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CBModel
 
 class CBMapViewController: UIViewController, MKMapViewDelegate {
     
@@ -51,7 +52,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.mapUpdater.update(self.mapView, updatedStations: CDStation.allStations(CoreDataHelper.mainContext))
+        let allStations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
+        self.mapUpdater.update(self.mapView, updatedStations: allStations)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManager.DidUpdateStationsNotification, object: nil)
         
         if let savedRegion = NSUserDefaults.getMapRegion() {
@@ -76,7 +78,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
                 self.showConnectionErrorLabel(true)
                 
             } else {
-                let stations = CDStation.allStations(CoreDataHelper.mainContext)
+                let stations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
                 self.mapUpdater.update(self.mapView, updatedStations: stations)
                 self.hideConnectionErrorLabel(true)
             }
@@ -167,7 +169,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         view.fewColor = UIColor.fewColor()
         view.plentyColor = UIColor.plentyColor()
         
-        let station = CDStation.stationWithID(cbAnnotation.stationProxy.id, context: CoreDataHelper.mainContext)!
+        let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataHelper.sharedInstance().mainContext).first as! CDStation
         view.configure(station)
         return view
     }

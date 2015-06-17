@@ -7,21 +7,25 @@
 //
 
 import Foundation
-import CoreData
 
 @objc(CDLocation)
-class CDLocation: NSManagedObject {
+public class CDLocation: NSManagedObject {
 
-    @NSManaged var city: String
-    @NSManaged var country: String
-    @NSManaged var latitude: NSNumber
-    @NSManaged var longitude: NSNumber
-    @NSManaged var network: CDNetwork
-
-    func fill(location: CBLocation) {
-        self.city = location.city
-        self.country = location.country
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
+    @NSManaged public var city: String
+    @NSManaged public var country: String
+    @NSManaged public var network: CDNetwork
+    
+    @NSManaged private var latitudeValue: NSNumber
+    @NSManaged private var longitudeValue: NSNumber
+    
+    public var coordinate: CLLocationCoordinate2D {
+        set {
+            self.latitudeValue = newValue.latitude
+            self.longitudeValue = newValue.longitude
+        }
+        
+        get {
+            return CLLocationCoordinate2D(latitude: self.latitudeValue.doubleValue, longitude: self.longitudeValue.doubleValue)
+        }
     }
 }

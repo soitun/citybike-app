@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CBModel
 
 class CBOrderedNetworksGroup {
     var countryCode: String!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CBModel
 
 class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
@@ -45,7 +46,8 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManager.DidUpdateNetworksNotification, object: nil)
-        self.refreshContent(CDNetwork.allNetworks(CoreDataHelper.mainContext))
+        
+        self.refresAll()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -57,9 +59,12 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     
     /// MARK: Notifications
     func didUpdateNetworksNotification(notification: NSNotification) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.refreshContent(CDNetwork.allNetworks(CoreDataHelper.mainContext))
-        })
+        dispatch_async(dispatch_get_main_queue(), { self.refresAll() })
+    }
+    
+    private func refresAll() {
+        let allNetworks = CDNetwork.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDNetwork]
+        self.refreshContent(allNetworks)
     }
     
     /// MARK: Private
