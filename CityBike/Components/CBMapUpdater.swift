@@ -26,19 +26,13 @@ class CBMapUpdater {
     private var stationProxies = [CBStationProxy]()
     
     func viewForAnnotation(annotation: CBAnnotation) -> CBStationAnnotationView {
-        for annotationView in self.annotationViews {
-            if let cbAnnotation = (annotationView.annotation as? CBAnnotation) {
-                if cbAnnotation.stationProxy.id == annotation.stationProxy.id {
-                    return annotationView
-                }
-            }
+        var view = self.annotationViews.filter({($0.annotation as? CBAnnotation)?.stationProxy.id == annotation.stationProxy.id}).first
+        if view == nil {
+            view = CBStationAnnotationView(annotation: annotation, reuseIdentifier: "CBStationAnnotationView")
+            self.annotationViews.append(view!)
         }
-        
-        let view = CBStationAnnotationView(annotation: annotation, reuseIdentifier: "CBStationAnnotationView")
-        self.annotationViews.append(view)
-        return view
+        return view!
     }
-    
     
     func update(map: MKMapView, updatedStations: [CDStation]) {
         let currentStationProxies = self.stationProxies
@@ -74,30 +68,22 @@ class CBMapUpdater {
         /// Remove not available annotations
         var annotationsToRemove = [CBAnnotation]()
         for annotation in currentAnnotations {
-            if let annotation = annotation as? CBAnnotation {
-                if allProxies.filter({$0.id == annotation.stationProxy.id}).first == nil {
-                    annotationsToRemove.append(annotation)
-                    
-                    /// Remove annotation from map array
-                    var idx = 0
-                    for onMapAnnotation in currentAnnotations {
-                        if onMapAnnotation is CBAnnotation {
-                            currentAnnotations.removeAtIndex(idx)
-                            break
-                        }
-                        
-                        idx++
+            if let annotation = annotation as? CBAnnotation where allProxies.filter({$0.id == annotation.stationProxy.id}).first == nil {
+                annotationsToRemove.append(annotation)
+                
+                /// Remove annotation from map array
+                for idx in 0 ..< currentAnnotations.count {
+                    if currentAnnotations[idx] is CBAnnotation {
+                        currentAnnotations.removeAtIndex(idx)
+                        break
                     }
-                    
-                    /// Remove old annotation views
-                    idx = 0
-                    for view in currentAnnotationViews {
-                        if (view.annotation as! CBAnnotation).stationProxy.id == annotation.stationProxy.id {
-                            currentAnnotationViews.removeAtIndex(idx)
-                            break
-                        }
-                        
-                        idx++;
+                }
+                
+                /// Remove old annotation views
+                for idx in 0 ..< currentAnnotationViews.count {
+                    if (currentAnnotationViews[idx].annotation as! CBAnnotation).stationProxy.id == annotation.stationProxy.id {
+                        currentAnnotationViews.removeAtIndex(idx)
+                        break
                     }
                 }
             }
@@ -109,7 +95,6 @@ class CBMapUpdater {
             annotationsToAdd.append(CBAnnotation(stationProxy: proxy))
         }
         
-        
         self.stationProxies = allProxies
         self.annotationViews = currentAnnotationViews
         map.removeAnnotations(annotationsToRemove)
@@ -117,15 +102,11 @@ class CBMapUpdater {
         
         /// Update existing annotations
         for updatedProxy in updatedProxies {
-            if let annotationView = self.annotationViews.filter({
-                if let annotation = ($0.annotation as? CBAnnotation) {
-                    return annotation.stationProxy.id == updatedProxy.id
-                }
-                
-                return false
+            if let annView = self.annotationViews.filter({
+                return ($0.annotation as? CBAnnotation)?.stationProxy.id == updatedProxy.id
             }).first {
-                let station = updatedStations.filter({$0.id == (annotationView.annotation as! CBAnnotation).stationProxy.id}).first!
-                annotationView.update(station)
+                let station = updatedStations.filter({$0.id == (annView.annotation as! CBAnnotation).stationProxy.id}).first!
+                annView.update(station)
             }
         }
         
