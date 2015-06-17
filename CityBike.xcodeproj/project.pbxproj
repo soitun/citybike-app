@@ -315,13 +315,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		6D6DB5211B31D9BB00342179 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Protocols;
-			sourceTree = "<group>";
-		};
 		6D6DB5221B31DA9200342179 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +335,6 @@
 				6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */,
 				6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */,
 				6D6DB5221B31DA9200342179 /* Extensions */,
-				6D6DB5211B31D9BB00342179 /* Protocols */,
 				6D80630C1B31BF0900E2F7FF /* Supporting Files */,
 			);
 			path = CBModel;
