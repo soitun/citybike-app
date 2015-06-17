@@ -32,7 +32,7 @@ class CBRideManager {
         _isGoing = false
         let duration = self.stopwatch.stop()
         let startDate = NSDate(timeIntervalSince1970: self.stopwatch.startTimeInterval)
-        let typeComponents = NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit
+        let typeComponents = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay
         let components = NSCalendar.autoupdatingCurrentCalendar().components(typeComponents, fromDate: startDate)
         let dateOfTheStartDay = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
         
