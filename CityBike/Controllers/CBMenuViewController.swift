@@ -38,6 +38,9 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         UIApplication.sharedApplication().openURL(NSURL(string: "http://citybik.es")!)
     }
     
+    @IBAction func donePressed(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     /// MARK: UITableView
     private enum Section: Int {

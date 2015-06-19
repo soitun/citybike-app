@@ -13,19 +13,12 @@ import CBModel
 class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private var stopwatchReadyButton: CBMapButton!
+    @IBOutlet private var stopwatchDoneButton: CBMapButton!
     
-    @IBOutlet private var locateMeButton: UIBarButtonItem!
-    
-    @IBOutlet private var stopwatchReadyButton: UIBarButtonItem!
-    @IBOutlet private var stopwatchDoneButton: UIBarButtonItem!
-    @IBOutlet private weak var stopwatchContainer: UIView!
-    @IBOutlet private weak var stopwatchContainerTopConstraint: NSLayoutConstraint!
-    @IBOutlet private weak var stopwatchTimeLabel: UILabel!
-
-    @IBOutlet private weak var connectionErrorBar: UIView!
-    @IBOutlet private weak var connectionErrorLabel: UILabel!
-    @IBOutlet private weak var connectionErrorTopConstraint: NSLayoutConstraint!
-    private var connectionErrorPresented: Bool = false
+    /// Container is displayed when there is no internet connection
+    @IBOutlet weak var noInternetContainer: UIView!
+    @IBOutlet weak var noInternetLabel: UILabel!
 
     private var stopwatchManager = CBRideManager()
     private var locationManager = CLLocationManager()
@@ -33,16 +26,11 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.hideConnectionErrorLabel(false)
-        /// Put logo in navigation bar
-        let logo = UIImageView(image: UIImage(named: "city-bike-logo-nav"))
-        self.navigationItem.titleView = logo
         
-        /// Set button initially
-        self.navigationItem.leftBarButtonItems = [self.stopwatchReadyButton, self.locateMeButton]
-        
-        self.stopwatchContainer.backgroundColor = UIColor.blueGrayColor()
+        self.noInternetContainer.makeRounded()
+        self.noInternetLabel.text = NSLocalizedString("No internet connection", comment: "")
+        self.changeNoInternetContainer(false, animated: false)
+                
         self.runStopwatchIfNeeded()
 
         /// Request content
@@ -52,13 +40,21 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.registerObservers()
+        
         let allStations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
         self.mapUpdater.update(self.mapView, updatedStations: allStations)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManager.DidUpdateStationsNotification, object: nil)
-        
+       
+        /// Show last saved region
         if let savedRegion = NSUserDefaults.getMapRegion() {
             self.mapView.setRegion(savedRegion, animated: false)
         }
+    }
+    
+    private func registerObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManager.DidUpdateStationsNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManager.DidUpdateNetworksNotification, object: nil)
     }
 
     override func viewDidDisappear(animated: Bool) {
@@ -74,17 +70,26 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     func didUpdateStationsNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             if let error = notification.userInfo?["error"] as? NSError {
-                self.connectionErrorLabel.text = "Internet connection problem."
-                self.showConnectionErrorLabel(true)
+                self.changeNoInternetContainer(true, animated: true)
                 
             } else {
                 let stations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
                 self.mapUpdater.update(self.mapView, updatedStations: stations)
-                self.hideConnectionErrorLabel(true)
+                self.changeNoInternetContainer(false, animated: true)
             }
         })
     }
-
+    
+    func didUpdateNetworksNotification(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            if let error = notification.userInfo?["error"] as? NSError {
+                self.changeNoInternetContainer(true, animated: true)
+                
+            } else {
+                self.changeNoInternetContainer(false, animated: true)
+            }
+        })
+    }
     
     /// MARK: Stopwatch
     @IBAction func stopwatchReadyPressed(sender: AnyObject) {
@@ -103,59 +108,65 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     private func startStopwatch(var ti: NSTimeInterval?, showBar: Bool, animated: Bool) {
         self.stopwatchManager.start(ti, updateBlock: { (duration) -> Void in
-            self.stopwatchTimeLabel.text = duration.stringTimeRepresentationStyle2
+//            self.stopwatchTimeLabel.text = duration.stringTimeRepresentationStyle2
         })
         
         if (showBar) {
-            self.navigationItem.setLeftBarButtonItems([self.stopwatchDoneButton, self.locateMeButton], animated: animated)
+            self.switchStopwatchButtons(false)
             self.changeStopwatchContainer(true, animated: animated)
         }
     }
     
+    private func switchStopwatchButtons(presentReady: Bool) {
+        let btnToShow = presentReady ? self.stopwatchReadyButton : self.stopwatchDoneButton
+        let btnToHide = presentReady ? self.stopwatchDoneButton : self.stopwatchReadyButton
+        
+        btnToShow.alpha = 0
+        btnToShow.hidden = false
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            btnToShow.alpha = 1
+            btnToHide.alpha = 0
+            }, completion: { _ in
+                btnToHide.hidden = true
+        })
+    }
+    
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
-        self.navigationItem.setLeftBarButtonItems([self.stopwatchReadyButton, self.locateMeButton], animated: true)
+        self.switchStopwatchButtons(true)
         self.changeStopwatchContainer(false, animated: true)
         self.stopwatchManager.stop()
     }
     
     private func changeStopwatchContainer(show: Bool, animated: Bool) {
-        self.stopwatchContainerTopConstraint.constant = show ? 0 : -CGRectGetHeight(self.stopwatchContainer.frame)
-        if show && self.connectionErrorPresented {
-            self.showConnectionErrorLabel(true)
-        }
-        
-        UIView.animateWithDuration(animated ? 0.25 : 0, animations: { () -> Void in
-            self.stopwatchContainer.alpha = show ? 1.0 : 0.0 /// explicit
-            self.view.layoutIfNeeded()
-        })
+//        self.stopwatchContainerTopConstraint.constant = show ? 0 : -CGRectGetHeight(self.stopwatchContainer.frame)
+//        if show && self.connectionErrorPresented {
+//            self.showConnectionErrorLabel(true)
+//        }
+//        
+//        UIView.animateWithDuration(animated ? 0.25 : 0, animations: { () -> Void in
+//            self.stopwatchContainer.alpha = show ? 1.0 : 0.0 /// explicit
+//            self.view.layoutIfNeeded()
+//        })
     }
     
     
-    /// MARK: Connection Error Label
-    private func showConnectionErrorLabel(animated: Bool) {
-        self.connectionErrorPresented = true
-        self.connectionErrorTopConstraint.constant = 0
-        if self.stopwatchManager.isGoing {
-            self.stopwatchContainerTopConstraint.constant = CGRectGetHeight(self.connectionErrorBar.frame)
+    /// MARK: No Internet Container
+    private func changeNoInternetContainer(show: Bool, animated: Bool) {
+        let duration = animated ? 0.25 : 0
+        if show == true && self.noInternetContainer.hidden == true {
+            self.noInternetContainer.alpha = 0
+            self.noInternetContainer.hidden = false
+            UIView.animateWithDuration(duration, animations: { self.noInternetContainer.alpha = 1 })
+
+        } else if show == false && self.noInternetContainer.hidden == false {
+            self.noInternetContainer.alpha = 1
+            UIView.animateWithDuration(duration, animations: {
+                self.noInternetContainer.alpha = 0
+                }) { _ in
+                    self.noInternetContainer.hidden = true
+            }
         }
-        
-        UIView.animateWithDuration(animated ? 0.3 : 0, animations: { () -> Void in
-            self.connectionErrorBar.alpha = 1
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    private func hideConnectionErrorLabel(animated: Bool) {
-        self.connectionErrorPresented = false
-        self.connectionErrorTopConstraint.constant = -CGRectGetHeight(self.connectionErrorBar.frame)
-        if self.stopwatchManager.isGoing {
-            self.stopwatchContainerTopConstraint.constant = 0
-        }
-        
-        UIView.animateWithDuration(animated ? 0.3 : 0, animations: { () -> Void in
-            self.connectionErrorBar.alpha = 0
-            self.view.layoutIfNeeded()
-        })
     }
     
     

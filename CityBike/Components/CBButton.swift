@@ -51,7 +51,7 @@ class CBButton: UIButton {
         self.makeNormalStyle()
     }
 
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    final override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             UIView.animateWithDuration(0.15, animations: { () -> Void in
                 self.makePressedStyle()
@@ -65,11 +65,11 @@ class CBButton: UIButton {
         })
     }
     
-    private func makePressedStyle() {
+    func makePressedStyle() {
         self.backgroundColor = self.pressedBackgroundColor
     }
     
-    private func makeNormalStyle() {
+    func makeNormalStyle() {
         self.backgroundColor = self.normalBackgroundColor
     }
 }

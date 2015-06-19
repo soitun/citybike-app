@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var rootVC: UIViewController!
         if NSUserDefaults.getDisplayedGettingStarted() {
-            rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMapViewControllerNC") as! UINavigationController
+            rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMapViewController") as! CBMapViewController
         } else {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
         }
