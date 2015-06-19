@@ -17,9 +17,11 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet private var stopwatchDoneButton: CBMapButton!
     
     /// Container is displayed when there is no internet connection
-    @IBOutlet weak var noInternetContainer: UIView!
-    @IBOutlet weak var noInternetLabel: UILabel!
+    @IBOutlet private weak var noInternetContainer: UIView!
+    @IBOutlet private weak var noInternetLabel: UILabel!
 
+    @IBOutlet private weak var stopwatchPopover: CBSimplePopover!
+    
     private var stopwatchManager = CBRideManager()
     private var locationManager = CLLocationManager()
     private var mapUpdater = CBMapUpdater()
@@ -27,10 +29,10 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.noInternetContainer.makeRounded()
         self.noInternetLabel.text = NSLocalizedString("No internet connection", comment: "")
-        self.changeNoInternetContainer(false, animated: false)
-                
+        self.noInternetContainer.makeRounded()
+        self.noInternetContainer.changeVisibility(false, animated: false)
+        
         self.runStopwatchIfNeeded()
 
         /// Request content
@@ -70,24 +72,19 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     func didUpdateStationsNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             if let error = notification.userInfo?["error"] as? NSError {
-                self.changeNoInternetContainer(true, animated: true)
+                self.noInternetContainer.changeVisibility(true, animated: true)
                 
             } else {
                 let stations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
                 self.mapUpdater.update(self.mapView, updatedStations: stations)
-                self.changeNoInternetContainer(false, animated: true)
+                self.noInternetContainer.changeVisibility(false, animated: true)
             }
         })
     }
     
     func didUpdateNetworksNotification(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            if let error = notification.userInfo?["error"] as? NSError {
-                self.changeNoInternetContainer(true, animated: true)
-                
-            } else {
-                self.changeNoInternetContainer(false, animated: true)
-            }
+            self.noInternetContainer.changeVisibility((notification.userInfo?["error"] != nil), animated: true)
         })
     }
     
@@ -102,18 +99,18 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
             self.startStopwatch(startTimeInterval, showBar: true, animated: false)
             
         } else {
-            self.changeStopwatchContainer(false, animated: false)
+            self.stopwatchPopover.changeVisibility(false, animated: false)
         }
     }
     
     private func startStopwatch(var ti: NSTimeInterval?, showBar: Bool, animated: Bool) {
         self.stopwatchManager.start(ti, updateBlock: { (duration) -> Void in
-//            self.stopwatchTimeLabel.text = duration.stringTimeRepresentationStyle2
+            self.stopwatchPopover.label.text = duration.stringTimeRepresentationStyle2
         })
         
         if (showBar) {
             self.switchStopwatchButtons(false)
-            self.changeStopwatchContainer(true, animated: animated)
+            self.stopwatchPopover.changeVisibility(true, animated: animated)
         }
     }
     
@@ -134,41 +131,9 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
         self.switchStopwatchButtons(true)
-        self.changeStopwatchContainer(false, animated: true)
+        self.stopwatchPopover.changeVisibility(false, animated: true)
         self.stopwatchManager.stop()
     }
-    
-    private func changeStopwatchContainer(show: Bool, animated: Bool) {
-//        self.stopwatchContainerTopConstraint.constant = show ? 0 : -CGRectGetHeight(self.stopwatchContainer.frame)
-//        if show && self.connectionErrorPresented {
-//            self.showConnectionErrorLabel(true)
-//        }
-//        
-//        UIView.animateWithDuration(animated ? 0.25 : 0, animations: { () -> Void in
-//            self.stopwatchContainer.alpha = show ? 1.0 : 0.0 /// explicit
-//            self.view.layoutIfNeeded()
-//        })
-    }
-    
-    
-    /// MARK: No Internet Container
-    private func changeNoInternetContainer(show: Bool, animated: Bool) {
-        let duration = animated ? 0.25 : 0
-        if show == true && self.noInternetContainer.hidden == true {
-            self.noInternetContainer.alpha = 0
-            self.noInternetContainer.hidden = false
-            UIView.animateWithDuration(duration, animations: { self.noInternetContainer.alpha = 1 })
-
-        } else if show == false && self.noInternetContainer.hidden == false {
-            self.noInternetContainer.alpha = 1
-            UIView.animateWithDuration(duration, animations: {
-                self.noInternetContainer.alpha = 0
-                }) { _ in
-                    self.noInternetContainer.hidden = true
-            }
-        }
-    }
-    
     
     /// MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {

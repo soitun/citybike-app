@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJx-Th-boP" userLabel="no-internet-container">
-                                <rect key="frame" x="84" y="74" width="153" height="37"/>
+                                <rect key="frame" x="84" y="30" width="153" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No internet label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOM-vQ-GWz">
                                         <rect key="frame" x="30" y="10" width="93" height="17"/>
@@ -84,16 +84,26 @@
                                     <constraint firstAttribute="trailing" secondItem="KOM-vQ-GWz" secondAttribute="trailing" constant="30" id="Pbc-zB-aD8"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Sp-jnP" userLabel="stopwatch-popover" customClass="CBSimplePopover" customModule="CityBike" customModuleProvider="target">
+                                <rect key="frame" x="65" y="490" width="96" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="800" constant="96" id="7k7-bl-Ij5"/>
+                                    <constraint firstAttribute="height" priority="800" constant="30" id="KyP-Nf-YpZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yDG-km-d5j" secondAttribute="trailing" constant="5" id="1DF-25-3yN"/>
                             <constraint firstAttribute="centerX" secondItem="OJx-Th-boP" secondAttribute="centerX" constant="-0.5" id="37j-7Q-KdI"/>
+                            <constraint firstItem="DDb-k8-KLJ" firstAttribute="top" secondItem="HE4-Sp-jnP" secondAttribute="bottom" constant="1" id="6Fp-Ew-u97"/>
                             <constraint firstAttribute="centerX" secondItem="cq3-Wp-t1e" secondAttribute="centerX" constant="47" id="6fO-f5-mwz"/>
                             <constraint firstItem="OhG-pJ-PUp" firstAttribute="top" secondItem="AJI-b7-YUL" secondAttribute="bottom" id="8K6-AX-Ndk"/>
                             <constraint firstAttribute="centerX" secondItem="gDu-NR-6z0" secondAttribute="centerX" constant="-47" id="9OK-9f-8lg"/>
                             <constraint firstItem="OhG-pJ-PUp" firstAttribute="top" secondItem="yDG-km-d5j" secondAttribute="bottom" constant="5" id="BmG-Wd-3h0"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OJx-Th-boP" secondAttribute="trailing" constant="20" id="EuP-Cg-kAi"/>
+                            <constraint firstItem="DDb-k8-KLJ" firstAttribute="centerX" secondItem="HE4-Sp-jnP" secondAttribute="centerX" id="L5P-oU-tyc"/>
                             <constraint firstItem="DDb-k8-KLJ" firstAttribute="centerY" secondItem="cq3-Wp-t1e" secondAttribute="centerY" id="Mj2-On-87l"/>
                             <constraint firstItem="ur1-3P-9VE" firstAttribute="leading" secondItem="cq3-Wp-t1e" secondAttribute="trailing" constant="5" id="QOt-7G-eYL"/>
                             <constraint firstItem="AJI-b7-YUL" firstAttribute="top" secondItem="qIu-6W-Nop" secondAttribute="top" id="RIb-Bb-mu5"/>
@@ -115,6 +125,7 @@
                         <outlet property="noInternetContainer" destination="OJx-Th-boP" id="jPc-ss-LvM"/>
                         <outlet property="noInternetLabel" destination="KOM-vQ-GWz" id="u8o-wX-G6v"/>
                         <outlet property="stopwatchDoneButton" destination="DDb-k8-KLJ" id="2YV-r8-UjG"/>
+                        <outlet property="stopwatchPopover" destination="HE4-Sp-jnP" id="iCJ-67-xVM"/>
                         <outlet property="stopwatchReadyButton" destination="cq3-Wp-t1e" id="hZP-Yu-OFU"/>
                     </connections>
                 </viewController>
