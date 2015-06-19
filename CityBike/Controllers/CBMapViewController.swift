@@ -135,6 +135,11 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         self.stopwatchManager.stop()
     }
     
+    @IBAction func findPressed(sender: AnyObject) {
+        let alert = UIAlertView(title: "Not ready yet", message: "Feature will allow user to find closest free bike and free dock.", delegate: nil, cancelButtonTitle: "Great, but I want to use it now!")
+        alert.show()
+    }
+    
     /// MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
         if !(annotation is CBAnnotation) { return nil }

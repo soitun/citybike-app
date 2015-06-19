@@ -56,6 +56,9 @@
                                 <state key="normal" image="btn-find">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="findPressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="zZz-0e-CGv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-km-d5j" userLabel="btn-menu" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="273" y="521" width="42" height="42"/>
