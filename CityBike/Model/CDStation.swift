@@ -8,14 +8,16 @@
 
 import Foundation
 
+public typealias StationID = String
+
 @objc(CDStation)
 public class CDStation: NSManagedObject {
 
     @NSManaged public var freeBikes: NSNumber
     @NSManaged public var emptySlots: NSNumber
-    @NSManaged public var id: String
+    @NSManaged public var id: StationID
     @NSManaged public var name: String
-    @NSManaged public var timestamp: String
+    @NSManaged public var timestamp: NSDate
     @NSManaged public var network: CDNetwork
 
     @NSManaged private var latitudeValue: NSNumber

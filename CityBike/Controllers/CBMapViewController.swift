@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CBModel
 
-class CBMapViewController: UIViewController, MKMapViewDelegate {
+class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private var stopwatchReadyButton: CBMapButton!
@@ -21,13 +21,18 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet private weak var noInternetLabel: UILabel!
 
     @IBOutlet private weak var stopwatchPopover: CBSimplePopover!
+    @IBOutlet private weak var mapDetailView: CBMapDetailView!
+    @IBOutlet private weak var mapDetailViewBottomConstraint: NSLayoutConstraint!
     
     private var stopwatchManager = CBRideManager()
     private var locationManager = CLLocationManager()
     private var mapUpdater = CBMapUpdater()
+    private var selectedStation: StationID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mapDetailView.delegate = self
         
         self.noInternetLabel.text = NSLocalizedString("No internet connection", comment: "")
         self.noInternetContainer.makeRounded()
@@ -78,6 +83,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
                 let stations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
                 self.mapUpdater.update(self.mapView, updatedStations: stations)
                 self.noInternetContainer.changeVisibility(false, animated: true)
+                
+                self.updateMapDetailView(self.selectedStation)
             }
         })
     }
@@ -155,7 +162,49 @@ class CBMapViewController: UIViewController, MKMapViewDelegate {
         return view
     }
     
+    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+        self.updateMapDetailView(self.selectedStation)
+    }
+    
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
         NSUserDefaults.setMapRegion(mapView.region)
+    }
+    
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        view.bounce(0.1)
+        if let annotation = (view.annotation as? CBAnnotation) {
+            self.updateMapDetailView(annotation.stationProxy.id)
+        }
+    }
+    
+    private func updateMapDetailView(stationID: StationID?) {
+        if stationID == nil { return }
+        
+        let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataHelper.sharedInstance().mainContext).first as! CDStation
+        self.selectedStation = station.id
+        
+        let detailText = "\(station.network.location.city), \(station.network.location.country)"
+        
+        var distanceInMeters = 0.0
+        if let userLocation = self.mapView.userLocation.location {
+            distanceInMeters = userLocation.distanceFromLocation(CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude))
+        }
+        
+        self.mapDetailView.update(station.name, detailText: detailText, freeBikes: station.freeBikes.integerValue, freeSlots: station.emptySlots.integerValue, distance: Float(distanceInMeters), date: station.timestamp)
+        
+        self.mapDetailViewBottomConstraint.constant = 0
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    
+    /// MARK: CBMapDetailViewDelegate
+    func mapDetailViewDidPressClose(view: CBMapDetailView) {
+        self.selectedStation = nil
+        self.mapDetailViewBottomConstraint.constant = -CGRectGetHeight(self.mapDetailView.frame)
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            self.view.layoutIfNeeded()
+        })
     }
 }

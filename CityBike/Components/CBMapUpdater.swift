@@ -12,8 +12,8 @@ import CoreLocation
 import CBModel
 
 struct CBStationProxy {
-    var id: String
-    var timestamp: String
+    var id: StationID
+    var timestamp: NSDate
     var coordinate: CLLocationCoordinate2D
 }
 

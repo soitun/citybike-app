@@ -37,8 +37,12 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         
         let heightConstraint = NSLayoutConstraint(item: self.containerView, attribute: .Height, relatedBy: .Equal, toItem:nil , attribute: .NotAnAttribute, multiplier: 1, constant: 29)
         let centerXConstraint = NSLayoutConstraint(item: self.containerView, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0)
-        let centerYConstraint = NSLayoutConstraint(item: self.containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: -17)
+        let centerYConstraint = NSLayoutConstraint(item: self.containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: -5)
         self.addConstraints([heightConstraint, centerXConstraint, centerYConstraint])
+        
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: self.containerView, attribute: .Width, multiplier: 1, constant: 0)
+        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.addConstraint(widthConstraint)
         
         self.configureBackground()
         self.configureCone()
@@ -162,21 +166,15 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         
         if self.previousFreeBikes != bikes {
             self.previousFreeBikes = bikes
-            self.animateView(self.bikesCircle)
+            self.bikesCircle.bounce(0.1)
         }
         
         if self.previousEmptySlots != slots {
             self.previousEmptySlots = slots
-            self.animateView(self.slotsCircle)
+            self.slotsCircle.bounce(0.1)
         }
     }
-    
-    private func animateView(view: UIView) {
-        view.alpha = 0
-        UIView.animateWithDuration(0.25, animations: { view.alpha = 1 })
-    }
-    
-    
+
     
     /// MARK: CBMapUpdaterProtocol
     func update(station: CDStation) {

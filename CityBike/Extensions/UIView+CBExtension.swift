@@ -36,6 +36,20 @@ extension UIView {
             UIView.animateWithDuration(duration, animations: { self.alpha = 0 }) { _ in self.hidden = true }
         }
     }
+    
+    func bounce(duration: NSTimeInterval) {
+        UIView.animateWithDuration(duration, animations: {
+            self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2)
+            
+            }) { _ in
+                UIView.animateWithDuration(duration, animations: {
+                    self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9)
+                    
+                    }) { _ in
+                        UIView.animateWithDuration(duration, animations: { _ in self.transform = CGAffineTransformIdentity })
+                }
+        }
+    }
 }
 
 extension UIView {
