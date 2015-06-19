@@ -171,6 +171,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        mapView.deselectAnnotation(view.annotation, animated: false)
+        
         view.bounce(0.1)
         if let annotation = (view.annotation as? CBAnnotation) {
             self.updateMapDetailView(annotation.stationProxy.id)
