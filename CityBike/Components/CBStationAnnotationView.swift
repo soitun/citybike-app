@@ -40,9 +40,9 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         let centerYConstraint = NSLayoutConstraint(item: self.containerView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: -5)
         self.addConstraints([heightConstraint, centerXConstraint, centerYConstraint])
         
-        let widthConstraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: self.containerView, attribute: .Width, multiplier: 1, constant: 0)
-        self.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.addConstraint(widthConstraint)
+//        let widthConstraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: self.containerView, attribute: .Width, multiplier: 1, constant: 0)
+//        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+//        self.addConstraint(widthConstraint)
         
         self.configureBackground()
         self.configureCone()
