@@ -41,19 +41,17 @@ class CBGettingStartedViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidAppear(animated)
         
         self.logoContainerBottomConstraint.constant = CGRectGetHeight(self.view.frame) - 40.0
-        UIView.animateWithDuration(0.7, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        UIView.animateWithDuration(0.7, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             self.finalBackgroundImageView.alpha = 1
             self.startLogoImageView.alpha = 0
             self.finalLogoImageView.alpha = 1
             self.view.layoutIfNeeded()
 
-        }) { (finished) -> Void in
+        }) { _ in
             self.loadGettingStarted()
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
+            UIView.animateWithDuration(0.5, animations: {
                 self.pageControl.alpha = 1
                 self.scrollView.alpha = 1
-            }, completion: { (finished) -> Void in
-                /// ?
             })
         }
     }
@@ -64,9 +62,7 @@ class CBGettingStartedViewController: UIViewController, UIScrollViewDelegate {
     
     private func loadGettingStarted() {
         let identifiers = self.tutorialPages()
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let svWidth = CGRectGetWidth(self.scrollView.frame)
 
         var idx = 0
@@ -103,7 +99,7 @@ class CBGettingStartedViewController: UIViewController, UIScrollViewDelegate {
         /// Enable and show thanks buton
         if self.thanksButton.enabled == false && (self.pageControl.currentPage + 1) == self.tutorialPages().count {
             self.thanksButton.enabled = true
-            UIView.animateWithDuration(0.25, animations: { () -> Void in
+            UIView.animateWithDuration(0.25, animations: {
                 self.thanksButton.alpha = 1
             })
         }

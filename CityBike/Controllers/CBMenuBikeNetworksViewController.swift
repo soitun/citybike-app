@@ -79,10 +79,10 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func refreshContent(networksToDisplay: [CDNetwork]) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.orderedNetworks = CBNetworksSort.orderNetworks(networksToDisplay)
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
                 
                 let noItems = self.orderedNetworks.count == 0

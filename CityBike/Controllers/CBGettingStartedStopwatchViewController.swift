@@ -13,7 +13,6 @@ class CBGettingStartedStopwatchViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.textLabel.text = NSLocalizedString("Track how much time you spend cycling.\n You can check your rides history in menu.", comment: "")
     }
 }

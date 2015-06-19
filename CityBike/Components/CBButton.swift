@@ -52,11 +52,11 @@ class CBButton: UIButton {
     }
 
     final override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            UIView.animateWithDuration(0.15, animations: { () -> Void in
+        dispatch_async(dispatch_get_main_queue(), {
+            UIView.animateWithDuration(0.15, animations: {
                 self.makePressedStyle()
-            }, completion: { (finished) -> Void in
-                UIView.animateWithDuration(0.15, animations: { () -> Void in
+            }, completion: { _ in
+                UIView.animateWithDuration(0.15, animations: {
                     self.makeNormalStyle()
                 }, completion: { (finished) -> Void in
                     super.sendAction(action, to: target, forEvent: event)

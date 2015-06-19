@@ -46,7 +46,7 @@ class CBModelUpdater: CBUpdaterProtocol {
     func updateNetworks(updatedNetworks: [CBNetwork], completion:() -> Void) {
         println("Sync networks")
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             let tmpContext = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
             for updatedNetwork in updatedNetworks {
                 var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: tmpContext).first as? CDNetwork
@@ -72,7 +72,7 @@ class CBModelUpdater: CBUpdaterProtocol {
     func updateNetworksWithStations(updatedNetworks: [CBNetwork], completion:() -> Void) {
         println("Sync networks and stations")
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), { () -> Void in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             let tmpContext = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
             
             for updatedNetwork in updatedNetworks {
