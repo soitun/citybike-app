@@ -56,6 +56,9 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
         self.saveSelectedNetworks()
     }
     
+    @IBAction func backPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     /// MARK: Notifications
     func didUpdateNetworksNotification(notification: NSNotification) {

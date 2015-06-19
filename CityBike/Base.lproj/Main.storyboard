@@ -266,7 +266,13 @@
                             <constraint firstItem="eld-ZO-sRQ" firstAttribute="top" secondItem="ReF-17-fS3" secondAttribute="bottom" id="wQq-Aq-kBf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="City Bike Networks" id="Vuv-KB-fsF"/>
+                    <navigationItem key="navigationItem" title="City Bike Networks" id="Vuv-KB-fsF">
+                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-left" style="plain" id="fgl-8J-uZl">
+                            <connections>
+                                <action selector="backPressed:" destination="cCh-TQ-uMI" id="tma-Wg-Blb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="noItemsIndicator" destination="PWb-OC-IZR" id="bd7-ui-DlL"/>
                         <outlet property="noItemsLabel" destination="Z2x-UD-a1X" id="ZrW-YN-mm8"/>
@@ -638,7 +644,13 @@ You can check your rides history in menu.</string>
                             <constraint firstItem="GNf-4d-OfA" firstAttribute="leading" secondItem="h2c-Rp-MZx" secondAttribute="leading" constant="30" id="lrQ-Y4-UXA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Rides History" id="Fpx-3H-AOD"/>
+                    <navigationItem key="navigationItem" title="Rides History" id="Fpx-3H-AOD">
+                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-left" style="plain" id="r2x-ej-YUO">
+                            <connections>
+                                <action selector="backPressed:" destination="j2V-SR-b3r" id="tF2-ea-kfh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="noItemsLabel" destination="GNf-4d-OfA" id="hG8-bQ-FvJ"/>
                         <outlet property="searchDisplayController" destination="JMf-GL-HRS" id="Nkd-cB-okB"/>
@@ -672,6 +684,7 @@ You can check your rides history in menu.</string>
     <resources>
         <image name="background-big" width="320" height="568"/>
         <image name="btn-arrow-down" width="20" height="21"/>
+        <image name="btn-arrow-left" width="20" height="20"/>
         <image name="btn-find" width="42" height="42"/>
         <image name="btn-locate-me" width="42" height="42"/>
         <image name="btn-menu" width="42" height="42"/>

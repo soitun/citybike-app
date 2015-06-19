@@ -46,6 +46,9 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
         self.noItemsLabel.hidden = self.history.count > 0
     }
     
+    @IBAction func backPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     /// MARK: UITableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
