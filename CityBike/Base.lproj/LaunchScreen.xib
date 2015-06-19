@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -10,10 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-background" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-4c-GpI">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-4c-GpI" userLabel="launch-screen-bg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="kaV-UD-ylV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-white-big" translatesAutoresizingMaskIntoConstraints="NO" id="kaV-UD-ylV" userLabel="city-bike-white-big">
                     <rect key="frame" x="59" y="495" width="202" height="58"/>
                 </imageView>
             </subviews>
@@ -32,8 +33,8 @@
         </view>
     </objects>
     <resources>
-        <image name="city-bike-logo-white" width="202" height="58"/>
-        <image name="launch-screen-background" width="320" height="568"/>
+        <image name="city-bike-white-big" width="202" height="58"/>
+        <image name="launch-screen-bg" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

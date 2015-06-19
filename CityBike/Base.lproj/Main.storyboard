@@ -27,13 +27,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yg-G3-tks" userLabel="stopwatch bar">
                                 <rect key="frame" x="0.0" y="64" width="320" height="32"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-Jn-ffQ" userLabel="bar-container">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-Jn-ffQ" userLabel="bar-container">
                                         <rect key="frame" x="124" y="7" width="72" height="17"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="stopwatch-ready-icon-mini" translatesAutoresizingMaskIntoConstraints="NO" id="TFO-OT-8HB">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch-ready-icon-mini" translatesAutoresizingMaskIntoConstraints="NO" id="TFO-OT-8HB">
                                                 <rect key="frame" x="0.0" y="0.0" width="14" height="17"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-JE-kx2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-JE-kx2">
                                                 <rect key="frame" x="19" y="1" width="53" height="17"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,7 +62,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVu-uo-Dx3" userLabel="connection error bar">
                                 <rect key="frame" x="0.0" y="114" width="320" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI3-ef-Ep3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI3-ef-Ep3">
                                         <rect key="frame" x="146" y="8" width="31" height="17"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -258,7 +258,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No City Bike Networks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2x-UD-a1X">
                                 <rect key="frame" x="30" y="251" width="260" height="66"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="PWb-OC-IZR">
@@ -313,10 +313,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-background" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-BH-EgJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-BH-EgJ" userLabel="background-big-before">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-background" translatesAutoresizingMaskIntoConstraints="NO" id="8M9-Gq-9w8" userLabel="finalBackground">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-big" translatesAutoresizingMaskIntoConstraints="NO" id="8M9-Gq-9w8" userLabel="background-big-after">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WrV-fF-yd3">
@@ -325,10 +325,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6n-JW-DUf" userLabel="logo-container">
                                 <rect key="frame" x="59" y="489" width="202" height="58"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-logo-black" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-HQ-ge2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-black-big" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-HQ-ge2" userLabel="city-bike-black">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="58"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="43b-uK-b1i">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city-bike-white-big" translatesAutoresizingMaskIntoConstraints="NO" id="43b-uK-b1i" userLabel="city-bike-white">
                                         <rect key="frame" x="0.0" y="0.0" width="202" height="58"/>
                                     </imageView>
                                 </subviews>
@@ -343,7 +343,7 @@
                                     <constraint firstItem="43b-uK-b1i" firstAttribute="leading" secondItem="q6n-JW-DUf" secondAttribute="leading" id="uVk-pP-Oex"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-W0-tBf" userLabel="Thanks" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-W0-tBf" userLabel="paging-thanks-button" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="10" y="485" width="300" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QPT-Y3-y1f"/>
@@ -356,7 +356,7 @@
                                     <action selector="thanksPressed:" destination="rhP-tg-att" eventType="touchUpInside" id="qCc-t9-Eqd"/>
                                 </connections>
                             </button>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liK-H9-EDk">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liK-H9-EDk" userLabel="scroll-view">
                                 <rect key="frame" x="0.0" y="96" width="320" height="381"/>
                                 <connections>
                                     <outlet property="delegate" destination="rhP-tg-att" id="jch-UY-1Os"/>
@@ -416,47 +416,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-white-blurred-bg" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-3e-PHP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-blurred-bg-big" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-3e-PHP" userLabel="white-blurred-bg">
                                 <rect key="frame" x="0.0" y="18" width="320" height="360"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-map" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-6n-yGM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-big" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-6n-yGM" userLabel="map-big">
                                 <rect key="frame" x="0.0" y="28" width="320" height="326"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-pin-big" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-ff-z6I">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-big" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-ff-z6I" userLabel="pin-big">
                                 <rect key="frame" x="108" y="69" width="104" height="60"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free bikes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-0M-pqF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free bikes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-0M-pqF" userLabel="free-bikes-label">
                                 <rect key="frame" x="91" y="122" width="58" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free slots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-bh-jlt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free slots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-bh-jlt" userLabel="free-slots-label">
                                 <rect key="frame" x="173" y="122" width="54" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Many" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P7-MJ-oTc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Many" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P7-MJ-oTc" userLabel="many-label">
                                 <rect key="frame" x="63" y="261" width="34" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Italic" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Few" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVG-Ku-FUl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Few" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVG-Ku-FUl" userLabel="few-label">
                                 <rect key="frame" x="148" y="261" width="24" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Italic" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-rI-51l">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbw-rI-51l" userLabel="none-label">
                                 <rect key="frame" x="224" y="261" width="32" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Italic" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="25e-RR-5ib" userLabel="few-circle">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="25e-RR-5ib" userLabel="few-circle">
                                 <rect key="frame" x="145" y="225" width="30" height="31"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="zc4-ec-6lV" userLabel="many-circle">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="zc4-ec-6lV" userLabel="many-circle">
                                 <rect key="frame" x="65" y="225" width="30" height="31"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="04N-Zl-FbE" userLabel="none-circle">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="04N-Zl-FbE" userLabel="none-circle">
                                 <rect key="frame" x="225" y="225" width="30" height="31"/>
                             </imageView>
                         </subviews>
@@ -515,30 +515,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-white-blurred-bg" translatesAutoresizingMaskIntoConstraints="NO" id="8Dt-hJ-kCr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-blurred-bg-big" translatesAutoresizingMaskIntoConstraints="NO" id="8Dt-hJ-kCr" userLabel="white-blurred-bg">
                                 <rect key="frame" x="0.0" y="18" width="320" height="360"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="ObC-7b-r09"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-networks-icon-big" translatesAutoresizingMaskIntoConstraints="NO" id="Mjn-j2-Qbh">
-                                <rect key="frame" x="118" y="126" width="84" height="72"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu-big" translatesAutoresizingMaskIntoConstraints="NO" id="Mjn-j2-Qbh">
+                                <rect key="frame" x="114" y="128" width="93" height="80"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have to select at least one city bike network. Networks are grouped by country to make it easy to select." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCj-rm-AbN">
-                                <rect key="frame" x="40" y="218" width="240" height="58"/>
+                                <rect key="frame" x="60" y="218" width="200" height="58"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Italic" family="Avenir Next Condensed" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Dt-hJ-kCr" firstAttribute="centerY" secondItem="Mjn-j2-Qbh" secondAttribute="bottom" id="5vB-iK-7xe"/>
-                            <constraint firstItem="hCj-rm-AbN" firstAttribute="leading" secondItem="8Dt-hJ-kCr" secondAttribute="leading" constant="40" id="C5u-jj-1sj"/>
-                            <constraint firstItem="hCj-rm-AbN" firstAttribute="trailing" secondItem="8Dt-hJ-kCr" secondAttribute="trailing" constant="-40" id="VU8-OW-V5d"/>
+                            <constraint firstItem="8Dt-hJ-kCr" firstAttribute="centerY" secondItem="Mjn-j2-Qbh" secondAttribute="bottom" constant="-10" id="5vB-iK-7xe"/>
+                            <constraint firstItem="hCj-rm-AbN" firstAttribute="leading" secondItem="8Dt-hJ-kCr" secondAttribute="leading" constant="60" id="C5u-jj-1sj"/>
+                            <constraint firstItem="hCj-rm-AbN" firstAttribute="trailing" secondItem="8Dt-hJ-kCr" secondAttribute="trailing" constant="-60" id="VU8-OW-V5d"/>
                             <constraint firstAttribute="centerX" secondItem="8Dt-hJ-kCr" secondAttribute="centerX" id="f2d-6x-2Hx"/>
                             <constraint firstAttribute="centerY" secondItem="8Dt-hJ-kCr" secondAttribute="centerY" id="jJm-ww-IWK"/>
                             <constraint firstItem="hCj-rm-AbN" firstAttribute="centerX" secondItem="8Dt-hJ-kCr" secondAttribute="centerX" id="qFU-nq-Q0p"/>
-                            <constraint firstItem="hCj-rm-AbN" firstAttribute="top" secondItem="Mjn-j2-Qbh" secondAttribute="bottom" constant="20" id="r0b-H7-z4u"/>
+                            <constraint firstItem="hCj-rm-AbN" firstAttribute="top" secondItem="Mjn-j2-Qbh" secondAttribute="bottom" constant="10" id="r0b-H7-z4u"/>
                             <constraint firstItem="8Dt-hJ-kCr" firstAttribute="centerX" secondItem="Mjn-j2-Qbh" secondAttribute="centerX" id="tqJ-np-Low"/>
                         </constraints>
                     </view>
@@ -564,17 +564,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-white-blurred-bg" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-RZ-MuO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-blurred-bg-big" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-RZ-MuO" userLabel="white-blurred-bg">
                                 <rect key="frame" x="0.0" y="18" width="320" height="360"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="QiB-Ii-QdG"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="how-to-stopwatch-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-cK-sof">
-                                <rect key="frame" x="120" y="118" width="80" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch-big" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-cK-sof" userLabel="stopwatch-big">
+                                <rect key="frame" x="121" y="118" width="79" height="80"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgG-vP-VuI">
-                                <rect key="frame" x="40" y="218" width="240" height="39"/>
+                                <rect key="frame" x="60" y="218" width="200" height="39"/>
                                 <string key="text">Track how much time  you spend cycling.
 You can check your rides history in menu.</string>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Italic" family="Avenir Next Condensed" pointSize="14"/>
@@ -584,8 +584,8 @@ You can check your rides history in menu.</string>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OR5-RZ-MuO" secondAttribute="centerX" id="74o-Qo-CdA"/>
-                            <constraint firstItem="DgG-vP-VuI" firstAttribute="leading" secondItem="OR5-RZ-MuO" secondAttribute="leading" constant="40" id="8aM-6F-FMu"/>
-                            <constraint firstItem="DgG-vP-VuI" firstAttribute="trailing" secondItem="OR5-RZ-MuO" secondAttribute="trailing" constant="-40" id="B89-PJ-QiK"/>
+                            <constraint firstItem="DgG-vP-VuI" firstAttribute="leading" secondItem="OR5-RZ-MuO" secondAttribute="leading" constant="60" id="8aM-6F-FMu"/>
+                            <constraint firstItem="DgG-vP-VuI" firstAttribute="trailing" secondItem="OR5-RZ-MuO" secondAttribute="trailing" constant="-60" id="B89-PJ-QiK"/>
                             <constraint firstItem="OR5-RZ-MuO" firstAttribute="centerY" secondItem="Mga-cK-sof" secondAttribute="bottom" id="KUF-cM-rd1"/>
                             <constraint firstItem="OR5-RZ-MuO" firstAttribute="centerX" secondItem="Mga-cK-sof" secondAttribute="centerX" id="dU0-MR-dHc"/>
                             <constraint firstAttribute="centerY" secondItem="OR5-RZ-MuO" secondAttribute="centerY" id="igg-JK-Mys"/>
@@ -635,7 +635,7 @@ You can check your rides history in menu.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Rides History" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNf-4d-OfA">
                                 <rect key="frame" x="30" y="268" width="260" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -682,21 +682,21 @@ You can check your rides history in menu.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="city-bike-logo-black" width="202" height="58"/>
-        <image name="city-bike-logo-white" width="202" height="58"/>
-        <image name="how-to-background" width="320" height="568"/>
-        <image name="how-to-circle-big" width="30" height="31"/>
-        <image name="how-to-map" width="320" height="326"/>
-        <image name="how-to-networks-icon-big" width="84" height="72"/>
-        <image name="how-to-pin-big" width="104" height="60"/>
-        <image name="how-to-stopwatch-icon" width="80" height="80"/>
-        <image name="how-to-white-blurred-bg" width="320" height="360"/>
-        <image name="launch-screen-background" width="320" height="568"/>
+        <image name="background-big" width="320" height="568"/>
+        <image name="circle-big" width="30" height="31"/>
+        <image name="city-bike-black-big" width="202" height="58"/>
+        <image name="city-bike-white-big" width="202" height="58"/>
+        <image name="launch-screen-bg" width="320" height="568"/>
         <image name="locate-me-icon-nav" width="29" height="29"/>
+        <image name="map-big" width="320" height="326"/>
+        <image name="menu-big" width="93" height="80"/>
         <image name="menu-icon-nav" width="29" height="29"/>
+        <image name="pin-big" width="104" height="60"/>
+        <image name="stopwatch-big" width="79" height="80"/>
         <image name="stopwatch-done-icon-nav" width="24" height="25"/>
         <image name="stopwatch-ready-icon-mini" width="14" height="17"/>
         <image name="stopwatch-ready-icon-nav" width="24" height="25"/>
+        <image name="white-blurred-bg-big" width="320" height="360"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
