@@ -131,6 +131,7 @@
 		6D28345F1B24E89000E361A3 /* CBRideStopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRideStopwatch.swift; path = Helpers/CBRideStopwatch.swift; sourceTree = "<group>"; };
 		6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+TextualRepresentation.swift"; sourceTree = "<group>"; };
 		6D31D0FF1B221CA50034C27B /* CBRightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRightDetailCell.swift; path = Components/CBRightDetailCell.swift; sourceTree = "<group>"; };
+		6D42F3EB1B35AA9800839FA0 /* Clustering.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Clustering.playground; sourceTree = "<group>"; };
 		6D5BA0B51B359822005C72CC /* UIView+XIBLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XIBLoading.swift"; sourceTree = "<group>"; };
 		6D5BA0B71B359849005C72CC /* UIView+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Dynamic.swift"; sourceTree = "<group>"; };
 		6D5FB3F61B34849E00AB9143 /* CBMapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMapButton.swift; path = Components/CBMapButton.swift; sourceTree = "<group>"; };
@@ -236,6 +237,7 @@
 				6D0EBE551B2033FB003ED872 /* Products */,
 				1AA46FD4589E04156EFD982A /* Pods */,
 				A8775754B7360485054AA7FD /* Frameworks */,
+				6D42F3EB1B35AA9800839FA0 /* Clustering.playground */,
 			);
 			sourceTree = "<group>";
 		};
