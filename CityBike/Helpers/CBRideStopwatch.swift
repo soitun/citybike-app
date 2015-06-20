@@ -15,11 +15,7 @@ class CBRideStopwatch {
     private var timer: NSTimer?
     private var updateBlock: UpdateBlockType?
     
-    var isMeasuring: Bool = false
-    
     func start(timeInterval: NSTimeInterval, updateBlock: UpdateBlockType) {
-        self.isMeasuring = true
-        
         self.updateBlock = updateBlock
         
         self.startTimeInterval = timeInterval
@@ -34,8 +30,6 @@ class CBRideStopwatch {
     }
     
     func stop() -> NSTimeInterval {
-        self.isMeasuring = false
-        
         self.timer?.invalidate()
         return self.duration()
     }

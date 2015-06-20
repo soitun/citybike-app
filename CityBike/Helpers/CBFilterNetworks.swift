@@ -9,11 +9,11 @@
 import Foundation
 
 struct CBFilteredNetworksGroupProxy {
-    var countryCode: String
+    var countryCode: CountryCode
     var countryName: String
     var networks = [CBFilteredNetworkProxy]()
     
-    init(code: String, country: String) {
+    init(code: CountryCode, country: String) {
         self.countryCode = code
         self.countryName = country
     }
