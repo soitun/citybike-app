@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CBModel
 
 class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var cityBikesButton: UIButton!
+    @IBOutlet weak var providedByLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,13 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshProvidedBy", name: CBSyncManagerNotification.DidUpdateNetworks.rawValue, object: nil)
+        self.refreshProvidedBy()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     @IBAction func cityBikesAPIPressed(sender: AnyObject) {
@@ -40,6 +49,16 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func donePressed(sender: AnyObject) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @objc private func refreshProvidedBy() {
+        let networksCount = CDNetwork.fetchAll(CoreDataHelper.sharedInstance().mainContext).count
+        if networksCount == 0 {
+            self.providedByLabel.text = NSLocalizedString("Provided by", comment: "")
+        
+        } else {
+            self.providedByLabel.text = String.localizedStringWithFormat("%d networks provided by", networksCount)
+        }
     }
     
     /// MARK: UITableView
