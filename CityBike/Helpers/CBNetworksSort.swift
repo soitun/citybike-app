@@ -10,8 +10,13 @@ import Foundation
 import CBModel
 
 class CBOrderedNetworksGroup {
-    var countryCode: String!
-    var networks = [CDNetwork]()
+    var countryCode: CountryCode
+    var networks: [CDNetwork]
+    
+    init(countryCode: String, networks: [CDNetwork]) {
+        self.countryCode = countryCode
+        self.networks = networks
+    }
     
     lazy var countryName: String! = {
         let identifier = NSLocale.localeIdentifierFromComponents([NSLocaleCountryCode: self.countryCode])
@@ -20,19 +25,17 @@ class CBOrderedNetworksGroup {
 }
 
 class CBNetworksSort {
-    class func orderNetworks(var networks: [CDNetwork]) -> [CBOrderedNetworksGroup] {
+    class func orderNetworks(networks: [CDNetwork]) -> [CBOrderedNetworksGroup] {
         /// Store networks groupped by country code
         var orderedGroups = [CBOrderedNetworksGroup]()
-
+        
         for network in networks {
-            let key = network.location.country
-            if let group = orderedGroups.filter({$0.countryCode == key}).first {
+            let ccKey = network.location.country
+            if let group = orderedGroups.filter({$0.countryCode == ccKey}).first {
                 group.networks.append(network)
+                
             } else {
-                var group = CBOrderedNetworksGroup()
-                group.networks.append(network)
-                group.countryCode = network.location.country
-                orderedGroups.append(group)
+                orderedGroups.append(CBOrderedNetworksGroup(countryCode: network.location.country, networks: [network]))
             }
         }
         
