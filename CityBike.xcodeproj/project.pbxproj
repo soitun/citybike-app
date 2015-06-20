@@ -282,6 +282,7 @@
 		6D5BA0AF1B359683005C72CC /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				6D5BA0BA1B359CF0005C72CC /* Feedback */,
 				6DC344D61B23C63A00C29408 /* Getting Started */,
 				6D5BA0B01B35968E005C72CC /* Map Browser */,
 				6D5BA0B11B3596A7005C72CC /* Menu */,
@@ -307,7 +308,6 @@
 		6D5BA0B11B3596A7005C72CC /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */,
 				6D2834511B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift */,
 				6D2834531B24925400E361A3 /* CBMenuRidesHistoryViewController.swift */,
 				6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */,
@@ -364,6 +364,14 @@
 				6DBA51121B2B8454002ECC3F /* citybik.es-api */,
 			);
 			name = Externals;
+			sourceTree = "<group>";
+		};
+		6D5BA0BA1B359CF0005C72CC /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				6D28345B1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift */,
+			);
+			name = Feedback;
 			sourceTree = "<group>";
 		};
 		6D6DB5221B31DA9200342179 /* Extensions */ = {
