@@ -1,56 +1,12 @@
 //
-//  UIViewExtension.swift
+//  UIView+XIBLoading.swift
 //  CityBike
 //
-//  Created by Tomasz Szulc on 04/06/15.
+//  Created by Tomasz Szulc on 20/06/15.
 //  Copyright (c) 2015 Tomasz Szulc. All rights reserved.
 //
 
 import UIKit
-
-extension UIView {
-
-    func makeShadowed() {
-        self.layer.shadowColor = UIColor.blackColor().CGColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 1)
-        self.layer.shadowRadius = 0
-        self.layer.shadowOpacity = 0.3
-    }
-
-    func makeRounded() {
-        self.layer.cornerRadius = 6
-    }
-}
-
-extension UIView {
-    
-    func changeVisibility(show: Bool, animated: Bool) {
-        let duration = animated ? 0.25 : 0
-        if show == true && self.hidden == true {
-            self.alpha = 0
-            self.hidden = false
-            UIView.animateWithDuration(duration, animations: { self.alpha = 1 })
-            
-        } else if show == false && self.hidden == false {
-            self.alpha = 1
-            UIView.animateWithDuration(duration, animations: { self.alpha = 0 }) { _ in self.hidden = true }
-        }
-    }
-    
-    func bounce(duration: NSTimeInterval) {
-        UIView.animateWithDuration(duration, animations: {
-            self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.2, 1.2)
-            
-            }) { _ in
-                UIView.animateWithDuration(duration, animations: {
-                    self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9)
-                    
-                    }) { _ in
-                        UIView.animateWithDuration(duration, animations: { _ in self.transform = CGAffineTransformIdentity })
-                }
-        }
-    }
-}
 
 extension UIView {
     
