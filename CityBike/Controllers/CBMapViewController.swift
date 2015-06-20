@@ -13,8 +13,8 @@ import CBModel
 class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
     
     @IBOutlet private weak var mapView: MKMapView!
-    @IBOutlet private var stopwatchReadyButton: CBMapButton!
-    @IBOutlet private var stopwatchDoneButton: CBMapButton!
+    @IBOutlet private weak var stopwatchReadyButton: CBMapButton!
+    @IBOutlet private weak var stopwatchDoneButton: CBMapButton!
     
     /// Container is displayed when there is no internet connection
     @IBOutlet private weak var noInternetContainer: UIView!
