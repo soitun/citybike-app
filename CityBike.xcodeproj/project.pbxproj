@@ -52,7 +52,6 @@
 		6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
 		6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
 		6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51161B2B8465002ECC3F /* CBNetwork.swift */; };
-		6DBA511E1B2B8465002ECC3F /* CBNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51171B2B8465002ECC3F /* CBNetworkType.swift */; };
 		6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51181B2B8465002ECC3F /* CBService.swift */; };
 		6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51191B2B8465002ECC3F /* CBStation.swift */; };
 		6DBA51271B2B8D39002ECC3F /* CBModelUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51261B2B8D39002ECC3F /* CBModelUpdater.swift */; };
@@ -158,7 +157,6 @@
 		6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBJSONParser.swift; path = "Submodules/citybik.es-api/CBJSONParser.swift"; sourceTree = "<group>"; };
 		6DBA51151B2B8465002ECC3F /* CBLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBLocation.swift; path = "Submodules/citybik.es-api/CBLocation.swift"; sourceTree = "<group>"; };
 		6DBA51161B2B8465002ECC3F /* CBNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNetwork.swift; path = "Submodules/citybik.es-api/CBNetwork.swift"; sourceTree = "<group>"; };
-		6DBA51171B2B8465002ECC3F /* CBNetworkType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNetworkType.swift; path = "Submodules/citybik.es-api/CBNetworkType.swift"; sourceTree = "<group>"; };
 		6DBA51181B2B8465002ECC3F /* CBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBService.swift; path = "Submodules/citybik.es-api/CBService.swift"; sourceTree = "<group>"; };
 		6DBA51191B2B8465002ECC3F /* CBStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStation.swift; path = "Submodules/citybik.es-api/CBStation.swift"; sourceTree = "<group>"; };
 		6DBA51261B2B8D39002ECC3F /* CBModelUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBModelUpdater.swift; path = ../CBModelUpdater.swift; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 				6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */,
 				6DBA51151B2B8465002ECC3F /* CBLocation.swift */,
 				6DBA51161B2B8465002ECC3F /* CBNetwork.swift */,
-				6DBA51171B2B8465002ECC3F /* CBNetworkType.swift */,
 				6DBA51181B2B8465002ECC3F /* CBService.swift */,
 				6DBA51191B2B8465002ECC3F /* CBStation.swift */,
 			);
@@ -663,7 +660,6 @@
 				6D28345C1B24B0A100E361A3 /* CBFeedbackMailComposeViewController.swift in Sources */,
 				6DC344D51B23C57300C29408 /* CBGettingStartedStopwatchViewController.swift in Sources */,
 				6DC344E11B242B6E00C29408 /* CBMenuViewController.swift in Sources */,
-				6DBA511E1B2B8465002ECC3F /* CBNetworkType.swift in Sources */,
 				6DBA51271B2B8D39002ECC3F /* CBModelUpdater.swift in Sources */,
 				6DC344CD1B233B9E00C29408 /* CBButton.swift in Sources */,
 				6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */,
