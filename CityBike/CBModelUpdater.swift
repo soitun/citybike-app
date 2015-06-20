@@ -47,23 +47,21 @@ class CBModelUpdater: CBUpdaterProtocol {
         println("Sync networks")
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let tmpContext = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
+            let ctx = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
+            
             for updatedNetwork in updatedNetworks {
-                var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: tmpContext).first as? CDNetwork
+                var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? CDNetwork
                 if network == nil {
-                    network = CDNetwork(context: tmpContext)
-                    network!.location = CDLocation(context: tmpContext)
+                    network = CDNetwork(context: ctx)
+                    network!.location = CDLocation(context: ctx)
                 }
                 
-                /// network
-                self.fillNetwork(network!, updatedNetwork: updatedNetwork)
-                
-                /// location
-                self.fillLocation(network!.location, updatedLocation: updatedNetwork.location)
+                network!.fill(updatedNetwork)
+                network!.location.fill(updatedNetwork.location)
             }
             
-            tmpContext.save(nil)
-            tmpContext.parentContext?.save(nil)
+            ctx.save(nil)
+            ctx.parentContext?.save(nil)
             
             completion()
         })
@@ -73,58 +71,62 @@ class CBModelUpdater: CBUpdaterProtocol {
         println("Sync networks and stations")
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let tmpContext = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
+            let ctx = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
             
             for updatedNetwork in updatedNetworks {
-                var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: tmpContext).first as? CDNetwork
+                var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? CDNetwork
                 if network == nil {
-                    network = CDNetwork(context: tmpContext)
-                    network!.location = CDLocation(context: tmpContext)
+                    network = CDNetwork(context: ctx)
+                    network!.location = CDLocation(context: ctx)
                 }
                 
-                /// network
-                self.fillNetwork(network!, updatedNetwork: updatedNetwork)
-                
-                /// location
-                self.fillLocation(network!.location, updatedLocation: updatedNetwork.location)
+                network!.fill(updatedNetwork)
+                network!.location.fill(updatedNetwork.location)
                 
                 /// stations
                 for updatedStation in updatedNetwork.stations {
-                    if let station = CDStation.fetchWithAttribute("id", value: updatedStation.id, context: tmpContext).first as? CDStation {
-                        self.fillStation(station, updatedStation: updatedStation)
+                    if let station: CDStation = CDStation.fetchWithAttribute("id", value: updatedStation.id, context: ctx).first as? CDStation {
+                        station.fill(updatedStation)
+                        
                     } else {
-                        let station: CDStation = CDStation(context: tmpContext)
-                        self.fillStation(station, updatedStation: updatedStation)
+                        let station: CDStation = CDStation(context: ctx)
+                        station.fill(updatedStation)
                         network!.addStation(station)
                     }
                 }
             }
             
-            tmpContext.save(nil)
-            tmpContext.parentContext?.save(nil)
+            ctx.save(nil)
+            ctx.parentContext?.save(nil)
             
             completion()
         })
     }
-    
-    private func fillNetwork(network: CDNetwork, updatedNetwork: CBNetwork) {
-        network.company = updatedNetwork.company ?? ""
-        network.id = updatedNetwork.id
-        network.name = updatedNetwork.name
+}
+
+private extension CDNetwork {
+    func fill(updatedNetwork: CBNetwork) {
+        self.company = updatedNetwork.company ?? ""
+        self.id = updatedNetwork.id
+        self.name = updatedNetwork.name
     }
-    
-    private func fillStation(station: CDStation, updatedStation: CBStation) {
-        station.freeBikes = updatedStation.freeBikes
-        station.emptySlots = updatedStation.emptySlots
-        station.id = updatedStation.id
-        station.coordinate = updatedStation.coordinate
-        station.name = updatedStation.name
-        station.timestamp = updatedStation.timestamp
+}
+
+private extension CDStation {
+    func fill(updatedStation: CBStation) {
+        self.freeBikes = updatedStation.freeBikes
+        self.emptySlots = updatedStation.emptySlots
+        self.id = updatedStation.id
+        self.coordinate = updatedStation.coordinate
+        self.name = updatedStation.name
+        self.timestamp = updatedStation.timestamp
     }
-    
-    private func fillLocation(location: CDLocation, updatedLocation: CBLocation) {
-        location.city = updatedLocation.city
-        location.country = updatedLocation.country
-        location.coordinate = updatedLocation.coordinate
+}
+
+private extension CDLocation {
+    func fill(updatedLocation: CBLocation) {
+        self.city = updatedLocation.city
+        self.country = updatedLocation.country
+        self.coordinate = updatedLocation.coordinate
     }
 }
