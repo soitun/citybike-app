@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -84,7 +83,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-detail-pin" translatesAutoresizingMaskIntoConstraints="NO" id="SZ9-iX-vGh">
-                                <rect key="frame" x="8" y="7" width="16" height="23"/>
+                                <rect key="frame" x="10" y="7" width="16" height="23"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -93,13 +92,13 @@
                             <constraint firstItem="2sA-Lm-2QW" firstAttribute="top" secondItem="nG4-wT-2G7" secondAttribute="bottom" constant="-1" id="6mV-Jr-Jm3"/>
                             <constraint firstItem="BVZ-kf-Fah" firstAttribute="centerY" secondItem="M9b-T7-czQ" secondAttribute="centerY" id="FE3-3W-K3a"/>
                             <constraint firstItem="BVZ-kf-Fah" firstAttribute="centerY" secondItem="efT-tO-sR2" secondAttribute="centerY" id="Jxq-8L-BDE"/>
-                            <constraint firstItem="nG4-wT-2G7" firstAttribute="leading" secondItem="SZ9-iX-vGh" secondAttribute="trailing" constant="12" id="LYY-hO-EuU"/>
+                            <constraint firstItem="nG4-wT-2G7" firstAttribute="leading" secondItem="SZ9-iX-vGh" secondAttribute="trailing" constant="10" id="LYY-hO-EuU"/>
                             <constraint firstItem="BVZ-kf-Fah" firstAttribute="leading" secondItem="efT-tO-sR2" secondAttribute="trailing" constant="2" id="ObL-Z1-mzg"/>
                             <constraint firstItem="efT-tO-sR2" firstAttribute="centerY" secondItem="Nym-vZ-FxJ" secondAttribute="centerY" id="PDM-UT-usL"/>
                             <constraint firstItem="SZ9-iX-vGh" firstAttribute="centerY" secondItem="RZZ-Ak-1Pv" secondAttribute="centerY" id="TLo-Gj-V3W"/>
                             <constraint firstItem="Wnu-yC-l2m" firstAttribute="leading" secondItem="M9b-T7-czQ" secondAttribute="trailing" constant="2" id="X0m-KY-EcF"/>
                             <constraint firstItem="SZ9-iX-vGh" firstAttribute="centerY" secondItem="nG4-wT-2G7" secondAttribute="centerY" constant="-1" id="a1y-X6-bcC"/>
-                            <constraint firstAttribute="centerX" secondItem="SZ9-iX-vGh" secondAttribute="centerX" constant="144" id="a9S-xu-uDp"/>
+                            <constraint firstAttribute="centerX" secondItem="SZ9-iX-vGh" secondAttribute="centerX" constant="142" id="a9S-xu-uDp"/>
                             <constraint firstItem="M9b-T7-czQ" firstAttribute="leading" secondItem="BVZ-kf-Fah" secondAttribute="trailing" constant="5" id="dAX-yS-QJx"/>
                             <constraint firstAttribute="centerY" secondItem="SZ9-iX-vGh" secondAttribute="centerY" constant="19" id="eop-hJ-pNO"/>
                             <constraint firstItem="RZZ-Ak-1Pv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wnu-yC-l2m" secondAttribute="trailing" constant="10" id="gDU-U5-N2W"/>
