@@ -45,7 +45,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManager.DidUpdateNetworksNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManagerNotification.DidUpdateNetworks.rawValue, object: nil)
         
         self.refresAll()
     }

@@ -60,8 +60,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     private func registerObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManager.DidUpdateStationsNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManager.DidUpdateNetworksNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateStationsNotification:", name: CBSyncManagerNotification.DidUpdateStations.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManagerNotification.DidUpdateNetworks.rawValue, object: nil)
     }
 
     override func viewDidDisappear(animated: Bool) {
