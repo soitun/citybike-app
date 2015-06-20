@@ -12,6 +12,6 @@ import Foundation
 public class CDRideHistoryEntry: NSManagedObject {
 
     @NSManaged public var duration: NSNumber
-    @NSManaged public var startTimeInterval: NSNumber
+    @NSManaged public var date: NSDate
     @NSManaged public var day: CDRideHistoryDay
 }

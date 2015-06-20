@@ -11,8 +11,7 @@ import Foundation
 @objc(CDRideHistoryDay)
 public class CDRideHistoryDay: NSManagedObject {
     
-    /// time interval since 1970 when day started 00:00
-    @NSManaged public var startTimeInterval: NSNumber
+    @NSManaged public var date: NSDate
     @NSManaged public var entries: NSOrderedSet
     
     public func addEntry(entry: CDRideHistoryEntry) {

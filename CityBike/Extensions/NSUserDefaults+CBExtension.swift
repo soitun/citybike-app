@@ -36,7 +36,7 @@ extension NSUserDefaults {
     
     private static let CityBikeDisplayedGettingStarted = "CityBikeDisplayedGettingStarted"
     private static let CityBikeSelectedNetworks = "CityBikeSelectedNetworks"
-    private static let CityBikeStartRideTimeInterval = "CityBikeStartRideTimeInterval"
+    private static let CityBikeStartRideDate = "CityBikeStartRideDate"
     private static let CityBikeMapRegion = "CityBikeMapRegion"
     
     class func registerCityBikeDefaults() {
@@ -74,22 +74,17 @@ extension NSUserDefaults {
     
     
     /// MARK: Ride Time
-    class func getStartRideTimeInterval() -> NSTimeInterval? {
-        let value = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeStartRideTimeInterval) as? NSTimeInterval
-        if value != nil {
-            return value
-        } else {
-            return nil
-        }
+    class func getStartRideDate() -> NSDate? {
+        return NSUserDefaults.standardUserDefaults().objectForKey(CityBikeStartRideDate) as? NSDate
     }
     
-    class func setStartRideTimeInterval(ti: NSTimeInterval) {
-        NSUserDefaults.standardUserDefaults().setDouble(ti, forKey: CityBikeStartRideTimeInterval)
+    class func setStartRideDate(date: NSDate) {
+        NSUserDefaults.standardUserDefaults().setObject(date, forKey: CityBikeStartRideDate)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    class func removeStartRideTimeInterval() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(CityBikeStartRideTimeInterval)
+    class func removeStartRideDate() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(CityBikeStartRideDate)
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     

@@ -11,14 +11,18 @@ import Foundation
 class CBRideStopwatch {
     typealias UpdateBlockType = (duration: NSTimeInterval) -> Void
     
-    var startTimeInterval: NSTimeInterval = 0
+//    var startTimeInterval: NSTimeInterval = 0
     private var timer: NSTimer?
     private var updateBlock: UpdateBlockType?
+    private var _startDate: NSDate = NSDate()
     
-    func start(timeInterval: NSTimeInterval, updateBlock: UpdateBlockType) {
+    var startDate: NSDate {
+        return _startDate
+    }
+    
+    func start(startDate: NSDate, updateBlock: UpdateBlockType) {
         self.updateBlock = updateBlock
-        
-        self.startTimeInterval = timeInterval
+        _startDate = startDate
         self.refresh()
         
         self.timer?.invalidate()
@@ -35,6 +39,6 @@ class CBRideStopwatch {
     }
     
     private func duration() -> NSTimeInterval {
-        return NSDate().timeIntervalSince1970 - self.startTimeInterval
+        return NSDate().timeIntervalSinceDate(_startDate)
     }
 }

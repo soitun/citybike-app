@@ -63,8 +63,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CBRightDetailHeader.Identifier) as! CBRightDetailHeader
         
         let day = self.history[section]
-        let date = NSDate(timeIntervalSince1970: day.startTimeInterval.doubleValue)
-        header.label.text = self.dateFormatter.stringFromDate(date)
+        header.label.text = self.dateFormatter.stringFromDate(day.date)
         
         var sum: NSTimeInterval = 0
         for entry in day.entries {
@@ -84,7 +83,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
         
         let cell = tableView.dequeueReusableCellWithIdentifier(CBSubtitleCell.Identifier) as! CBSubtitleCell
         cell.label?.text = entry.duration.doubleValue.stringTimeRepresentationStyle1
-        cell.detailLabel.text = self.dateTimeFormatter.stringFromDate(NSDate(timeIntervalSince1970: entry.startTimeInterval.doubleValue))
+        cell.detailLabel.text = self.dateTimeFormatter.stringFromDate(entry.date)
         return cell
     }
     

@@ -97,31 +97,29 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     /// MARK: Stopwatch
     @IBAction func stopwatchReadyPressed(sender: AnyObject) {
-        self.startStopwatch(nil, showBar: true, animated: true)
+        self.startStopwatch(NSDate(), animated: true)
     }
     
     private func runStopwatchIfNeeded() {
         /// Check if stopwatch should be turned on
-        if let startTimeInterval = NSUserDefaults.getStartRideTimeInterval() {
-            self.startStopwatch(startTimeInterval, showBar: true, animated: false)
+        if let startDate = NSUserDefaults.getStartRideDate() {
+            self.startStopwatch(startDate, animated: false)
             
         } else {
             self.stopwatchPopover.changeVisibility(false, animated: false)
         }
     }
     
-    private func startStopwatch(var ti: NSTimeInterval?, showBar: Bool, animated: Bool) {
-        self.stopwatchManager.start(ti, updateBlock: { (duration) -> Void in
+    private func startStopwatch(startDate: NSDate, animated: Bool) {
+        self.stopwatchManager.start(startDate, updateBlock: { (duration) -> Void in
             self.stopwatchPopover.label.text = duration.stringTimeRepresentationStyle2
         })
         
-        if (showBar) {
-            self.switchStopwatchButtons(false)
-            self.stopwatchPopover.changeVisibility(true, animated: animated)
-        }
+        self.switchStopwatchButtons(presentReady: false)
+        self.stopwatchPopover.changeVisibility(true, animated: animated)
     }
     
-    private func switchStopwatchButtons(presentReady: Bool) {
+    private func switchStopwatchButtons(#presentReady: Bool) {
         let btnToShow = presentReady ? self.stopwatchReadyButton : self.stopwatchDoneButton
         let btnToHide = presentReady ? self.stopwatchDoneButton : self.stopwatchReadyButton
         
@@ -137,7 +135,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
-        self.switchStopwatchButtons(true)
+        self.switchStopwatchButtons(presentReady: true)
         self.stopwatchPopover.changeVisibility(false, animated: true)
         self.stopwatchManager.stop()
     }
