@@ -166,6 +166,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
         NSUserDefaults.setMapRegion(mapView.region)
+        println(mapView.region.span.latitudeDelta)
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
