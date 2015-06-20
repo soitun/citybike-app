@@ -34,23 +34,6 @@ class CBButton: UIButton {
         self.makeNormalStyle()
     }
     
-    func makeStyleReddish() {
-        self.makeRounded()
-        self.normalBackgroundColor = UIColor.flamePeaColor()
-        self.pressedBackgroundColor = UIColor.whiteColor()
-        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        self.makeNormalStyle()
-    }
-    
-    func makeStyleShadowedWhite() {
-        self.makeRounded()
-        self.makeShadowed()
-        self.normalBackgroundColor = UIColor.whiteColor()
-        self.pressedBackgroundColor = UIColor(white: 1.0, alpha: 0.3)
-        self.setTitleColor(UIColor.blueGrayColor(), forState: UIControlState.Normal)
-        self.makeNormalStyle()
-    }
-
     final override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
         dispatch_async(dispatch_get_main_queue(), {
             UIView.animateWithDuration(0.15, animations: {
