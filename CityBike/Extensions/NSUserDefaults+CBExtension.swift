@@ -61,12 +61,12 @@ extension NSUserDefaults {
     
     
     /// MARK: Selected Networks
-    class func getNetworkIDs() -> [String] {
+    class func getNetworkIDs() -> [CBNetworkType] {
         let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeSelectedNetworks) as! NSData
         return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String]
     }
     
-    class func saveNetworkIDs(ids: [String]) {
+    class func saveNetworkIDs(ids: [CBNetworkType]) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(ids)
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: CityBikeSelectedNetworks)
         NSUserDefaults.standardUserDefaults().synchronize()
