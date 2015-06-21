@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CBModel
 
-class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
+class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var stopwatchReadyButton: CBMapButton!
@@ -41,7 +41,11 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.runStopwatchIfNeeded()
 
         /// Request content
-        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.distanceFilter = 30.0
         CBModelUpdater.sharedInstance.start()
     }
     
@@ -50,11 +54,11 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         
         self.registerObservers()
         
-        let allStations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
+        let allStations = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
         self.mapUpdater.update(self.mapView, updatedStations: allStations)
        
         /// Show last saved region
-        if let savedRegion = NSUserDefaults.getMapRegion() {
+        if let savedRegion = CBUserDefaults.sharedInstance.getMapRegion() {
             self.mapView.setRegion(savedRegion, animated: false)
         }
     }
@@ -80,7 +84,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
                 self.noInternetContainer.changeVisibility(true, animated: true)
                 
             } else {
-                let stations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
+                let stations = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
                 self.mapUpdater.update(self.mapView, updatedStations: stations)
                 self.noInternetContainer.changeVisibility(false, animated: true)
                 
@@ -102,7 +106,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     private func runStopwatchIfNeeded() {
         /// Check if stopwatch should be turned on
-        if let startDate = NSUserDefaults.getStartRideDate() {
+        if let startDate = CBUserDefaults.sharedInstance.getStartRideDate() {
             self.startStopwatch(startDate, animated: false)
             
         } else {
@@ -155,7 +159,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         view.fewColor = UIColor.fewColor()
         view.plentyColor = UIColor.plentyColor()
         
-        let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataHelper.sharedInstance().mainContext).first as! CDStation
+        let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
         view.configure(station)
         return view
     }
@@ -165,7 +169,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        NSUserDefaults.setMapRegion(mapView.region)
+        CBUserDefaults.sharedInstance.setMapRegion(mapView.region)
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
@@ -180,7 +184,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     private func updateMapDetailView(stationID: StationID?) {
         if stationID == nil { return }
         
-        let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataHelper.sharedInstance().mainContext).first as! CDStation
+        let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
         self.selectedStation = station.id
         
         let detailText = "\(station.network.location.city), \(station.network.location.country)"
@@ -206,5 +210,13 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
+    }
+    
+    
+    /// MARK: CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        if let location = locations.first as? CLLocation {
+            CBWormhole.sharedInstance.passMessageObject(location, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
+        }
     }
 }

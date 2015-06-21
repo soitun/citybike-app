@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CCHMapClusterController"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CCHMapClusterController"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CCHMapClusterController" -framework "CoreLocation" -framework "MapKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CCHMapClusterController" "${PODS_ROOT}/Headers/Public/MMWormhole"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CCHMapClusterController" -isystem "${PODS_ROOT}/Headers/Public/MMWormhole"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-CCHMapClusterController" -l"Pods-MMWormhole" -framework "CoreLocation" -framework "Foundation" -framework "MapKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

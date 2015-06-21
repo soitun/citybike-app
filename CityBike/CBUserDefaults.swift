@@ -1,8 +1,8 @@
 //
-//  CBNSUserDefaults.swift
+//  CBUserDefaults.swift
 //  CityBike
 //
-//  Created by Tomasz Szulc on 04/06/15.
+//  Created by Tomasz Szulc on 21/06/15.
 //  Copyright (c) 2015 Tomasz Szulc. All rights reserved.
 //
 
@@ -32,66 +32,81 @@ class CBCoordinateRegionSerializable: NSObject, NSCoding {
     override init() { super.init() }
 }
 
-extension NSUserDefaults {
+class CBUserDefaults: NSUserDefaults {
+        
+    private class func createSharedDefaults() -> CBUserDefaults {
+        return CBUserDefaults(suiteName: CBConstant.AppSharedGroup.rawValue)!
+    }
     
-    private static let CityBikeDisplayedGettingStarted = "CityBikeDisplayedGettingStarted"
-    private static let CityBikeSelectedNetworks = "CityBikeSelectedNetworks"
-    private static let CityBikeStartRideDate = "CityBikeStartRideDate"
-    private static let CityBikeMapRegion = "CityBikeMapRegion"
+    class var sharedInstance: CBUserDefaults {
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: CBUserDefaults? = nil
+        }
+        
+        dispatch_once(&Static.onceToken, { Static.instance = CBUserDefaults.createSharedDefaults() })
+        return Static.instance!
+    }
+
     
-    class func registerCityBikeDefaults() {
+    private let CityBikeDisplayedGettingStarted = "CityBikeDisplayedGettingStarted"
+    private let CityBikeSelectedNetworks = "CityBikeSelectedNetworks"
+    private let CityBikeStartRideDate = "CityBikeStartRideDate"
+    private let CityBikeMapRegion = "CityBikeMapRegion"
+    
+    func registerCityBikeDefaults() {
         
         let defaults = [
             CityBikeDisplayedGettingStarted: 0,
             CityBikeSelectedNetworks: NSKeyedArchiver.archivedDataWithRootObject([String]())
         ]
-        NSUserDefaults.standardUserDefaults().registerDefaults(defaults)
+        self.registerDefaults(defaults)
     }
     
     
     /// MARK: Getting Started
-    class func getDisplayedGettingStarted() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(CityBikeDisplayedGettingStarted)
+    func getDisplayedGettingStarted() -> Bool {
+        return self.boolForKey(CityBikeDisplayedGettingStarted)
     }
     
-    class func setDisplayedGettingStarted(displayed: Bool) {
-        NSUserDefaults.standardUserDefaults().setBool(displayed, forKey: CityBikeDisplayedGettingStarted)
-        NSUserDefaults.standardUserDefaults().synchronize()
+    func setDisplayedGettingStarted(displayed: Bool) {
+        self.setBool(displayed, forKey: CityBikeDisplayedGettingStarted)
+        self.synchronize()
     }
     
     
     /// MARK: Selected Networks
-    class func getNetworkIDs() -> [CBNetworkType] {
-        let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeSelectedNetworks) as! NSData
+    func getNetworkIDs() -> [CBNetworkType] {
+        let data = self.objectForKey(CityBikeSelectedNetworks) as! NSData
         return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String]
     }
     
-    class func saveNetworkIDs(ids: [CBNetworkType]) {
+    func saveNetworkIDs(ids: [CBNetworkType]) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(ids)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: CityBikeSelectedNetworks)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        self.setObject(data, forKey: CityBikeSelectedNetworks)
+        self.synchronize()
     }
     
     
     /// MARK: Ride Time
-    class func getStartRideDate() -> NSDate? {
-        return NSUserDefaults.standardUserDefaults().objectForKey(CityBikeStartRideDate) as? NSDate
+    func getStartRideDate() -> NSDate? {
+        return self.objectForKey(CityBikeStartRideDate) as? NSDate
     }
     
-    class func setStartRideDate(date: NSDate) {
-        NSUserDefaults.standardUserDefaults().setObject(date, forKey: CityBikeStartRideDate)
-        NSUserDefaults.standardUserDefaults().synchronize()
+    func setStartRideDate(date: NSDate) {
+        self.setObject(date, forKey: CityBikeStartRideDate)
+        self.synchronize()
     }
     
-    class func removeStartRideDate() {
-        NSUserDefaults.standardUserDefaults().removeObjectForKey(CityBikeStartRideDate)
-        NSUserDefaults.standardUserDefaults().synchronize()
+    func removeStartRideDate() {
+        self.removeObjectForKey(CityBikeStartRideDate)
+        self.synchronize()
     }
     
     
     /// MARK: Map Region
-    class func getMapRegion() -> MKCoordinateRegion? {
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey(CityBikeMapRegion) as? NSData {
+    func getMapRegion() -> MKCoordinateRegion? {
+        if let data = self.objectForKey(CityBikeMapRegion) as? NSData {
             let serialized = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! CBCoordinateRegionSerializable
             let center = CLLocationCoordinate2D(latitude: serialized.latitude, longitude: serialized.longitude)
             let span = MKCoordinateSpan(latitudeDelta: serialized.latitudeDelta, longitudeDelta: serialized.longitudeDelta)
@@ -101,7 +116,7 @@ extension NSUserDefaults {
         }
     }
     
-    class func setMapRegion(region: MKCoordinateRegion) {
+    func setMapRegion(region: MKCoordinateRegion) {
         let serialized = CBCoordinateRegionSerializable()
         serialized.latitude = region.center.latitude
         serialized.longitude = region.center.longitude
@@ -109,7 +124,7 @@ extension NSUserDefaults {
         serialized.longitudeDelta = region.span.longitudeDelta
         
         let data = NSKeyedArchiver.archivedDataWithRootObject(serialized)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: CityBikeMapRegion)
-        NSUserDefaults.standardUserDefaults().synchronize()
+        self.setObject(data, forKey: CityBikeMapRegion)
+        self.synchronize()
     }
 }

@@ -52,7 +52,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc private func refreshProvidedBy() {
-        let networksCount = CDNetwork.fetchAll(CoreDataHelper.sharedInstance().mainContext).count
+        let networksCount = CDNetwork.fetchAll(CoreDataStack.sharedInstance().mainContext).count
         if networksCount == 0 {
             self.providedByLabel.text = NSLocalizedString("Provided by", comment: "")
         
@@ -89,7 +89,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .Settings:
             let cell = tableView.dequeueReusableCellWithIdentifier(CBRightDetailCell.Identifier) as! CBRightDetailCell
             cell.label.text = NSLocalizedString("City Bike Networks", comment: "")
-            cell.detailLabel.text = String.localizedStringWithFormat("%d Selected", NSUserDefaults.getNetworkIDs().count)
+            cell.detailLabel.text = String.localizedStringWithFormat("%d Selected", CBUserDefaults.sharedInstance.getNetworkIDs().count)
             cell.accessoryType = .DisclosureIndicator
             return cell
             

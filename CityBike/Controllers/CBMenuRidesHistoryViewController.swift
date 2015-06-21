@@ -40,7 +40,7 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.history = CDRideHistoryDay.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDRideHistoryDay]
+        self.history = CDRideHistoryDay.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDRideHistoryDay]
         self.tableView.reloadData()
         
         self.noItemsLabel.hidden = self.history.count > 0

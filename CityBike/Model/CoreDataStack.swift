@@ -1,5 +1,5 @@
 //
-//  CoreDataHelper.swift
+//  CoreDataStack.swift
 //
 //  Created by Tomasz Szulc on 22/09/14.
 //  Copyright (c) 2014 Tomasz Szulc. All rights reserved.
@@ -20,7 +20,9 @@ public struct CoreDataModel {
     }
 }
 
-public class CoreDataHelper: NSObject {
+public class CoreDataStack: NSObject {
+    
+    let sharedAppGroup: String = "group.com.tomaszszulc.CityBike"
     
     private var model: CoreDataModel
     private var storeType: CoreDataModelStoreType
@@ -34,11 +36,18 @@ public class CoreDataHelper: NSObject {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("contextDidSaveContext:"), name: NSManagedObjectContextDidSaveNotification, object: nil)
     }
     
-    public class func setSharedInstance(shared: CoreDataHelper) {
+    public class func setSharedInstance(shared: CoreDataStack) {
         Static.instance = shared
     }
     
-    public class func sharedInstance() -> CoreDataHelper {
+    public class func sharedInstance() -> CoreDataStack {
+        /// This is workaround for core data configuration (for now)
+        if Static.instance == nil {
+            let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self))
+            let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
+            CoreDataStack.setSharedInstance(cdStack)
+        }
+        
         return Static.instance
     }
     
@@ -62,7 +71,7 @@ public class CoreDataHelper: NSObject {
     }
     
     private struct Static {
-        static var instance: CoreDataHelper!
+        static var instance: CoreDataStack!
     }
     
     
@@ -73,10 +82,11 @@ public class CoreDataHelper: NSObject {
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         let model = NSManagedObjectModel(contentsOfURL: self.model.bundle.URLForResource(self.model.name, withExtension: "momd")!)!
-        let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
         
-        let documentsDirectory = (NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as! [NSURL]).last!
-        let storeURL = documentsDirectory.URLByAppendingPathComponent("\(self.model.name).sqlite")
+        let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
+
+        let sharedContainerURL: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.sharedAppGroup)!
+        let storeURL = sharedContainerURL.URLByAppendingPathComponent("\(self.model.name).sqlite")
         
         var error: NSError? = nil
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error) == nil {

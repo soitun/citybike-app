@@ -12,6 +12,7 @@
 		6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE5D1B2033FB003ED872 /* Main.storyboard */; };
 		6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE601B2033FB003ED872 /* Images.xcassets */; };
 		6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */; };
+		6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6D2834501B243C2200E361A3 /* CBCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28344F1B243C2200E361A3 /* CBCell.swift */; };
 		6D2834521B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834511B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift */; };
 		6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834531B24925400E361A3 /* CBMenuRidesHistoryViewController.swift */; };
@@ -38,8 +39,6 @@
 		6D6DB51E1B31D1E500342179 /* CityBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */; };
 		6D6DB5291B31DD6B00342179 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DB5281B31DD6B00342179 /* NSManagedObject+Extension.swift */; };
 		6D80630F1B31BF0900E2F7FF /* CBModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D80630E1B31BF0900E2F7FF /* CBModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D8063151B31BF0A00E2F7FF /* CBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */; };
-		6D80631E1B31BF0A00E2F7FF /* CBModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */; };
 		6D8063211B31BF0A00E2F7FF /* CBModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */; };
 		6D8063221B31BF0A00E2F7FF /* CBModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6D80637E1B31C2C900E2F7FF /* CDLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F271B2D613B00A8F796 /* CDLocation.swift */; };
@@ -47,9 +46,16 @@
 		6D8063801B31C2C900E2F7FF /* CDRideHistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */; };
 		6D8063811B31C2C900E2F7FF /* CDRideHistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */; };
 		6D8063821B31C2C900E2F7FF /* CDStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F251B2D613A00A8F796 /* CDStation.swift */; };
-		6D8063831B31C2C900E2F7FF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */; };
+		6D8063831B31C2C900E2F7FF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataStack.swift */; };
+		6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */; };
+		6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B21B369DDD00B80C63 /* Images.xcassets */; };
+		6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */; };
+		6D8DC0BF1B369DDD00B80C63 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */; };
+		6D8DC0C11B369DDD00B80C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0C01B369DDD00B80C63 /* Images.xcassets */; };
+		6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */; };
+		6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
-		6DB84B091B20E372005DBDAD /* NSUserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
 		6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
 		6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
@@ -66,6 +72,19 @@
 		6DC344DC1B242A2000C29408 /* CBDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */; };
 		6DC344E11B242B6E00C29408 /* CBMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */; };
 		6DC344E61B242D6400C29408 /* CBDefaultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */; };
+		6DCFEB461B36EF8E002D24C8 /* CBUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */; };
+		6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
+		6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
+		6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
+		6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
+		6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51161B2B8465002ECC3F /* CBNetwork.swift */; };
+		6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51181B2B8465002ECC3F /* CBService.swift */; };
+		6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51191B2B8465002ECC3F /* CBStation.swift */; };
+		6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */; };
+		6DCFEB511B370349002D24C8 /* CBConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB501B370349002D24C8 /* CBConstant.swift */; };
+		6DCFEB531B3703EE002D24C8 /* CBConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB501B370349002D24C8 /* CBConstant.swift */; };
+		6DCFEB551B370421002D24C8 /* CBWormhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB541B370421002D24C8 /* CBWormhole.swift */; };
+		6DCFEB571B370695002D24C8 /* CBWormhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB541B370421002D24C8 /* CBWormhole.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
@@ -74,29 +93,31 @@
 		6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */; };
 		6DF07F381B2DD78300A8F796 /* CBFilterNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */; };
 		6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */; };
+		6DFD68FE1B36E11000047D7B /* CBNoStationsTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD68FD1B36E11000047D7B /* CBNoStationsTableRowController.swift */; };
+		AE8CA4AFF270B133414A1EE2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA90676A2DC38C9EC428943F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6D8063161B31BF0A00E2F7FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D8063091B31BF0900E2F7FF;
-			remoteInfo = CBModel;
-		};
-		6D8063181B31BF0A00E2F7FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D0EBE531B2033FB003ED872;
-			remoteInfo = CityBike;
-		};
 		6D80631F1B31BF0A00E2F7FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6D8063091B31BF0900E2F7FF;
 			remoteInfo = CBModel;
+		};
+		6D8DC0B81B369DDD00B80C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8DC0B51B369DDD00B80C63;
+			remoteInfo = "City Bike WatchKit App";
+		};
+		6D8DC0C21B369DDD00B80C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8DC0AB1B369DDD00B80C63;
+			remoteInfo = "City Bike WatchKit Extension";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -112,6 +133,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D8DC0CB1B369DDD00B80C63 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +153,7 @@
 		6D0EBE5E1B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D0EBE601B2033FB003ED872 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D0EBE631B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6D20FF3B1B36D6D300C5F4A0 /* City Bike WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "City Bike WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		6D28344F1B243C2200E361A3 /* CBCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBCell.swift; path = Components/CBCell.swift; sourceTree = "<group>"; };
 		6D2834511B2443F800E361A3 /* CBMenuBikeNetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMenuBikeNetworksViewController.swift; path = Controllers/CBMenuBikeNetworksViewController.swift; sourceTree = "<group>"; };
 		6D2834531B24925400E361A3 /* CBMenuRidesHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMenuRidesHistoryViewController.swift; path = Controllers/CBMenuRidesHistoryViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +171,7 @@
 		6D5FB3FA1B349F7C00AB9143 /* CBSimplePopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBSimplePopover.swift; path = Components/CBSimplePopover.swift; sourceTree = "<group>"; };
 		6D5FB3FC1B34A99300AB9143 /* CBMapDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBMapDetailView.xib; sourceTree = "<group>"; };
 		6D5FB3FE1B34AB8D00AB9143 /* CBMapDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMapDetailView.swift; path = Components/CBMapDetailView.swift; sourceTree = "<group>"; };
+		6D630EF41B36CB380002FF3C /* CityBike.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CityBike.entitlements; sourceTree = "<group>"; };
 		6D6801991B28E323009DE824 /* CBNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNavigationBar.swift; path = Components/CBNavigationBar.swift; sourceTree = "<group>"; };
 		6D68019B1B28E8E2009DE824 /* CBDefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBDefaultCell.xib; path = Resources/CBDefaultCell.xib; sourceTree = "<group>"; };
 		6D68019C1B28E8E2009DE824 /* CBDefaultHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CBDefaultHeader.xib; path = Resources/CBDefaultHeader.xib; sourceTree = "<group>"; };
@@ -148,13 +182,19 @@
 		6D80630A1B31BF0900E2F7FF /* CBModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CBModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D80630D1B31BF0900E2F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D80630E1B31BF0900E2F7FF /* CBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBModel.h; sourceTree = "<group>"; };
-		6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D80631C1B31BF0A00E2F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBModelTests.swift; sourceTree = "<group>"; };
+		6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "City Bike WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8DC0AF1B369DDD00B80C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBStationsListInterfaceController.swift; sourceTree = "<group>"; };
+		6D8DC0B21B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Bike WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8DC0BC1B369DDD00B80C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8DC0BE1B369DDD00B80C63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6D8DC0C01B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationTableRowController.swift; sourceTree = "<group>"; };
+		6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUpdateTableRowController.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRideManager.swift; path = Helpers/CBRideManager.swift; sourceTree = "<group>"; };
-		6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+Settings.swift"; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStationAnnotationView.swift; path = Components/CBStationAnnotationView.swift; sourceTree = "<group>"; };
-		6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataHelper.swift; path = ../CityBike/Model/CoreDataHelper.swift; sourceTree = "<group>"; };
+		6DBA50EE1B2B4042002ECC3F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CityBike/Model/CoreDataStack.swift; sourceTree = "<group>"; };
 		6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityBike.xcdatamodel; sourceTree = "<group>"; };
 		6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRideHistoryEntry.swift; path = ../CityBike/Model/CDRideHistoryEntry.swift; sourceTree = "<group>"; };
 		6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDRideHistoryDay.swift; path = ../CityBike/Model/CDRideHistoryDay.swift; sourceTree = "<group>"; };
@@ -173,6 +213,10 @@
 		6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBDefaultCell.swift; path = Components/CBDefaultCell.swift; sourceTree = "<group>"; };
 		6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMenuViewController.swift; path = Controllers/CBMenuViewController.swift; sourceTree = "<group>"; };
 		6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBDefaultHeader.swift; path = Components/CBDefaultHeader.swift; sourceTree = "<group>"; };
+		6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUserDefaults.swift; sourceTree = "<group>"; };
+		6DCFEB501B370349002D24C8 /* CBConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBConstant.swift; sourceTree = "<group>"; };
+		6DCFEB541B370421002D24C8 /* CBWormhole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBWormhole.swift; sourceTree = "<group>"; };
+		6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* UIView+Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Styling.swift"; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* UIColor+UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIColors.swift"; sourceTree = "<group>"; };
 		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDStation.swift; path = ../CityBike/Model/CDStation.swift; sourceTree = "<group>"; };
@@ -184,6 +228,7 @@
 		6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMapUpdater.swift; path = Components/CBMapUpdater.swift; sourceTree = "<group>"; };
 		6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBFilterNetworks.swift; path = Helpers/CBFilterNetworks.swift; sourceTree = "<group>"; };
 		6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNetworksSort.swift; path = Helpers/CBNetworksSort.swift; sourceTree = "<group>"; };
+		6DFD68FD1B36E11000047D7B /* CBNoStationsTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNoStationsTableRowController.swift; sourceTree = "<group>"; };
 		7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DA90676A2DC38C9EC428943F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,11 +251,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D8063111B31BF0900E2F7FF /* Frameworks */ = {
+		6D8DC0A91B369DDD00B80C63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D8063151B31BF0A00E2F7FF /* CBModel.framework in Frameworks */,
+				AE8CA4AFF270B133414A1EE2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +277,8 @@
 				6D0EBE561B2033FB003ED872 /* CityBike */,
 				6D5BA0B91B359C5B005C72CC /* Externals */,
 				6D80630B1B31BF0900E2F7FF /* CBModel */,
-				6D80631A1B31BF0A00E2F7FF /* CBModelTests */,
+				6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */,
+				6D8DC0BA1B369DDD00B80C63 /* City Bike WatchKit App */,
 				6D0EBE551B2033FB003ED872 /* Products */,
 				1AA46FD4589E04156EFD982A /* Pods */,
 				A8775754B7360485054AA7FD /* Frameworks */,
@@ -244,7 +290,8 @@
 			children = (
 				6D0EBE541B2033FB003ED872 /* CityBike.app */,
 				6D80630A1B31BF0900E2F7FF /* CBModel.framework */,
-				6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */,
+				6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */,
+				6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,11 +299,13 @@
 		6D0EBE561B2033FB003ED872 /* CityBike */ = {
 			isa = PBXGroup;
 			children = (
+				6D630EF41B36CB380002FF3C /* CityBike.entitlements */,
 				6D0EBE591B2033FB003ED872 /* AppDelegate.swift */,
 				6D5BA0AF1B359683005C72CC /* Features */,
 				6D5BA0B31B359772005C72CC /* Services */,
 				6D0EBE7C1B20387B003ED872 /* Resources */,
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
+				6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */,
 			);
 			path = CityBike;
 			sourceTree = "<group>";
@@ -339,10 +388,13 @@
 			isa = PBXGroup;
 			children = (
 				6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */,
+				6DCFEB501B370349002D24C8 /* CBConstant.swift */,
 				6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */,
 				6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */,
 				6DBA51261B2B8D39002ECC3F /* CBModelUpdater.swift */,
 				6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */,
+				6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */,
+				6DCFEB541B370421002D24C8 /* CBWormhole.swift */,
 				6DD460A01B20890B0070E163 /* Extensions */,
 				6D5BA0B41B359783005C72CC /* Rides Tracking */,
 			);
@@ -391,7 +443,7 @@
 				6DBA50F51B2B40A1002ECC3F /* CDRideHistoryEntry.swift */,
 				6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */,
 				6DF07F251B2D613A00A8F796 /* CDStation.swift */,
-				6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */,
+				6DBA50EE1B2B4042002ECC3F /* CoreDataStack.swift */,
 				6DBA50EF1B2B4042002ECC3F /* CityBike.xcdatamodeld */,
 				6D6DB5221B31DA9200342179 /* Extensions */,
 				6D80630C1B31BF0900E2F7FF /* Supporting Files */,
@@ -407,21 +459,60 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6D80631A1B31BF0A00E2F7FF /* CBModelTests */ = {
+		6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */,
-				6D80631B1B31BF0A00E2F7FF /* Supporting Files */,
+				6D20FF3B1B36D6D300C5F4A0 /* City Bike WatchKit Extension.entitlements */,
+				6D8DC0CC1B36A5CC00B80C63 /* Features */,
+				6D8DC0B21B369DDD00B80C63 /* Images.xcassets */,
+				6D8DC0AE1B369DDD00B80C63 /* Supporting Files */,
 			);
-			path = CBModelTests;
+			path = "City Bike WatchKit Extension";
 			sourceTree = "<group>";
 		};
-		6D80631B1B31BF0A00E2F7FF /* Supporting Files */ = {
+		6D8DC0AE1B369DDD00B80C63 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6D80631C1B31BF0A00E2F7FF /* Info.plist */,
+				6D8DC0AF1B369DDD00B80C63 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D8DC0BA1B369DDD00B80C63 /* City Bike WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */,
+				6D8DC0C01B369DDD00B80C63 /* Images.xcassets */,
+				6D8DC0BB1B369DDD00B80C63 /* Supporting Files */,
+			);
+			path = "City Bike WatchKit App";
+			sourceTree = "<group>";
+		};
+		6D8DC0BB1B369DDD00B80C63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0BC1B369DDD00B80C63 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D8DC0CC1B36A5CC00B80C63 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0CD1B36A5D400B80C63 /* Stations List */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		6D8DC0CD1B36A5D400B80C63 /* Stations List */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */,
+				6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */,
+				6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */,
+				6DFD68FD1B36E11000047D7B /* CBNoStationsTableRowController.swift */,
+			);
+			name = "Stations List";
 			sourceTree = "<group>";
 		};
 		6DBA51121B2B8454002ECC3F /* citybik.es-api */ = {
@@ -454,7 +545,6 @@
 			isa = PBXGroup;
 			children = (
 				6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */,
-				6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */,
 				6DD460A31B208A040070E163 /* UIColor+UIColors.swift */,
 				6D28345D1B24B5E100E361A3 /* UIDevice+ModelNames.swift */,
 				6DD460A11B20891D0070E163 /* UIView+Styling.swift */,
@@ -496,11 +586,13 @@
 				6D0EBE521B2033FB003ED872 /* Resources */,
 				55673F5A179B6B47C89B9FEA /* Copy Pods Resources */,
 				6D8062F91B31BC4600E2F7FF /* Embed Frameworks */,
+				6D8DC0CB1B369DDD00B80C63 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6D8063201B31BF0A00E2F7FF /* PBXTargetDependency */,
+				6D8DC0C31B369DDD00B80C63 /* PBXTargetDependency */,
 			);
 			name = CityBike;
 			productName = CityBike;
@@ -525,24 +617,40 @@
 			productReference = 6D80630A1B31BF0900E2F7FF /* CBModel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		6D8063131B31BF0900E2F7FF /* CBModelTests */ = {
+		6D8DC0AB1B369DDD00B80C63 /* City Bike WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D8063261B31BF0A00E2F7FF /* Build configuration list for PBXNativeTarget "CBModelTests" */;
+			buildConfigurationList = 6D8DC0CA1B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit Extension" */;
 			buildPhases = (
-				6D8063101B31BF0900E2F7FF /* Sources */,
-				6D8063111B31BF0900E2F7FF /* Frameworks */,
-				6D8063121B31BF0900E2F7FF /* Resources */,
+				468A4A6BD700B0F8CEA2FB7D /* Check Pods Manifest.lock */,
+				6D8DC0A81B369DDD00B80C63 /* Sources */,
+				6D8DC0A91B369DDD00B80C63 /* Frameworks */,
+				6D8DC0AA1B369DDD00B80C63 /* Resources */,
+				B66B33BA019242B3521A6B79 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6D8063171B31BF0A00E2F7FF /* PBXTargetDependency */,
-				6D8063191B31BF0A00E2F7FF /* PBXTargetDependency */,
+				6D8DC0B91B369DDD00B80C63 /* PBXTargetDependency */,
 			);
-			name = CBModelTests;
-			productName = CBModelTests;
-			productReference = 6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = "City Bike WatchKit Extension";
+			productName = "City Bike WatchKit Extension";
+			productReference = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		6D8DC0B51B369DDD00B80C63 /* City Bike WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8DC0C91B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit App" */;
+			buildPhases = (
+				6D8DC0B41B369DDD00B80C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "City Bike WatchKit App";
+			productName = "City Bike WatchKit App";
+			productReference = 6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
 		};
 /* End PBXNativeTarget section */
 
@@ -557,13 +665,29 @@
 				TargetAttributes = {
 					6D0EBE531B2033FB003ED872 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6D8063091B31BF0900E2F7FF = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
 					};
-					6D8063131B31BF0900E2F7FF = {
+					6D8DC0AB1B369DDD00B80C63 = {
 						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 6D0EBE531B2033FB003ED872;
+						DevelopmentTeam = 7HTJY423B9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					6D8DC0B51B369DDD00B80C63 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
 					};
 				};
 			};
@@ -582,7 +706,8 @@
 			targets = (
 				6D0EBE531B2033FB003ED872 /* CityBike */,
 				6D8063091B31BF0900E2F7FF /* CBModel */,
-				6D8063131B31BF0900E2F7FF /* CBModelTests */,
+				6D8DC0AB1B369DDD00B80C63 /* City Bike WatchKit Extension */,
+				6D8DC0B51B369DDD00B80C63 /* City Bike WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -612,17 +737,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D8063121B31BF0900E2F7FF /* Resources */ = {
+		6D8DC0AA1B369DDD00B80C63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */,
+				6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8DC0B41B369DDD00B80C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8DC0BF1B369DDD00B80C63 /* Interface.storyboard in Resources */,
+				6D8DC0C11B369DDD00B80C63 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		468A4A6BD700B0F8CEA2FB7D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		55673F5A179B6B47C89B9FEA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B66B33BA019242B3521A6B79 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -667,11 +833,14 @@
 				6DC344E61B242D6400C29408 /* CBDefaultHeader.swift in Sources */,
 				6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */,
 				6D2834601B24E89000E361A3 /* CBRideStopwatch.swift in Sources */,
+				6DCFEB551B370421002D24C8 /* CBWormhole.swift in Sources */,
 				6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */,
 				6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */,
 				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
+				6DCFEB461B36EF8E002D24C8 /* CBUserDefaults.swift in Sources */,
 				6D5FB3FB1B349F7C00AB9143 /* CBSimplePopover.swift in Sources */,
 				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,
+				6DCFEB511B370349002D24C8 /* CBConstant.swift in Sources */,
 				6D5FB3F71B34849E00AB9143 /* CBMapButton.swift in Sources */,
 				6D2834501B243C2200E361A3 /* CBCell.swift in Sources */,
 				6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */,
@@ -698,7 +867,6 @@
 				6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* CBSubtitleCell.swift in Sources */,
-				6DB84B091B20E372005DBDAD /* NSUserDefaults+Settings.swift in Sources */,
 				6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */,
 				6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */,
 				6D5BA0B61B359822005C72CC /* UIView+XIBLoading.swift in Sources */,
@@ -710,7 +878,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D6DB5291B31DD6B00342179 /* NSManagedObject+Extension.swift in Sources */,
-				6D8063831B31C2C900E2F7FF /* CoreDataHelper.swift in Sources */,
+				6D8063831B31C2C900E2F7FF /* CoreDataStack.swift in Sources */,
 				6D6DB51E1B31D1E500342179 /* CityBike.xcdatamodeld in Sources */,
 				6D8063811B31C2C900E2F7FF /* CDRideHistoryDay.swift in Sources */,
 				6D8063821B31C2C900E2F7FF /* CDStation.swift in Sources */,
@@ -720,31 +888,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D8063101B31BF0900E2F7FF /* Sources */ = {
+		6D8DC0A81B369DDD00B80C63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D80631E1B31BF0A00E2F7FF /* CBModelTests.swift in Sources */,
+				6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */,
+				6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */,
+				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
+				6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */,
+				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
+				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
+				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,
+				6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */,
+				6DCFEB571B370695002D24C8 /* CBWormhole.swift in Sources */,
+				6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */,
+				6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */,
+				6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */,
+				6DCFEB531B3703EE002D24C8 /* CBConstant.swift in Sources */,
+				6DFD68FE1B36E11000047D7B /* CBNoStationsTableRowController.swift in Sources */,
+				6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6D8063171B31BF0A00E2F7FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D8063091B31BF0900E2F7FF /* CBModel */;
-			targetProxy = 6D8063161B31BF0A00E2F7FF /* PBXContainerItemProxy */;
-		};
-		6D8063191B31BF0A00E2F7FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D0EBE531B2033FB003ED872 /* CityBike */;
-			targetProxy = 6D8063181B31BF0A00E2F7FF /* PBXContainerItemProxy */;
-		};
 		6D8063201B31BF0A00E2F7FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6D8063091B31BF0900E2F7FF /* CBModel */;
 			targetProxy = 6D80631F1B31BF0A00E2F7FF /* PBXContainerItemProxy */;
+		};
+		6D8DC0B91B369DDD00B80C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8DC0B51B369DDD00B80C63 /* City Bike WatchKit App */;
+			targetProxy = 6D8DC0B81B369DDD00B80C63 /* PBXContainerItemProxy */;
+		};
+		6D8DC0C31B369DDD00B80C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8DC0AB1B369DDD00B80C63 /* City Bike WatchKit Extension */;
+			targetProxy = 6D8DC0C21B369DDD00B80C63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -763,6 +945,14 @@
 				6D0EBE631B2033FB003ED872 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D8DC0BE1B369DDD00B80C63 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -854,10 +1044,15 @@
 			baseConfigurationReference = 8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CityBike/CityBike.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = CityBike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a627691f-8ace-45a1-8b88-a883d3ed5f8e";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -866,16 +1061,23 @@
 			baseConfigurationReference = 7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CityBike/CityBike.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = CityBike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a627691f-8ace-45a1-8b88-a883d3ed5f8e";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Release;
 		};
 		6D8063241B31BF0A00E2F7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -890,6 +1092,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e03727d1-9df6-4442-ba5a-a068220ff3fe";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -900,6 +1103,8 @@
 		6D8063251B31BF0A00E2F7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -910,6 +1115,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e03727d1-9df6-4442-ba5a-a068220ff3fe";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -917,35 +1123,77 @@
 			};
 			name = Release;
 		};
-		6D8063271B31BF0A00E2F7FF /* Debug */ = {
+		6D8DC0C51B369DDD00B80C63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				CODE_SIGN_ENTITLEMENTS = "City Bike WatchKit Extension/City Bike WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CBModelTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
+				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "7508641e-936e-40d9-9f53-8fca5ee486ff";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Debug;
 		};
-		6D8063281B31BF0A00E2F7FF /* Release */ = {
+		6D8DC0C61B369DDD00B80C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "City Bike WatchKit Extension/City Bike WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "7508641e-936e-40d9-9f53-8fca5ee486ff";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
+			};
+			name = Release;
+		};
+		6D8DC0C71B369DDD00B80C63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CBModelTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IBSC_MODULE = City_Bike_WatchKit_Extension;
+				INFOPLIST_FILE = "City Bike WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
+				PROVISIONING_PROFILE = "c2f9f7b2-6cf3-4f5f-b6e3-b23f09a0b334";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		6D8DC0C81B369DDD00B80C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				IBSC_MODULE = City_Bike_WatchKit_Extension;
+				INFOPLIST_FILE = "City Bike WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c2f9f7b2-6cf3-4f5f-b6e3-b23f09a0b334";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
 			};
 			name = Release;
 		};
@@ -979,11 +1227,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D8063261B31BF0A00E2F7FF /* Build configuration list for PBXNativeTarget "CBModelTests" */ = {
+		6D8DC0C91B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D8063271B31BF0A00E2F7FF /* Debug */,
-				6D8063281B31BF0A00E2F7FF /* Release */,
+				6D8DC0C71B369DDD00B80C63 /* Debug */,
+				6D8DC0C81B369DDD00B80C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D8DC0CA1B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8DC0C51B369DDD00B80C63 /* Debug */,
+				6D8DC0C61B369DDD00B80C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

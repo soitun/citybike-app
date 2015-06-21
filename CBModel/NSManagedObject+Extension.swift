@@ -27,7 +27,11 @@ public extension NSManagedObject {
 
 public extension NSManagedObject {
     public class func fetchAll(context: NSManagedObjectContext) -> [NSManagedObject] {
-        return self.fetch(NSFetchRequest(entityName: self.entityName()), context: context)
+        return self.fetch(self.fetchAllRequest(), context: context)
+    }
+    
+    public class func fetchAllRequest() -> NSFetchRequest {
+        return NSFetchRequest(entityName: self.entityName())
     }
     
     public class func fetchWithAttribute(key: String, value: AnyObject, context: NSManagedObjectContext) -> [NSManagedObject] {

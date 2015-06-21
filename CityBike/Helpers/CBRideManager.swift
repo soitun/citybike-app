@@ -20,7 +20,7 @@ class CBRideManager {
     
     func start(startDate: NSDate, updateBlock: CBRideStopwatch.UpdateBlockType) {
         _isGoing = true
-        NSUserDefaults.setStartRideDate(startDate)
+        CBUserDefaults.sharedInstance.setStartRideDate(startDate)
         self.stopwatch.start(startDate, updateBlock: updateBlock)
     }
     
@@ -34,20 +34,20 @@ class CBRideManager {
         let startDayAtMidnight = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
         
         /// Create entry for this ride session
-        let entry: CDRideHistoryEntry = CDRideHistoryEntry(context:CoreDataHelper.sharedInstance().mainContext)
+        let entry: CDRideHistoryEntry = CDRideHistoryEntry(context:CoreDataStack.sharedInstance().mainContext)
         entry.date = self.stopwatch.startDate
         entry.duration = duration
         
         /// Check if there is day which can store this entry, if not crreate one
-        if let day = CDRideHistoryDay.fetchWithAttribute("date", value: startDayAtMidnight, context: CoreDataHelper.sharedInstance().mainContext).first as? CDRideHistoryDay {
+        if let day = CDRideHistoryDay.fetchWithAttribute("date", value: startDayAtMidnight, context: CoreDataStack.sharedInstance().mainContext).first as? CDRideHistoryDay {
             day.addEntry(entry)
         } else {
-            var day: CDRideHistoryDay = CDRideHistoryDay(context: CoreDataHelper.sharedInstance().mainContext)
+            var day: CDRideHistoryDay = CDRideHistoryDay(context: CoreDataStack.sharedInstance().mainContext)
             day.date = startDayAtMidnight
             day.addEntry(entry)
         }
         
-        CoreDataHelper.sharedInstance().mainContext.save(nil)
-        NSUserDefaults.removeStartRideDate()
+        CoreDataStack.sharedInstance().mainContext.save(nil)
+        CBUserDefaults.sharedInstance.removeStartRideDate()
     }
 }

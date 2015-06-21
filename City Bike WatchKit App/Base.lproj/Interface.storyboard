@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--CBStationsListInterfaceController-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="CBStationsListInterfaceController" id="AgC-eL-Hgc" customClass="CBStationsListInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="xxi-L1-DMD">
+                            <items>
+                                <tableRow identifier="CBStationTableRowController" id="7gx-WD-uGn" customClass="CBStationTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="46" alignment="left" layout="vertical" id="xOH-45-3LW" userLabel="content-view">
+                                        <items>
+                                            <group width="1" height="24" alignment="left" id="xhd-v7-VCQ" userLabel="first-line">
+                                                <items>
+                                                    <group alignment="left" id="w2E-4j-38O" userLabel="bikes">
+                                                        <items>
+                                                            <imageView alignment="left" verticalAlignment="center" image="circle" id="puf-eG-KdM" userLabel="free-bikes-circle"/>
+                                                            <label alignment="left" verticalAlignment="center" text="10" id="srX-no-60x" userLabel="free-bikes-label">
+                                                                <fontDescription key="font" type="boldSystem" pointSize="21"/>
+                                                            </label>
+                                                        </items>
+                                                        <edgeInsets key="margins" left="0.0" right="4" top="0.0" bottom="0.0"/>
+                                                        <variation key="device=watch38mm">
+                                                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                                        </variation>
+                                                    </group>
+                                                    <group alignment="left" id="P0c-fR-KD6" userLabel="slots">
+                                                        <items>
+                                                            <imageView alignment="left" verticalAlignment="center" image="circle" id="deX-l1-fSZ" userLabel="free-slots-circle"/>
+                                                            <label alignment="left" verticalAlignment="center" text="10" id="0iv-MD-rVm" userLabel="free-slots-label">
+                                                                <fontDescription key="font" type="boldSystem" pointSize="21"/>
+                                                            </label>
+                                                        </items>
+                                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                                    </group>
+                                                    <label height="23" alignment="right" verticalAlignment="center" text="0.8km" textAlignment="right" id="1f5-JL-5TX" userLabel="distance-label">
+                                                        <fontDescription key="font" type="system" pointSize="16"/>
+                                                    </label>
+                                                </items>
+                                                <edgeInsets key="margins" left="5" right="4" top="0.0" bottom="0.0"/>
+                                            </group>
+                                            <group alignment="left" id="lXi-aT-xvo" userLabel="second-line">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="STACJA 01 FLOATING ARENA" id="SR8-Q2-njj" userLabel="station-name-label">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                                <edgeInsets key="margins" left="5" right="0.0" top="0.0" bottom="0.0"/>
+                                            </group>
+                                        </items>
+                                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="1" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="distanceLabel" destination="1f5-JL-5TX" id="tgP-ps-Vb0"/>
+                                        <outlet property="freeBikesCircleImage" destination="puf-eG-KdM" id="uhf-nG-Qij"/>
+                                        <outlet property="freeBikesLabel" destination="srX-no-60x" id="uCN-9f-L9F"/>
+                                        <outlet property="freeSlotsCircleImage" destination="deX-l1-fSZ" id="Olg-RE-fac"/>
+                                        <outlet property="freeSlotsLabel" destination="0iv-MD-rVm" id="rHe-7M-8xd"/>
+                                        <outlet property="stationNameLabel" destination="SR8-Q2-njj" id="Uzh-zv-7kM"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="CBUpdateTableRowController" selectable="NO" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="32" alignment="left" layout="vertical" spacing="0.0" id="CWL-W1-Q9E" userLabel="content-view">
+                                        <items>
+                                            <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
+                                            </label>
+                                            <label width="1" height="14" alignment="left" text="21/06/2015 14:21:33" id="elW-hQ-oSG" userLabel="station-name-label">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="margins" left="5" right="0.0" top="2" bottom="0.0"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dateLabel" destination="elW-hQ-oSG" id="ImY-R7-c8T"/>
+                                        <outlet property="titleLabel" destination="21X-6e-k47" id="DR1-Kb-Q3f"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="CBNoStationsTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBNoStationsTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="AoY-Xw-LEg" userLabel="content-view">
+                                        <items>
+                                            <group alignment="left" spacing="4" id="4pF-cH-Njd" userLabel="top-line">
+                                                <items>
+                                                    <imageView alignment="left" verticalAlignment="center" image="circle" id="1N0-sJ-ug4" userLabel="warning-icon"/>
+                                                    <label alignment="left" verticalAlignment="center" text="No stations" id="bxe-hx-0EK" userLabel="title-label">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label width="1" alignment="left" text="Go to your iPhone and select some city bike networks." numberOfLines="0" id="FU8-Gm-ShN" userLabel="detail-text-label">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="margins" left="5" right="0.0" top="4" bottom="3"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="FU8-Gm-ShN" id="Z9L-oN-v87"/>
+                                        <outlet property="icon" destination="1N0-sJ-ug4" id="B2L-Br-4Z0"/>
+                                        <outlet property="titleLabel" destination="bxe-hx-0EK" id="wOK-uz-8rn"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="xxi-L1-DMD" id="qSu-6R-YRa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="204" y="476"/>
+        </scene>
+    </scenes>
+</document>

@@ -23,7 +23,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selectedNetworkIDs = NSUserDefaults.getNetworkIDs()
+        self.selectedNetworkIDs = CBUserDefaults.sharedInstance.getNetworkIDs()
         
         self.tableView.contentOffset = CGPointMake(0, CGRectGetHeight(self.searchBar.frame))
         self.tableView.tableFooterView = UIView()
@@ -66,13 +66,13 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func refresAll() {
-        let allNetworks = CDNetwork.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDNetwork]
+        let allNetworks = CDNetwork.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDNetwork]
         self.refreshContent(allNetworks)
     }
     
     /// MARK: Private
     private func saveSelectedNetworks() {
-        NSUserDefaults.saveNetworkIDs(self.selectedNetworkIDs)
+        CBUserDefaults.sharedInstance.saveNetworkIDs(self.selectedNetworkIDs)
         
         /// Force content update. Redownload stations
         CBModelUpdater.sharedInstance.forceUpdate()
