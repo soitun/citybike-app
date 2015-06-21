@@ -47,7 +47,7 @@ class CBModelUpdater: CBUpdaterProtocol {
         println("Sync networks")
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let ctx = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
+            let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
             
             for updatedNetwork in updatedNetworks {
                 var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? CDNetwork
@@ -71,7 +71,7 @@ class CBModelUpdater: CBUpdaterProtocol {
         println("Sync networks and stations")
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let ctx = CoreDataHelper.sharedInstance().createTemporaryContextFromMainContext()
+            let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
             
             for updatedNetwork in updatedNetworks {
                 var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? CDNetwork

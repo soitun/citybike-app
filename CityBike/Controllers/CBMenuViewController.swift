@@ -52,7 +52,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @objc private func refreshProvidedBy() {
-        let networksCount = CDNetwork.fetchAll(CoreDataHelper.sharedInstance().mainContext).count
+        let networksCount = CDNetwork.fetchAll(CoreDataStack.sharedInstance().mainContext).count
         if networksCount == 0 {
             self.providedByLabel.text = NSLocalizedString("Provided by", comment: "")
         

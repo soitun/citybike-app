@@ -50,7 +50,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         
         self.registerObservers()
         
-        let allStations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
+        let allStations = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
         self.mapUpdater.update(self.mapView, updatedStations: allStations)
        
         /// Show last saved region
@@ -80,7 +80,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
                 self.noInternetContainer.changeVisibility(true, animated: true)
                 
             } else {
-                let stations = CDStation.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDStation]
+                let stations = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
                 self.mapUpdater.update(self.mapView, updatedStations: stations)
                 self.noInternetContainer.changeVisibility(false, animated: true)
                 
@@ -155,7 +155,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         view.fewColor = UIColor.fewColor()
         view.plentyColor = UIColor.plentyColor()
         
-        let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataHelper.sharedInstance().mainContext).first as! CDStation
+        let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
         view.configure(station)
         return view
     }
@@ -180,7 +180,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     private func updateMapDetailView(stationID: StationID?) {
         if stationID == nil { return }
         
-        let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataHelper.sharedInstance().mainContext).first as! CDStation
+        let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
         self.selectedStation = station.id
         
         let detailText = "\(station.network.location.city), \(station.network.location.country)"

@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NSUserDefaults.registerCityBikeDefaults()
         
-        let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataHelper.self))
-        let cdStack = CoreDataHelper(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
-        CoreDataHelper.setSharedInstance(cdStack)
+        let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self))
+        let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
+        CoreDataStack.setSharedInstance(cdStack)
         
         if self.window == nil {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

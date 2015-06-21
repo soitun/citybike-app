@@ -1,5 +1,5 @@
 //
-//  CoreDataHelper.swift
+//  CoreDataStack.swift
 //
 //  Created by Tomasz Szulc on 22/09/14.
 //  Copyright (c) 2014 Tomasz Szulc. All rights reserved.
@@ -20,7 +20,7 @@ public struct CoreDataModel {
     }
 }
 
-public class CoreDataHelper: NSObject {
+public class CoreDataStack: NSObject {
     
     private var model: CoreDataModel
     private var storeType: CoreDataModelStoreType
@@ -34,11 +34,11 @@ public class CoreDataHelper: NSObject {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("contextDidSaveContext:"), name: NSManagedObjectContextDidSaveNotification, object: nil)
     }
     
-    public class func setSharedInstance(shared: CoreDataHelper) {
+    public class func setSharedInstance(shared: CoreDataStack) {
         Static.instance = shared
     }
     
-    public class func sharedInstance() -> CoreDataHelper {
+    public class func sharedInstance() -> CoreDataStack {
         return Static.instance
     }
     
@@ -62,7 +62,7 @@ public class CoreDataHelper: NSObject {
     }
     
     private struct Static {
-        static var instance: CoreDataHelper!
+        static var instance: CoreDataStack!
     }
     
     

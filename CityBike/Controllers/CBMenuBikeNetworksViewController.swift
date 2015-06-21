@@ -66,7 +66,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     }
     
     private func refresAll() {
-        let allNetworks = CDNetwork.fetchAll(CoreDataHelper.sharedInstance().mainContext) as! [CDNetwork]
+        let allNetworks = CDNetwork.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDNetwork]
         self.refreshContent(allNetworks)
     }
     
