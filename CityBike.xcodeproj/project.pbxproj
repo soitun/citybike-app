@@ -1060,7 +1060,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
+				PROVISIONING_PROFILE = "0affd2bc-b39d-4bed-88ee-00a7af649b74";
 			};
 			name = Debug;
 		};
@@ -1074,7 +1074,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
+				PROVISIONING_PROFILE = "0affd2bc-b39d-4bed-88ee-00a7af649b74";
 			};
 			name = Release;
 		};
@@ -1143,7 +1143,7 @@
 				INFOPLIST_FILE = CBModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
+				PROVISIONING_PROFILE = "ac79c205-b96b-4e6e-b105-9c6fd61d744e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
 			};
 			name = Debug;
@@ -1159,7 +1159,7 @@
 				INFOPLIST_FILE = CBModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
+				PROVISIONING_PROFILE = "ac79c205-b96b-4e6e-b105-9c6fd61d744e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
 			};
 			name = Release;
@@ -1278,6 +1278,7 @@
 				6D8DC0C81B369DDD00B80C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D8DC0CA1B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1286,6 +1287,7 @@
 				6D8DC0C61B369DDD00B80C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
