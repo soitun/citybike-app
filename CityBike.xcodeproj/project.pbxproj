@@ -48,12 +48,14 @@
 		6D8063811B31C2C900E2F7FF /* CDRideHistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */; };
 		6D8063821B31C2C900E2F7FF /* CDStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F251B2D613A00A8F796 /* CDStation.swift */; };
 		6D8063831B31C2C900E2F7FF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */; };
-		6D8DC0B11B369DDD00B80C63 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B01B369DDD00B80C63 /* InterfaceController.swift */; };
+		6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */; };
 		6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B21B369DDD00B80C63 /* Images.xcassets */; };
 		6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */; };
 		6D8DC0BF1B369DDD00B80C63 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */; };
 		6D8DC0C11B369DDD00B80C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0C01B369DDD00B80C63 /* Images.xcassets */; };
 		6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */; };
+		6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB84B091B20E372005DBDAD /* NSUserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
@@ -184,12 +186,14 @@
 		6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBModelTests.swift; sourceTree = "<group>"; };
 		6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "City Bike WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8DC0AF1B369DDD00B80C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D8DC0B01B369DDD00B80C63 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBStationsListInterfaceController.swift; sourceTree = "<group>"; };
 		6D8DC0B21B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Bike WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8DC0BC1B369DDD00B80C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8DC0BE1B369DDD00B80C63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		6D8DC0C01B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationTableRowController.swift; sourceTree = "<group>"; };
+		6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUpdateTableRowController.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRideManager.swift; path = Helpers/CBRideManager.swift; sourceTree = "<group>"; };
 		6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+Settings.swift"; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStationAnnotationView.swift; path = Components/CBStationAnnotationView.swift; sourceTree = "<group>"; };
@@ -477,7 +481,7 @@
 		6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				6D8DC0B01B369DDD00B80C63 /* InterfaceController.swift */,
+				6D8DC0CC1B36A5CC00B80C63 /* Features */,
 				6D8DC0B21B369DDD00B80C63 /* Images.xcassets */,
 				6D8DC0AE1B369DDD00B80C63 /* Supporting Files */,
 			);
@@ -508,6 +512,24 @@
 				6D8DC0BC1B369DDD00B80C63 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D8DC0CC1B36A5CC00B80C63 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0CD1B36A5D400B80C63 /* Stations List */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		6D8DC0CD1B36A5D400B80C63 /* Stations List */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */,
+				6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */,
+				6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */,
+			);
+			name = "Stations List";
 			sourceTree = "<group>";
 		};
 		6DBA51121B2B8454002ECC3F /* citybik.es-api */ = {
@@ -883,7 +905,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D8DC0B11B369DDD00B80C63 /* InterfaceController.swift in Sources */,
+				6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */,
+				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
+				6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
