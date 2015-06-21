@@ -89,6 +89,8 @@
 		6DCFEB5A1B3735B4002D24C8 /* CDStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */; };
 		6DCFEB5C1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */; };
 		6DCFEB5D1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */; };
+		6DCFEB5F1B37412F002D24C8 /* CBStopwatchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5E1B37412F002D24C8 /* CBStopwatchInterfaceController.swift */; };
+		6DCFEB621B374164002D24C8 /* CBMainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB611B374164002D24C8 /* CBMainInterfaceController.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
@@ -223,6 +225,8 @@
 		6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
 		6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStationManager.swift; sourceTree = "<group>"; };
 		6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAppleWatchHelper.swift; sourceTree = "<group>"; };
+		6DCFEB5E1B37412F002D24C8 /* CBStopwatchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStopwatchInterfaceController.swift; sourceTree = "<group>"; };
+		6DCFEB611B374164002D24C8 /* CBMainInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBMainInterfaceController.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* UIView+Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Styling.swift"; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* UIColor+UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIColors.swift"; sourceTree = "<group>"; };
 		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDStation.swift; path = ../CityBike/Model/CDStation.swift; sourceTree = "<group>"; };
@@ -507,7 +511,9 @@
 		6D8DC0CC1B36A5CC00B80C63 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				6DCFEB611B374164002D24C8 /* CBMainInterfaceController.swift */,
 				6D8DC0CD1B36A5D400B80C63 /* Stations List */,
+				6DCFEB601B374134002D24C8 /* Stopwatch */,
 			);
 			name = Features;
 			sourceTree = "<group>";
@@ -547,6 +553,14 @@
 			);
 			name = "Getting Started";
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6DCFEB601B374134002D24C8 /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				6DCFEB5E1B37412F002D24C8 /* CBStopwatchInterfaceController.swift */,
+			);
+			name = Stopwatch;
 			sourceTree = "<group>";
 		};
 		6DD460A01B20890B0070E163 /* Extensions */ = {
@@ -910,7 +924,9 @@
 				6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */,
 				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
 				6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */,
+				6DCFEB621B374164002D24C8 /* CBMainInterfaceController.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
+				6DCFEB5F1B37412F002D24C8 /* CBStopwatchInterfaceController.swift in Sources */,
 				6DCFEB5A1B3735B4002D24C8 /* CDStationManager.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
 				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,

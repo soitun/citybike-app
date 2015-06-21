@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Uiw-Dl-Vp4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--CBStationsListInterfaceController-->
+        <!--Stations-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="CBStationsListInterfaceController" id="AgC-eL-Hgc" customClass="CBStationsListInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                <controller identifier="CBStationsListInterfaceController" title="Stations" spacing="6" id="AgC-eL-Hgc" customClass="CBStationsListInterfaceController" customModule="City_Bike_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="xxi-L1-DMD">
                             <items>
@@ -114,12 +114,47 @@
                             </items>
                         </table>
                     </items>
+                    <edgeInsets key="margins" left="1" right="1" top="0.0" bottom="0.0"/>
                     <connections>
                         <outlet property="table" destination="xxi-L1-DMD" id="qSu-6R-YRa"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="204" y="476"/>
+            <point key="canvasLocation" x="273" y="476"/>
+        </scene>
+        <!--CBMainInterfaceController-->
+        <scene sceneID="roC-v3-BoS">
+            <objects>
+                <controller identifier="CBMainInterfaceController" id="Uiw-Dl-Vp4" customClass="CBMainInterfaceController" customModule="City_Bike_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="476"/>
+        </scene>
+        <!--Stopwatch-->
+        <scene sceneID="4vN-eP-SoL">
+            <objects>
+                <controller identifier="CBStopwatchInterfaceController" title="Stopwatch" id="JRs-Ma-1PU" customClass="CBStopwatchInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="2Fp-yr-IqV">
+                            <items>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="START A RIDE" id="lso-vN-0YM">
+                                    <fontDescription key="font" type="system" weight="heavy" pointSize="17"/>
+                                </button>
+                                <label width="1" height="119" alignment="left" verticalAlignment="center" text="00:00:00" textAlignment="center" id="5VI-kP-U4A">
+                                    <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="27"/>
+                                    <variation key="device=watch38mm" height="96"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="5"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="button" destination="lso-vN-0YM" id="QHh-Lj-t5t"/>
+                        <outlet property="timeLabel" destination="5VI-kP-U4A" id="qNM-WO-SnR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="460" y="476"/>
         </scene>
     </scenes>
 </document>
