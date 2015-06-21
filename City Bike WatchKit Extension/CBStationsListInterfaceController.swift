@@ -10,8 +10,10 @@ import WatchKit
 import Foundation
 import CBModel
 
-class CBStationsListInterfaceController: WKInterfaceController {
+class CBStationsListInterfaceController: WKInterfaceController, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var table: WKInterfaceTable!
+    
+    private var fetchedRequestController: NSFetchedResultsController?
 
     private enum RowType: String {
         case Station = "CBStationTableRowController"
@@ -21,13 +23,13 @@ class CBStationsListInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        self.configureFetchedResultsController()
     }
 
     override func willActivate() {
         super.willActivate()
-        
-        let stations: [CDStation] = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
-        loadTableData(stations)
+        fetchedRequestController?.performFetch(nil)
+        reloadTable()
     }
 
     override func didDeactivate() {
@@ -35,12 +37,14 @@ class CBStationsListInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    private func loadTableData(stations: [CDStation]) {
-        if stations.count > 0 {
-            let rows = stations.count + 1
+    private func reloadTable() {
+        let stations: [CDStation]? = self.fetchedRequestController?.fetchedObjects as? [CDStation]
+        
+        if stations != nil && stations?.count > 0  {
+            let rows = stations!.count + 1
             var rowTypes = [String]()
             for idx in 0..<rows {
-                if idx < stations.count {
+                if idx < stations!.count {
                     rowTypes.append(RowType.Station.rawValue)
                 } else {
                     rowTypes.append(RowType.Update.rawValue)
@@ -50,13 +54,13 @@ class CBStationsListInterfaceController: WKInterfaceController {
             table.setRowTypes(rowTypes)
             
             for idx in 0..<rows {
-                if idx < stations.count {
+                if idx < stations!.count {
                     let row = table.rowControllerAtIndex(idx) as! CBStationTableRowController
-                    row.update(stations[idx])
+                    row.update(stations![idx])
                 } else {
                     // Get recently update date
                     var recentTimestamp = NSDate(timeIntervalSince1970: 0)
-                    for station in stations {
+                    for station in stations! {
                         if recentTimestamp.laterDate(station.timestamp) == station.timestamp {
                             recentTimestamp = station.timestamp
                         }
@@ -66,10 +70,25 @@ class CBStationsListInterfaceController: WKInterfaceController {
                     row.update(recentTimestamp)
                 }
             }
+            
         } else {
             table.setNumberOfRows(1, withRowType: RowType.NoStations.rawValue)
             let row = table.rowControllerAtIndex(0) as! CBNoStationsTableRowController
             row.update()
         }
     }
+    
+    private func configureFetchedResultsController() {
+        var request = CDStation.fetchAllRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        fetchedRequestController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.sharedInstance().mainContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedRequestController!.delegate = self
+    }
+    
+    
+    /// MARK: NSFetchedRequestControllerDelegate
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        dispatch_async(dispatch_get_main_queue()) { self.reloadTable() }
+    }
+
 }
