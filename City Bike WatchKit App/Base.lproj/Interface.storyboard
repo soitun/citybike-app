@@ -138,6 +138,9 @@
                             <items>
                                 <button width="1" alignment="left" verticalAlignment="bottom" title="START A RIDE" id="lso-vN-0YM">
                                     <fontDescription key="font" type="system" weight="heavy" pointSize="17"/>
+                                    <connections>
+                                        <action selector="actionButtonTapped" destination="JRs-Ma-1PU" id="WDM-eD-b4s"/>
+                                    </connections>
                                 </button>
                                 <label width="1" height="119" alignment="left" verticalAlignment="center" text="00:00:00" textAlignment="center" id="5VI-kP-U4A">
                                     <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

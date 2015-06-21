@@ -77,8 +77,11 @@ class CBUserDefaults: NSUserDefaults {
     
     /// MARK: Selected Networks
     func getNetworkIDs() -> [CBNetworkType] {
-        let data = self.objectForKey(CityBikeSelectedNetworks) as! NSData
-        return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [String]
+        if let data = self.objectForKey(CityBikeSelectedNetworks) as? NSData {
+            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [CBNetworkType]
+        } else {
+            return [CBNetworkType]()
+        }
     }
     
     func saveNetworkIDs(ids: [CBNetworkType]) {

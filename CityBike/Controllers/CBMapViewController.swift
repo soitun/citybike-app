@@ -27,9 +27,12 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     private var stopwatchManager = CBRideManager()
     private var mapUpdater = CBMapUpdater()
     private var selectedStation: StationID?
+    private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestAlwaysAuthorization()
         
         self.mapDetailView.delegate = self
         
@@ -37,12 +40,26 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.noInternetContainer.makeRounded()
         self.noInternetContainer.changeVisibility(false, animated: false)
         
-        self.runStopwatchIfNeeded()
+        listenForWormholeNotifications()
+    }
+    
+    private func listenForWormholeNotifications() {
+        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
+            if self.stopwatchManager.isGoing == false {
+                self.startStopwatch(CBUserDefaults.sharedInstance.getStartRideDate()!, animated: true)
+            }
+        })
+        
+        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
+            if self.stopwatchManager.isGoing == true {
+                self.stopStopwatch()
+            }
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.runStopwatchIfNeeded()
         self.registerObservers()
         
         self.mapUpdater.update(self.mapView, updatedStations: CDStationManager.allStationsForSelectedNetworks())
@@ -128,6 +145,10 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
+        self.stopStopwatch()
+    }
+    
+    private func stopStopwatch() {
         self.switchStopwatchButtons(presentReady: true)
         self.stopwatchPopover.changeVisibility(false, animated: true)
         self.stopwatchManager.stop()

@@ -16,14 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
     private var locationManager = CLLocationManager()
     private var requestingData = false
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        CBUserDefaults.sharedInstance.registerCityBikeDefaults()
         
         configureCoreData()
         startRequestingData()
-
+        
         updateUI()
         showProperViewController()
         
@@ -68,14 +66,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if requestingData == true { return }
         requestingData = true
         
-        /// Request location updates
-        self.locationManager.requestAlwaysAuthorization()
+        // Register defaults
+        CBUserDefaults.sharedInstance.registerCityBikeDefaults()
+
+        // Request location updates
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager.distanceFilter = 30.0
         
-        /// Request content
+        // Request content
         CBModelUpdater.sharedInstance.start()
     }
     

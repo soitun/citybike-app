@@ -21,11 +21,14 @@ class CBRideManager {
     func start(startDate: NSDate, updateBlock: CBRideStopwatch.UpdateBlockType) {
         _isGoing = true
         CBUserDefaults.sharedInstance.setStartRideDate(startDate)
+        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStarted.rawValue)
         self.stopwatch.start(startDate, updateBlock: updateBlock)
     }
     
     func stop() {
         _isGoing = false
+
+        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStopped.rawValue)
 
         let duration = self.stopwatch.stop()
 

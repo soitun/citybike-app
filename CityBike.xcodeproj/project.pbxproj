@@ -91,6 +91,9 @@
 		6DCFEB5D1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */; };
 		6DCFEB5F1B37412F002D24C8 /* CBStopwatchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5E1B37412F002D24C8 /* CBStopwatchInterfaceController.swift */; };
 		6DCFEB621B374164002D24C8 /* CBMainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB611B374164002D24C8 /* CBMainInterfaceController.swift */; };
+		6DCFEB631B374607002D24C8 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
+		6DCFEB641B374610002D24C8 /* CBRideStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28345F1B24E89000E361A3 /* CBRideStopwatch.swift */; };
+		6DCFEB651B3746C9002D24C8 /* NSTimeInterval+TextualRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
@@ -926,6 +929,7 @@
 				6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */,
 				6DCFEB621B374164002D24C8 /* CBMainInterfaceController.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
+				6DCFEB641B374610002D24C8 /* CBRideStopwatch.swift in Sources */,
 				6DCFEB5F1B37412F002D24C8 /* CBStopwatchInterfaceController.swift in Sources */,
 				6DCFEB5A1B3735B4002D24C8 /* CDStationManager.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
@@ -933,9 +937,11 @@
 				6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */,
 				6DCFEB571B370695002D24C8 /* CBWormhole.swift in Sources */,
 				6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */,
+				6DCFEB631B374607002D24C8 /* CBRideManager.swift in Sources */,
 				6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */,
 				6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */,
 				6DCFEB531B3703EE002D24C8 /* CBConstant.swift in Sources */,
+				6DCFEB651B3746C9002D24C8 /* NSTimeInterval+TextualRepresentation.swift in Sources */,
 				6DFD68FE1B36E11000047D7B /* CBNoStationsTableRowController.swift in Sources */,
 				6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */,
 			);
