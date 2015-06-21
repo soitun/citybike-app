@@ -73,7 +73,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     /// MARK: Private
     private func saveSelectedNetworks() {
         CBUserDefaults.sharedInstance.saveNetworkIDs(self.selectedNetworkIDs)
-        
+        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.ContentUpdate.rawValue)
         /// Force content update. Redownload stations
         CBModelUpdater.sharedInstance.forceUpdate()
     }

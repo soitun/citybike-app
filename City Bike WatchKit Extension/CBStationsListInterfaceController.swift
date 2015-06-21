@@ -52,7 +52,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
     
     
     private func reloadTable() {
-        var stations: [CDStation] = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
+        var stations: [CDStation] = CDStationManager.allStationsForSelectedNetworks()
         
         /// sort by free bikes descending
         stations.sort({

@@ -85,6 +85,8 @@
 		6DCFEB531B3703EE002D24C8 /* CBConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB501B370349002D24C8 /* CBConstant.swift */; };
 		6DCFEB551B370421002D24C8 /* CBWormhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB541B370421002D24C8 /* CBWormhole.swift */; };
 		6DCFEB571B370695002D24C8 /* CBWormhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB541B370421002D24C8 /* CBWormhole.swift */; };
+		6DCFEB591B3735B4002D24C8 /* CDStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */; };
+		6DCFEB5A1B3735B4002D24C8 /* CDStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
@@ -217,6 +219,7 @@
 		6DCFEB501B370349002D24C8 /* CBConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBConstant.swift; sourceTree = "<group>"; };
 		6DCFEB541B370421002D24C8 /* CBWormhole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBWormhole.swift; sourceTree = "<group>"; };
 		6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
+		6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStationManager.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* UIView+Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Styling.swift"; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* UIColor+UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIColors.swift"; sourceTree = "<group>"; };
 		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDStation.swift; path = ../CityBike/Model/CDStation.swift; sourceTree = "<group>"; };
@@ -395,6 +398,7 @@
 				6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */,
 				6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */,
 				6DCFEB541B370421002D24C8 /* CBWormhole.swift */,
+				6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */,
 				6DD460A01B20890B0070E163 /* Extensions */,
 				6D5BA0B41B359783005C72CC /* Rides Tracking */,
 			);
@@ -842,6 +846,7 @@
 				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,
 				6DCFEB511B370349002D24C8 /* CBConstant.swift in Sources */,
 				6D5FB3F71B34849E00AB9143 /* CBMapButton.swift in Sources */,
+				6DCFEB591B3735B4002D24C8 /* CDStationManager.swift in Sources */,
 				6D2834501B243C2200E361A3 /* CBCell.swift in Sources */,
 				6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */,
 				6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */,
@@ -897,6 +902,7 @@
 				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
 				6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
+				6DCFEB5A1B3735B4002D24C8 /* CDStationManager.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
 				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,
 				6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */,

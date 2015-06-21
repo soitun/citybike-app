@@ -54,8 +54,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         
         self.registerObservers()
         
-        let allStations = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
-        self.mapUpdater.update(self.mapView, updatedStations: allStations)
+        self.mapUpdater.update(self.mapView, updatedStations: CDStationManager.allStationsForSelectedNetworks())
        
         /// Show last saved region
         if let savedRegion = CBUserDefaults.sharedInstance.getMapRegion() {
@@ -84,8 +83,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
                 self.noInternetContainer.changeVisibility(true, animated: true)
                 
             } else {
-                let stations = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
-                self.mapUpdater.update(self.mapView, updatedStations: stations)
+                self.mapUpdater.update(self.mapView, updatedStations: CDStationManager.allStationsForSelectedNetworks())
                 self.noInternetContainer.changeVisibility(false, animated: true)
                 
                 self.updateMapDetailView(self.selectedStation)
