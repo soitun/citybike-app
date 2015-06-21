@@ -48,6 +48,12 @@
 		6D8063811B31C2C900E2F7FF /* CDRideHistoryDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50F61B2B40A1002ECC3F /* CDRideHistoryDay.swift */; };
 		6D8063821B31C2C900E2F7FF /* CDStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F251B2D613A00A8F796 /* CDStation.swift */; };
 		6D8063831B31C2C900E2F7FF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50EE1B2B4042002ECC3F /* CoreDataHelper.swift */; };
+		6D8DC0B11B369DDD00B80C63 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B01B369DDD00B80C63 /* InterfaceController.swift */; };
+		6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B21B369DDD00B80C63 /* Images.xcassets */; };
+		6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */; };
+		6D8DC0BF1B369DDD00B80C63 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */; };
+		6D8DC0C11B369DDD00B80C63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0C01B369DDD00B80C63 /* Images.xcassets */; };
+		6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB84B091B20E372005DBDAD /* NSUserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
@@ -98,6 +104,20 @@
 			remoteGlobalIDString = 6D8063091B31BF0900E2F7FF;
 			remoteInfo = CBModel;
 		};
+		6D8DC0B81B369DDD00B80C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8DC0B51B369DDD00B80C63;
+			remoteInfo = "City Bike WatchKit App";
+		};
+		6D8DC0C21B369DDD00B80C63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D0EBE4C1B2033FB003ED872 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D8DC0AB1B369DDD00B80C63;
+			remoteInfo = "City Bike WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,6 +130,17 @@
 				6D8063221B31BF0A00E2F7FF /* CBModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8DC0CB1B369DDD00B80C63 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -151,6 +182,14 @@
 		6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D80631C1B31BF0A00E2F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D80631D1B31BF0A00E2F7FF /* CBModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBModelTests.swift; sourceTree = "<group>"; };
+		6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "City Bike WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8DC0AF1B369DDD00B80C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8DC0B01B369DDD00B80C63 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6D8DC0B21B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Bike WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D8DC0BC1B369DDD00B80C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D8DC0BE1B369DDD00B80C63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6D8DC0C01B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRideManager.swift; path = Helpers/CBRideManager.swift; sourceTree = "<group>"; };
 		6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+Settings.swift"; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStationAnnotationView.swift; path = Components/CBStationAnnotationView.swift; sourceTree = "<group>"; };
@@ -214,6 +253,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D8DC0A91B369DDD00B80C63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -233,6 +279,8 @@
 				6D5BA0B91B359C5B005C72CC /* Externals */,
 				6D80630B1B31BF0900E2F7FF /* CBModel */,
 				6D80631A1B31BF0A00E2F7FF /* CBModelTests */,
+				6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */,
+				6D8DC0BA1B369DDD00B80C63 /* City Bike WatchKit App */,
 				6D0EBE551B2033FB003ED872 /* Products */,
 				1AA46FD4589E04156EFD982A /* Pods */,
 				A8775754B7360485054AA7FD /* Frameworks */,
@@ -245,6 +293,8 @@
 				6D0EBE541B2033FB003ED872 /* CityBike.app */,
 				6D80630A1B31BF0900E2F7FF /* CBModel.framework */,
 				6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */,
+				6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */,
+				6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,6 +474,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0B01B369DDD00B80C63 /* InterfaceController.swift */,
+				6D8DC0B21B369DDD00B80C63 /* Images.xcassets */,
+				6D8DC0AE1B369DDD00B80C63 /* Supporting Files */,
+			);
+			path = "City Bike WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		6D8DC0AE1B369DDD00B80C63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0AF1B369DDD00B80C63 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D8DC0BA1B369DDD00B80C63 /* City Bike WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */,
+				6D8DC0C01B369DDD00B80C63 /* Images.xcassets */,
+				6D8DC0BB1B369DDD00B80C63 /* Supporting Files */,
+			);
+			path = "City Bike WatchKit App";
+			sourceTree = "<group>";
+		};
+		6D8DC0BB1B369DDD00B80C63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D8DC0BC1B369DDD00B80C63 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6DBA51121B2B8454002ECC3F /* citybik.es-api */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,11 +582,13 @@
 				6D0EBE521B2033FB003ED872 /* Resources */,
 				55673F5A179B6B47C89B9FEA /* Copy Pods Resources */,
 				6D8062F91B31BC4600E2F7FF /* Embed Frameworks */,
+				6D8DC0CB1B369DDD00B80C63 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6D8063201B31BF0A00E2F7FF /* PBXTargetDependency */,
+				6D8DC0C31B369DDD00B80C63 /* PBXTargetDependency */,
 			);
 			name = CityBike;
 			productName = CityBike;
@@ -544,6 +632,39 @@
 			productReference = 6D8063141B31BF0900E2F7FF /* CBModelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6D8DC0AB1B369DDD00B80C63 /* City Bike WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8DC0CA1B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit Extension" */;
+			buildPhases = (
+				6D8DC0A81B369DDD00B80C63 /* Sources */,
+				6D8DC0A91B369DDD00B80C63 /* Frameworks */,
+				6D8DC0AA1B369DDD00B80C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D8DC0B91B369DDD00B80C63 /* PBXTargetDependency */,
+			);
+			name = "City Bike WatchKit Extension";
+			productName = "City Bike WatchKit Extension";
+			productReference = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		6D8DC0B51B369DDD00B80C63 /* City Bike WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D8DC0C91B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit App" */;
+			buildPhases = (
+				6D8DC0B41B369DDD00B80C63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "City Bike WatchKit App";
+			productName = "City Bike WatchKit App";
+			productReference = 6D8DC0B61B369DDD00B80C63 /* City Bike WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -557,13 +678,23 @@
 				TargetAttributes = {
 					6D0EBE531B2033FB003ED872 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
 					};
 					6D8063091B31BF0900E2F7FF = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
 					};
 					6D8063131B31BF0900E2F7FF = {
 						CreatedOnToolsVersion = 6.3.2;
 						TestTargetID = 6D0EBE531B2033FB003ED872;
+					};
+					6D8DC0AB1B369DDD00B80C63 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
+					};
+					6D8DC0B51B369DDD00B80C63 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 7HTJY423B9;
 					};
 				};
 			};
@@ -583,6 +714,8 @@
 				6D0EBE531B2033FB003ED872 /* CityBike */,
 				6D8063091B31BF0900E2F7FF /* CBModel */,
 				6D8063131B31BF0900E2F7FF /* CBModelTests */,
+				6D8DC0AB1B369DDD00B80C63 /* City Bike WatchKit Extension */,
+				6D8DC0B51B369DDD00B80C63 /* City Bike WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -616,6 +749,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8DC0AA1B369DDD00B80C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */,
+				6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D8DC0B41B369DDD00B80C63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8DC0BF1B369DDD00B80C63 /* Interface.storyboard in Resources */,
+				6D8DC0C11B369DDD00B80C63 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +879,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6D8DC0A81B369DDD00B80C63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8DC0B11B369DDD00B80C63 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -746,6 +905,16 @@
 			target = 6D8063091B31BF0900E2F7FF /* CBModel */;
 			targetProxy = 6D80631F1B31BF0A00E2F7FF /* PBXContainerItemProxy */;
 		};
+		6D8DC0B91B369DDD00B80C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8DC0B51B369DDD00B80C63 /* City Bike WatchKit App */;
+			targetProxy = 6D8DC0B81B369DDD00B80C63 /* PBXContainerItemProxy */;
+		};
+		6D8DC0C31B369DDD00B80C63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D8DC0AB1B369DDD00B80C63 /* City Bike WatchKit Extension */;
+			targetProxy = 6D8DC0C21B369DDD00B80C63 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -763,6 +932,14 @@
 				6D0EBE631B2033FB003ED872 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D8DC0BE1B369DDD00B80C63 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -854,10 +1031,12 @@
 			baseConfigurationReference = 8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CityBike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
 			};
 			name = Debug;
 		};
@@ -866,16 +1045,20 @@
 			baseConfigurationReference = 7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CityBike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
 			};
 			name = Release;
 		};
 		6D8063241B31BF0A00E2F7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -890,6 +1073,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -900,6 +1084,8 @@
 		6D8063251B31BF0A00E2F7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -910,6 +1096,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -920,6 +1107,7 @@
 		6D8063271B31BF0A00E2F7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -931,6 +1119,7 @@
 				INFOPLIST_FILE = CBModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
 			};
 			name = Debug;
@@ -938,6 +1127,7 @@
 		6D8063281B31BF0A00E2F7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -945,7 +1135,76 @@
 				INFOPLIST_FILE = CBModelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "eddd68bd-8ced-4ff6-99a4-3ee1afa08d20";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CityBike.app/CityBike";
+			};
+			name = Release;
+		};
+		6D8DC0C51B369DDD00B80C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6D8DC0C61B369DDD00B80C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6D8DC0C71B369DDD00B80C63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = City_Bike_WatchKit_Extension;
+				INFOPLIST_FILE = "City Bike WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		6D8DC0C81B369DDD00B80C63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = City_Bike_WatchKit_Extension;
+				INFOPLIST_FILE = "City Bike WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
 			};
 			name = Release;
 		};
@@ -987,6 +1246,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		6D8DC0C91B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8DC0C71B369DDD00B80C63 /* Debug */,
+				6D8DC0C81B369DDD00B80C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D8DC0CA1B369DDD00B80C63 /* Build configuration list for PBXNativeTarget "City Bike WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D8DC0C51B369DDD00B80C63 /* Debug */,
+				6D8DC0C61B369DDD00B80C63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

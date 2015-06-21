@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>City Bike WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>CityBike.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -43,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>6D8063131B31BF0900E2F7FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D8DC0B51B369DDD00B80C63</key>
 		<dict>
 			<key>primary</key>
 			<true/>
