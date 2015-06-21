@@ -13,4 +13,10 @@ class CBUpdateTableRowController: NSObject {
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     @IBOutlet weak var dateLabel: WKInterfaceLabel!
 
+    func update(date: NSDate) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        self.dateLabel.setText(dateFormatter.stringFromDate(date))
+    }
 }

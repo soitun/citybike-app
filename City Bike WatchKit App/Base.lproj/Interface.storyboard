@@ -68,7 +68,7 @@
                                 <tableRow identifier="CBUpdateTableRowController" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="32" alignment="left" layout="vertical" spacing="0.0" id="CWL-W1-Q9E" userLabel="content-view">
                                         <items>
-                                            <label width="1" alignment="left" text="UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
+                                            <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="font" type="boldSystem" pointSize="11"/>
                                             </label>

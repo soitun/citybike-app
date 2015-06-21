@@ -22,6 +22,8 @@ public struct CoreDataModel {
 
 public class CoreDataStack: NSObject {
     
+    let sharedAppGroup: String = "group.com.tomaszszulc.CityBike"
+    
     private var model: CoreDataModel
     private var storeType: CoreDataModelStoreType
     private var concurrencyType: NSManagedObjectContextConcurrencyType
@@ -39,6 +41,12 @@ public class CoreDataStack: NSObject {
     }
     
     public class func sharedInstance() -> CoreDataStack {
+        if Static.instance == nil {
+            let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self))
+            let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
+            CoreDataStack.setSharedInstance(cdStack)
+        }
+        
         return Static.instance
     }
     
@@ -73,10 +81,11 @@ public class CoreDataStack: NSObject {
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         let model = NSManagedObjectModel(contentsOfURL: self.model.bundle.URLForResource(self.model.name, withExtension: "momd")!)!
-        let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
         
-        let documentsDirectory = (NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask) as! [NSURL]).last!
-        let storeURL = documentsDirectory.URLByAppendingPathComponent("\(self.model.name).sqlite")
+        let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
+        println(self.sharedAppGroup)
+        let sharedContainerURL: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.sharedAppGroup)!
+        let storeURL = sharedContainerURL.URLByAppendingPathComponent("\(self.model.name).sqlite")
         
         var error: NSError? = nil
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error) == nil {
