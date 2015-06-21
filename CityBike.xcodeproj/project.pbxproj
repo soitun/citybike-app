@@ -87,6 +87,8 @@
 		6DCFEB571B370695002D24C8 /* CBWormhole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB541B370421002D24C8 /* CBWormhole.swift */; };
 		6DCFEB591B3735B4002D24C8 /* CDStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */; };
 		6DCFEB5A1B3735B4002D24C8 /* CDStationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */; };
+		6DCFEB5C1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */; };
+		6DCFEB5D1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
@@ -220,6 +222,7 @@
 		6DCFEB541B370421002D24C8 /* CBWormhole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBWormhole.swift; sourceTree = "<group>"; };
 		6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
 		6DCFEB581B3735B4002D24C8 /* CDStationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDStationManager.swift; sourceTree = "<group>"; };
+		6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBAppleWatchHelper.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* UIView+Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Styling.swift"; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* UIColor+UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIColors.swift"; sourceTree = "<group>"; };
 		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDStation.swift; path = ../CityBike/Model/CDStation.swift; sourceTree = "<group>"; };
@@ -391,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */,
+				6DCFEB5B1B373A85002D24C8 /* CBAppleWatchHelper.swift */,
 				6DCFEB501B370349002D24C8 /* CBConstant.swift */,
 				6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */,
 				6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */,
@@ -674,6 +678,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 						};
 					};
 					6D8063091B31BF0900E2F7FF = {
@@ -869,6 +876,7 @@
 				6DBA51271B2B8D39002ECC3F /* CBModelUpdater.swift in Sources */,
 				6DC344CD1B233B9E00C29408 /* CBButton.swift in Sources */,
 				6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */,
+				6DCFEB5C1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */,
 				6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* CBSubtitleCell.swift in Sources */,
@@ -897,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DCFEB5D1B373A85002D24C8 /* CBAppleWatchHelper.swift in Sources */,
 				6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */,
 				6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */,
 				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,

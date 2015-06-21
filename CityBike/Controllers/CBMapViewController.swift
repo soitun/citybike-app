@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CBModel
 
-class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate, CLLocationManagerDelegate {
+class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var stopwatchReadyButton: CBMapButton!
@@ -25,7 +25,6 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     @IBOutlet private weak var mapDetailViewBottomConstraint: NSLayoutConstraint!
     
     private var stopwatchManager = CBRideManager()
-    private var locationManager = CLLocationManager()
     private var mapUpdater = CBMapUpdater()
     private var selectedStation: StationID?
     
@@ -39,14 +38,6 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.noInternetContainer.changeVisibility(false, animated: false)
         
         self.runStopwatchIfNeeded()
-
-        /// Request content
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        self.locationManager.distanceFilter = 30.0
-        CBModelUpdater.sharedInstance.start()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -208,13 +199,5 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
-    }
-    
-    
-    /// MARK: CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        if let location = locations.first as? CLLocation {
-            CBWormhole.sharedInstance.passMessageObject(location, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
-        }
     }
 }

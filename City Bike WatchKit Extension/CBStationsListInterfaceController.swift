@@ -24,6 +24,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.RequestUpdates.rawValue], reply: nil)
     }
 
     override func willActivate() {
@@ -40,10 +41,12 @@ class CBStationsListInterfaceController: WKInterfaceController {
     /// MARK: Notifications
     private func observeWormholeNotifications() {
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.ContentUpdate.rawValue, listener: { _ in
+            println("watch: content update")
             self.reloadTable()
         })
         
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.UserLocationUpdate.rawValue, listener: { (updatedLocation: AnyObject?) in
+            println("watch: location update")
             self.userLocation = updatedLocation as? CLLocation
             self.reloadTable()
         })

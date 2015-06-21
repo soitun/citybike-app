@@ -8,20 +8,35 @@
 
 import UIKit
 import CBModel
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    private var locationManager = CLLocationManager()
+    private var requestingData = false
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         CBUserDefaults.sharedInstance.registerCityBikeDefaults()
         
+        configureCoreData()
+        startRequestingData()
+
+        updateUI()
+        showProperViewController()
+        
+        return true
+    }
+    
+    private func configureCoreData() {
         let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self))
         let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
         CoreDataStack.setSharedInstance(cdStack)
-        
+    }
+    
+    private func showProperViewController() {
         if self.window == nil {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         }
@@ -36,9 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
-        
-        
-        /// Update UI Style
+    }
+    
+    private func updateUI() {
         UINavigationBar.appearance().tintColor = UIColor.flamePeaColor()
         
         var fontAttributes = [
@@ -47,9 +62,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
         
         UINavigationBar.appearance().titleTextAttributes = fontAttributes
-
+    }
+    
+    func startRequestingData() {
+        if requestingData == true { return }
+        requestingData = true
         
-        return true
+        /// Request location updates
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.distanceFilter = 30.0
+        
+        /// Request content
+        CBModelUpdater.sharedInstance.start()
+    }
+    
+    /// MARK: CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        if let location = locations.first as? CLLocation {
+            println("ios-app: location update")
+            CBWormhole.sharedInstance.passMessageObject(location, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
+        }
+    }
+    
+    
+    /// MARK: Apple Watch
+    func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        if let rawRequest = userInfo?["request"] as? String {
+            if let event = CBAppleWatchEvent(rawValue: rawRequest) {
+                switch event {
+                    case .RequestUpdates: startRequestingData()
+                }
+            }
+        }
+        
     }
 }
 
