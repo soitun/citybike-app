@@ -56,7 +56,6 @@
 		6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */; };
 		6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
-		6DB84B091B20E372005DBDAD /* NSUserDefaults+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
 		6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
 		6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
@@ -73,6 +72,15 @@
 		6DC344DC1B242A2000C29408 /* CBDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */; };
 		6DC344E11B242B6E00C29408 /* CBMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */; };
 		6DC344E61B242D6400C29408 /* CBDefaultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */; };
+		6DCFEB461B36EF8E002D24C8 /* CBUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */; };
+		6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
+		6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
+		6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
+		6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
+		6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51161B2B8465002ECC3F /* CBNetwork.swift */; };
+		6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51181B2B8465002ECC3F /* CBService.swift */; };
+		6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51191B2B8465002ECC3F /* CBStation.swift */; };
+		6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
@@ -180,7 +188,6 @@
 		6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationTableRowController.swift; sourceTree = "<group>"; };
 		6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUpdateTableRowController.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRideManager.swift; path = Helpers/CBRideManager.swift; sourceTree = "<group>"; };
-		6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+Settings.swift"; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStationAnnotationView.swift; path = Components/CBStationAnnotationView.swift; sourceTree = "<group>"; };
 		6DBA50EE1B2B4042002ECC3F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CityBike/Model/CoreDataStack.swift; sourceTree = "<group>"; };
 		6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityBike.xcdatamodel; sourceTree = "<group>"; };
@@ -201,6 +208,7 @@
 		6DC344DB1B242A2000C29408 /* CBDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBDefaultCell.swift; path = Components/CBDefaultCell.swift; sourceTree = "<group>"; };
 		6DC344E01B242B6E00C29408 /* CBMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMenuViewController.swift; path = Controllers/CBMenuViewController.swift; sourceTree = "<group>"; };
 		6DC344E51B242D6400C29408 /* CBDefaultHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBDefaultHeader.swift; path = Components/CBDefaultHeader.swift; sourceTree = "<group>"; };
+		6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBUserDefaults.swift; sourceTree = "<group>"; };
 		6DD460A11B20891D0070E163 /* UIView+Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Styling.swift"; sourceTree = "<group>"; };
 		6DD460A31B208A040070E163 /* UIColor+UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+UIColors.swift"; sourceTree = "<group>"; };
 		6DF07F251B2D613A00A8F796 /* CDStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDStation.swift; path = ../CityBike/Model/CDStation.swift; sourceTree = "<group>"; };
@@ -374,6 +382,7 @@
 				6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */,
 				6DBA51261B2B8D39002ECC3F /* CBModelUpdater.swift */,
 				6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */,
+				6DCFEB451B36EF8E002D24C8 /* CBUserDefaults.swift */,
 				6DD460A01B20890B0070E163 /* Extensions */,
 				6D5BA0B41B359783005C72CC /* Rides Tracking */,
 			);
@@ -524,7 +533,6 @@
 			isa = PBXGroup;
 			children = (
 				6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */,
-				6DB84B081B20E372005DBDAD /* NSUserDefaults+Settings.swift */,
 				6DD460A31B208A040070E163 /* UIColor+UIColors.swift */,
 				6D28345D1B24B5E100E361A3 /* UIDevice+ModelNames.swift */,
 				6DD460A11B20891D0070E163 /* UIView+Styling.swift */,
@@ -784,6 +792,7 @@
 				6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */,
 				6D2834541B24925400E361A3 /* CBMenuRidesHistoryViewController.swift in Sources */,
 				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
+				6DCFEB461B36EF8E002D24C8 /* CBUserDefaults.swift in Sources */,
 				6D5FB3FB1B349F7C00AB9143 /* CBSimplePopover.swift in Sources */,
 				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,
 				6D5FB3F71B34849E00AB9143 /* CBMapButton.swift in Sources */,
@@ -812,7 +821,6 @@
 				6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* CBSubtitleCell.swift in Sources */,
-				6DB84B091B20E372005DBDAD /* NSUserDefaults+Settings.swift in Sources */,
 				6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */,
 				6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */,
 				6D5BA0B61B359822005C72CC /* UIView+XIBLoading.swift in Sources */,
@@ -839,10 +847,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */,
+				6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */,
+				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
+				6DCFEB4F1B36F259002D24C8 /* CBUserDefaults.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
+				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,
+				6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */,
+				6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */,
+				6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */,
 				6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */,
 				6DFD68FE1B36E11000047D7B /* CBNoStationsTableRowController.swift in Sources */,
+				6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

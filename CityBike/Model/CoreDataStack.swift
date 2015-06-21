@@ -41,6 +41,7 @@ public class CoreDataStack: NSObject {
     }
     
     public class func sharedInstance() -> CoreDataStack {
+        /// This is workaround for core data configuration (for now)
         if Static.instance == nil {
             let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self))
             let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
@@ -83,7 +84,7 @@ public class CoreDataStack: NSObject {
         let model = NSManagedObjectModel(contentsOfURL: self.model.bundle.URLForResource(self.model.name, withExtension: "momd")!)!
         
         let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
-        println(self.sharedAppGroup)
+
         let sharedContainerURL: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.sharedAppGroup)!
         let storeURL = sharedContainerURL.URLByAppendingPathComponent("\(self.model.name).sqlite")
         

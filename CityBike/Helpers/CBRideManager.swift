@@ -20,7 +20,7 @@ class CBRideManager {
     
     func start(startDate: NSDate, updateBlock: CBRideStopwatch.UpdateBlockType) {
         _isGoing = true
-        NSUserDefaults.setStartRideDate(startDate)
+        CBUserDefaults.sharedInstance.setStartRideDate(startDate)
         self.stopwatch.start(startDate, updateBlock: updateBlock)
     }
     
@@ -48,6 +48,6 @@ class CBRideManager {
         }
         
         CoreDataStack.sharedInstance().mainContext.save(nil)
-        NSUserDefaults.removeStartRideDate()
+        CBUserDefaults.sharedInstance.removeStartRideDate()
     }
 }

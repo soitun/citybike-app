@@ -21,7 +21,7 @@ class CBStationTableRowController: NSObject {
     
     @IBOutlet weak var stationNameLabel: WKInterfaceLabel!
     
-    func update(station: CDStation) {
+    func update(station: CDStation, distance: Float?) {
         freeBikesLabel.setText(station.freeBikes.stringValue)
         freeBikesCircleImage.setTintColor(colorForValue(station.freeBikes.integerValue, min: 0, max: 5))
         
@@ -29,7 +29,12 @@ class CBStationTableRowController: NSObject {
         freeSlotsCircleImage.setTintColor(colorForValue(station.emptySlots.integerValue, min: 0, max: 5))
         stationNameLabel.setText(station.name)
         
-        distanceLabel.setText("-.-km")
+        if let distance = distance {
+            distanceLabel.setText(String(format: "%0.1fkm", distance))
+            distanceLabel.setHidden(false)
+        } else {
+            distanceLabel.setHidden(true)
+        }
     }
     
     private func colorForValue(value: Int, min: Int, max: Int) -> UIColor {

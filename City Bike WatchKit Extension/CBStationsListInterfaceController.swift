@@ -9,11 +9,13 @@
 import WatchKit
 import Foundation
 import CBModel
+import CoreLocation
 
-class CBStationsListInterfaceController: WKInterfaceController, NSFetchedResultsControllerDelegate {
+class CBStationsListInterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
     
-    private var fetchedRequestController: NSFetchedResultsController?
+    private var refreshContentTimer: NSTimer?
+    private var userLocation: CLLocation?
 
     private enum RowType: String {
         case Station = "CBStationTableRowController"
@@ -23,12 +25,11 @@ class CBStationsListInterfaceController: WKInterfaceController, NSFetchedResults
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        self.configureFetchedResultsController()
     }
 
     override func willActivate() {
         super.willActivate()
-        fetchedRequestController?.performFetch(nil)
+        self.startRefreshContentTimer()
         reloadTable()
     }
 
@@ -38,13 +39,35 @@ class CBStationsListInterfaceController: WKInterfaceController, NSFetchedResults
     }
 
     private func reloadTable() {
-        let stations: [CDStation]? = self.fetchedRequestController?.fetchedObjects as? [CDStation]
+        var stations: [CDStation] = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
         
-        if stations != nil && stations?.count > 0  {
-            let rows = stations!.count + 1
+        /// sort by free bikes descending
+        stations.sort({
+            let bikes1 = $0.freeBikes.integerValue
+            let bikes2 = $1.freeBikes.integerValue
+
+            if let userLocation = self.userLocation {
+                let location1 = CLLocation(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude)
+                let location2 = CLLocation(latitude: $1.coordinate.latitude, longitude: $1.coordinate.longitude)
+                
+                let distance1 = self.userLocation!.distanceFromLocation(location1)
+                let distance2 = self.userLocation!.distanceFromLocation(location2)
+                
+                if distance1 == distance2 {
+                    return bikes1 > bikes2
+                } else {
+                    return distance1 < distance2
+                }
+            }
+
+            return bikes1 > bikes2
+            })
+        
+        if stations.count > 0  {
+            let rows = stations.count + 1
             var rowTypes = [String]()
             for idx in 0..<rows {
-                if idx < stations!.count {
+                if idx < stations.count {
                     rowTypes.append(RowType.Station.rawValue)
                 } else {
                     rowTypes.append(RowType.Update.rawValue)
@@ -54,13 +77,22 @@ class CBStationsListInterfaceController: WKInterfaceController, NSFetchedResults
             table.setRowTypes(rowTypes)
             
             for idx in 0..<rows {
-                if idx < stations!.count {
+                if idx < stations.count {
                     let row = table.rowControllerAtIndex(idx) as! CBStationTableRowController
-                    row.update(stations![idx])
+                    let station = stations[idx]
+                    var distance: Float?
+                    if let userLocation = self.userLocation {
+                        let stationLocation = CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude)
+                        let distanceInMeters: Double = stationLocation.distanceFromLocation(userLocation)
+                        let distanceInKm = distanceInMeters / 1000.0
+                        distance = Float(distanceInKm)
+                    }
+                    
+                    row.update(station, distance: distance)
                 } else {
                     // Get recently update date
                     var recentTimestamp = NSDate(timeIntervalSince1970: 0)
-                    for station in stations! {
+                    for station in stations {
                         if recentTimestamp.laterDate(station.timestamp) == station.timestamp {
                             recentTimestamp = station.timestamp
                         }
@@ -78,17 +110,17 @@ class CBStationsListInterfaceController: WKInterfaceController, NSFetchedResults
         }
     }
     
-    private func configureFetchedResultsController() {
-        var request = CDStation.fetchAllRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        fetchedRequestController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.sharedInstance().mainContext, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedRequestController!.delegate = self
+    private func startRefreshContentTimer() {
+        self.refreshContentTimer?.invalidate()
+        self.refreshContentTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("refreshContent"), userInfo: nil, repeats: true)
+        self.refreshContent()
     }
     
-    
-    /// MARK: NSFetchedRequestControllerDelegate
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        dispatch_async(dispatch_get_main_queue()) { self.reloadTable() }
+    @objc private func refreshContent() {
+        println("update")
+        self.userLocation = CBUserDefaults.sharedInstance.getUserLocation()
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.reloadTable()
+        })
     }
-
 }

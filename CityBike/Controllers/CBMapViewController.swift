@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CBModel
 
-class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
+class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet private weak var mapView: MKMapView!
     @IBOutlet private weak var stopwatchReadyButton: CBMapButton!
@@ -41,7 +41,9 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.runStopwatchIfNeeded()
 
         /// Request content
-        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
         CBModelUpdater.sharedInstance.start()
     }
     
@@ -54,7 +56,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.mapUpdater.update(self.mapView, updatedStations: allStations)
        
         /// Show last saved region
-        if let savedRegion = NSUserDefaults.getMapRegion() {
+        if let savedRegion = CBUserDefaults.sharedInstance.getMapRegion() {
             self.mapView.setRegion(savedRegion, animated: false)
         }
     }
@@ -102,7 +104,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     private func runStopwatchIfNeeded() {
         /// Check if stopwatch should be turned on
-        if let startDate = NSUserDefaults.getStartRideDate() {
+        if let startDate = CBUserDefaults.sharedInstance.getStartRideDate() {
             self.startStopwatch(startDate, animated: false)
             
         } else {
@@ -165,7 +167,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        NSUserDefaults.setMapRegion(mapView.region)
+        CBUserDefaults.sharedInstance.setMapRegion(mapView.region)
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
@@ -206,5 +208,13 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
+    }
+    
+    
+    /// MARK: CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        if let location = locations.first as? CLLocation {
+            CBUserDefaults.sharedInstance.setUserLocation(location)
+        }
     }
 }

@@ -86,7 +86,7 @@ class CBGettingStartedViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func thanksPressed(sender: AnyObject) {
         self.performSegueWithIdentifier("Map", sender: nil)
-        NSUserDefaults.setDisplayedGettingStarted(true)
+        CBUserDefaults.sharedInstance.setDisplayedGettingStarted(true)
     }
     
     /// MARK: UIScrollViewDelegate
