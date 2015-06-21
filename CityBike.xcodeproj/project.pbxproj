@@ -81,6 +81,7 @@
 		6DF07F361B2D9A8400A8F796 /* CBMapUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */; };
 		6DF07F381B2DD78300A8F796 /* CBFilterNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */; };
 		6DF07F3A1B2DD89E00A8F796 /* CBNetworksSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */; };
+		6DFD68FE1B36E11000047D7B /* CBNoStationsTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD68FD1B36E11000047D7B /* CBNoStationsTableRowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		6DF07F351B2D9A8400A8F796 /* CBMapUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBMapUpdater.swift; path = Components/CBMapUpdater.swift; sourceTree = "<group>"; };
 		6DF07F371B2DD78300A8F796 /* CBFilterNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBFilterNetworks.swift; path = Helpers/CBFilterNetworks.swift; sourceTree = "<group>"; };
 		6DF07F391B2DD89E00A8F796 /* CBNetworksSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNetworksSort.swift; path = Helpers/CBNetworksSort.swift; sourceTree = "<group>"; };
+		6DFD68FD1B36E11000047D7B /* CBNoStationsTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBNoStationsTableRowController.swift; sourceTree = "<group>"; };
 		7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8BA85768E391B38D81FE6431 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DA90676A2DC38C9EC428943F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -487,6 +489,7 @@
 				6D8DC0B01B369DDD00B80C63 /* CBStationsListInterfaceController.swift */,
 				6D8DC0CE1B36A5FB00B80C63 /* CBStationTableRowController.swift */,
 				6D8DC0D01B36B1B500B80C63 /* CBUpdateTableRowController.swift */,
+				6DFD68FD1B36E11000047D7B /* CBNoStationsTableRowController.swift */,
 			);
 			name = "Stations List";
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* CBStationsListInterfaceController.swift in Sources */,
 				6D8DC0CF1B36A5FB00B80C63 /* CBStationTableRowController.swift in Sources */,
+				6DFD68FE1B36E11000047D7B /* CBNoStationsTableRowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,7 +1070,7 @@
 				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "e07b529e-76c6-44a1-a9bc-84b3ac816089";
+				PROVISIONING_PROFILE = "7508641e-936e-40d9-9f53-8fca5ee486ff";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1080,7 +1084,7 @@
 				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "e07b529e-76c6-44a1-a9bc-84b3ac816089";
+				PROVISIONING_PROFILE = "7508641e-936e-40d9-9f53-8fca5ee486ff";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

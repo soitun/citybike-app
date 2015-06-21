@@ -14,9 +14,11 @@ class CBUpdateTableRowController: NSObject {
     @IBOutlet weak var dateLabel: WKInterfaceLabel!
 
     func update(date: NSDate) {
+        titleLabel.setText(NSLocalizedString("RECENTLY UPDATED", comment: ""))
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        self.dateLabel.setText(dateFormatter.stringFromDate(date))
+        dateLabel.setText(dateFormatter.stringFromDate(date))
     }
 }

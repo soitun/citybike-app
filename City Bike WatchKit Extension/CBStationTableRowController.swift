@@ -28,6 +28,8 @@ class CBStationTableRowController: NSObject {
         freeSlotsLabel.setText(station.emptySlots.stringValue)
         freeSlotsCircleImage.setTintColor(colorForValue(station.emptySlots.integerValue, min: 0, max: 5))
         stationNameLabel.setText(station.name)
+        
+        distanceLabel.setText("-.-km")
     }
     
     private func colorForValue(value: Int, min: Int, max: Int) -> UIColor {

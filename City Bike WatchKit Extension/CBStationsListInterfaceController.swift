@@ -16,6 +16,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
     private enum RowType: String {
         case Station = "CBStationTableRowController"
         case Update = "CBUpdateTableRowController"
+        case NoStations = "CBNoStationsTableRowController"
     }
     
     override func awakeWithContext(context: AnyObject?) {
@@ -35,37 +36,40 @@ class CBStationsListInterfaceController: WKInterfaceController {
     }
 
     private func loadTableData(stations: [CDStation]) {
-        
-        let stationsCount = stations.count
-        let rows = stationsCount + 1
-        var rowTypes = [String]()
-        for idx in 0..<rows {
-            if idx < stationsCount {
-                rowTypes.append(RowType.Station.rawValue)
-            } else {
-                rowTypes.append(RowType.Update.rawValue)
-            }
-        }
-        
-        table.setRowTypes(rowTypes)
-        
-        for idx in 0..<rows {
-            if idx < stationsCount {
-                let row = table.rowControllerAtIndex(idx) as! CBStationTableRowController
-                row.update(stations[idx])
-            } else {
-                // Get recently update date
-                var recentTimestamp = NSDate(timeIntervalSince1970: 0)
-                for station in stations {
-                    if recentTimestamp.laterDate(station.timestamp) == station.timestamp {
-                        recentTimestamp = station.timestamp
-                    }
+        if stations.count > 0 {
+            let rows = stations.count + 1
+            var rowTypes = [String]()
+            for idx in 0..<rows {
+                if idx < stations.count {
+                    rowTypes.append(RowType.Station.rawValue)
+                } else {
+                    rowTypes.append(RowType.Update.rawValue)
                 }
-                
-                let row = table.rowControllerAtIndex(idx) as! CBUpdateTableRowController
-                row.update(recentTimestamp)
             }
+            
+            table.setRowTypes(rowTypes)
+            
+            for idx in 0..<rows {
+                if idx < stations.count {
+                    let row = table.rowControllerAtIndex(idx) as! CBStationTableRowController
+                    row.update(stations[idx])
+                } else {
+                    // Get recently update date
+                    var recentTimestamp = NSDate(timeIntervalSince1970: 0)
+                    for station in stations {
+                        if recentTimestamp.laterDate(station.timestamp) == station.timestamp {
+                            recentTimestamp = station.timestamp
+                        }
+                    }
+                    
+                    let row = table.rowControllerAtIndex(idx) as! CBUpdateTableRowController
+                    row.update(recentTimestamp)
+                }
+            }
+        } else {
+            table.setNumberOfRows(1, withRowType: RowType.NoStations.rawValue)
+            let row = table.rowControllerAtIndex(0) as! CBNoStationsTableRowController
+            row.update()
         }
-        
     }
 }

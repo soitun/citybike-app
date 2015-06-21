@@ -19,7 +19,7 @@
                                                 <items>
                                                     <group alignment="left" id="w2E-4j-38O" userLabel="bikes">
                                                         <items>
-                                                            <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="circle" id="puf-eG-KdM" userLabel="free-bikes-circle"/>
+                                                            <imageView alignment="left" verticalAlignment="center" image="circle" id="puf-eG-KdM" userLabel="free-bikes-circle"/>
                                                             <label alignment="left" verticalAlignment="center" text="10" id="srX-no-60x" userLabel="free-bikes-label">
                                                                 <fontDescription key="font" type="boldSystem" pointSize="21"/>
                                                             </label>
@@ -31,7 +31,7 @@
                                                     </group>
                                                     <group alignment="left" id="P0c-fR-KD6" userLabel="slots">
                                                         <items>
-                                                            <imageView width="15" height="15" alignment="left" verticalAlignment="center" image="circle" id="deX-l1-fSZ" userLabel="free-slots-circle"/>
+                                                            <imageView alignment="left" verticalAlignment="center" image="circle" id="deX-l1-fSZ" userLabel="free-slots-circle"/>
                                                             <label alignment="left" verticalAlignment="center" text="10" id="0iv-MD-rVm" userLabel="free-slots-label">
                                                                 <fontDescription key="font" type="boldSystem" pointSize="21"/>
                                                             </label>
@@ -65,7 +65,7 @@
                                         <outlet property="stationNameLabel" destination="SR8-Q2-njj" id="Uzh-zv-7kM"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="CBUpdateTableRowController" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="CBUpdateTableRowController" selectable="NO" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="32" alignment="left" layout="vertical" spacing="0.0" id="CWL-W1-Q9E" userLabel="content-view">
                                         <items>
                                             <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
@@ -85,6 +85,32 @@
                                         <outlet property="titleLabel" destination="21X-6e-k47" id="DR1-Kb-Q3f"/>
                                     </connections>
                                 </tableRow>
+                                <tableRow identifier="CBNoStationsTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBNoStationsTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="AoY-Xw-LEg" userLabel="content-view">
+                                        <items>
+                                            <group alignment="left" spacing="4" id="4pF-cH-Njd" userLabel="top-line">
+                                                <items>
+                                                    <imageView alignment="left" verticalAlignment="center" image="circle" id="1N0-sJ-ug4" userLabel="warning-icon"/>
+                                                    <label alignment="left" verticalAlignment="center" text="No stations" id="bxe-hx-0EK" userLabel="title-label">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <label width="1" alignment="left" text="Go to your iPhone and select some city bike networks." numberOfLines="0" id="FU8-Gm-ShN" userLabel="detail-text-label">
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="margins" left="5" right="0.0" top="4" bottom="3"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailTextLabel" destination="FU8-Gm-ShN" id="Z9L-oN-v87"/>
+                                        <outlet property="icon" destination="1N0-sJ-ug4" id="B2L-Br-4Z0"/>
+                                        <outlet property="titleLabel" destination="bxe-hx-0EK" id="wOK-uz-8rn"/>
+                                    </connections>
+                                </tableRow>
                             </items>
                         </table>
                     </items>
@@ -93,6 +119,7 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="204" y="476"/>
         </scene>
     </scenes>
 </document>
