@@ -14,7 +14,6 @@ import CoreLocation
 class CBStationsListInterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
     
-    private var refreshContentTimer: NSTimer?
     private var userLocation: CLLocation?
 
     private enum RowType: String {
@@ -29,15 +28,29 @@ class CBStationsListInterfaceController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
-        self.startRefreshContentTimer()
+        self.observeWormholeNotifications()
         reloadTable()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    
+    /// MARK: Notifications
+    private func observeWormholeNotifications() {
+        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.ContentUpdate.rawValue, listener: { _ in
+            self.reloadTable()
+        })
+        
+        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.UserLocationUpdate.rawValue, listener: { (updatedLocation: AnyObject?) in
+            self.userLocation = updatedLocation as? CLLocation
+            self.reloadTable()
+        })
+    }
 
+    
+    
     private func reloadTable() {
         var stations: [CDStation] = CDStation.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDStation]
         
@@ -108,19 +121,5 @@ class CBStationsListInterfaceController: WKInterfaceController {
             let row = table.rowControllerAtIndex(0) as! CBNoStationsTableRowController
             row.update()
         }
-    }
-    
-    private func startRefreshContentTimer() {
-        self.refreshContentTimer?.invalidate()
-        self.refreshContentTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("refreshContent"), userInfo: nil, repeats: true)
-        self.refreshContent()
-    }
-    
-    @objc private func refreshContent() {
-        println("update")
-        self.userLocation = CBUserDefaults.sharedInstance.getUserLocation()
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.reloadTable()
-        })
     }
 }

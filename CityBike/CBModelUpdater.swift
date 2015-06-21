@@ -64,6 +64,7 @@ class CBModelUpdater: CBUpdaterProtocol {
             ctx.parentContext?.save(nil)
             
             completion()
+            self.sendContentUpdateMessageUsingWormhole()
         })
     }
     
@@ -100,7 +101,12 @@ class CBModelUpdater: CBUpdaterProtocol {
             ctx.parentContext?.save(nil)
             
             completion()
+            self.sendContentUpdateMessageUsingWormhole()
         })
+    }
+    
+    func sendContentUpdateMessageUsingWormhole() {
+        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.ContentUpdate.rawValue)
     }
 }
 

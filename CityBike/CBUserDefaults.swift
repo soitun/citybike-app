@@ -33,11 +33,9 @@ class CBCoordinateRegionSerializable: NSObject, NSCoding {
 }
 
 class CBUserDefaults: NSUserDefaults {
-    
-    private static let AppSharedGroup = "group.com.tomaszszulc.CityBike"
-    
+        
     private class func createSharedDefaults() -> CBUserDefaults {
-        return CBUserDefaults(suiteName: AppSharedGroup)!
+        return CBUserDefaults(suiteName: CBConstant.AppSharedGroup.rawValue)!
     }
     
     class var sharedInstance: CBUserDefaults {
@@ -55,7 +53,6 @@ class CBUserDefaults: NSUserDefaults {
     private let CityBikeSelectedNetworks = "CityBikeSelectedNetworks"
     private let CityBikeStartRideDate = "CityBikeStartRideDate"
     private let CityBikeMapRegion = "CityBikeMapRegion"
-    private let CityBikeUserLocation = "CityBikeUserLocation"
     
     func registerCityBikeDefaults() {
         
@@ -129,21 +126,5 @@ class CBUserDefaults: NSUserDefaults {
         let data = NSKeyedArchiver.archivedDataWithRootObject(serialized)
         self.setObject(data, forKey: CityBikeMapRegion)
         self.synchronize()
-    }
-
-    
-    /// MARK: User Location
-    func setUserLocation(location: CLLocation) {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(location)
-        self.setObject(data, forKey: CityBikeUserLocation)
-        self.synchronize()
-    }
-    
-    func getUserLocation() -> CLLocation? {
-        if let data = self.objectForKey(CityBikeUserLocation) as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! CLLocation
-        } else {
-            return nil
-        }
     }
 }

@@ -7,379 +7,344 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BE4DCD5CA1AC71EB8DB31D6 /* CCHMapClusterController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC50AF6EE41D833AE102BF09 /* CCHMapClusterController.h */; };
-		13175E216CD364B0E1B05D8F /* CCHMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E0A4EA0C9DE137228CEE01 /* CCHMapClusterer.h */; };
-		1375FD82CA33CE148A7ED924 /* CCHMapClusterControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 52628012FF89DCD0530BFE75 /* CCHMapClusterControllerDelegate.h */; };
-		1DEECC3302ECFF5C81D7B9D0 /* CCHMapClusterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCEAEC52D65E0770228034C /* CCHMapClusterOperation.m */; };
-		2B992D63FE4DA0A571A0CD1F /* MMWormhole.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CCABA2CCA5875ED21051BB /* MMWormhole.h */; };
-		2E5BFD600D9D234E7FD46DB9 /* CCHCenterOfMassMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = 961AC4CD43E88EE27DD352C4 /* CCHCenterOfMassMapClusterer.m */; };
-		328AA7E5E7026E17E6FA2126 /* CCHMapAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB44FBE4C5ADF5401E077B8 /* CCHMapAnimator.h */; };
-		35FF729085DD3DA8BF2381AE /* CCHMapClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8937D236F83456652FA9E0E1 /* CCHMapClusterAnnotation.m */; };
-		379E0D40B0D75EDA6A169628 /* MMWormholeFileTransiting.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B61EEF19B3AF8669012E34 /* MMWormholeFileTransiting.h */; };
-		3E03EEFB5D31CABCC7ECA96D /* CCHMapClusterAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = D00984600CEDFEC7AAD7F8E9 /* CCHMapClusterAnnotation.h */; };
-		4443508476541EC2CAE40D9A /* CCHMapClusterController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5109BBC126D6E5A39C04D9 /* CCHMapClusterController.m */; };
-		4921E954BD9178B28A146AA8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32B0006BA986A6528B70198 /* MapKit.framework */; };
-		493B3B1BF0C44953026AEDCF /* CCHFadeInOutMapAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EC289A34EEA7F50D17161F /* CCHFadeInOutMapAnimator.m */; };
-		4BC045FCA029E7FCD231A27E /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA1F351F7A1A19859291ED9 /* MMWormhole.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		5387C73B1AD05775585CF219 /* MMWormholeCoordinatedFileTransiting.h in Headers */ = {isa = PBXBuildFile; fileRef = 31810F69EDF4B6C3527C3E55 /* MMWormholeCoordinatedFileTransiting.h */; };
-		5915564ABF88426A89C6C320 /* CCHMapClusterControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9F56F05B3930E6B34DB35F /* CCHMapClusterControllerUtils.m */; };
-		65B2C277F040D628F0F038A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC579FA6C4AB97C7667E1CF6 /* Foundation.framework */; };
-		6E584905C0C4E41DBD6D54A7 /* CCHMapClusterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 575161724BFDCB37409EA923 /* CCHMapClusterOperation.h */; };
-		70C6E201E313B42CDCBCB2EE /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0B35FA1F072CC09F8871F /* MMWormholeFileTransiting.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		74929CDACAA77E8216D3C768 /* CCHMapViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F128127821B6BB8E2F21783 /* CCHMapViewDelegateProxy.m */; };
-		7645D93DDDF8EB0577DC8540 /* CCHMapTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAE38331161DE8BEB0B15DC /* CCHMapTree.m */; };
-		8859993EAE21CD8C85C77745 /* CCHMapTreeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CDB5C59D54FC2E2A1176C69B /* CCHMapTreeUtils.h */; };
-		97A994B42EF789B8B5237F0C /* CCHMapClusterControllerDebugPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E0A42DA4F0C8DC050A8587 /* CCHMapClusterControllerDebugPolygon.m */; };
-		9DBD7664DE1FDBF5DE527B00 /* CCHNearCenterMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF50C93AA6127BBDB0BF4A1 /* CCHNearCenterMapClusterer.h */; };
-		9DFB80FC7CC0CCFC94AA526D /* Pods-CCHMapClusterController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AFFDD0D0A3A1D603DC1D87 /* Pods-CCHMapClusterController-dummy.m */; };
-		AAAD7D62596B44FBB866329C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC579FA6C4AB97C7667E1CF6 /* Foundation.framework */; };
-		AF0CFBFDD58CF1B9CD64C9C7 /* CCHFadeInOutMapAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CE380065A764649865A856E /* CCHFadeInOutMapAnimator.h */; };
-		B1AB0FE2038FBDC605DE9027 /* CCHMapTreeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCDA1F96703319D8DCDC21E /* CCHMapTreeUtils.m */; };
-		B31E06B4FA3D2C06AB840D7A /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B15970C6BE5FF9EE40FA8 /* Pods-dummy.m */; };
-		B436916D777B97EB16B97C40 /* Pods-MMWormhole-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B247075C5E17844710ACD4 /* Pods-MMWormhole-dummy.m */; };
-		BDF1219CD9666C2C52F4F98C /* CCHMapClusterControllerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = E1FD3021B8206AC59B6B4025 /* CCHMapClusterControllerUtils.h */; };
-		C00818E876EFDF36829B5DF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC579FA6C4AB97C7667E1CF6 /* Foundation.framework */; };
-		C3DFE6EF7387307504BC631C /* CCHMapTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 649181A5096075AB55EE8852 /* CCHMapTree.h */; };
-		CF8AA8C7E62C836D4A7B8CA6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3ECF5FB563E0961D17B544E /* CoreLocation.framework */; };
-		E5E8CB84316B7443534996D1 /* CCHMapClusterControllerDebugPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A33E939A80A148115EB5EDC /* CCHMapClusterControllerDebugPolygon.h */; };
-		E843E84F354CF4578F8519D6 /* CCHNearCenterMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = B89C3C9D761C28C50C3AA5DD /* CCHNearCenterMapClusterer.m */; };
-		ED9D5F82703C5A06561F1EB8 /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B61210AD57346192666BB8 /* MMWormholeCoordinatedFileTransiting.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		F55D59CC0BA3B7EEE25F572F /* CCHMapViewDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 439CD80707724B7641771EF1 /* CCHMapViewDelegateProxy.h */; };
-		FDBB1CFE46F0A4849BFE33C5 /* CCHCenterOfMassMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3F0817826F55D7442D69ED /* CCHCenterOfMassMapClusterer.h */; };
+		0C80B27ECEAB85986DAC8501 /* Pods-CCHMapClusterController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 879CFE83C85C2232C445C6AF /* Pods-CCHMapClusterController-dummy.m */; };
+		0F1B5090B37940C7C13FE3DC /* CCHMapClusterControllerDebugPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 812D18F5268CEB8F722AB66B /* CCHMapClusterControllerDebugPolygon.h */; };
+		1007767E898ED58A6EEC764C /* CCHMapTree.h in Headers */ = {isa = PBXBuildFile; fileRef = B6AE2652819F33CC0E4456B5 /* CCHMapTree.h */; };
+		15C7D5BE11BF62E5566C7C0C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A37723E9C985A154CE27F0 /* CoreLocation.framework */; };
+		25CB42CC4C3EDA780F5E6F19 /* CCHMapTreeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8480BA051400BD15F4E00A /* CCHMapTreeUtils.m */; };
+		2ADF1E8596B7BD64F616C87E /* CCHMapClusterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C91F893B1C922A5D6ABD073 /* CCHMapClusterController.m */; };
+		2FBAD15EA9F1D237143155D8 /* MMWormhole.m in Sources */ = {isa = PBXBuildFile; fileRef = AC87B437BAAA1DCAB2A9C150 /* MMWormhole.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		37AF1CB20A359DC3C32F08A8 /* MMWormholeFileTransiting.h in Headers */ = {isa = PBXBuildFile; fileRef = 941E9570DFE6203318DA694D /* MMWormholeFileTransiting.h */; };
+		40C532930677928B46360B06 /* CCHMapClusterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 271C1295B5A25E3B6D7C7859 /* CCHMapClusterController.h */; };
+		4134E02225A124B20484A5B6 /* CCHMapClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CD42E3F54D0FC05E4510DD /* CCHMapClusterAnnotation.m */; };
+		553E2799EE375755EF55B7F6 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 549588D32EEE53C50AB12E70 /* Pods-dummy.m */; };
+		560764419F526D576111FCAE /* CCHMapClusterControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E39ACC66288C73AC27E0013B /* CCHMapClusterControllerUtils.m */; };
+		5638EC5408AB7B98421F6957 /* MMWormholeCoordinatedFileTransiting.h in Headers */ = {isa = PBXBuildFile; fileRef = F989AB2FE72A8FF2909E8E38 /* MMWormholeCoordinatedFileTransiting.h */; };
+		63655A0EB4A26750318AF871 /* CCHMapClusterControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A449F03206E212D70159D69 /* CCHMapClusterControllerDelegate.h */; };
+		6613E56F2B91002C226037F4 /* CCHMapClusterAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EFA41F33C2348F5D9F21241 /* CCHMapClusterAnnotation.h */; };
+		6C7EFBAC130EC57D333175F2 /* CCHMapClusterControllerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FEC3617BD5855CCC171F1454 /* CCHMapClusterControllerUtils.h */; };
+		75BF76BB28B327396608D958 /* Pods-MMWormhole-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B006EF61ED703A4FD31523B8 /* Pods-MMWormhole-dummy.m */; };
+		7AD8F2604275BA8EE727D1CC /* CCHNearCenterMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = 93A3F2A5A8181690153D9AC5 /* CCHNearCenterMapClusterer.m */; };
+		878CA18B485763983316AA7E /* CCHMapClusterControllerDebugPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = A4BBFE538679A8D16D195365 /* CCHMapClusterControllerDebugPolygon.m */; };
+		8B0553FD04E4DD7673E614EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1A61799CEFF5ABAF76A6E9 /* Foundation.framework */; };
+		8C9E8EE2A7DBC6327AD83D90 /* CCHMapClusterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = F60EC771C8318AAB92C71C7D /* CCHMapClusterOperation.h */; };
+		8E9BD027D33D341E5D07C62F /* CCHFadeInOutMapAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A6EBB8649299C49EB9F455 /* CCHFadeInOutMapAnimator.m */; };
+		93188A7A5E10320E29EC7DE2 /* CCHMapTreeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F46E93581B08982C50217F73 /* CCHMapTreeUtils.h */; };
+		96E8C55672E214828B7C25A8 /* CCHNearCenterMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4140273EB1A720E08718EC38 /* CCHNearCenterMapClusterer.h */; };
+		9B96A1A51256F06EAC56D629 /* CCHMapViewDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B22A0C97C7551D9767970BC /* CCHMapViewDelegateProxy.h */; };
+		9DB5CCCDC45B3B2163755212 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1A61799CEFF5ABAF76A6E9 /* Foundation.framework */; };
+		A3828B803B809119646B2F58 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2F15387DA64A0EFA2F8484 /* MapKit.framework */; };
+		A51C9FC1BC45E93D408A6E2B /* CCHCenterOfMassMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F715E452270C1C571E361A0 /* CCHCenterOfMassMapClusterer.m */; };
+		AD36E19374D346DC7DDA8297 /* CCHMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = F2A02CDC4706FD2EA093D957 /* CCHMapClusterer.h */; };
+		B1FD6005EB323BADF079548F /* MMWormhole.h in Headers */ = {isa = PBXBuildFile; fileRef = C2DD41F500987D7C882D8254 /* MMWormhole.h */; };
+		B2E8A467C572913D1338AEA0 /* CCHMapClusterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D9C442DEA780014D55A39F /* CCHMapClusterOperation.m */; };
+		C4E6868CEAE8064D2BC592A8 /* MMWormholeCoordinatedFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = D5DB220259328B867495213C /* MMWormholeCoordinatedFileTransiting.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CDC9F093813B16E409576649 /* CCHFadeInOutMapAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = DA54FB4BD2A49CA525A83AAC /* CCHFadeInOutMapAnimator.h */; };
+		D1F745D88FD5C95F9955C2F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1A61799CEFF5ABAF76A6E9 /* Foundation.framework */; };
+		D2B5BF5D5803DD4E12F1F6A6 /* CCHMapViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C5BA68393AA6C716CCA3F7 /* CCHMapViewDelegateProxy.m */; };
+		D964207BAC1C6AE77962CB85 /* MMWormholeFileTransiting.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAEBC35349A3AD15277C2B1 /* MMWormholeFileTransiting.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E3F91B6A31213C1A4B441DE4 /* CCHCenterOfMassMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A40E1F0AC449625746BF6F5 /* CCHCenterOfMassMapClusterer.h */; };
+		F7CD6E0E83E9CAC3B925951B /* CCHMapAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D665C044AB194315EBD7C8F /* CCHMapAnimator.h */; };
+		FCABB2A8B434C336E11921A9 /* CCHMapTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C21C8062CADECABD79EDA06 /* CCHMapTree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		929C3D8AF7D427EA91B39C29 /* PBXContainerItemProxy */ = {
+		AC300DADF5D7F8138CE0E6CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E0293A6F5C87C0EF6394F9E6 /* Project object */;
+			containerPortal = 18D79D020D0F91BE11CB13DC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 5D4D157667AD6FB66230747C;
+			remoteGlobalIDString = AB7DBB12A4E177E4DC7E6981;
 			remoteInfo = "Pods-CCHMapClusterController";
 		};
-		EEAEEA81A1C7F8FB60BCE41D /* PBXContainerItemProxy */ = {
+		CD8731D23D3F32A28EE8EFEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E0293A6F5C87C0EF6394F9E6 /* Project object */;
+			containerPortal = 18D79D020D0F91BE11CB13DC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E48EAB6BA459B949D44266DC;
+			remoteGlobalIDString = 1778C4762794CBAE19FB61B7;
 			remoteInfo = "Pods-MMWormhole";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02EC289A34EEA7F50D17161F /* CCHFadeInOutMapAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHFadeInOutMapAnimator.m; path = CCHMapClusterController/CCHFadeInOutMapAnimator.m; sourceTree = "<group>"; };
-		11B247075C5E17844710ACD4 /* Pods-MMWormhole-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MMWormhole-dummy.m"; sourceTree = "<group>"; };
-		1BAE38331161DE8BEB0B15DC /* CCHMapTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapTree.m; path = CCHMapClusterController/CCHMapTree.m; sourceTree = "<group>"; };
-		1F128127821B6BB8E2F21783 /* CCHMapViewDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapViewDelegateProxy.m; path = CCHMapClusterController/CCHMapViewDelegateProxy.m; sourceTree = "<group>"; };
-		2A33E939A80A148115EB5EDC /* CCHMapClusterControllerDebugPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerDebugPolygon.h; path = CCHMapClusterController/CCHMapClusterControllerDebugPolygon.h; sourceTree = "<group>"; };
-		2CF50C93AA6127BBDB0BF4A1 /* CCHNearCenterMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHNearCenterMapClusterer.h; path = CCHMapClusterController/CCHNearCenterMapClusterer.h; sourceTree = "<group>"; };
-		31810F69EDF4B6C3527C3E55 /* MMWormholeCoordinatedFileTransiting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMWormholeCoordinatedFileTransiting.h; path = Source/MMWormholeCoordinatedFileTransiting.h; sourceTree = "<group>"; };
-		3350FB4D25C1574288FADB2A /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3964E59960DAC18DE746DBDE /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		3CCDA1F96703319D8DCDC21E /* CCHMapTreeUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapTreeUtils.m; path = CCHMapClusterController/CCHMapTreeUtils.m; sourceTree = "<group>"; };
-		439CD80707724B7641771EF1 /* CCHMapViewDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapViewDelegateProxy.h; path = CCHMapClusterController/CCHMapViewDelegateProxy.h; sourceTree = "<group>"; };
-		5004C120B439639B43D1D452 /* libPods-MMWormhole.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MMWormhole.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52628012FF89DCD0530BFE75 /* CCHMapClusterControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerDelegate.h; path = CCHMapClusterController/CCHMapClusterControllerDelegate.h; sourceTree = "<group>"; };
-		575161724BFDCB37409EA923 /* CCHMapClusterOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterOperation.h; path = CCHMapClusterController/CCHMapClusterOperation.h; sourceTree = "<group>"; };
-		5CE380065A764649865A856E /* CCHFadeInOutMapAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHFadeInOutMapAnimator.h; path = CCHMapClusterController/CCHFadeInOutMapAnimator.h; sourceTree = "<group>"; };
-		649181A5096075AB55EE8852 /* CCHMapTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapTree.h; path = CCHMapClusterController/CCHMapTree.h; sourceTree = "<group>"; };
-		64AFFDD0D0A3A1D603DC1D87 /* Pods-CCHMapClusterController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CCHMapClusterController-dummy.m"; sourceTree = "<group>"; };
-		78B61210AD57346192666BB8 /* MMWormholeCoordinatedFileTransiting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMWormholeCoordinatedFileTransiting.m; path = Source/MMWormholeCoordinatedFileTransiting.m; sourceTree = "<group>"; };
-		7AB44FBE4C5ADF5401E077B8 /* CCHMapAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapAnimator.h; path = CCHMapClusterController/CCHMapAnimator.h; sourceTree = "<group>"; };
-		7FCEAEC52D65E0770228034C /* CCHMapClusterOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterOperation.m; path = CCHMapClusterController/CCHMapClusterOperation.m; sourceTree = "<group>"; };
-		8937D236F83456652FA9E0E1 /* CCHMapClusterAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterAnnotation.m; path = CCHMapClusterController/CCHMapClusterAnnotation.m; sourceTree = "<group>"; };
-		8A0C15E252BB5FA8151452AA /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		8B685F07051D635F2212E40D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		8C3F0817826F55D7442D69ED /* CCHCenterOfMassMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHCenterOfMassMapClusterer.h; path = CCHMapClusterController/CCHCenterOfMassMapClusterer.h; sourceTree = "<group>"; };
-		8CA1F351F7A1A19859291ED9 /* MMWormhole.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMWormhole.m; path = Source/MMWormhole.m; sourceTree = "<group>"; };
-		928F4D491613B61481EBD3E4 /* Pods-MMWormhole-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMWormhole-Private.xcconfig"; sourceTree = "<group>"; };
-		961AC4CD43E88EE27DD352C4 /* CCHCenterOfMassMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHCenterOfMassMapClusterer.m; path = CCHMapClusterController/CCHCenterOfMassMapClusterer.m; sourceTree = "<group>"; };
-		9C6B15970C6BE5FF9EE40FA8 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		A9D52D07DF79BE8222E6ED08 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		AC579FA6C4AB97C7667E1CF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		B89C3C9D761C28C50C3AA5DD /* CCHNearCenterMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHNearCenterMapClusterer.m; path = CCHMapClusterController/CCHNearCenterMapClusterer.m; sourceTree = "<group>"; };
-		BE6177617378838D5B232FE4 /* Pods-CCHMapClusterController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CCHMapClusterController.xcconfig"; sourceTree = "<group>"; };
-		C142F72D220DDF6E74A68DC9 /* libPods-CCHMapClusterController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCHMapClusterController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3E0A42DA4F0C8DC050A8587 /* CCHMapClusterControllerDebugPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterControllerDebugPolygon.m; path = CCHMapClusterController/CCHMapClusterControllerDebugPolygon.m; sourceTree = "<group>"; };
-		C4E0A4EA0C9DE137228CEE01 /* CCHMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterer.h; path = CCHMapClusterController/CCHMapClusterer.h; sourceTree = "<group>"; };
-		C5E51D0A99ED5CC37F5B1E0C /* Pods-MMWormhole-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MMWormhole-prefix.pch"; sourceTree = "<group>"; };
-		C6B61EEF19B3AF8669012E34 /* MMWormholeFileTransiting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMWormholeFileTransiting.h; path = Source/MMWormholeFileTransiting.h; sourceTree = "<group>"; };
-		CD7D5AAC6D5FAD374AEBFA35 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		CDB5C59D54FC2E2A1176C69B /* CCHMapTreeUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapTreeUtils.h; path = CCHMapClusterController/CCHMapTreeUtils.h; sourceTree = "<group>"; };
-		D00984600CEDFEC7AAD7F8E9 /* CCHMapClusterAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterAnnotation.h; path = CCHMapClusterController/CCHMapClusterAnnotation.h; sourceTree = "<group>"; };
-		D4D63347F4B48127128D3648 /* Pods-CCHMapClusterController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CCHMapClusterController-Private.xcconfig"; sourceTree = "<group>"; };
-		DC50AF6EE41D833AE102BF09 /* CCHMapClusterController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterController.h; path = CCHMapClusterController/CCHMapClusterController.h; sourceTree = "<group>"; };
-		DF47ED5586930264FFAFDECB /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		E1FD3021B8206AC59B6B4025 /* CCHMapClusterControllerUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerUtils.h; path = CCHMapClusterController/CCHMapClusterControllerUtils.h; sourceTree = "<group>"; };
-		E4CCABA2CCA5875ED21051BB /* MMWormhole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMWormhole.h; path = Source/MMWormhole.h; sourceTree = "<group>"; };
-		E634F370836A0F7687FE7F76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F32B0006BA986A6528B70198 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		F3ECF5FB563E0961D17B544E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		F5D0B35FA1F072CC09F8871F /* MMWormholeFileTransiting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMWormholeFileTransiting.m; path = Source/MMWormholeFileTransiting.m; sourceTree = "<group>"; };
-		F6E0147F0A1297E5C659EC2A /* Pods-CCHMapClusterController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CCHMapClusterController-prefix.pch"; sourceTree = "<group>"; };
-		F862742EE349BE0B7A7B25C3 /* Pods-MMWormhole.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMWormhole.xcconfig"; sourceTree = "<group>"; };
-		FD5109BBC126D6E5A39C04D9 /* CCHMapClusterController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterController.m; path = CCHMapClusterController/CCHMapClusterController.m; sourceTree = "<group>"; };
-		FF9F56F05B3930E6B34DB35F /* CCHMapClusterControllerUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterControllerUtils.m; path = CCHMapClusterController/CCHMapClusterControllerUtils.m; sourceTree = "<group>"; };
+		0E7A01F79B08830E942B5C06 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		1613A65AA69314A79E4F627F /* Pods-MMWormhole-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMWormhole-Private.xcconfig"; sourceTree = "<group>"; };
+		186885A046F4749532760E7E /* libPods-MMWormhole.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MMWormhole.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B22A0C97C7551D9767970BC /* CCHMapViewDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapViewDelegateProxy.h; path = CCHMapClusterController/CCHMapViewDelegateProxy.h; sourceTree = "<group>"; };
+		20D9C442DEA780014D55A39F /* CCHMapClusterOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterOperation.m; path = CCHMapClusterController/CCHMapClusterOperation.m; sourceTree = "<group>"; };
+		2362393995305DA4B2E871A7 /* Pods-CCHMapClusterController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CCHMapClusterController.xcconfig"; sourceTree = "<group>"; };
+		271C1295B5A25E3B6D7C7859 /* CCHMapClusterController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterController.h; path = CCHMapClusterController/CCHMapClusterController.h; sourceTree = "<group>"; };
+		2F715E452270C1C571E361A0 /* CCHCenterOfMassMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHCenterOfMassMapClusterer.m; path = CCHMapClusterController/CCHCenterOfMassMapClusterer.m; sourceTree = "<group>"; };
+		3BAEBC35349A3AD15277C2B1 /* MMWormholeFileTransiting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMWormholeFileTransiting.m; path = Source/MMWormholeFileTransiting.m; sourceTree = "<group>"; };
+		3EFA41F33C2348F5D9F21241 /* CCHMapClusterAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterAnnotation.h; path = CCHMapClusterController/CCHMapClusterAnnotation.h; sourceTree = "<group>"; };
+		4140273EB1A720E08718EC38 /* CCHNearCenterMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHNearCenterMapClusterer.h; path = CCHMapClusterController/CCHNearCenterMapClusterer.h; sourceTree = "<group>"; };
+		4A233DFEB6D431D5C0B94C07 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4C1A61799CEFF5ABAF76A6E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		549588D32EEE53C50AB12E70 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		56A6EBB8649299C49EB9F455 /* CCHFadeInOutMapAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHFadeInOutMapAnimator.m; path = CCHMapClusterController/CCHFadeInOutMapAnimator.m; sourceTree = "<group>"; };
+		6A449F03206E212D70159D69 /* CCHMapClusterControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerDelegate.h; path = CCHMapClusterController/CCHMapClusterControllerDelegate.h; sourceTree = "<group>"; };
+		812D18F5268CEB8F722AB66B /* CCHMapClusterControllerDebugPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerDebugPolygon.h; path = CCHMapClusterController/CCHMapClusterControllerDebugPolygon.h; sourceTree = "<group>"; };
+		847A04DC1A244AFE2263E2A1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		879CFE83C85C2232C445C6AF /* Pods-CCHMapClusterController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CCHMapClusterController-dummy.m"; sourceTree = "<group>"; };
+		88CD42E3F54D0FC05E4510DD /* CCHMapClusterAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterAnnotation.m; path = CCHMapClusterController/CCHMapClusterAnnotation.m; sourceTree = "<group>"; };
+		88E157CF979209CEDC9290F4 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8A40E1F0AC449625746BF6F5 /* CCHCenterOfMassMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHCenterOfMassMapClusterer.h; path = CCHMapClusterController/CCHCenterOfMassMapClusterer.h; sourceTree = "<group>"; };
+		8C21C8062CADECABD79EDA06 /* CCHMapTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapTree.m; path = CCHMapClusterController/CCHMapTree.m; sourceTree = "<group>"; };
+		8C91F893B1C922A5D6ABD073 /* CCHMapClusterController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterController.m; path = CCHMapClusterController/CCHMapClusterController.m; sourceTree = "<group>"; };
+		8CB09CEAD2D19FE9DD3E348B /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		8D665C044AB194315EBD7C8F /* CCHMapAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapAnimator.h; path = CCHMapClusterController/CCHMapAnimator.h; sourceTree = "<group>"; };
+		93A3F2A5A8181690153D9AC5 /* CCHNearCenterMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHNearCenterMapClusterer.m; path = CCHMapClusterController/CCHNearCenterMapClusterer.m; sourceTree = "<group>"; };
+		941E9570DFE6203318DA694D /* MMWormholeFileTransiting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMWormholeFileTransiting.h; path = Source/MMWormholeFileTransiting.h; sourceTree = "<group>"; };
+		9BF103A5E5E4573D561A3FC9 /* Pods-MMWormhole-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MMWormhole-prefix.pch"; sourceTree = "<group>"; };
+		9EF91C4D68A043E64F451A91 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		9FE02D86602E29DFF0649328 /* Pods-MMWormhole.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MMWormhole.xcconfig"; sourceTree = "<group>"; };
+		A1A37723E9C985A154CE27F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		A4BBFE538679A8D16D195365 /* CCHMapClusterControllerDebugPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterControllerDebugPolygon.m; path = CCHMapClusterController/CCHMapClusterControllerDebugPolygon.m; sourceTree = "<group>"; };
+		A89AEAAF6F9840AD820B1377 /* Pods-CCHMapClusterController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CCHMapClusterController-Private.xcconfig"; sourceTree = "<group>"; };
+		AB379F6B76DE1D02F3B8A8F6 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		AC87B437BAAA1DCAB2A9C150 /* MMWormhole.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMWormhole.m; path = Source/MMWormhole.m; sourceTree = "<group>"; };
+		B006EF61ED703A4FD31523B8 /* Pods-MMWormhole-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MMWormhole-dummy.m"; sourceTree = "<group>"; };
+		B6AE2652819F33CC0E4456B5 /* CCHMapTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapTree.h; path = CCHMapClusterController/CCHMapTree.h; sourceTree = "<group>"; };
+		BBF7C69674711BB433B4095A /* libPods-CCHMapClusterController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCHMapClusterController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05DFDFCE36F0DD40B3E2D73 /* Pods-CCHMapClusterController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CCHMapClusterController-prefix.pch"; sourceTree = "<group>"; };
+		C2DD41F500987D7C882D8254 /* MMWormhole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMWormhole.h; path = Source/MMWormhole.h; sourceTree = "<group>"; };
+		C6C5BA68393AA6C716CCA3F7 /* CCHMapViewDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapViewDelegateProxy.m; path = CCHMapClusterController/CCHMapViewDelegateProxy.m; sourceTree = "<group>"; };
+		CF88E43FA1ADAE402FBCA06C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		D5DB220259328B867495213C /* MMWormholeCoordinatedFileTransiting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMWormholeCoordinatedFileTransiting.m; path = Source/MMWormholeCoordinatedFileTransiting.m; sourceTree = "<group>"; };
+		DA54FB4BD2A49CA525A83AAC /* CCHFadeInOutMapAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHFadeInOutMapAnimator.h; path = CCHMapClusterController/CCHFadeInOutMapAnimator.h; sourceTree = "<group>"; };
+		DB2F15387DA64A0EFA2F8484 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		DE8480BA051400BD15F4E00A /* CCHMapTreeUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapTreeUtils.m; path = CCHMapClusterController/CCHMapTreeUtils.m; sourceTree = "<group>"; };
+		E39ACC66288C73AC27E0013B /* CCHMapClusterControllerUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterControllerUtils.m; path = CCHMapClusterController/CCHMapClusterControllerUtils.m; sourceTree = "<group>"; };
+		F2A02CDC4706FD2EA093D957 /* CCHMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterer.h; path = CCHMapClusterController/CCHMapClusterer.h; sourceTree = "<group>"; };
+		F46E93581B08982C50217F73 /* CCHMapTreeUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapTreeUtils.h; path = CCHMapClusterController/CCHMapTreeUtils.h; sourceTree = "<group>"; };
+		F60EC771C8318AAB92C71C7D /* CCHMapClusterOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterOperation.h; path = CCHMapClusterController/CCHMapClusterOperation.h; sourceTree = "<group>"; };
+		F989AB2FE72A8FF2909E8E38 /* MMWormholeCoordinatedFileTransiting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMWormholeCoordinatedFileTransiting.h; path = Source/MMWormholeCoordinatedFileTransiting.h; sourceTree = "<group>"; };
+		FEC3617BD5855CCC171F1454 /* CCHMapClusterControllerUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerUtils.h; path = CCHMapClusterController/CCHMapClusterControllerUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		102A01D2FC44AE78A8D66083 /* Frameworks */ = {
+		ADBA582465096D8CCB978491 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C00818E876EFDF36829B5DF6 /* Foundation.framework in Frameworks */,
+				8B0553FD04E4DD7673E614EA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		369694B0E319F6AE9B3272DF /* Frameworks */ = {
+		E4B659CE02F4161F4C2C5164 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAAD7D62596B44FBB866329C /* Foundation.framework in Frameworks */,
+				9DB5CCCDC45B3B2163755212 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D2679CEB01998C99C9A04B21 /* Frameworks */ = {
+		F5CF950D94D684099C9BE261 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8AA8C7E62C836D4A7B8CA6 /* CoreLocation.framework in Frameworks */,
-				65B2C277F040D628F0F038A1 /* Foundation.framework in Frameworks */,
-				4921E954BD9178B28A146AA8 /* MapKit.framework in Frameworks */,
+				15C7D5BE11BF62E5566C7C0C /* CoreLocation.framework in Frameworks */,
+				D1F745D88FD5C95F9955C2F5 /* Foundation.framework in Frameworks */,
+				A3828B803B809119646B2F58 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		155294CECB533F9B53169B3D /* Pods */ = {
+		0CE6F5743C201525C6AE4CCD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3350FB4D25C1574288FADB2A /* Pods-acknowledgements.markdown */,
-				8A0C15E252BB5FA8151452AA /* Pods-acknowledgements.plist */,
-				9C6B15970C6BE5FF9EE40FA8 /* Pods-dummy.m */,
-				DF47ED5586930264FFAFDECB /* Pods-environment.h */,
-				CD7D5AAC6D5FAD374AEBFA35 /* Pods-resources.sh */,
-				A9D52D07DF79BE8222E6ED08 /* Pods.debug.xcconfig */,
-				8B685F07051D635F2212E40D /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		3A42A86269F1D35D53991BF8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CB725E4B1F4C8D7FC5561B6A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4F042B305D7A56BB6B72DF4C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E634F370836A0F7687FE7F76 /* libPods.a */,
-				C142F72D220DDF6E74A68DC9 /* libPods-CCHMapClusterController.a */,
-				5004C120B439639B43D1D452 /* libPods-MMWormhole.a */,
+				847A04DC1A244AFE2263E2A1 /* libPods.a */,
+				BBF7C69674711BB433B4095A /* libPods-CCHMapClusterController.a */,
+				186885A046F4749532760E7E /* libPods-MMWormhole.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5481CB814EFAD1B85614C944 /* Pods */ = {
+		14B69AE327C9005E78E1E5F8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				567DA38726914C3F30FF26F7 /* CCHMapClusterController */,
-				B0D3607631A2967B292788A6 /* MMWormhole */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		567DA38726914C3F30FF26F7 /* CCHMapClusterController */ = {
-			isa = PBXGroup;
-			children = (
-				8C3F0817826F55D7442D69ED /* CCHCenterOfMassMapClusterer.h */,
-				961AC4CD43E88EE27DD352C4 /* CCHCenterOfMassMapClusterer.m */,
-				5CE380065A764649865A856E /* CCHFadeInOutMapAnimator.h */,
-				02EC289A34EEA7F50D17161F /* CCHFadeInOutMapAnimator.m */,
-				7AB44FBE4C5ADF5401E077B8 /* CCHMapAnimator.h */,
-				D00984600CEDFEC7AAD7F8E9 /* CCHMapClusterAnnotation.h */,
-				8937D236F83456652FA9E0E1 /* CCHMapClusterAnnotation.m */,
-				DC50AF6EE41D833AE102BF09 /* CCHMapClusterController.h */,
-				FD5109BBC126D6E5A39C04D9 /* CCHMapClusterController.m */,
-				2A33E939A80A148115EB5EDC /* CCHMapClusterControllerDebugPolygon.h */,
-				C3E0A42DA4F0C8DC050A8587 /* CCHMapClusterControllerDebugPolygon.m */,
-				52628012FF89DCD0530BFE75 /* CCHMapClusterControllerDelegate.h */,
-				E1FD3021B8206AC59B6B4025 /* CCHMapClusterControllerUtils.h */,
-				FF9F56F05B3930E6B34DB35F /* CCHMapClusterControllerUtils.m */,
-				575161724BFDCB37409EA923 /* CCHMapClusterOperation.h */,
-				7FCEAEC52D65E0770228034C /* CCHMapClusterOperation.m */,
-				C4E0A4EA0C9DE137228CEE01 /* CCHMapClusterer.h */,
-				649181A5096075AB55EE8852 /* CCHMapTree.h */,
-				1BAE38331161DE8BEB0B15DC /* CCHMapTree.m */,
-				CDB5C59D54FC2E2A1176C69B /* CCHMapTreeUtils.h */,
-				3CCDA1F96703319D8DCDC21E /* CCHMapTreeUtils.m */,
-				439CD80707724B7641771EF1 /* CCHMapViewDelegateProxy.h */,
-				1F128127821B6BB8E2F21783 /* CCHMapViewDelegateProxy.m */,
-				2CF50C93AA6127BBDB0BF4A1 /* CCHNearCenterMapClusterer.h */,
-				B89C3C9D761C28C50C3AA5DD /* CCHNearCenterMapClusterer.m */,
-				FEF5F72BBBD2FD9C28B6146B /* Support Files */,
-			);
-			path = CCHMapClusterController;
-			sourceTree = "<group>";
-		};
-		5A36925075570D76E7F31B4C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E4CCABA2CCA5875ED21051BB /* MMWormhole.h */,
-				8CA1F351F7A1A19859291ED9 /* MMWormhole.m */,
-				31810F69EDF4B6C3527C3E55 /* MMWormholeCoordinatedFileTransiting.h */,
-				78B61210AD57346192666BB8 /* MMWormholeCoordinatedFileTransiting.m */,
-				C6B61EEF19B3AF8669012E34 /* MMWormholeFileTransiting.h */,
-				F5D0B35FA1F072CC09F8871F /* MMWormholeFileTransiting.m */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		76D4B3510F0A65BC18A7E0FE = {
-			isa = PBXGroup;
-			children = (
-				3964E59960DAC18DE746DBDE /* Podfile */,
-				3A42A86269F1D35D53991BF8 /* Frameworks */,
-				5481CB814EFAD1B85614C944 /* Pods */,
-				4F042B305D7A56BB6B72DF4C /* Products */,
-				B0EBB88735CF88FE41809F09 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		B0D3607631A2967B292788A6 /* MMWormhole */ = {
-			isa = PBXGroup;
-			children = (
-				5A36925075570D76E7F31B4C /* Core */,
-				D631814BDC6FB1DBDEEEB4AE /* Support Files */,
-			);
-			path = MMWormhole;
-			sourceTree = "<group>";
-		};
-		B0EBB88735CF88FE41809F09 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				155294CECB533F9B53169B3D /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		CB725E4B1F4C8D7FC5561B6A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				F3ECF5FB563E0961D17B544E /* CoreLocation.framework */,
-				AC579FA6C4AB97C7667E1CF6 /* Foundation.framework */,
-				F32B0006BA986A6528B70198 /* MapKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D631814BDC6FB1DBDEEEB4AE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F862742EE349BE0B7A7B25C3 /* Pods-MMWormhole.xcconfig */,
-				928F4D491613B61481EBD3E4 /* Pods-MMWormhole-Private.xcconfig */,
-				11B247075C5E17844710ACD4 /* Pods-MMWormhole-dummy.m */,
-				C5E51D0A99ED5CC37F5B1E0C /* Pods-MMWormhole-prefix.pch */,
+				9FE02D86602E29DFF0649328 /* Pods-MMWormhole.xcconfig */,
+				1613A65AA69314A79E4F627F /* Pods-MMWormhole-Private.xcconfig */,
+				B006EF61ED703A4FD31523B8 /* Pods-MMWormhole-dummy.m */,
+				9BF103A5E5E4573D561A3FC9 /* Pods-MMWormhole-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-MMWormhole";
 			sourceTree = "<group>";
 		};
-		FEF5F72BBBD2FD9C28B6146B /* Support Files */ = {
+		3032E914746831E2ABC7138B = {
 			isa = PBXGroup;
 			children = (
-				BE6177617378838D5B232FE4 /* Pods-CCHMapClusterController.xcconfig */,
-				D4D63347F4B48127128D3648 /* Pods-CCHMapClusterController-Private.xcconfig */,
-				64AFFDD0D0A3A1D603DC1D87 /* Pods-CCHMapClusterController-dummy.m */,
-				F6E0147F0A1297E5C659EC2A /* Pods-CCHMapClusterController-prefix.pch */,
+				4A233DFEB6D431D5C0B94C07 /* Podfile */,
+				38339425D7408ED72052A71D /* Frameworks */,
+				DB9CCD59C8252CBC1EB1AA39 /* Pods */,
+				0CE6F5743C201525C6AE4CCD /* Products */,
+				C62C31D7505361A4BA6FAA08 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		38339425D7408ED72052A71D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1CBCB8E1738CCAEC2E50549 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1CBCB8E1738CCAEC2E50549 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A1A37723E9C985A154CE27F0 /* CoreLocation.framework */,
+				4C1A61799CEFF5ABAF76A6E9 /* Foundation.framework */,
+				DB2F15387DA64A0EFA2F8484 /* MapKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C62C31D7505361A4BA6FAA08 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E31D6BA25436D18BA0F9BDAA /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		DB9CCD59C8252CBC1EB1AA39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DFD1B663081E5155B56FDA31 /* CCHMapClusterController */,
+				F69DCD5F60AB31525799E775 /* MMWormhole */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DFD1B663081E5155B56FDA31 /* CCHMapClusterController */ = {
+			isa = PBXGroup;
+			children = (
+				8A40E1F0AC449625746BF6F5 /* CCHCenterOfMassMapClusterer.h */,
+				2F715E452270C1C571E361A0 /* CCHCenterOfMassMapClusterer.m */,
+				DA54FB4BD2A49CA525A83AAC /* CCHFadeInOutMapAnimator.h */,
+				56A6EBB8649299C49EB9F455 /* CCHFadeInOutMapAnimator.m */,
+				8D665C044AB194315EBD7C8F /* CCHMapAnimator.h */,
+				3EFA41F33C2348F5D9F21241 /* CCHMapClusterAnnotation.h */,
+				88CD42E3F54D0FC05E4510DD /* CCHMapClusterAnnotation.m */,
+				271C1295B5A25E3B6D7C7859 /* CCHMapClusterController.h */,
+				8C91F893B1C922A5D6ABD073 /* CCHMapClusterController.m */,
+				812D18F5268CEB8F722AB66B /* CCHMapClusterControllerDebugPolygon.h */,
+				A4BBFE538679A8D16D195365 /* CCHMapClusterControllerDebugPolygon.m */,
+				6A449F03206E212D70159D69 /* CCHMapClusterControllerDelegate.h */,
+				FEC3617BD5855CCC171F1454 /* CCHMapClusterControllerUtils.h */,
+				E39ACC66288C73AC27E0013B /* CCHMapClusterControllerUtils.m */,
+				F60EC771C8318AAB92C71C7D /* CCHMapClusterOperation.h */,
+				20D9C442DEA780014D55A39F /* CCHMapClusterOperation.m */,
+				F2A02CDC4706FD2EA093D957 /* CCHMapClusterer.h */,
+				B6AE2652819F33CC0E4456B5 /* CCHMapTree.h */,
+				8C21C8062CADECABD79EDA06 /* CCHMapTree.m */,
+				F46E93581B08982C50217F73 /* CCHMapTreeUtils.h */,
+				DE8480BA051400BD15F4E00A /* CCHMapTreeUtils.m */,
+				1B22A0C97C7551D9767970BC /* CCHMapViewDelegateProxy.h */,
+				C6C5BA68393AA6C716CCA3F7 /* CCHMapViewDelegateProxy.m */,
+				4140273EB1A720E08718EC38 /* CCHNearCenterMapClusterer.h */,
+				93A3F2A5A8181690153D9AC5 /* CCHNearCenterMapClusterer.m */,
+				F66D1240C1C23A3221408BED /* Support Files */,
+			);
+			path = CCHMapClusterController;
+			sourceTree = "<group>";
+		};
+		E31D6BA25436D18BA0F9BDAA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88E157CF979209CEDC9290F4 /* Pods-acknowledgements.markdown */,
+				9EF91C4D68A043E64F451A91 /* Pods-acknowledgements.plist */,
+				549588D32EEE53C50AB12E70 /* Pods-dummy.m */,
+				AB379F6B76DE1D02F3B8A8F6 /* Pods-environment.h */,
+				8CB09CEAD2D19FE9DD3E348B /* Pods-resources.sh */,
+				0E7A01F79B08830E942B5C06 /* Pods.debug.xcconfig */,
+				CF88E43FA1ADAE402FBCA06C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		F0FC07EE05A45C025D2688B1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C2DD41F500987D7C882D8254 /* MMWormhole.h */,
+				AC87B437BAAA1DCAB2A9C150 /* MMWormhole.m */,
+				F989AB2FE72A8FF2909E8E38 /* MMWormholeCoordinatedFileTransiting.h */,
+				D5DB220259328B867495213C /* MMWormholeCoordinatedFileTransiting.m */,
+				941E9570DFE6203318DA694D /* MMWormholeFileTransiting.h */,
+				3BAEBC35349A3AD15277C2B1 /* MMWormholeFileTransiting.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		F66D1240C1C23A3221408BED /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2362393995305DA4B2E871A7 /* Pods-CCHMapClusterController.xcconfig */,
+				A89AEAAF6F9840AD820B1377 /* Pods-CCHMapClusterController-Private.xcconfig */,
+				879CFE83C85C2232C445C6AF /* Pods-CCHMapClusterController-dummy.m */,
+				C05DFDFCE36F0DD40B3E2D73 /* Pods-CCHMapClusterController-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-CCHMapClusterController";
 			sourceTree = "<group>";
 		};
+		F69DCD5F60AB31525799E775 /* MMWormhole */ = {
+			isa = PBXGroup;
+			children = (
+				F0FC07EE05A45C025D2688B1 /* Core */,
+				14B69AE327C9005E78E1E5F8 /* Support Files */,
+			);
+			path = MMWormhole;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		18FD16C838C21341A2A5A5FA /* Headers */ = {
+		7DBDF6D692E95CD820702BFF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B992D63FE4DA0A571A0CD1F /* MMWormhole.h in Headers */,
-				5387C73B1AD05775585CF219 /* MMWormholeCoordinatedFileTransiting.h in Headers */,
-				379E0D40B0D75EDA6A169628 /* MMWormholeFileTransiting.h in Headers */,
+				B1FD6005EB323BADF079548F /* MMWormhole.h in Headers */,
+				5638EC5408AB7B98421F6957 /* MMWormholeCoordinatedFileTransiting.h in Headers */,
+				37AF1CB20A359DC3C32F08A8 /* MMWormholeFileTransiting.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6697A804664CBDC8279F0494 /* Headers */ = {
+		D51090879395DB34F776DAA4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDBB1CFE46F0A4849BFE33C5 /* CCHCenterOfMassMapClusterer.h in Headers */,
-				AF0CFBFDD58CF1B9CD64C9C7 /* CCHFadeInOutMapAnimator.h in Headers */,
-				328AA7E5E7026E17E6FA2126 /* CCHMapAnimator.h in Headers */,
-				3E03EEFB5D31CABCC7ECA96D /* CCHMapClusterAnnotation.h in Headers */,
-				0BE4DCD5CA1AC71EB8DB31D6 /* CCHMapClusterController.h in Headers */,
-				E5E8CB84316B7443534996D1 /* CCHMapClusterControllerDebugPolygon.h in Headers */,
-				1375FD82CA33CE148A7ED924 /* CCHMapClusterControllerDelegate.h in Headers */,
-				BDF1219CD9666C2C52F4F98C /* CCHMapClusterControllerUtils.h in Headers */,
-				6E584905C0C4E41DBD6D54A7 /* CCHMapClusterOperation.h in Headers */,
-				13175E216CD364B0E1B05D8F /* CCHMapClusterer.h in Headers */,
-				C3DFE6EF7387307504BC631C /* CCHMapTree.h in Headers */,
-				8859993EAE21CD8C85C77745 /* CCHMapTreeUtils.h in Headers */,
-				F55D59CC0BA3B7EEE25F572F /* CCHMapViewDelegateProxy.h in Headers */,
-				9DBD7664DE1FDBF5DE527B00 /* CCHNearCenterMapClusterer.h in Headers */,
+				E3F91B6A31213C1A4B441DE4 /* CCHCenterOfMassMapClusterer.h in Headers */,
+				CDC9F093813B16E409576649 /* CCHFadeInOutMapAnimator.h in Headers */,
+				F7CD6E0E83E9CAC3B925951B /* CCHMapAnimator.h in Headers */,
+				6613E56F2B91002C226037F4 /* CCHMapClusterAnnotation.h in Headers */,
+				40C532930677928B46360B06 /* CCHMapClusterController.h in Headers */,
+				0F1B5090B37940C7C13FE3DC /* CCHMapClusterControllerDebugPolygon.h in Headers */,
+				63655A0EB4A26750318AF871 /* CCHMapClusterControllerDelegate.h in Headers */,
+				6C7EFBAC130EC57D333175F2 /* CCHMapClusterControllerUtils.h in Headers */,
+				8C9E8EE2A7DBC6327AD83D90 /* CCHMapClusterOperation.h in Headers */,
+				AD36E19374D346DC7DDA8297 /* CCHMapClusterer.h in Headers */,
+				1007767E898ED58A6EEC764C /* CCHMapTree.h in Headers */,
+				93188A7A5E10320E29EC7DE2 /* CCHMapTreeUtils.h in Headers */,
+				9B96A1A51256F06EAC56D629 /* CCHMapViewDelegateProxy.h in Headers */,
+				96E8C55672E214828B7C25A8 /* CCHNearCenterMapClusterer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5D4D157667AD6FB66230747C /* Pods-CCHMapClusterController */ = {
+		1778C4762794CBAE19FB61B7 /* Pods-MMWormhole */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0C02FB8DB89C1EBC74EA2D4 /* Build configuration list for PBXNativeTarget "Pods-CCHMapClusterController" */;
+			buildConfigurationList = E8C8C118E2885D294410FF65 /* Build configuration list for PBXNativeTarget "Pods-MMWormhole" */;
 			buildPhases = (
-				229058B231E49985DD9D08FA /* Sources */,
-				D2679CEB01998C99C9A04B21 /* Frameworks */,
-				6697A804664CBDC8279F0494 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-CCHMapClusterController";
-			productName = "Pods-CCHMapClusterController";
-			productReference = C142F72D220DDF6E74A68DC9 /* libPods-CCHMapClusterController.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		7F5CB3FCE7B10BA4F8844EF7 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F97E6AAD80C3A31E04872C85 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				396F44776D7AA407BA62960B /* Sources */,
-				369694B0E319F6AE9B3272DF /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				011BA803CEC427A528624CD5 /* PBXTargetDependency */,
-				9D664AC0D7D9D9C897664AA4 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = E634F370836A0F7687FE7F76 /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		E48EAB6BA459B949D44266DC /* Pods-MMWormhole */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9A9DCAC43F6E759F0DE7EA74 /* Build configuration list for PBXNativeTarget "Pods-MMWormhole" */;
-			buildPhases = (
-				C9BCE74FB117A23F3AEFF86C /* Sources */,
-				102A01D2FC44AE78A8D66083 /* Frameworks */,
-				18FD16C838C21341A2A5A5FA /* Headers */,
+				19816177BEAF1906572F12A6 /* Sources */,
+				ADBA582465096D8CCB978491 /* Frameworks */,
+				7DBDF6D692E95CD820702BFF /* Headers */,
 			);
 			buildRules = (
 			);
@@ -387,145 +352,133 @@
 			);
 			name = "Pods-MMWormhole";
 			productName = "Pods-MMWormhole";
-			productReference = 5004C120B439639B43D1D452 /* libPods-MMWormhole.a */;
+			productReference = 186885A046F4749532760E7E /* libPods-MMWormhole.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4EC22E6EB8892EC067B214FA /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E151C8ADAA38BC1191D04FD /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				E6FA623A31E9821CC95E8726 /* Sources */,
+				E4B659CE02F4161F4C2C5164 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				585DBECDBF66296BE8AACC56 /* PBXTargetDependency */,
+				70299E23F1AB3A91D3E2E9A2 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 847A04DC1A244AFE2263E2A1 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AB7DBB12A4E177E4DC7E6981 /* Pods-CCHMapClusterController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18C960F66A7EAEA9A8B7C8D /* Build configuration list for PBXNativeTarget "Pods-CCHMapClusterController" */;
+			buildPhases = (
+				B39D84FEC17A3C6FD4C7AFFD /* Sources */,
+				F5CF950D94D684099C9BE261 /* Frameworks */,
+				D51090879395DB34F776DAA4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CCHMapClusterController";
+			productName = "Pods-CCHMapClusterController";
+			productReference = BBF7C69674711BB433B4095A /* libPods-CCHMapClusterController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E0293A6F5C87C0EF6394F9E6 /* Project object */ = {
+		18D79D020D0F91BE11CB13DC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 			};
-			buildConfigurationList = 793BCC1515EC09F19F9D4EC4 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4789DC458A17D9C220835AF4 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 76D4B3510F0A65BC18A7E0FE;
-			productRefGroup = 4F042B305D7A56BB6B72DF4C /* Products */;
+			mainGroup = 3032E914746831E2ABC7138B;
+			productRefGroup = 0CE6F5743C201525C6AE4CCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7F5CB3FCE7B10BA4F8844EF7 /* Pods */,
-				5D4D157667AD6FB66230747C /* Pods-CCHMapClusterController */,
-				E48EAB6BA459B949D44266DC /* Pods-MMWormhole */,
+				4EC22E6EB8892EC067B214FA /* Pods */,
+				AB7DBB12A4E177E4DC7E6981 /* Pods-CCHMapClusterController */,
+				1778C4762794CBAE19FB61B7 /* Pods-MMWormhole */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		229058B231E49985DD9D08FA /* Sources */ = {
+		19816177BEAF1906572F12A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E5BFD600D9D234E7FD46DB9 /* CCHCenterOfMassMapClusterer.m in Sources */,
-				493B3B1BF0C44953026AEDCF /* CCHFadeInOutMapAnimator.m in Sources */,
-				35FF729085DD3DA8BF2381AE /* CCHMapClusterAnnotation.m in Sources */,
-				4443508476541EC2CAE40D9A /* CCHMapClusterController.m in Sources */,
-				97A994B42EF789B8B5237F0C /* CCHMapClusterControllerDebugPolygon.m in Sources */,
-				5915564ABF88426A89C6C320 /* CCHMapClusterControllerUtils.m in Sources */,
-				1DEECC3302ECFF5C81D7B9D0 /* CCHMapClusterOperation.m in Sources */,
-				7645D93DDDF8EB0577DC8540 /* CCHMapTree.m in Sources */,
-				B1AB0FE2038FBDC605DE9027 /* CCHMapTreeUtils.m in Sources */,
-				74929CDACAA77E8216D3C768 /* CCHMapViewDelegateProxy.m in Sources */,
-				E843E84F354CF4578F8519D6 /* CCHNearCenterMapClusterer.m in Sources */,
-				9DFB80FC7CC0CCFC94AA526D /* Pods-CCHMapClusterController-dummy.m in Sources */,
+				2FBAD15EA9F1D237143155D8 /* MMWormhole.m in Sources */,
+				C4E6868CEAE8064D2BC592A8 /* MMWormholeCoordinatedFileTransiting.m in Sources */,
+				D964207BAC1C6AE77962CB85 /* MMWormholeFileTransiting.m in Sources */,
+				75BF76BB28B327396608D958 /* Pods-MMWormhole-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		396F44776D7AA407BA62960B /* Sources */ = {
+		B39D84FEC17A3C6FD4C7AFFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B31E06B4FA3D2C06AB840D7A /* Pods-dummy.m in Sources */,
+				A51C9FC1BC45E93D408A6E2B /* CCHCenterOfMassMapClusterer.m in Sources */,
+				8E9BD027D33D341E5D07C62F /* CCHFadeInOutMapAnimator.m in Sources */,
+				4134E02225A124B20484A5B6 /* CCHMapClusterAnnotation.m in Sources */,
+				2ADF1E8596B7BD64F616C87E /* CCHMapClusterController.m in Sources */,
+				878CA18B485763983316AA7E /* CCHMapClusterControllerDebugPolygon.m in Sources */,
+				560764419F526D576111FCAE /* CCHMapClusterControllerUtils.m in Sources */,
+				B2E8A467C572913D1338AEA0 /* CCHMapClusterOperation.m in Sources */,
+				FCABB2A8B434C336E11921A9 /* CCHMapTree.m in Sources */,
+				25CB42CC4C3EDA780F5E6F19 /* CCHMapTreeUtils.m in Sources */,
+				D2B5BF5D5803DD4E12F1F6A6 /* CCHMapViewDelegateProxy.m in Sources */,
+				7AD8F2604275BA8EE727D1CC /* CCHNearCenterMapClusterer.m in Sources */,
+				0C80B27ECEAB85986DAC8501 /* Pods-CCHMapClusterController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9BCE74FB117A23F3AEFF86C /* Sources */ = {
+		E6FA623A31E9821CC95E8726 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC045FCA029E7FCD231A27E /* MMWormhole.m in Sources */,
-				ED9D5F82703C5A06561F1EB8 /* MMWormholeCoordinatedFileTransiting.m in Sources */,
-				70C6E201E313B42CDCBCB2EE /* MMWormholeFileTransiting.m in Sources */,
-				B436916D777B97EB16B97C40 /* Pods-MMWormhole-dummy.m in Sources */,
+				553E2799EE375755EF55B7F6 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		011BA803CEC427A528624CD5 /* PBXTargetDependency */ = {
+		585DBECDBF66296BE8AACC56 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-CCHMapClusterController";
-			target = 5D4D157667AD6FB66230747C /* Pods-CCHMapClusterController */;
-			targetProxy = 929C3D8AF7D427EA91B39C29 /* PBXContainerItemProxy */;
+			target = AB7DBB12A4E177E4DC7E6981 /* Pods-CCHMapClusterController */;
+			targetProxy = AC300DADF5D7F8138CE0E6CB /* PBXContainerItemProxy */;
 		};
-		9D664AC0D7D9D9C897664AA4 /* PBXTargetDependency */ = {
+		70299E23F1AB3A91D3E2E9A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MMWormhole";
-			target = E48EAB6BA459B949D44266DC /* Pods-MMWormhole */;
-			targetProxy = EEAEEA81A1C7F8FB60BCE41D /* PBXContainerItemProxy */;
+			target = 1778C4762794CBAE19FB61B7 /* Pods-MMWormhole */;
+			targetProxy = CD8731D23D3F32A28EE8EFEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		49EB823BC3E8A9B7BF3CB1BF /* Debug */ = {
+		0B8DAFFA26166B94CD5E5CB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9D52D07DF79BE8222E6ED08 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 1613A65AA69314A79E4F627F /* Pods-MMWormhole-Private.xcconfig */;
 			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8DDC92A7F711D7E2334456BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B685F07051D635F2212E40D /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		936303B5B7E4BF83F7614B57 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4D63347F4B48127128D3648 /* Pods-CCHMapClusterController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-CCHMapClusterController/Pods-CCHMapClusterController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9900F51405F3FE6FD5427060 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 928F4D491613B61481EBD3E4 /* Pods-MMWormhole-Private.xcconfig */;
-			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-MMWormhole/Pods-MMWormhole-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -538,44 +491,11 @@
 			};
 			name = Debug;
 		};
-		B37676827ACFDA69C4E44D67 /* Release */ = {
+		18592CDE997CE080B1F970F5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89AEAAF6F9840AD820B1377 /* Pods-CCHMapClusterController-Private.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C07016922FA6B88443D9E2E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4D63347F4B48127128D3648 /* Pods-CCHMapClusterController-Private.xcconfig */;
-			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-CCHMapClusterController/Pods-CCHMapClusterController-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -588,23 +508,41 @@
 			};
 			name = Release;
 		};
-		FBF5214E829CEBD5D3D7D749 /* Release */ = {
+		3D4633B348B3E83EE26D55D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 928F4D491613B61481EBD3E4 /* Pods-MMWormhole-Private.xcconfig */;
+			baseConfigurationReference = 0E7A01F79B08830E942B5C06 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MMWormhole/Pods-MMWormhole-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		55FF581B3ED8824F5A9560A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89AEAAF6F9840AD820B1377 /* Pods-CCHMapClusterController-Private.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-CCHMapClusterController/Pods-CCHMapClusterController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		FDAF3F683D5D59F037898DE4 /* Debug */ = {
+		5C2EC94201A83C2EBCEE45BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -643,46 +581,114 @@
 			};
 			name = Debug;
 		};
+		8702CC493388B10B720C8F7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1613A65AA69314A79E4F627F /* Pods-MMWormhole-Private.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MMWormhole/Pods-MMWormhole-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A919EB8E460D18B3FF33C9F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF88E43FA1ADAE402FBCA06C /* Pods.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C36C754C9AB8EBA72D371EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		793BCC1515EC09F19F9D4EC4 /* Build configuration list for PBXProject "Pods" */ = {
+		4789DC458A17D9C220835AF4 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FDAF3F683D5D59F037898DE4 /* Debug */,
-				B37676827ACFDA69C4E44D67 /* Release */,
+				5C2EC94201A83C2EBCEE45BB /* Debug */,
+				C36C754C9AB8EBA72D371EF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A9DCAC43F6E759F0DE7EA74 /* Build configuration list for PBXNativeTarget "Pods-MMWormhole" */ = {
+		6E151C8ADAA38BC1191D04FD /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9900F51405F3FE6FD5427060 /* Debug */,
-				FBF5214E829CEBD5D3D7D749 /* Release */,
+				3D4633B348B3E83EE26D55D1 /* Debug */,
+				A919EB8E460D18B3FF33C9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0C02FB8DB89C1EBC74EA2D4 /* Build configuration list for PBXNativeTarget "Pods-CCHMapClusterController" */ = {
+		E18C960F66A7EAEA9A8B7C8D /* Build configuration list for PBXNativeTarget "Pods-CCHMapClusterController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				936303B5B7E4BF83F7614B57 /* Debug */,
-				C07016922FA6B88443D9E2E1 /* Release */,
+				55FF581B3ED8824F5A9560A3 /* Debug */,
+				18592CDE997CE080B1F970F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F97E6AAD80C3A31E04872C85 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		E8C8C118E2885D294410FF65 /* Build configuration list for PBXNativeTarget "Pods-MMWormhole" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				49EB823BC3E8A9B7BF3CB1BF /* Debug */,
-				8DDC92A7F711D7E2334456BF /* Release */,
+				0B8DAFFA26166B94CD5E5CB4 /* Debug */,
+				8702CC493388B10B720C8F7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E0293A6F5C87C0EF6394F9E6 /* Project object */;
+	rootObject = 18D79D020D0F91BE11CB13DC /* Project object */;
 }

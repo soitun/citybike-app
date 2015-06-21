@@ -44,6 +44,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.distanceFilter = 30.0
         CBModelUpdater.sharedInstance.start()
     }
     
@@ -214,7 +216,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     /// MARK: CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let location = locations.first as? CLLocation {
-            CBUserDefaults.sharedInstance.setUserLocation(location)
+            CBWormhole.sharedInstance.passMessageObject(location, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
         }
     }
 }
