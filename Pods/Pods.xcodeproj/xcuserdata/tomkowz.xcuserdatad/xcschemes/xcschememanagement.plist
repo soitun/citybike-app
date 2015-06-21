@@ -8,25 +8,31 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
+		</dict>
+		<key>Pods-MMWormhole.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A0D0A60399252B28CE567383</key>
+		<key>5D4D157667AD6FB66230747C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E6C3E545BBA7BF10DBD3C7BE</key>
+		<key>7F5CB3FCE7B10BA4F8844EF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E48EAB6BA459B949D44266DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
