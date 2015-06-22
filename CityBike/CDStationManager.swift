@@ -12,7 +12,7 @@ import CBModel
 class CDStationManager {
     
     class func allStationsForSelectedNetworks() -> [CDStation] {
-        let networkIDs = CBUserDefaults.sharedInstance.getNetworkIDs()
+        let networkIDs = CBUserSettings.sharedInstance().getNetworkIDs()
         
         var stations = [CDStation]()
         for networkID in networkIDs {

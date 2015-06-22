@@ -20,7 +20,7 @@ class CBRideManager {
     
     func start(startDate: NSDate, updateBlock: CBRideStopwatch.UpdateBlockType) {
         _isGoing = true
-        CBUserDefaults.sharedInstance.setStartRideDate(startDate)
+        CBUserSettings.sharedInstance().setStartRideDate(startDate)
         CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStarted.rawValue)
         self.stopwatch.start(startDate, updateBlock: updateBlock)
     }
@@ -51,6 +51,6 @@ class CBRideManager {
         }
         
         CoreDataStack.sharedInstance().mainContext.save(nil)
-        CBUserDefaults.sharedInstance.removeStartRideDate()
+        CBUserSettings.sharedInstance().removeStartRideDate()
     }
 }

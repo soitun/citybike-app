@@ -89,7 +89,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         case .Settings:
             let cell = tableView.dequeueReusableCellWithIdentifier(CBRightDetailCell.Identifier) as! CBRightDetailCell
             cell.label.text = NSLocalizedString("City Bike Networks", comment: "")
-            cell.detailLabel.text = String.localizedStringWithFormat("%d Selected", CBUserDefaults.sharedInstance.getNetworkIDs().count)
+            cell.detailLabel.text = String.localizedStringWithFormat("%d Selected", CBUserSettings.sharedInstance().getNetworkIDs().count)
             cell.accessoryType = .DisclosureIndicator
             return cell
             

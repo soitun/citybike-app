@@ -26,7 +26,7 @@ class CBStopwatchInterfaceController: WKInterfaceController {
         
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
             if self.stopwatchManager.isGoing == false {
-                self.start(CBUserDefaults.sharedInstance.getStartRideDate()!)
+                self.start(CBUserSettings.sharedInstance().getStartRideDate()!)
             }
         })
         
@@ -38,7 +38,7 @@ class CBStopwatchInterfaceController: WKInterfaceController {
     }
     
     private func refreshButtonState() {
-        if let startDate = CBUserDefaults.sharedInstance.getStartRideDate() {
+        if let startDate = CBUserSettings.sharedInstance().getStartRideDate() {
             start(startDate)
         } else {
             stop()

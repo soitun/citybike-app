@@ -15,17 +15,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var window: UIWindow?
     private var locationManager = CLLocationManager()
-    private var requestingData = false
+    private var configured = false
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        configureApp()
         
-        configureCoreData()
         startRequestingData()
         
         updateUI()
         showProperViewController()
-        
         return true
+    }
+    
+    
+    // MARK: Configuration
+    private func configureApp() {
+        if configured == false {
+            configured = true
+            configureUserSettings()
+            configureCoreData()
+            startRequestingData()
+        }
+    }
+    
+    private func configureUserSettings() {
+        let defaults = NSUserDefaults(suiteName: CBConstant.AppSharedGroup.rawValue)!
+        let userSettings = CBUserSettings(userDefaults: defaults)
+        CBUserSettings.setSharedInstance(userSettings)
+        
+        /// Register defaults values
+        CBUserSettings.sharedInstance().registerDefaults()
     }
     
     private func configureCoreData() {
@@ -34,6 +53,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         CoreDataStack.setSharedInstance(cdStack)
     }
     
+    private func startRequestingData() {
+        // Request location updates
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.distanceFilter = 30.0
+        
+        // Request content
+        CBModelUpdater.sharedInstance.start()
+    }
+    
+    
+    // MARK: Other
     private func showProperViewController() {
         if self.window == nil {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -41,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var rootVC: UIViewController!
-        if CBUserDefaults.sharedInstance.getDisplayedGettingStarted() {
+        if CBUserSettings.sharedInstance().getDisplayedGettingStarted() {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMapViewController") as! CBMapViewController
         } else {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
@@ -62,23 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         UINavigationBar.appearance().titleTextAttributes = fontAttributes
     }
     
-    func startRequestingData() {
-        if requestingData == true { return }
-        requestingData = true
-        
-        // Register defaults
-        CBUserDefaults.sharedInstance.registerCityBikeDefaults()
-
-        // Request location updates
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        self.locationManager.distanceFilter = 30.0
-        
-        // Request content
-        CBModelUpdater.sharedInstance.start()
-    }
-    
     /// MARK: CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         if let location = locations.first as? CLLocation {
@@ -93,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if let rawRequest = userInfo?["request"] as? String {
             if let event = CBAppleWatchEvent(rawValue: rawRequest) {
                 switch event {
-                    case .RequestUpdates: startRequestingData()
+                    case .RequestUpdates: configureApp()
                 }
             }
         }

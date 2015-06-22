@@ -46,7 +46,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     private func listenForWormholeNotifications() {
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
             if self.stopwatchManager.isGoing == false {
-                self.startStopwatch(CBUserDefaults.sharedInstance.getStartRideDate()!, animated: true)
+                self.startStopwatch(CBUserSettings.sharedInstance().getStartRideDate()!, animated: true)
             }
         })
         
@@ -65,7 +65,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         self.mapUpdater.update(self.mapView, updatedStations: CDStationManager.allStationsForSelectedNetworks())
        
         /// Show last saved region
-        if let savedRegion = CBUserDefaults.sharedInstance.getMapRegion() {
+        if let savedRegion = CBUserSettings.sharedInstance().getMapRegion() {
             self.mapView.setRegion(savedRegion, animated: false)
         }
     }
@@ -112,7 +112,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     private func runStopwatchIfNeeded() {
         /// Check if stopwatch should be turned on
-        if let startDate = CBUserDefaults.sharedInstance.getStartRideDate() {
+        if let startDate = CBUserSettings.sharedInstance().getStartRideDate() {
             self.startStopwatch(startDate, animated: false)
             
         } else {
@@ -179,7 +179,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        CBUserDefaults.sharedInstance.setMapRegion(mapView.region)
+        CBUserSettings.sharedInstance().setMapRegion(mapView.region)
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
