@@ -61,7 +61,7 @@ class CBModelUpdater: CBUpdaterProtocol {
             }
             
             ctx.save(nil)
-            ctx.parentContext?.save(nil)
+            dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
             
             completion()
             self.sendContentUpdateMessageUsingWormhole()
@@ -98,7 +98,7 @@ class CBModelUpdater: CBUpdaterProtocol {
             }
             
             ctx.save(nil)
-            ctx.parentContext?.save(nil)
+            dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
             
             completion()
             self.sendContentUpdateMessageUsingWormhole()

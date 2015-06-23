@@ -32,6 +32,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CBModelUpdater.sharedInstance.start()
         locationManager.requestAlwaysAuthorization()
         
         self.mapDetailView.delegate = self

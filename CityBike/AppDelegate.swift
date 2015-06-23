@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         configureApp()
         
-        startRequestingData()
+        startUpdatingLocation()
         
         updateUI()
         showProperViewController()
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             configureUserSettings()
             configureCoreData()
             configureWormhole()
-            startRequestingData()
+            startUpdatingLocation()
         }
     }
     
@@ -58,17 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         CoreDataStack.setSharedInstance(cdStack)
     }
     
-    private func startRequestingData() {
+    private func startUpdatingLocation() {
         // Request location updates
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         self.locationManager.distanceFilter = 30.0
-        
-        // Request content
-        CBModelUpdater.sharedInstance.start()
     }
-    
     
     // MARK: Other
     private func showProperViewController() {
@@ -115,7 +111,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 switch event {
                     case .RequestUpdates:
                         configureApp()
-                        reply([:])
+                        // Request data only if calling from the watch
+                        CBModelUpdater.sharedInstance.start()
                 }
             }
         }
