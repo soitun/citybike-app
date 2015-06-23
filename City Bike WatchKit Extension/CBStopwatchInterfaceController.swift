@@ -25,15 +25,11 @@ class CBStopwatchInterfaceController: WKInterfaceController {
         refreshButtonState()
         
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
-            if self.stopwatchManager.isGoing == false {
-                self.start(CBUserSettings.sharedInstance().getStartRideDate()!)
-            }
+            self.start(CBUserSettings.sharedInstance().getStartRideDate()!)
         })
         
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
-            if self.stopwatchManager.isGoing == true {
-                self.stop()
-            }
+            self.stop()
         })
     }
     
@@ -53,16 +49,20 @@ class CBStopwatchInterfaceController: WKInterfaceController {
         button.setBackgroundColor(UIColor.noneColor())
         button.setTitle(NSLocalizedString("STOP RIDE", comment: ""))
 
-        self.stopwatchManager.start(startDate, updateBlock: { (duration) -> Void in
-            self.timeLabel.setText(duration.stringTimeRepresentationStyle2)
-        })
+        if self.stopwatchManager.isGoing == false {
+            self.stopwatchManager.start(startDate, updateBlock: { (duration) -> Void in
+                self.timeLabel.setText(duration.stringTimeRepresentationStyle2)
+            })
+        }
     }
     
     private func stop() {
         button.setBackgroundColor(UIColor.plentyColor())
         button.setTitle(NSLocalizedString("START A RIDE", comment: ""))
 
-        self.stopwatchManager.stop()
+        if self.stopwatchManager.isGoing == true {
+            self.stopwatchManager.stop()
+        }
         self.timeLabel.setText((0.0).stringTimeRepresentationStyle2)
     }
 

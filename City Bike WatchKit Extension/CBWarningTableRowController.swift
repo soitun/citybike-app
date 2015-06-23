@@ -33,16 +33,16 @@ class CBWarningTableRowController: NSObject {
     
     private func configureForNoStations() {
         titleLabel.setText(NSLocalizedString("NO STATIONS", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("To get your location and show you approximate distance to bike stations please enable location services on your iPhone.", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("No stations selected yet. Open iPhone app and select some city bike network first.", comment: ""))
     }
     
     private func configureForLocationServicesDisabled() {
         titleLabel.setText(NSLocalizedString("LOCATION SERVICES", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("Go to your iPhone and select some city bike network first.", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("To show you approximate distance to bike stations app needs location services. You can turn it on your iPhone", comment: ""))
     }
     
     private func configureForLocationServicesAccessDenied() {
         titleLabel.setText(NSLocalizedString("LOCATION SERVICES", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("App have no permissions to use Location Services. If you want to see approximate distnace to bike stations please give permissions using iPhone.", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("App have no permissions to use Location Services. To show approximate distance to bike stations please give permissions using iPhone.", comment: ""))
     }
 }
