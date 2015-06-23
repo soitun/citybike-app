@@ -14,12 +14,20 @@ class CBMainInterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
+        configureUserSettings()
     }
 
     override func willActivate() {
         super.willActivate()
         WKInterfaceController.reloadRootControllersWithNames(["CBStationsListInterfaceController", "CBStopwatchInterfaceController"], contexts: nil)
+    }
+    
+    private func configureUserSettings() {
+        let defaults = NSUserDefaults(suiteName: CBConstant.AppSharedGroup.rawValue)!
+        let userSettings = CBUserSettings(userDefaults: defaults)
+        CBUserSettings.setSharedInstance(userSettings)
+        
+        /// Register defaults values
+        CBUserSettings.sharedInstance().registerDefaults()
     }
 }

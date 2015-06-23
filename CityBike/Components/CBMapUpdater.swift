@@ -26,18 +26,18 @@ class CBMapUpdater {
     private var stationProxies = [CBStationProxy]()
     
     func viewForAnnotation(annotation: CBAnnotation) -> CBStationAnnotationView {
-        var view = self.annotationViews.filter({($0.annotation as? CBAnnotation)?.stationProxy.id == annotation.stationProxy.id}).first
+        var view = annotationViews.filter({($0.annotation as? CBAnnotation)?.stationProxy.id == annotation.stationProxy.id}).first
         if view == nil {
             view = CBStationAnnotationView(annotation: annotation, reuseIdentifier: "CBStationAnnotationView")
-            self.annotationViews.append(view!)
+            annotationViews.append(view!)
         }
         return view!
     }
     
     func update(map: MKMapView, updatedStations: [CDStation]) {
-        let currentStationProxies = self.stationProxies
+        let currentStationProxies = stationProxies
         var currentAnnotations = map.annotations
-        var currentAnnotationViews = self.annotationViews
+        var currentAnnotationViews = annotationViews
 
         /// Separate new, updated and not updated proxies
         var newProxies = [CBStationProxy]()
@@ -95,8 +95,8 @@ class CBMapUpdater {
             annotationsToAdd.append(CBAnnotation(stationProxy: proxy))
         }
         
-        self.stationProxies = allProxies
-        self.annotationViews = currentAnnotationViews
+        stationProxies = allProxies
+        annotationViews = currentAnnotationViews
         map.removeAnnotations(annotationsToRemove)
         map.addAnnotations(annotationsToAdd)
         

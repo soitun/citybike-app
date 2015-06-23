@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             configured = true
             configureUserSettings()
             configureCoreData()
+            configureWormhole()
             startRequestingData()
         }
     }
@@ -45,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         /// Register defaults values
         CBUserSettings.sharedInstance().registerDefaults()
+    }
+    
+    private func configureWormhole() {
+        CBWormhole.sharedInstance
     }
     
     private func configureCoreData() {
@@ -108,7 +113,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if let rawRequest = userInfo?["request"] as? String {
             if let event = CBAppleWatchEvent(rawValue: rawRequest) {
                 switch event {
-                    case .RequestUpdates: configureApp()
+                    case .RequestUpdates:
+                        configureApp()
+                        reply([:])
                 }
             }
         }

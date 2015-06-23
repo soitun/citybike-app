@@ -32,11 +32,6 @@ class CBStationsListInterfaceController: WKInterfaceController {
         self.observeWormholeNotifications()
         reloadTable()
     }
-
-    override func didDeactivate() {
-        super.didDeactivate()
-    }
-    
     
     /// MARK: Notifications
     private func observeWormholeNotifications() {

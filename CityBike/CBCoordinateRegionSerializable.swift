@@ -22,17 +22,17 @@ class CBCoordinateRegionSerializable: NSObject, NSCoding {
     var longitudeDelta: CLLocationDegrees = 0
     
     func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeDouble(self.latitude, forKey: kLatitude)
-        aCoder.encodeDouble(self.longitude, forKey: kLongitude)
-        aCoder.encodeDouble(self.latitudeDelta, forKey: kLatitudeDelta)
-        aCoder.encodeDouble(self.longitudeDelta, forKey: kLongitudeDelta)
+        aCoder.encodeDouble(latitude, forKey: kLatitude)
+        aCoder.encodeDouble(longitude, forKey: kLongitude)
+        aCoder.encodeDouble(latitudeDelta, forKey: kLatitudeDelta)
+        aCoder.encodeDouble(longitudeDelta, forKey: kLongitudeDelta)
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.latitude = aDecoder.decodeDoubleForKey(kLatitude)
-        self.longitude = aDecoder.decodeDoubleForKey(kLongitude)
-        self.latitudeDelta = aDecoder.decodeDoubleForKey(kLatitudeDelta)
-        self.longitudeDelta = aDecoder.decodeDoubleForKey(kLongitudeDelta)
+        latitude = aDecoder.decodeDoubleForKey(kLatitude)
+        longitude = aDecoder.decodeDoubleForKey(kLongitude)
+        latitudeDelta = aDecoder.decodeDoubleForKey(kLatitudeDelta)
+        longitudeDelta = aDecoder.decodeDoubleForKey(kLongitudeDelta)
     }
     
     override init() { super.init() }

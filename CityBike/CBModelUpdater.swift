@@ -25,20 +25,20 @@ class CBModelUpdater: CBUpdaterProtocol {
     }
 
     init() {
-        self.syncManager = CBSyncManager()
-        self.syncManager.delegate = self
+        syncManager = CBSyncManager()
+        syncManager.delegate = self
     }
     
     func start() {
-        self.syncManager.start()
+        syncManager.start()
     }
     
     func stop() {
-        self.syncManager.stop()
+        syncManager.stop()
     }
     
     func forceUpdate() {
-        self.syncManager.forceUpdate()
+        syncManager.forceUpdate()
     }
     
     
@@ -112,27 +112,27 @@ class CBModelUpdater: CBUpdaterProtocol {
 
 private extension CDNetwork {
     func fill(updatedNetwork: CBNetwork) {
-        self.company = updatedNetwork.company ?? ""
-        self.id = updatedNetwork.id
-        self.name = updatedNetwork.name
+        company = updatedNetwork.company ?? ""
+        id = updatedNetwork.id
+        name = updatedNetwork.name
     }
 }
 
 private extension CDStation {
     func fill(updatedStation: CBStation) {
-        self.freeBikes = updatedStation.freeBikes
-        self.emptySlots = updatedStation.emptySlots
-        self.id = updatedStation.id
-        self.coordinate = updatedStation.coordinate
-        self.name = updatedStation.name
-        self.timestamp = updatedStation.timestamp
+        freeBikes = updatedStation.freeBikes
+        emptySlots = updatedStation.emptySlots
+        id = updatedStation.id
+        coordinate = updatedStation.coordinate
+        name = updatedStation.name
+        timestamp = updatedStation.timestamp
     }
 }
 
 private extension CDLocation {
     func fill(updatedLocation: CBLocation) {
-        self.city = updatedLocation.city
-        self.country = updatedLocation.country
-        self.coordinate = updatedLocation.coordinate
+        city = updatedLocation.city
+        country = updatedLocation.country
+        coordinate = updatedLocation.coordinate
     }
 }

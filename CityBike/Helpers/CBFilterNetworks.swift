@@ -14,8 +14,8 @@ struct CBFilteredNetworksGroupProxy {
     var networks = [CBFilteredNetworkProxy]()
     
     init(code: CountryCode, country: String) {
-        self.countryCode = code
-        self.countryName = country
+        countryCode = code
+        countryName = country
     }
 }
 
