@@ -103,6 +103,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
+    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status != .AuthorizedAlways && status != .AuthorizedWhenInUse {
+            CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
+    }
     
     /// MARK: Apple Watch
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {

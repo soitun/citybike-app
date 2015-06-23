@@ -49,6 +49,10 @@ class CBStationsListInterfaceController: WKInterfaceController {
     }
 
     private func reloadTable() {
+        if isLocationServicesDisabled() || isLocationServicesAccessDenied() {
+            self.userLocation = nil
+        }
+        
         var stations: [CDStation] = CDStationManager.allStationsForSelectedNetworks()
         if stations.count == 0 && wasReloadedWithoutContent == false {
             wasReloadedWithoutContent = true
@@ -69,10 +73,12 @@ class CBStationsListInterfaceController: WKInterfaceController {
         warningTypes.append(.NoStations)
         
         // Should add any warning cell?
-        if showLocationServicesDisabledRow() {
+        if isLocationServicesDisabled() {
+            self.userLocation = nil
             warningTypes.append(.LocationServicesDisabled)
             rowTypes.append(RowType.Warning.rawValue)
-        } else if showLocationServicesAccessDenied() {
+        } else if isLocationServicesAccessDenied() {
+            self.userLocation = nil
             warningTypes.append(.LocationServicesAccessDenied)
             rowTypes.append(RowType.Warning.rawValue)
         }
@@ -102,10 +108,10 @@ class CBStationsListInterfaceController: WKInterfaceController {
         
         // Should add any warning cell?
         var warningTypes = [CBWarningType]()
-        if showLocationServicesDisabledRow() {
+        if isLocationServicesDisabled() {
             warningTypes.append(.LocationServicesDisabled)
             rowTypes.append(RowType.Warning.rawValue)
-        } else if showLocationServicesAccessDenied() {
+        } else if isLocationServicesAccessDenied() {
             warningTypes.append(.LocationServicesAccessDenied)
             rowTypes.append(RowType.Warning.rawValue)
         }
@@ -171,11 +177,11 @@ class CBStationsListInterfaceController: WKInterfaceController {
         })
     }
     
-    private func showLocationServicesDisabledRow() -> Bool {
+    private func isLocationServicesDisabled() -> Bool {
         return CLLocationManager.locationServicesEnabled() == false
     }
     
-    private func showLocationServicesAccessDenied() -> Bool {
+    private func isLocationServicesAccessDenied() -> Bool {
         let authStatus = CLLocationManager.authorizationStatus()
         return (authStatus != .AuthorizedAlways && authStatus != .AuthorizedWhenInUse)
     }
