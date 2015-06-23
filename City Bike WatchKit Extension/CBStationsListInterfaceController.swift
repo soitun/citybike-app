@@ -151,6 +151,8 @@ class CBStationsListInterfaceController: WKInterfaceController {
             if let userLocation = userLocation {
                 let stationLocation = CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude)
                 proxy.distanceToUser = userLocation.distanceFromLocation(stationLocation)
+            } else {
+                proxy.distanceToUser = nil
             }
         }
         
