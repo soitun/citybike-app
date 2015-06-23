@@ -21,16 +21,16 @@ class CBStationTableRowController: NSObject {
     
     @IBOutlet weak var stationNameLabel: WKInterfaceLabel!
     
-    func update(station: CDStation, distance: Float?) {
-        freeBikesLabel.setText(station.freeBikes.stringValue)
-        freeBikesCircleImage.setTintColor(colorForValue(station.freeBikes.integerValue, min: 0, max: 5))
+    func configure(proxy: CBWatchStationProxy) {
+        freeBikesLabel.setText("\(proxy.freeBikes)")
+        freeBikesCircleImage.setTintColor(colorForValue(proxy.freeBikes, min: 0, max: 5))
         
-        freeSlotsLabel.setText(station.emptySlots.stringValue)
-        freeSlotsCircleImage.setTintColor(colorForValue(station.emptySlots.integerValue, min: 0, max: 5))
-        stationNameLabel.setText(station.name)
-        
-        if let distance = distance {
-            distanceLabel.setText(String(format: "%0.1fkm", distance))
+        freeSlotsLabel.setText("\(proxy.emptySlots)")
+        freeSlotsCircleImage.setTintColor(colorForValue(proxy.emptySlots, min: 0, max: 5))
+        stationNameLabel.setText(proxy.name)
+    
+        if let distance = proxy.distanceToUser {
+            distanceLabel.setText(String(format: "%0.1fkm", distance / 1000.0))
             distanceLabel.setHidden(false)
         } else {
             distanceLabel.setHidden(true)

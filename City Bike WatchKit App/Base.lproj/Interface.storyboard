@@ -85,25 +85,25 @@
                                         <outlet property="titleLabel" destination="21X-6e-k47" id="DR1-Kb-Q3f"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="CBNoStationsTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBNoStationsTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="CBWarningTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBWarningTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="AoY-Xw-LEg" userLabel="content-view">
                                         <items>
-                                            <group alignment="left" spacing="4" id="4pF-cH-Njd" userLabel="top-line">
+                                            <group alignment="left" spacing="2" id="4pF-cH-Njd" userLabel="top-line">
                                                 <items>
-                                                    <imageView alignment="left" verticalAlignment="center" image="circle" id="1N0-sJ-ug4" userLabel="warning-icon"/>
-                                                    <label alignment="left" verticalAlignment="center" text="No stations" id="bxe-hx-0EK" userLabel="title-label">
+                                                    <imageView width="10" height="10" alignment="left" verticalAlignment="center" image="circle" id="1N0-sJ-ug4" userLabel="warning-icon"/>
+                                                    <label alignment="left" verticalAlignment="center" text="NO STATIONS" id="bxe-hx-0EK" userLabel="title-label">
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="font" type="boldSystem" pointSize="18"/>
+                                                        <fontDescription key="font" type="boldSystem" pointSize="11"/>
                                                     </label>
                                                 </items>
                                             </group>
                                             <label width="1" alignment="left" text="Go to your iPhone and select some city bike networks." numberOfLines="0" id="FU8-Gm-ShN" userLabel="detail-text-label">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                                <fontDescription key="font" type="system" pointSize="10"/>
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <edgeInsets key="margins" left="5" right="0.0" top="4" bottom="3"/>
+                                        <edgeInsets key="margins" left="5" right="0.0" top="0.0" bottom="3"/>
                                     </group>
                                     <connections>
                                         <outlet property="detailTextLabel" destination="FU8-Gm-ShN" id="Z9L-oN-v87"/>
@@ -120,7 +120,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="273" y="476"/>
+            <point key="canvasLocation" x="273" y="490"/>
         </scene>
         <!--CBMainInterfaceController-->
         <scene sceneID="roC-v3-BoS">
