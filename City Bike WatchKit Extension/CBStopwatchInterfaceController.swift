@@ -29,6 +29,7 @@ class CBStopwatchInterfaceController: WKInterfaceController {
         })
         
         CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
+            /// should be on the main thread.
             self.stop()
         })
     }
