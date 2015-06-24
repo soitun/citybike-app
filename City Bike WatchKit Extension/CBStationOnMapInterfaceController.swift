@@ -13,11 +13,11 @@ import CoreLocation
 class CBStationOnMapInterfaceController: WKInterfaceController {
 
     @IBOutlet private weak var map: WKInterfaceMap!
+    
     private var context: CBStationOnMapContext!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
         self.context = context as! CBStationOnMapContext
     }
 

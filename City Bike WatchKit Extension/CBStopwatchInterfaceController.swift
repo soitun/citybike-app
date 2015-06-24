@@ -16,6 +16,8 @@ class CBStopwatchInterfaceController: WKInterfaceController {
     
     private var stopwatchManager = CBRideManager()
     
+    
+    // MARK: Life cycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
     }
@@ -34,16 +36,18 @@ class CBStopwatchInterfaceController: WKInterfaceController {
         })
     }
     
+    @IBAction func actionButtonTapped() {
+        self.stopwatchManager.isGoing == true ? stop() : start(NSDate())
+    }
+    
+    
+    // MARK: Private
     private func refreshButtonState() {
         if let startDate = CBUserSettings.sharedInstance().getStartRideDate() {
             start(startDate)
         } else {
             stop()
         }
-    }
-    
-    @IBAction func actionButtonTapped() {
-        self.stopwatchManager.isGoing == true ? stop() : start(NSDate())
     }
     
     private func start(startDate: NSDate) {
@@ -65,10 +69,5 @@ class CBStopwatchInterfaceController: WKInterfaceController {
             self.stopwatchManager.stop()
         }
         self.timeLabel.setText((0.0).stringTimeRepresentationStyle2)
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
     }
 }
