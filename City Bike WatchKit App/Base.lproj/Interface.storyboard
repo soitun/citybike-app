@@ -85,7 +85,7 @@
                                         <outlet property="titleLabel" destination="21X-6e-k47" id="DR1-Kb-Q3f"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="CBWarningTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBWarningTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="CBMessageTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBMessageTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="AoY-Xw-LEg" userLabel="content-view">
                                         <items>
                                             <group alignment="left" spacing="2" id="4pF-cH-Njd" userLabel="top-line">
