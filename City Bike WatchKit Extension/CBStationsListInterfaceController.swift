@@ -19,7 +19,8 @@ private enum RowType: String {
 
 class CBStationsListInterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
-    
+    private var proxies = [CBWatchStationProxy]()
+    private var userLocation: CLLocation?
     
     // MARK: Life-cycle
     override func awakeWithContext(context: AnyObject?) {
@@ -46,17 +47,15 @@ class CBStationsListInterfaceController: WKInterfaceController {
             println("Fetched Data")
             println(dict)
             
-            var userLocation: CLLocation?
-            
             if let dict = dict as? [String: AnyObject] {
                 var latitude = dict["latitude"] as? CLLocationDegrees
                 var longitude = dict["longitude"] as? CLLocationDegrees
                 if latitude != nil && longitude != nil {
-                    userLocation = CLLocation(latitude: latitude!, longitude: longitude!)
+                    self.userLocation = CLLocation(latitude: latitude!, longitude: longitude!)
                 }
             }
             
-            if userLocation == nil {
+            if self.userLocation == nil {
                 self.reloadContent(nil)
                 
                 let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
@@ -65,7 +64,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
                 }
                 
             } else {
-                self.reloadContent(userLocation)
+                self.reloadContent(self.userLocation)
             }
         })
     }
@@ -105,7 +104,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
     }
 
     private func reloadTableWithStations(stations: [CDStation], userLocation: CLLocation) {
-        var proxies = createStationProxiesFromStations(stations, userLocation: userLocation)
+        proxies = createStationProxiesFromStations(stations, userLocation: userLocation)
         sortProxies(&proxies)
         
         if proxies.count > 5 {
@@ -148,7 +147,13 @@ class CBStationsListInterfaceController: WKInterfaceController {
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
         let row: AnyObject? = table.rowControllerAtIndex(rowIndex)
-        if row is CBUpdateTableRowController {
+        if row is CBStationTableRowController {
+            let proxy = proxies[rowIndex]
+            
+            var context = CBStationOnMapContext(proxy: proxy, userLocation: userLocation!)
+            self.presentControllerWithName("CBStationOnMapInterfaceController", context: context)
+            
+        } else if row is CBUpdateTableRowController {
             fetchData()
         }
     }

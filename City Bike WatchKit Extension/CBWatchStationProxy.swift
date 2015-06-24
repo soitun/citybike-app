@@ -17,6 +17,7 @@ class CBWatchStationProxy {
     var emptySlots: Int { return station.emptySlots.integerValue }
     var name: String { return station.name }
     var updateTimestamp: NSDate { return station.timestamp }
+    var coordinate: CLLocationCoordinate2D { return station.coordinate }
     
     init(station: CDStation) {
         self.station = station

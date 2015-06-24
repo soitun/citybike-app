@@ -159,5 +159,19 @@
             </objects>
             <point key="canvasLocation" x="460" y="476"/>
         </scene>
+        <!--CBStationOnMapInterfaceController-->
+        <scene sceneID="Snj-Au-HH9">
+            <objects>
+                <controller identifier="CBStationOnMapInterfaceController" id="t6y-U9-qQS" customClass="CBStationOnMapInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                    <items>
+                        <map alignment="left" id="Fao-xk-QdM"/>
+                    </items>
+                    <connections>
+                        <outlet property="map" destination="Fao-xk-QdM" id="eMA-Qh-kHF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="273" y="729"/>
+        </scene>
     </scenes>
 </document>
