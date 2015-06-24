@@ -47,8 +47,8 @@ class CBStopwatchInterfaceController: WKInterfaceController {
     }
     
     private func start(startDate: NSDate) {
-        button.setBackgroundColor(UIColor.noneColor())
-        button.setTitle(NSLocalizedString("STOP RIDE", comment: ""))
+        let stopImage = UIImage(named: "watch-btn-stopwatch-stop")
+        button.setBackgroundImage(stopImage)
 
         if self.stopwatchManager.isGoing == false {
             self.stopwatchManager.start(startDate, updateBlock: { (duration) -> Void in
@@ -58,8 +58,8 @@ class CBStopwatchInterfaceController: WKInterfaceController {
     }
     
     private func stop() {
-        button.setBackgroundColor(UIColor.plentyColor())
-        button.setTitle(NSLocalizedString("START A RIDE", comment: ""))
+        let startImage = UIImage(named: "watch-btn-stopwatch-play")
+        button.setBackgroundImage(startImage)
 
         if self.stopwatchManager.isGoing == true {
             self.stopwatchManager.stop()

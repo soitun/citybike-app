@@ -130,34 +130,36 @@
             <point key="canvasLocation" x="76" y="476"/>
         </scene>
         <!--Stopwatch-->
-        <scene sceneID="4vN-eP-SoL">
+        <scene sceneID="wdU-mh-6zG">
             <objects>
-                <controller identifier="CBStopwatchInterfaceController" title="Stopwatch" id="JRs-Ma-1PU" customClass="CBStopwatchInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                <controller identifier="CBStopwatchInterfaceController" title="Stopwatch" id="2KQ-60-rdq" customClass="CBStopwatchInterfaceController" customModule="City_Bike_WatchKit_Extension">
                     <items>
-                        <group width="1" height="1" alignment="left" layout="vertical" id="2Fp-yr-IqV">
+                        <group width="1" height="100" alignment="center" verticalAlignment="center" id="z2J-PG-evH">
                             <items>
-                                <button width="1" alignment="left" verticalAlignment="bottom" title="START A RIDE" id="lso-vN-0YM">
-                                    <fontDescription key="font" type="system" weight="heavy" pointSize="17"/>
+                                <button width="32" height="40" alignment="center" verticalAlignment="center" backgroundImage="watch-btn-stopwatch-play" id="Phf-PW-fIx">
                                     <connections>
-                                        <action selector="actionButtonTapped" destination="JRs-Ma-1PU" id="WDM-eD-b4s"/>
+                                        <action selector="actionButtonTapped" destination="2KQ-60-rdq" id="E4C-K1-UPA"/>
                                     </connections>
                                 </button>
-                                <label width="1" height="119" alignment="left" verticalAlignment="center" text="00:00:00" textAlignment="center" id="5VI-kP-U4A">
-                                    <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="boldSystem" pointSize="27"/>
-                                    <variation key="device=watch38mm" height="96"/>
-                                </label>
                             </items>
-                            <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="5"/>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="PSW-yE-7Jr">
+                            <items>
+                                <label width="1" alignment="left" text="00:00:00" textAlignment="center" id="wXw-vN-1mi"/>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                            <variation key="device=watch42mm">
+                                <edgeInsets key="margins" left="0.0" right="0.0" top="14" bottom="14"/>
+                            </variation>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="button" destination="lso-vN-0YM" id="QHh-Lj-t5t"/>
-                        <outlet property="timeLabel" destination="5VI-kP-U4A" id="qNM-WO-SnR"/>
+                        <outlet property="button" destination="Phf-PW-fIx" id="DUP-3k-TkH"/>
+                        <outlet property="timeLabel" destination="wXw-vN-1mi" id="wCa-uO-4NM"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="418" y="476"/>
+            <point key="canvasLocation" x="431" y="476"/>
         </scene>
         <!--CBStationOnMapInterfaceController-->
         <scene sceneID="Snj-Au-HH9">

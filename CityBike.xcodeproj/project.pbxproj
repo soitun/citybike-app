@@ -102,6 +102,7 @@
 		6DCFEB651B3746C9002D24C8 /* NSTimeInterval+TextualRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */; };
 		6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A11B20891D0070E163 /* UIView+Styling.swift */; };
 		6DD460A41B208A040070E163 /* UIColor+UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+UIColors.swift */; };
+		6DE2F0271B3B61B30058EE7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0C01B369DDD00B80C63 /* Images.xcassets */; };
 		6DF07F2E1B2D71DD00A8F796 /* CBAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* CBAnnotation.swift */; };
 		6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
 		6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
@@ -801,6 +802,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE2F0271B3B61B30058EE7C /* Images.xcassets in Resources */,
 				6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */,
 				6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */,
 			);
