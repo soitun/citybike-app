@@ -9,5 +9,6 @@
 import Foundation
 
 enum CBAppleWatchEvent: String {
-    case RequestUpdates = "RequestUpdates"
+    case InitialConfiguration = "InitialConfiguration"
+    case FetchData = "FetchData"
 }

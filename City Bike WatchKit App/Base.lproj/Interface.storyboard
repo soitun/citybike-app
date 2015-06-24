@@ -50,7 +50,7 @@
                                                         <fontDescription key="font" type="system" pointSize="10"/>
                                                     </label>
                                                 </items>
-                                                <edgeInsets key="margins" left="5" right="0.0" top="0.0" bottom="0.0"/>
+                                                <edgeInsets key="margins" left="5" right="3" top="0.0" bottom="0.0"/>
                                             </group>
                                         </items>
                                         <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,7 +103,7 @@
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <edgeInsets key="margins" left="5" right="0.0" top="0.0" bottom="3"/>
+                                        <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="3"/>
                                     </group>
                                     <connections>
                                         <outlet property="detailTextLabel" destination="FU8-Gm-ShN" id="Z9L-oN-v87"/>

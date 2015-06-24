@@ -118,10 +118,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         if let rawRequest = userInfo?["request"] as? String {
             if let event = CBAppleWatchEvent(rawValue: rawRequest) {
                 switch event {
-                    case .RequestUpdates:
-                        configureApp()
-                        // Request data only if calling from the watch
-                        CBModelUpdater.sharedInstance.start()
+                case .InitialConfiguration:
+                    configureApp()
+                    // Request data only if calling from the watch
+                    CBModelUpdater.sharedInstance.start()
+                    reply(nil)
+                    
+                case .FetchData:
+                    if let location = self.locationManager.location {
+                        reply(["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude])
+                    } else {
+                        reply(["user-location": "not available"])
+                    }
                 }
             }
         }
