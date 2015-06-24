@@ -65,7 +65,7 @@
                                         <outlet property="stationNameLabel" destination="SR8-Q2-njj" id="Uzh-zv-7kM"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="CBUpdateTableRowController" selectable="NO" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="CBUpdateTableRowController" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="32" alignment="left" layout="vertical" spacing="0.0" id="CWL-W1-Q9E" userLabel="content-view">
                                         <items>
                                             <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">

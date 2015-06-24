@@ -140,10 +140,16 @@ class CBStationsListInterfaceController: WKInterfaceController {
             } else if rowType == RowType.Update.rawValue {
                 let row = table.rowControllerAtIndex(rowIdx) as! CBUpdateTableRowController
                 row.configure(recentTimestamp)
-                
             }
             
             rowIdx++
+        }
+    }
+    
+    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+        let row: AnyObject? = table.rowControllerAtIndex(rowIndex)
+        if row is CBUpdateTableRowController {
+            fetchData()
         }
     }
     
