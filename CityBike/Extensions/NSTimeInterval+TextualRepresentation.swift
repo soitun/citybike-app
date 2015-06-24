@@ -10,8 +10,8 @@ import Foundation
 
 extension NSTimeInterval {
     
-    private func timeComponents() -> (Int, Int, Int) {
-        return (Int(self / 3600), Int((self / 60) % 60), Int(self % 60) )
+    func timeComponents() -> (hours: Int, minutes: Int, seconds: Int) {
+        return (hours: Int(self / 3600), minutes: Int((self / 60) % 60), seconds: Int(self % 60) )
     }
     
     var stringTimeRepresentationStyle1: String {

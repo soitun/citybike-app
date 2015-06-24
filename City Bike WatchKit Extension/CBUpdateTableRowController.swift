@@ -16,9 +16,27 @@ class CBUpdateTableRowController: NSObject {
     func configure(date: NSDate) {
         titleLabel.setText(NSLocalizedString("RECENTLY UPDATED", comment: ""))
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
-        dateLabel.setText(dateFormatter.stringFromDate(date))
+        let timeIntervalSinceNow = abs(date.timeIntervalSinceNow)
+        let tc = timeIntervalSinceNow.timeComponents()
+        
+        if tc.hours == 0 && tc.minutes == 0 {
+            if tc.seconds == 0 {
+                dateLabel.setText(NSLocalizedString("Now", comment: ""))
+            } else {
+                let text = String.localizedStringWithFormat("%d seconds ago", tc.seconds)
+                dateLabel.setText(text)
+            }
+        } else if tc.hours == 0 {
+            let text = String.localizedStringWithFormat("%d minutes ago", tc.minutes)
+            dateLabel.setText(text)
+        } else if tc.hours <= 2 {
+            let text = String.localizedStringWithFormat("%d hours ago", tc.hours)
+            dateLabel.setText(text)
+        } else {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+            dateLabel.setText(dateFormatter.stringFromDate(date))
+        }
     }
 }

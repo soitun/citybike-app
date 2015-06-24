@@ -93,17 +93,17 @@
                                                     <imageView width="10" height="10" alignment="left" verticalAlignment="center" image="circle" id="1N0-sJ-ug4" userLabel="warning-icon"/>
                                                     <label alignment="left" verticalAlignment="center" text="NO STATIONS" id="bxe-hx-0EK" userLabel="title-label">
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="font" type="boldSystem" pointSize="11"/>
+                                                        <fontDescription key="font" type="boldSystem" pointSize="13"/>
                                                     </label>
                                                 </items>
                                             </group>
                                             <label width="1" alignment="left" text="Go to your iPhone and select some city bike networks." numberOfLines="0" id="FU8-Gm-ShN" userLabel="detail-text-label">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                                <fontDescription key="font" type="system" pointSize="12"/>
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="3"/>
+                                        <edgeInsets key="margins" left="5" right="5" top="3" bottom="3"/>
                                     </group>
                                     <connections>
                                         <outlet property="detailTextLabel" destination="FU8-Gm-ShN" id="Z9L-oN-v87"/>
@@ -120,7 +120,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="273" y="490"/>
+            <point key="canvasLocation" x="247" y="476"/>
         </scene>
         <!--CBMainInterfaceController-->
         <scene sceneID="roC-v3-BoS">
@@ -157,7 +157,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="460" y="476"/>
+            <point key="canvasLocation" x="418" y="476"/>
         </scene>
         <!--CBStationOnMapInterfaceController-->
         <scene sceneID="Snj-Au-HH9">
@@ -171,7 +171,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="273" y="729"/>
+            <point key="canvasLocation" x="247" y="704"/>
         </scene>
     </scenes>
 </document>

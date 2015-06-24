@@ -60,6 +60,8 @@
 		6D9EFA331B386A9D00A96BE9 /* CBCoordinateRegionSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EFA311B386A6000A96BE9 /* CBCoordinateRegionSerializable.swift */; };
 		6DA595471B24F3920055D3D6 /* CBRideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA595461B24F3920055D3D6 /* CBRideManager.swift */; };
 		6DB2CC101B3B47830055E1BA /* CBStationOnMapInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC0F1B3B47830055E1BA /* CBStationOnMapInterfaceController.swift */; };
+		6DB2CC121B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */; };
+		6DB2CC141B3B4FB10055E1BA /* CBStationOnMapContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC131B3B4FB10055E1BA /* CBStationOnMapContext.swift */; };
 		6DBA50DE1B29F739002ECC3F /* CBStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */; };
 		6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
 		6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
@@ -209,6 +211,8 @@
 		6D9EFA311B386A6000A96BE9 /* CBCoordinateRegionSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCoordinateRegionSerializable.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* CBRideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBRideManager.swift; path = Helpers/CBRideManager.swift; sourceTree = "<group>"; };
 		6DB2CC0F1B3B47830055E1BA /* CBStationOnMapInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationOnMapInterfaceController.swift; sourceTree = "<group>"; };
+		6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+RegionForPoints.swift"; sourceTree = "<group>"; };
+		6DB2CC131B3B4FB10055E1BA /* CBStationOnMapContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBStationOnMapContext.swift; sourceTree = "<group>"; };
 		6DBA50DD1B29F739002ECC3F /* CBStationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStationAnnotationView.swift; path = Components/CBStationAnnotationView.swift; sourceTree = "<group>"; };
 		6DBA50EE1B2B4042002ECC3F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = ../CityBike/Model/CoreDataStack.swift; sourceTree = "<group>"; };
 		6DBA50F01B2B4042002ECC3F /* CityBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityBike.xcdatamodel; sourceTree = "<group>"; };
@@ -485,7 +489,9 @@
 		6D87CE2E1B39D9E20089D894 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6DB2CC131B3B4FB10055E1BA /* CBStationOnMapContext.swift */,
 				6D87CE2F1B39DA3E0089D894 /* CBWatchStationProxy.swift */,
+				6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -532,7 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				6DCFEB611B374164002D24C8 /* CBMainInterfaceController.swift */,
-				6DB2CC0E1B3B47590055E1BA /* Station Details */,
+				6DB2CC0E1B3B47590055E1BA /* Station on map */,
 				6D8DC0CD1B36A5D400B80C63 /* Stations List */,
 				6DCFEB601B374134002D24C8 /* Stopwatch */,
 			);
@@ -550,12 +556,12 @@
 			name = "Stations List";
 			sourceTree = "<group>";
 		};
-		6DB2CC0E1B3B47590055E1BA /* Station Details */ = {
+		6DB2CC0E1B3B47590055E1BA /* Station on map */ = {
 			isa = PBXGroup;
 			children = (
 				6DB2CC0F1B3B47830055E1BA /* CBStationOnMapInterfaceController.swift */,
 			);
-			name = "Station Details";
+			name = "Station on map";
 			sourceTree = "<group>";
 		};
 		6DBA51121B2B8454002ECC3F /* citybik.es-api */ = {
@@ -949,11 +955,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DB2CC121B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift in Sources */,
 				6DCFEB5D1B373A85002D24C8 /* CBAppleWatchEvent.swift in Sources */,
 				6D8DC0D11B36B1B500B80C63 /* CBUpdateTableRowController.swift in Sources */,
 				6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */,
 				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
 				6DCFEB4F1B36F259002D24C8 /* CBUserSettings.swift in Sources */,
+				6DB2CC141B3B4FB10055E1BA /* CBStationOnMapContext.swift in Sources */,
 				6DCFEB621B374164002D24C8 /* CBMainInterfaceController.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+UIColors.swift in Sources */,
 				6DCFEB641B374610002D24C8 /* CBRideStopwatch.swift in Sources */,
