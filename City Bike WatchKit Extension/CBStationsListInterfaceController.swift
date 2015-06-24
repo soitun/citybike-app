@@ -14,13 +14,14 @@ import CoreLocation
 private enum RowType: String {
     case Station = "CBStationTableRowController"
     case Update = "CBUpdateTableRowController"
-    case Warning = "CBWarningTableRowController"
+    case Warning = "CBMessageTableRowController"
 }
 
 class CBStationsListInterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
     private var proxies = [CBWatchStationProxy]()
     private var userLocation: CLLocation?
+    private var displayedFetchingData = false
     
     // MARK: Life-cycle
     override func awakeWithContext(context: AnyObject?) {
@@ -32,6 +33,11 @@ class CBStationsListInterfaceController: WKInterfaceController {
         WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.InitialConfiguration.rawValue], reply: { (dict, error) -> Void in
             println("Initial iOS App Configuration")
         })
+        
+        if displayedFetchingData == false {
+            displayedFetchingData = true
+            reloadWithWarning(.FetchingData)
+        }
         
         fetchData()
     }
@@ -97,9 +103,9 @@ class CBStationsListInterfaceController: WKInterfaceController {
         }
     }
     
-    private func reloadWithWarning(warning: CBWarningType) {
+    private func reloadWithWarning(warning: CBMessageType) {
         table.setNumberOfRows(1, withRowType: RowType.Warning.rawValue)
-        var row = table.rowControllerAtIndex(0) as! CBWarningTableRowController
+        var row = table.rowControllerAtIndex(0) as! CBMessageTableRowController
         row.configure(warning)
     }
 
