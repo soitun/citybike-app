@@ -64,7 +64,6 @@ class CBModelUpdater: CBUpdaterProtocol {
             dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
             
             completion()
-            self.sendContentUpdateMessageUsingWormhole()
         })
     }
     
@@ -101,12 +100,7 @@ class CBModelUpdater: CBUpdaterProtocol {
             dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
             
             completion()
-            self.sendContentUpdateMessageUsingWormhole()
         })
-    }
-    
-    func sendContentUpdateMessageUsingWormhole() {
-        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.ContentUpdate.rawValue)
     }
 }
 

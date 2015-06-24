@@ -9,8 +9,6 @@
 import Foundation
 
 enum CBWormholeNotification: String {
-    case ContentUpdate = "content-update"
-    case UserLocationUpdate = "user-location-update"
     case StopwatchStarted = "stopwatch-started"
     case StopwatchStopped = "stopwatch-stopped"
 }

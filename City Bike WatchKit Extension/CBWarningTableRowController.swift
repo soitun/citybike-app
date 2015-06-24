@@ -12,7 +12,7 @@ import WatchKit
 enum CBWarningType {
     case NoStations
     case LocationServicesDisabled
-    case LocationServicesAccessDenied
+    case CannotObtainUserLocation
 }
 
 class CBWarningTableRowController: NSObject {
@@ -27,22 +27,23 @@ class CBWarningTableRowController: NSObject {
         switch type {
         case .NoStations: configureForNoStations()
         case .LocationServicesDisabled: configureForLocationServicesDisabled()
-        case .LocationServicesAccessDenied: configureForLocationServicesAccessDenied()
+        case .CannotObtainUserLocation: configureForCannotObtainUserLocation()
         }
     }
     
     private func configureForNoStations() {
         titleLabel.setText(NSLocalizedString("NO STATIONS", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("No stations selected yet. Open iPhone app and select some city bike network first.", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("No stations selected. Open iPhone app and select some city bike network first.", comment: ""))
     }
     
     private func configureForLocationServicesDisabled() {
         titleLabel.setText(NSLocalizedString("LOCATION SERVICES", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("To show you approximate distance to bike stations app needs location services. You can turn it on your iPhone", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("To show you nearest bike stations and approximate distance to them app needs access to Location Services. If this is your first launch please go to iPhone app to accept permissions, otherwise go to system Settings.", comment: ""))
     }
     
-    private func configureForLocationServicesAccessDenied() {
-        titleLabel.setText(NSLocalizedString("LOCATION SERVICES", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("App have no permissions to use Location Services. To show approximate distance to bike stations please give permissions using iPhone.", comment: ""))
+    private func configureForCannotObtainUserLocation() {
+        titleLabel.setText(NSLocalizedString("CURRENT LOCATION", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("Getting your location...", comment: ""))
+
     }
 }

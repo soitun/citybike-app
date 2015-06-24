@@ -95,24 +95,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         UINavigationBar.appearance().titleTextAttributes = fontAttributes
     }
     
-    /// MARK: CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        if let location = locations.first as? CLLocation {
-            println("ios-app: location update")
-            CBWormhole.sharedInstance.passMessageObject(location, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status != .AuthorizedAlways && status != .AuthorizedWhenInUse {
-            CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.UserLocationUpdate.rawValue)
-    }
-    
     /// MARK: Apple Watch
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
         if let rawRequest = userInfo?["request"] as? String {

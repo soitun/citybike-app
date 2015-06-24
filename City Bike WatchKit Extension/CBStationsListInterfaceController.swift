@@ -11,21 +11,17 @@ import Foundation
 import CBModel
 import CoreLocation
 
+private enum RowType: String {
+    case Station = "CBStationTableRowController"
+    case Update = "CBUpdateTableRowController"
+    case Warning = "CBWarningTableRowController"
+}
+
 class CBStationsListInterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
     
-    private var userLocation: CLLocation?
-    private var requesterTimer: NSTimer?
     
-    private var wasReloadedWithoutContent = false
-    private var locServices = CBLocationServicesFlags()
-
-    private enum RowType: String {
-        case Station = "CBStationTableRowController"
-        case Update = "CBUpdateTableRowController"
-        case Warning = "CBWarningTableRowController"
-    }
-    
+    // MARK: Life-cycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
     }
@@ -33,114 +29,89 @@ class CBStationsListInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.InitialConfiguration.rawValue], reply: { (dict, error) -> Void in
-            println("W: Initial Configuration")
+            println("Initial iOS App Configuration")
         })
         
-        self.observeWormholeNotifications()
-        reloadContent()
-        scheduleFetchRequest()
+        fetchData()
     }
     
     override func didDeactivate() {
         super.didDeactivate()
-        requesterTimer?.invalidate()
     }
-    
-    private func scheduleFetchRequest() {
-        requesterTimer?.invalidate()
-        requesterTimer = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("fetchRequestFired"), userInfo: nil, repeats: true)
-        fetchRequestFired()
-    }
-    
-    @objc private func fetchRequestFired() {
-        WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
-            println("W: Fetch Data")
-            println(dict)
 
+    
+    // MARK: Private methods
+    private func fetchData() {
+        WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
+            println("Fetched Data")
+            println(dict)
+            
+            var userLocation: CLLocation?
+            
             if let dict = dict as? [String: AnyObject] {
-                var latitude: CLLocationDegrees? = dict["latitude"] as? CLLocationDegrees
-                var longitude: CLLocationDegrees? = dict["longitude"] as? CLLocationDegrees
+                var latitude = dict["latitude"] as? CLLocationDegrees
+                var longitude = dict["longitude"] as? CLLocationDegrees
                 if latitude != nil && longitude != nil {
-                    self.userLocation = CLLocation(latitude: latitude!, longitude: longitude!)
+                    userLocation = CLLocation(latitude: latitude!, longitude: longitude!)
                 }
-            } else {
-                self.userLocation = nil
             }
             
-            self.reloadContent()
+            if userLocation == nil {
+                self.reloadContent(nil)
+                
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) {
+                    self.fetchData()
+                }
+                
+            } else {
+                self.reloadContent(userLocation)
+            }
         })
     }
     
-    /// MARK: Notifications
-    private func observeWormholeNotifications() {
-        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.ContentUpdate.rawValue, listener: { _ in
-            println("W: Content Update")
-            self.reloadContent()
-        })
-        
-        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.UserLocationUpdate.rawValue, listener: { (updatedLocation: AnyObject?) in
-            println("W: Location Update")
-            self.userLocation = updatedLocation as? CLLocation
-            self.reloadContent()
-        })
+    private func isLocationServicesEnabled() -> Bool {
+        return CLLocationManager.locationServicesEnabled() == true
+    }
+    
+    private func isLocationServicesAccessGranted() -> Bool {
+        let authStatus = CLLocationManager.authorizationStatus()
+        return (authStatus == .AuthorizedAlways || authStatus == .AuthorizedWhenInUse)
     }
 
-    private func reloadContent() {
-        locServices.refreshFlags()
-        
-        if locServices.isWorking == false {
-            self.userLocation = nil
-        }
-        
-        var stations: [CDStation] = CDStationManager.allStationsForSelectedNetworks()
-        if stations.count == 0 {
-            /// Do not refresh if nothing changed
-            if (locServices.enabledChanged == false && locServices.enabled == false &&
-                locServices.accessGrantedChanged == false && locServices.accessGranted == false &&
-                wasReloadedWithoutContent == true) { return }
+
+    private func reloadContent(userLocation: CLLocation?) {
+        if isLocationServicesEnabled() == false || isLocationServicesAccessGranted() == false {
+            reloadWithWarning(.LocationServicesDisabled)
             
-            wasReloadedWithoutContent = true
-            reloadTableWithNoStations()
-        } else if stations.count > 0 {
-            wasReloadedWithoutContent = false
-            reloadTableWithStations(stations)
+        } else if userLocation == nil {
+            reloadWithWarning(.CannotObtainUserLocation)
+
+        } else {
+            var stations = CDStationManager.allStationsForSelectedNetworks() as [CDStation]
+            if stations.count == 0 {
+                reloadWithWarning(.NoStations)
+                
+            } else if stations.count > 0 {
+                reloadTableWithStations(stations, userLocation: userLocation!)
+            }
         }
     }
     
-    private func reloadTableWithNoStations() {
-        typealias RowIndex = Int
-        var rowTypes = [String]()
-        var warningTypes = [CBWarningType]()
-        
-        // No stations cell
-        rowTypes.append(RowType.Warning.rawValue)
-        warningTypes.append(.NoStations)
-        
-        // Should add any warning cell?
-        if locServices.enabled == false {
-            self.userLocation = nil
-            warningTypes.append(.LocationServicesDisabled)
-            rowTypes.append(RowType.Warning.rawValue)
-            
-        } else if locServices.accessGranted == false {
-            self.userLocation = nil
-            warningTypes.append(.LocationServicesAccessDenied)
-            rowTypes.append(RowType.Warning.rawValue)
-        }
-        
-        table.setRowTypes(rowTypes)
-        
-        var idx: RowIndex = 0
-        for rowType in rowTypes {
-            let row = table.rowControllerAtIndex(idx) as! CBWarningTableRowController
-            row.configure(warningTypes[idx])
-            idx++
-        }
+    private func reloadWithWarning(warning: CBWarningType) {
+        table.setNumberOfRows(1, withRowType: RowType.Warning.rawValue)
+        var row = table.rowControllerAtIndex(0) as! CBWarningTableRowController
+        row.configure(warning)
     }
-    
-    private func reloadTableWithStations(stations: [CDStation]) {
-        var proxies = createStationProxiesFromStations(stations)
+
+    private func reloadTableWithStations(stations: [CDStation], userLocation: CLLocation) {
+        var proxies = createStationProxiesFromStations(stations, userLocation: userLocation)
         sortProxies(&proxies)
+        
+        if proxies.count > 5 {
+            var slice = proxies[0..<5] as ArraySlice<CBWatchStationProxy>
+            proxies = Array(slice)
+        }
         
         // Add rows for proxies
         var rowTypes = [String]()
@@ -150,24 +121,11 @@ class CBStationsListInterfaceController: WKInterfaceController {
         
         /// Add row for "Recently Updated"
         rowTypes.append(RowType.Update.rawValue)
-        
-        // Should add any warning cell?
-        var warningTypes = [CBWarningType]()
-        if locServices.enabled == false {
-            warningTypes.append(.LocationServicesDisabled)
-            rowTypes.append(RowType.Warning.rawValue)
-            
-        } else if locServices.accessGranted == false {
-            warningTypes.append(.LocationServicesAccessDenied)
-            rowTypes.append(RowType.Warning.rawValue)
-        }
-        
         table.setRowTypes(rowTypes)
 
         var recentTimestamp = NSDate(timeIntervalSince1970: 0)
-        
         var rowIdx = 0
-        var warningIdx = 0
+        
         for rowType in rowTypes {
             if rowType == RowType.Station.rawValue {
                 let row = table.rowControllerAtIndex(rowIdx) as! CBStationTableRowController
@@ -183,36 +141,28 @@ class CBStationsListInterfaceController: WKInterfaceController {
                 let row = table.rowControllerAtIndex(rowIdx) as! CBUpdateTableRowController
                 row.configure(recentTimestamp)
                 
-            } else if rowType == RowType.Warning.rawValue {
-                let row = table.rowControllerAtIndex(rowIdx) as! CBWarningTableRowController
-                row.configure(warningTypes[warningIdx])
-                warningIdx++
             }
             
             rowIdx++
         }
     }
     
-    private func createStationProxiesFromStations(stations: [CDStation]) -> [CBWatchStationProxy] {
+    private func createStationProxiesFromStations(stations: [CDStation], userLocation: CLLocation) -> [CBWatchStationProxy] {
         var stationProxies = [CBWatchStationProxy]()
         
         for station in stations {
             var proxy = CBWatchStationProxy(station: station)
             stationProxies.append(proxy)
             
-            if let userLocation = userLocation {
-                let stationLocation = CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude)
-                proxy.distanceToUser = userLocation.distanceFromLocation(stationLocation)
-            } else {
-                proxy.distanceToUser = nil
-            }
+            let stationLocation = CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude)
+            proxy.distanceToUser = userLocation.distanceFromLocation(stationLocation)
         }
         
         return stationProxies
     }
     
-    /// sort by free bikes descending or by distance if location available
     private func sortProxies(inout proxies: [CBWatchStationProxy]) {
+        /// sort by free bikes descending or by distance if location available
         proxies.sort({
             if ($0.distanceToUser == nil || $1.distanceToUser == nil) { return $0.freeBikes > $1.freeBikes }
             if $0.distanceToUser! == $1.distanceToUser! { return $0.freeBikes > $1.freeBikes }
