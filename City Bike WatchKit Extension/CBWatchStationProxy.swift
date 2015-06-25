@@ -15,6 +15,7 @@ class CBWatchStationProxy {
     
     var freeBikes: Int { return station.freeBikes.integerValue }
     var emptySlots: Int { return station.emptySlots.integerValue }
+    var allSlots: Int { return freeBikes + emptySlots }
     var name: String { return station.name }
     var updateTimestamp: NSDate { return station.timestamp }
     var coordinate: CLLocationCoordinate2D { return station.coordinate }
