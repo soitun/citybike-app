@@ -20,7 +20,7 @@ class CBStationTableRowController: NSObject {
     
     func configure(proxy: CBWatchStationProxy) {
         freeBikesLabel.setText("\(proxy.freeBikes)/\(proxy.allSlots)")
-        freeBikesCircleImage.setTintColor(colorForValue(proxy.freeBikes, min: 0, max: proxy.allSlots))
+        freeBikesCircleImage.setTintColor(UIColor.colorForValue(proxy.freeBikes, min: 0, max: proxy.allSlots))
         stationNameLabel.setText(proxy.name)
     
         if let distance = proxy.distanceToUser {
@@ -29,14 +29,5 @@ class CBStationTableRowController: NSObject {
         } else {
             distanceLabel.setHidden(true)
         }
-    }
-    
-    private func colorForValue(value: Int, min: Int, max: Int) -> UIColor {
-        var many = Float(max) * Float(0.30)
-        var none = Float(max) * Float(0.15)
-        
-        if Float(value) > many { return UIColor.plentyColor() }
-        else if Float(value) < none { return UIColor.noneColor() }
-        else { return UIColor.fewColor() }
     }
 }

@@ -166,9 +166,6 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         
         let cbAnnotation = (annotation as! CBAnnotation)
         let view = self.mapUpdater.viewForAnnotation(cbAnnotation)
-        view.noneColor = UIColor.noneColor()
-        view.fewColor = UIColor.fewColor()
-        view.plentyColor = UIColor.plentyColor()
         
         let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
         view.configure(station)

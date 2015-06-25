@@ -23,7 +23,7 @@
                                     <outlet property="delegate" destination="UZx-M2-Yfd" id="pCd-R2-YA2"/>
                                 </connections>
                             </mapView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Sp-jnP" userLabel="stopwatch-popover" customClass="CBSimplePopover" customModule="CityBike" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Sp-jnP" userLabel="stopwatch-popover" customClass="CBSimplePopover" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="89" y="492" width="96" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="height" constant="75" id="dKp-rP-iqb"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq3-Wp-t1e" userLabel="btn-stopwatch-ready" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq3-Wp-t1e" userLabel="btn-stopwatch-ready" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="117" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-stopwatch-ready">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,7 +65,7 @@
                                     <action selector="stopwatchReadyPressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="bUi-QG-1q1"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDb-k8-KLJ" userLabel="btn-stopwatch-done" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDb-k8-KLJ" userLabel="btn-stopwatch-done" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="117" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-stopwatch-done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,7 +74,7 @@
                                     <action selector="stopwatchDonePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="tAP-LC-XHZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur1-3P-9VE" userLabel="btn-locate-me" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur1-3P-9VE" userLabel="btn-locate-me" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="164" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-locate-me">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,7 +83,7 @@
                                     <action selector="locateMePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="A19-Qk-s5Q"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-NR-6z0" userLabel="btn-find" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-NR-6z0" userLabel="btn-find" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="211" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-find">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,7 +92,7 @@
                                     <action selector="findPressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="zZz-0e-CGv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-km-d5j" userLabel="btn-menu" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-km-d5j" userLabel="btn-menu" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="273" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
