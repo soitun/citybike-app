@@ -28,7 +28,14 @@ class CBStationAnnotationView: MKAnnotationView, CBMapUpdaterProtocol {
         
         if self.customView != nil {
             self.addSubview(customView)
+            self.customView.setTranslatesAutoresizingMaskIntoConstraints(false)
         }
+        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+
+        /// Add constraints to make this view the same size as the custom one
+        let widthConstraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: customView, attribute: .Width, multiplier: 1, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: customView, attribute: .Height, multiplier: 1, constant: 0)
+        self.addConstraints([widthConstraint, heightConstraint])
     }
     
     

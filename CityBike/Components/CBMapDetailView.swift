@@ -29,7 +29,6 @@ class CBMapDetailView: UIView {
     @IBOutlet private weak var distanceContainer: UIView!
     @IBOutlet weak var distanceLabel: UILabel!
     
-    private var dateFormatter: NSDateFormatter!
     private var previousDistance: Float = 0.0
     private var previousBikes = 0
     private var previousSlots = 0
@@ -48,10 +47,6 @@ class CBMapDetailView: UIView {
         self.distanceContainer.makeRounded()
         self.distanceContainer.backgroundColor = UIColor.plentyColor()
         self.distanceContainer.layer.cornerRadius = (CGRectGetHeight(self.distanceContainer.frame) / CGFloat(2.0))
-        
-        self.dateFormatter = NSDateFormatter()
-        self.dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        self.dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
     }
     
     func update(text: String, detailText: String, freeBikes: Int, freeSlots: Int, distance: Float, date: NSDate) {
@@ -85,6 +80,6 @@ class CBMapDetailView: UIView {
             self.slotsImageView.bounce(0.1)
         }
         
-        self.labelThird.text = "UPDATED \(self.dateFormatter.stringFromDate(date))".uppercaseString
+        self.labelThird.text = "UPDATED \(date.updatedWhileAgoTextualRepresentation())".uppercaseString
     }
 }
