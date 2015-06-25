@@ -1,5 +1,5 @@
 //
-//  CBRideManager.swift
+//  RideManager.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 07/06/15.
@@ -9,26 +9,26 @@
 import Foundation
 import CBModel
 
-class CBRideManager {
+class RideManager {
     
-    private var stopwatch = CBRideStopwatch()
+    private var stopwatch = RideStopwatch()
     
     private var _isGoing = false
     var isGoing: Bool {
         return _isGoing
     }
     
-    func start(startDate: NSDate, updateBlock: CBRideStopwatch.UpdateBlockType) {
+    func start(startDate: NSDate, updateBlock: RideStopwatch.UpdateBlockType) {
         _isGoing = true
-        CBUserSettings.sharedInstance().setStartRideDate(startDate)
-        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStarted.rawValue)
+        UserSettings.sharedInstance().setStartRideDate(startDate)
+        WormholeNotificationSystem.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStarted.rawValue)
         self.stopwatch.start(startDate, updateBlock: updateBlock)
     }
     
     func stop() {
         _isGoing = false
 
-        CBWormhole.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStopped.rawValue)
+        WormholeNotificationSystem.sharedInstance.passMessageObject(nil, identifier: CBWormholeNotification.StopwatchStopped.rawValue)
 
         let duration = self.stopwatch.stop()
 
@@ -51,6 +51,6 @@ class CBRideManager {
         }
         
         CoreDataStack.sharedInstance().mainContext.save(nil)
-        CBUserSettings.sharedInstance().removeStartRideDate()
+        UserSettings.sharedInstance().removeStartRideDate()
     }
 }

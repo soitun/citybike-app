@@ -1,5 +1,5 @@
 //
-//  CBWormhole.swift
+//  WormholeNotificationSystem.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 21/06/15.
@@ -13,19 +13,19 @@ enum CBWormholeNotification: String {
     case StopwatchStopped = "stopwatch-stopped"
 }
 
-class CBWormhole: MMWormhole {
+class WormholeNotificationSystem: MMWormhole {
     
-    class var sharedInstance: CBWormhole {
+    class var sharedInstance: WormholeNotificationSystem {
         struct Static {
             static var onceToken: dispatch_once_t = 0
-            static var instance: CBWormhole? = nil
+            static var instance: WormholeNotificationSystem? = nil
         }
         
-        dispatch_once(&Static.onceToken, { Static.instance = CBWormhole() })
+        dispatch_once(&Static.onceToken, { Static.instance = WormholeNotificationSystem() })
         return Static.instance!
     }
     
     init() {
-        super.init(applicationGroupIdentifier: CBConstant.AppSharedGroup.rawValue, optionalDirectory: nil)
+        super.init(applicationGroupIdentifier: Constant.AppSharedGroup.rawValue, optionalDirectory: nil)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  CBRideStopwatch.swift
+//  RideStopwatch.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 07/06/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CBRideStopwatch {
+class RideStopwatch {
     typealias UpdateBlockType = (duration: NSTimeInterval) -> Void
     
 //    var startTimeInterval: NSTimeInterval = 0

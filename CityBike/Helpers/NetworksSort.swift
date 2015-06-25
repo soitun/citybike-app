@@ -1,5 +1,5 @@
 //
-//  CBNetworksSort.swift
+//  NetworksSort.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 14/06/15.
@@ -9,7 +9,7 @@
 import Foundation
 import CBModel
 
-class CBOrderedNetworksGroup {
+class OrderedNetworksGroup {
     var countryCode: CountryCode
     var networks: [CDNetwork]
     
@@ -24,10 +24,10 @@ class CBOrderedNetworksGroup {
         }()
 }
 
-class CBNetworksSort {
-    class func orderNetworks(networks: [CDNetwork]) -> [CBOrderedNetworksGroup] {
+class NetworksSort {
+    class func orderNetworks(networks: [CDNetwork]) -> [OrderedNetworksGroup] {
         /// Store networks groupped by country code
-        var orderedGroups = [CBOrderedNetworksGroup]()
+        var orderedGroups = [OrderedNetworksGroup]()
         
         for network in networks {
             let ccKey = network.location.country
@@ -35,7 +35,7 @@ class CBNetworksSort {
                 group.networks.append(network)
                 
             } else {
-                orderedGroups.append(CBOrderedNetworksGroup(countryCode: network.location.country, networks: [network]))
+                orderedGroups.append(OrderedNetworksGroup(countryCode: network.location.country, networks: [network]))
             }
         }
         

@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class CBUserSettings {
+class UserSettings {
     
     private var userDefaults: NSUserDefaults
     
@@ -20,14 +20,14 @@ class CBUserSettings {
     
     // MARK: Singleton
     private struct Static {
-        static var instance: CBUserSettings!
+        static var instance: UserSettings!
     }
     
-    class func setSharedInstance(instance: CBUserSettings) {
+    class func setSharedInstance(instance: UserSettings) {
         Static.instance = instance
     }
     
-    class func sharedInstance() -> CBUserSettings {
+    class func sharedInstance() -> UserSettings {
         return Static.instance
     }
     
@@ -93,7 +93,7 @@ class CBUserSettings {
     private let CityBikeMapRegion = "CityBikeMapRegion"
     func getMapRegion() -> MKCoordinateRegion? {
         if let data = userDefaults.objectForKey(CityBikeMapRegion) as? NSData {
-            let serialized = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! CBCoordinateRegionSerializable
+            let serialized = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! CoordinateRegionSerializable
             let center = CLLocationCoordinate2D(latitude: serialized.latitude, longitude: serialized.longitude)
             let span = MKCoordinateSpan(latitudeDelta: serialized.latitudeDelta, longitudeDelta: serialized.longitudeDelta)
             return MKCoordinateRegionMake(center, span)
@@ -103,7 +103,7 @@ class CBUserSettings {
     }
     
     func setMapRegion(region: MKCoordinateRegion) {
-        let serialized = CBCoordinateRegionSerializable()
+        let serialized = CoordinateRegionSerializable()
         serialized.latitude = region.center.latitude
         serialized.longitude = region.center.longitude
         serialized.latitudeDelta = region.span.latitudeDelta

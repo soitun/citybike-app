@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum CBConstant: String {
+public enum Constant: String {
     case AppSharedGroup = "group.com.tomaszszulc.CityBike"
 }

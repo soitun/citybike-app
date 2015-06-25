@@ -107,9 +107,9 @@ CCHMapClusterAnnotation *CCHMapClusterControllerClusterAnnotationForAnnotation(M
     CCHMapClusterAnnotation *annotationResult;
     
     NSSet *mapAnnotations = [mapView annotationsInMapRect:mapRect];
-    for (id<MKAnnotation> mapAnnotation in mapAnnotations) {
-        if ([mapAnnotation isKindOfClass:CCHMapClusterAnnotation.class]) {
-            CCHMapClusterAnnotation *mapClusterAnnotation = (CCHMapClusterAnnotation *)mapAnnotation;
+    for (id<MKAnnotation> StationAnnotation in mapAnnotations) {
+        if ([StationAnnotation isKindOfClass:CCHMapClusterAnnotation.class]) {
+            CCHMapClusterAnnotation *mapClusterAnnotation = (CCHMapClusterAnnotation *)StationAnnotation;
             if (mapClusterAnnotation.annotations) {
                 if ([mapClusterAnnotation.annotations containsObject:annotation]) {
                     annotationResult = mapClusterAnnotation;

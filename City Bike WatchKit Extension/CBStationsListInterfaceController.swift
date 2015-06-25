@@ -30,7 +30,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
-        WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.InitialConfiguration.rawValue], reply: { (dict, error) -> Void in
+        WKInterfaceController.openParentApplication(["request": AppleWatchEvent.InitialConfiguration.rawValue], reply: { (dict, error) -> Void in
             println("Initial iOS App Configuration")
         })
         
@@ -49,7 +49,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
     
     // MARK: Private methods
     private func fetchData() {
-        WKInterfaceController.openParentApplication(["request": CBAppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
+        WKInterfaceController.openParentApplication(["request": AppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
             println("Fetched Data")
             println(dict)
             
@@ -93,7 +93,7 @@ class CBStationsListInterfaceController: WKInterfaceController {
             reloadWithWarning(.CannotObtainUserLocation)
 
         } else {
-            var stations = CDStationManager.allStationsForSelectedNetworks() as [CDStation]
+            var stations = StationManager.allStationsForSelectedNetworks() as [CDStation]
             if stations.count == 0 {
                 reloadWithWarning(.NoStations)
                 

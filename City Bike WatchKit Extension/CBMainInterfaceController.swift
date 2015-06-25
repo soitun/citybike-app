@@ -23,11 +23,11 @@ class CBMainInterfaceController: WKInterfaceController {
     }
     
     private func configureUserSettings() {
-        let defaults = NSUserDefaults(suiteName: CBConstant.AppSharedGroup.rawValue)!
-        let userSettings = CBUserSettings(userDefaults: defaults)
-        CBUserSettings.setSharedInstance(userSettings)
+        let defaults = NSUserDefaults(suiteName: Constant.AppSharedGroup.rawValue)!
+        let userSettings = UserSettings(userDefaults: defaults)
+        UserSettings.setSharedInstance(userSettings)
         
         /// Register defaults values
-        CBUserSettings.sharedInstance().registerDefaults()
+        UserSettings.sharedInstance().registerDefaults()
     }
 }

@@ -40,16 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     private func configureUserSettings() {
-        let defaults = NSUserDefaults(suiteName: CBConstant.AppSharedGroup.rawValue)!
-        let userSettings = CBUserSettings(userDefaults: defaults)
-        CBUserSettings.setSharedInstance(userSettings)
+        let defaults = NSUserDefaults(suiteName: Constant.AppSharedGroup.rawValue)!
+        let userSettings = UserSettings(userDefaults: defaults)
+        UserSettings.setSharedInstance(userSettings)
         
         /// Register defaults values
-        CBUserSettings.sharedInstance().registerDefaults()
+        UserSettings.sharedInstance().registerDefaults()
     }
     
     private func configureWormhole() {
-        CBWormhole.sharedInstance
+        WormholeNotificationSystem.sharedInstance
     }
     
     private func configureCoreData() {
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var rootVC: UIViewController!
-        if CBUserSettings.sharedInstance().getDisplayedGettingStarted() {
+        if UserSettings.sharedInstance().getDisplayedGettingStarted() {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMapViewController") as! CBMapViewController
         } else {
             rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
@@ -98,12 +98,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     /// MARK: Apple Watch
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
         if let rawRequest = userInfo?["request"] as? String {
-            if let event = CBAppleWatchEvent(rawValue: rawRequest) {
+            if let event = AppleWatchEvent(rawValue: rawRequest) {
                 switch event {
                 case .InitialConfiguration:
                     configureApp()
                     // Request data only if calling from the watch
-                    CBModelUpdater.sharedInstance.start()
+                    ModelUpdater.sharedInstance.start()
                     reply(nil)
                     
                 case .FetchData:

@@ -10,17 +10,17 @@ import Foundation
 import CoreData
 import CBModel
 
-class CBModelUpdater: CBUpdaterProtocol {
+class ModelUpdater: CBUpdaterProtocol {
     
     private var syncManager: CBSyncManager!
     
-    class var sharedInstance: CBModelUpdater {
+    class var sharedInstance: ModelUpdater {
         struct Static {
             static var onceToken: dispatch_once_t = 0
-            static var instance: CBModelUpdater? = nil
+            static var instance: ModelUpdater? = nil
         }
         
-        dispatch_once(&Static.onceToken, { Static.instance = CBModelUpdater() })
+        dispatch_once(&Static.onceToken, { Static.instance = ModelUpdater() })
         return Static.instance!
     }
 

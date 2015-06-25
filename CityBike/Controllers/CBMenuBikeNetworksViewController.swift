@@ -16,14 +16,14 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var noItemsLabel: UILabel!
     @IBOutlet weak var noItemsIndicator: UIActivityIndicatorView!
     
-    private var orderedNetworks = [CBOrderedNetworksGroup]()
+    private var orderedNetworks = [OrderedNetworksGroup]()
     private var selectedNetworkIDs = [String]()
-    private var filteredNetworks = [CBFilteredNetworksGroupProxy]()
+    private var filteredNetworks = [FilteredNetworksGroupProxy]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selectedNetworkIDs = CBUserSettings.sharedInstance().getNetworkIDs()
+        self.selectedNetworkIDs = UserSettings.sharedInstance().getNetworkIDs()
         
         self.tableView.contentOffset = CGPointMake(0, CGRectGetHeight(self.searchBar.frame))
         self.tableView.tableFooterView = UIView()
@@ -72,14 +72,14 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     
     /// MARK: Private
     private func saveSelectedNetworks() {
-        CBUserSettings.sharedInstance().saveNetworkIDs(self.selectedNetworkIDs)
+        UserSettings.sharedInstance().saveNetworkIDs(self.selectedNetworkIDs)
         /// Force content update. Redownload stations
-        CBModelUpdater.sharedInstance.forceUpdate()
+        ModelUpdater.sharedInstance.forceUpdate()
     }
     
     private func refreshContent(networksToDisplay: [CDNetwork]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.orderedNetworks = CBNetworksSort.orderNetworks(networksToDisplay)
+            self.orderedNetworks = NetworksSort.orderNetworks(networksToDisplay)
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
@@ -179,7 +179,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filteredNetworks = CBFilterNetworks.filteredNetworks(self.orderedNetworks, phrase: searchText)
+        self.filteredNetworks = FilterNetworks.filteredNetworks(self.orderedNetworks, phrase: searchText)
         self.searchDisplayController?.searchResultsTableView.reloadData()
     }
 }

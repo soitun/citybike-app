@@ -1,5 +1,5 @@
 //
-//  CBCoordinateRegionSerializable.swift
+//  CoordinateRegionSerializable.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 22/06/15.
@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class CBCoordinateRegionSerializable: NSObject, NSCoding {
+class CoordinateRegionSerializable: NSObject, NSCoding {
     
     private let kLatitude = "latitude"
     private let kLongitude = "longitude"

@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CBStationAnnotationView">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StationAnnotationView">
             <connections>
                 <outlet property="bikesCircle" destination="RFW-Yg-Cdr" id="eYb-7V-vw8"/>
                 <outlet property="bikesLabel" destination="qVG-Au-z04" id="bYH-ER-mcz"/>

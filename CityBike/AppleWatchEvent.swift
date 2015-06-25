@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CBAppleWatchEvent: String {
+enum AppleWatchEvent: String {
     case InitialConfiguration = "InitialConfiguration"
     case FetchData = "FetchData"
 }

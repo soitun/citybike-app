@@ -1,5 +1,5 @@
 //
-//  CDStationManager.swift
+//  StationManager.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 21/06/15.
@@ -9,10 +9,10 @@
 import Foundation
 import CBModel
 
-class CDStationManager {
+class StationManager {
     
     class func allStationsForSelectedNetworks() -> [CDStation] {
-        let networkIDs = CBUserSettings.sharedInstance().getNetworkIDs()
+        let networkIDs = UserSettings.sharedInstance().getNetworkIDs()
         
         var stations = [CDStation]()
         for networkID in networkIDs {
