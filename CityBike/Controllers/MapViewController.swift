@@ -94,7 +94,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         /// find new stations to show on the map
         for station in stations {
-            station.freeBikes = station.freeBikes.integerValue + 1
             /// refresh annotations
             NSNotificationCenter.defaultCenter().postNotificationName(station.id, object: nil)
 
