@@ -20,13 +20,15 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
     private var selectedNetworkIDs = [String]()
     private var filteredNetworks = [FilteredNetworksGroupProxy]()
     
+    private var selectedIndexPath: NSIndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selectedNetworkIDs = UserSettings.sharedInstance().getNetworkIDs()
+        selectedNetworkIDs = UserSettings.sharedInstance().getNetworkIDs()
         
-        self.tableView.contentOffset = CGPointMake(0, CGRectGetHeight(self.searchBar.frame))
-        self.tableView.tableFooterView = UIView()
+        tableView.contentOffset = CGPointMake(0, CGRectGetHeight(self.searchBar.frame))
+        tableView.tableFooterView = UIView()
         
         for tableView in [self.tableView, self.searchDisplayController!.searchResultsTableView] {
             tableView.registerNib(UINib(nibName: SubtitleCell.Identifier, bundle: nil), forCellReuseIdentifier: SubtitleCell.Identifier)
@@ -34,30 +36,30 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
             tableView.separatorColor = UIColor.concreteColor()
         }
 
-        self.searchBar.barTintColor = UIColor.concreteColor()
+        searchBar.barTintColor = UIColor.concreteColor()
 
-        self.noItemsLabel.text = NSLocalizedString("No City Bike Networks", comment: "")
-        self.noItemsLabel.textColor = UIColor.whiteLilac()
-        self.noItemsLabel.hidden = true
-        self.noItemsIndicator.color = UIColor.whiteLilac()
-        self.noItemsIndicator.stopAnimating()
+        noItemsLabel.text = NSLocalizedString("No City Bike Networks", comment: "")
+        noItemsLabel.textColor = UIColor.whiteLilac()
+        noItemsLabel.hidden = true
+        noItemsIndicator.color = UIColor.whiteLilac()
+        noItemsIndicator.stopAnimating()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didUpdateNetworksNotification:", name: CBSyncManagerNotification.DidUpdateNetworks.rawValue, object: nil)
         
-        self.refresAll()
+        refresAll()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        self.saveSelectedNetworks()
+        saveSelectedNetworks()
     }
     
     @IBAction func backPressed(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     /// MARK: Notifications
@@ -67,7 +69,7 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
     
     private func refresAll() {
         let allNetworks = Network.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [Network]
-        self.refreshContent(allNetworks)
+        refreshContent(allNetworks)
     }
     
     /// MARK: Private
@@ -94,14 +96,14 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
     
     /// MARK: UITableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return tableView == self.tableView ? self.orderedNetworks.count : self.filteredNetworks.count
+        return tableView == self.tableView ? orderedNetworks.count : filteredNetworks.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableView {
-            return self.orderedNetworks[section].networks.count
+            return orderedNetworks[section].networks.count
         } else {
-            return self.filteredNetworks[section].networks.count
+            return filteredNetworks[section].networks.count
         }
     }
     
@@ -110,36 +112,59 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
             let cell = tableView.dequeueReusableCellWithIdentifier(SubtitleCell.Identifier) as! SubtitleCell
             cell.label?.text = name
             cell.detailLabel.text = city
-            cell.accessoryType = (find(self.selectedNetworkIDs, id) != nil) ? .Checkmark : .None
+            
+            if let networkID = find(selectedNetworkIDs, id) {
+                cell.accessoryType = .Checkmark
+                selectedIndexPath = indexPath
+            } else {
+                cell.accessoryType = .None
+            }
+            
             return cell
         }
         
         if tableView == self.tableView {
-            let network = self.orderedNetworks[indexPath.section].networks[indexPath.row]
+            let network = orderedNetworks[indexPath.section].networks[indexPath.row]
             return createCell(network.name, network.location.city, network.id)
         } else {
-            let networkProxy = self.filteredNetworks[indexPath.section].networks[indexPath.row]
+            let networkProxy = filteredNetworks[indexPath.section].networks[indexPath.row]
             return createCell(networkProxy.name, networkProxy.city, networkProxy.id)
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         func update(id: String) {
+            // Disable multi-selection support till map clustering is implemented
+            if let currentlySelectedIndexPath = selectedIndexPath {
+                if let cell = tableView.cellForRowAtIndexPath(currentlySelectedIndexPath) {
+                    cell.accessoryType = .None
+                    selectedNetworkIDs.removeAll(keepCapacity: false)
+                }
+                
+                selectedIndexPath = nil
+
+                if currentlySelectedIndexPath == indexPath {
+                    return
+                }
+            }
+            
             let cell = tableView.cellForRowAtIndexPath(indexPath)!
-            if let idx = find(self.selectedNetworkIDs, id) {
+            if let idx = find(selectedNetworkIDs, id) {
                 cell.accessoryType = .None
-                self.selectedNetworkIDs.removeAtIndex(idx)
+                selectedNetworkIDs.removeAtIndex(idx)
             } else {
+                /// Store selected bike network
                 cell.accessoryType = .Checkmark
-                self.selectedNetworkIDs.append(id)
+                selectedIndexPath = indexPath
+                selectedNetworkIDs.append(id)
             }
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if tableView == self.tableView {
-            update(self.orderedNetworks[indexPath.section].networks[indexPath.row].id)
+            update(orderedNetworks[indexPath.section].networks[indexPath.row].id)
         } else {
-            update(self.filteredNetworks[indexPath.section].networks[indexPath.row].id)
+            update(filteredNetworks[indexPath.section].networks[indexPath.row].id)
         }
     }
     
@@ -154,9 +179,9 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
         }
         
         if tableView == self.tableView {
-            return createHeader(self.orderedNetworks[section].countryName)
+            return createHeader(orderedNetworks[section].countryName)
         } else {
-            return createHeader(self.filteredNetworks[section].countryName)
+            return createHeader(filteredNetworks[section].countryName)
         }
     }
     
@@ -172,14 +197,14 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
     /// MARK: SearchBar
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        let height = CGRectGetHeight(self.searchBar.frame)
-        if self.tableView.contentOffset.y <= height {
-            self.tableView.contentOffset = CGPointMake(0, height)
+        let height = CGRectGetHeight(searchBar.frame)
+        if tableView.contentOffset.y <= height {
+            tableView.contentOffset = CGPointMake(0, height)
         }
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filteredNetworks = FilterNetworks.filteredNetworks(self.orderedNetworks, phrase: searchText)
-        self.searchDisplayController?.searchResultsTableView.reloadData()
+        filteredNetworks = FilterNetworks.filteredNetworks(self.orderedNetworks, phrase: searchText)
+        searchDisplayController?.searchResultsTableView.reloadData()
     }
 }
