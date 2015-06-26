@@ -8,7 +8,7 @@
         <!--Map View Controller-->
         <scene sceneID="3rR-o4-MZF">
             <objects>
-                <viewController storyboardIdentifier="CBMapViewController" id="UZx-M2-Yfd" customClass="CBMapViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="UZx-M2-Yfd" customClass="MapViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xwI-kE-lwr"/>
                         <viewControllerLayoutGuide type="bottom" id="OhG-pJ-PUp"/>
@@ -23,7 +23,7 @@
                                     <outlet property="delegate" destination="UZx-M2-Yfd" id="pCd-R2-YA2"/>
                                 </connections>
                             </mapView>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Sp-jnP" userLabel="stopwatch-popover" customClass="CBSimplePopover" customModule="CityBike" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-Sp-jnP" userLabel="stopwatch-popover" customClass="StopwatchPopover" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="89" y="492" width="96" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -49,14 +49,14 @@
                                     <constraint firstAttribute="trailing" secondItem="KOM-vQ-GWz" secondAttribute="trailing" constant="30" id="Pbc-zB-aD8"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hz9-w6-Zi6" userLabel="map-detail-view" customClass="CBMapDetailView" customModule="CityBike" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hz9-w6-Zi6" userLabel="map-detail-view" customClass="MapDetailView" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="568" width="320" height="75"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="dKp-rP-iqb"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq3-Wp-t1e" userLabel="btn-stopwatch-ready" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq3-Wp-t1e" userLabel="btn-stopwatch-ready" customClass="MapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="117" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-stopwatch-ready">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,7 +65,7 @@
                                     <action selector="stopwatchReadyPressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="bUi-QG-1q1"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDb-k8-KLJ" userLabel="btn-stopwatch-done" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDb-k8-KLJ" userLabel="btn-stopwatch-done" customClass="MapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="117" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-stopwatch-done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,7 +74,7 @@
                                     <action selector="stopwatchDonePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="tAP-LC-XHZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur1-3P-9VE" userLabel="btn-locate-me" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ur1-3P-9VE" userLabel="btn-locate-me" customClass="MapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="164" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-locate-me">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,7 +83,7 @@
                                     <action selector="locateMePressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="A19-Qk-s5Q"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-NR-6z0" userLabel="btn-find" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-NR-6z0" userLabel="btn-find" customClass="MapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="211" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-find">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -92,7 +92,7 @@
                                     <action selector="findPressed:" destination="UZx-M2-Yfd" eventType="touchUpInside" id="zZz-0e-CGv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-km-d5j" userLabel="btn-menu" customClass="CBMapButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-km-d5j" userLabel="btn-menu" customClass="MapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="273" y="523" width="42" height="42"/>
                                 <state key="normal" image="btn-menu">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,7 +150,7 @@
         <!--Menu-->
         <scene sceneID="Ze1-yz-8eQ">
             <objects>
-                <viewController storyboardIdentifier="CBMenuViewController" id="H7y-FH-SKk" customClass="CBMenuViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="H7y-FH-SKk" customClass="MenuViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XJn-0o-LVw"/>
                         <viewControllerLayoutGuide type="bottom" id="7KO-ib-fKU"/>
@@ -202,7 +202,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="3u7-yH-175">
-                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-down" style="plain" id="j8i-Xa-UKd">
+                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-down" style="done" id="j8i-Xa-UKd">
                             <connections>
                                 <action selector="donePressed:" destination="H7y-FH-SKk" id="85S-zm-8KF"/>
                             </connections>
@@ -223,7 +223,7 @@
         <!--City Bike Networks-->
         <scene sceneID="jXr-Ka-v26">
             <objects>
-                <viewController id="cCh-TQ-uMI" customClass="CBMenuBikeNetworksViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cCh-TQ-uMI" customClass="BikeNetworksViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ibi-iy-D9r"/>
                         <viewControllerLayoutGuide type="bottom" id="eld-ZO-sRQ"/>
@@ -244,7 +244,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bRH-Br-3i7">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceholderCell" id="bRH-Br-3i7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bRH-Br-3i7" id="PEB-X5-HL1">
@@ -282,7 +282,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="City Bike Networks" id="Vuv-KB-fsF">
-                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-left" style="plain" id="fgl-8J-uZl">
+                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-left" style="done" id="fgl-8J-uZl">
                             <connections>
                                 <action selector="backPressed:" destination="cCh-TQ-uMI" id="tma-Wg-Blb"/>
                             </connections>
@@ -312,7 +312,7 @@
         <!--Getting Started View Controller-->
         <scene sceneID="krz-CV-DJU">
             <objects>
-                <viewController storyboardIdentifier="CBGettingStartedViewController" id="rhP-tg-att" customClass="CBGettingStartedViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GettingStartedViewController" id="rhP-tg-att" customClass="GettingStartedViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rjl-0r-LT1"/>
                         <viewControllerLayoutGuide type="bottom" id="Tnk-te-Rbm"/>
@@ -351,7 +351,7 @@
                                     <constraint firstItem="43b-uK-b1i" firstAttribute="leading" secondItem="q6n-JW-DUf" secondAttribute="leading" id="uVk-pP-Oex"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-W0-tBf" userLabel="paging-thanks-button" customClass="CBButton" customModule="CityBike" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTI-W0-tBf" userLabel="paging-thanks-button" customClass="CustomButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="10" y="485" width="300" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="QPT-Y3-y1f"/>
@@ -415,7 +415,7 @@
         <!--Getting Started Map View Controller-->
         <scene sceneID="T3A-16-8jC">
             <objects>
-                <viewController storyboardIdentifier="CBGettingStartedMapViewController" id="pGq-6h-Fbu" customClass="CBGettingStartedMapViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GettingStartedMapViewController" id="pGq-6h-Fbu" customClass="GettingStartedMapViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iXj-rE-HSV"/>
                         <viewControllerLayoutGuide type="bottom" id="pRq-wE-mm1"/>
@@ -430,7 +430,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-big" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-6n-yGM" userLabel="map-big">
                                 <rect key="frame" x="0.0" y="28" width="320" height="326"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of free bikes in station" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-0M-pqF" userLabel="free-bikes-label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of free bikes in station" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-0M-pqF" userLabel="free-bikes-label">
                                 <rect key="frame" x="69" y="186" width="182" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -507,7 +507,7 @@
         <!--Getting Started Networks View Controller-->
         <scene sceneID="ZyF-0E-uK7">
             <objects>
-                <viewController storyboardIdentifier="CBGettingStartedNetworksViewController" id="1zF-1C-dD7" customClass="CBGettingStartedNetworksViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GettingStartedNetworksViewController" id="1zF-1C-dD7" customClass="GettingStartedNetworksViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="amg-WD-EpS"/>
                         <viewControllerLayoutGuide type="bottom" id="9S7-R3-ODD"/>
@@ -556,7 +556,7 @@
         <!--Getting Started Stopwatch View Controller-->
         <scene sceneID="Ljg-ak-lub">
             <objects>
-                <viewController storyboardIdentifier="CBGettingStartedStopwatchViewController" id="iLQ-GP-2hL" customClass="CBGettingStartedStopwatchViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GettingStartedStopwatchViewController" id="iLQ-GP-2hL" customClass="GettingStartedStopwatchViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="svM-WL-119"/>
                         <viewControllerLayoutGuide type="bottom" id="Osz-pR-VRW"/>
@@ -607,7 +607,7 @@ You can check your rides history in menu.</string>
         <!--Rides History-->
         <scene sceneID="aKn-Ve-lY1">
             <objects>
-                <viewController id="j2V-SR-b3r" customClass="CBMenuRidesHistoryViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j2V-SR-b3r" customClass="RidesHistoryViewController" customModule="CityBike" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sZ3-yf-Qro"/>
                         <viewControllerLayoutGuide type="bottom" id="hN7-oN-vNA"/>
@@ -620,7 +620,7 @@ You can check your rides history in menu.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5Fa-ae-AFg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceholderCell" id="5Fa-ae-AFg">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fa-ae-AFg" id="Yk3-AB-APd">
@@ -653,7 +653,7 @@ You can check your rides history in menu.</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rides History" id="Fpx-3H-AOD">
-                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-left" style="plain" id="r2x-ej-YUO">
+                        <barButtonItem key="leftBarButtonItem" image="btn-arrow-left" style="done" id="r2x-ej-YUO">
                             <connections>
                                 <action selector="backPressed:" destination="j2V-SR-b3r" id="tF2-ea-kfh"/>
                             </connections>
@@ -675,7 +675,7 @@ You can check your rides history in menu.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UJw-Ga-rRK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="8FY-9c-dYV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yVf-Ju-TA4" customClass="CBNavigationBar" customModule="CityBike" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yVf-Ju-TA4" customClass="CustomNavigationBar" customModule="CityBike" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

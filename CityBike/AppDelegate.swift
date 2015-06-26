@@ -75,9 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var rootVC: UIViewController!
         if UserSettings.sharedInstance().getDisplayedGettingStarted() {
-            rootVC = storyboard.instantiateViewControllerWithIdentifier("CBMapViewController") as! CBMapViewController
+            rootVC = storyboard.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
         } else {
-            rootVC = storyboard.instantiateViewControllerWithIdentifier("CBGettingStartedViewController") as! UIViewController
+            rootVC = storyboard.instantiateViewControllerWithIdentifier("GettingStartedViewController") as! UIViewController
         }
         
         self.window!.rootViewController = rootVC

@@ -8,11 +8,11 @@
         <!--Bikes-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="CBStationsListInterfaceController" title="Bikes" spacing="6" id="AgC-eL-Hgc" customClass="CBStationsListInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                <controller identifier="StationsListInterfaceController" title="Bikes" spacing="6" id="AgC-eL-Hgc" customClass="StationsListInterfaceController" customModule="City_Bike_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="xxi-L1-DMD">
                             <items>
-                                <tableRow identifier="CBStationTableRowController" id="7gx-WD-uGn" customClass="CBStationTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="StationTableRowController" id="7gx-WD-uGn" customClass="StationTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="46" alignment="left" layout="vertical" id="xOH-45-3LW" userLabel="content-view">
                                         <items>
                                             <group width="1" height="24" alignment="left" id="xhd-v7-VCQ" userLabel="first-line">
@@ -54,7 +54,7 @@
                                         <outlet property="stationNameLabel" destination="SR8-Q2-njj" id="Uzh-zv-7kM"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="CBUpdateTableRowController" id="arb-RD-KyW" userLabel="CBUpdateTableRowController" customClass="CBUpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="UpdateTableRowController" id="arb-RD-KyW" userLabel="UpdateTableRowController" customClass="UpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="32" alignment="left" layout="vertical" spacing="0.0" id="CWL-W1-Q9E" userLabel="content-view">
                                         <items>
                                             <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
@@ -74,7 +74,7 @@
                                         <outlet property="titleLabel" destination="21X-6e-k47" id="DR1-Kb-Q3f"/>
                                     </connections>
                                 </tableRow>
-                                <tableRow identifier="CBMessageTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="CBMessageTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                <tableRow identifier="MessageTableRowController" selectable="NO" id="lY9-Id-XRX" customClass="MessageTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="AoY-Xw-LEg" userLabel="content-view">
                                         <items>
                                             <group alignment="left" spacing="2" id="4pF-cH-Njd" userLabel="top-line">
@@ -111,17 +111,17 @@
             </objects>
             <point key="canvasLocation" x="247" y="476"/>
         </scene>
-        <!--CBMainInterfaceController-->
+        <!--MainInterfaceController-->
         <scene sceneID="roC-v3-BoS">
             <objects>
-                <controller identifier="CBMainInterfaceController" id="Uiw-Dl-Vp4" customClass="CBMainInterfaceController" customModule="City_Bike_WatchKit_Extension"/>
+                <controller identifier="MainInterfaceController" id="Uiw-Dl-Vp4" customClass="MainInterfaceController" customModule="City_Bike_WatchKit_Extension"/>
             </objects>
             <point key="canvasLocation" x="76" y="476"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="wdU-mh-6zG">
             <objects>
-                <controller identifier="CBStopwatchInterfaceController" title="Stopwatch" id="2KQ-60-rdq" customClass="CBStopwatchInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                <controller identifier="StopwatchInterfaceController" title="Stopwatch" id="2KQ-60-rdq" customClass="StopwatchInterfaceController" customModule="City_Bike_WatchKit_Extension">
                     <items>
                         <group width="1" height="100" alignment="center" verticalAlignment="center" id="z2J-PG-evH">
                             <items>
@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="431" y="476"/>
         </scene>
-        <!--CBStationOnMapInterfaceController-->
+        <!--StationOnMapInterfaceController-->
         <scene sceneID="Snj-Au-HH9">
             <objects>
-                <controller identifier="CBStationOnMapInterfaceController" id="t6y-U9-qQS" customClass="CBStationOnMapInterfaceController" customModule="City_Bike_WatchKit_Extension">
+                <controller identifier="StationOnMapInterfaceController" id="t6y-U9-qQS" customClass="StationOnMapInterfaceController" customModule="City_Bike_WatchKit_Extension">
                     <items>
                         <map alignment="left" id="Fao-xk-QdM"/>
                     </items>
