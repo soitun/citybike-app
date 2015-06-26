@@ -309,11 +309,11 @@
 		6D0EBE4B1B2033FB003ED872 = {
 			isa = PBXGroup;
 			children = (
-				6D0EBE561B2033FB003ED872 /* CityBike */,
-				6D5BA0B91B359C5B005C72CC /* Externals */,
-				6D80630B1B31BF0900E2F7FF /* Model */,
+				6D0EBE561B2033FB003ED872 /* City Bike */,
+				6D80630B1B31BF0900E2F7FF /* City Bike Model */,
 				6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */,
 				6D8DC0BA1B369DDD00B80C63 /* City Bike WatchKit App */,
+				6D5BA0B91B359C5B005C72CC /* External APIs */,
 				6D0EBE551B2033FB003ED872 /* Products */,
 				1AA46FD4589E04156EFD982A /* Pods */,
 				A8775754B7360485054AA7FD /* Frameworks */,
@@ -331,7 +331,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D0EBE561B2033FB003ED872 /* CityBike */ = {
+		6D0EBE561B2033FB003ED872 /* City Bike */ = {
 			isa = PBXGroup;
 			children = (
 				6D630EF41B36CB380002FF3C /* CityBike.entitlements */,
@@ -342,6 +342,7 @@
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
 				6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */,
 			);
+			name = "City Bike";
 			path = CityBike;
 			sourceTree = "<group>";
 		};
@@ -442,12 +443,12 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
-		6D5BA0B91B359C5B005C72CC /* Externals */ = {
+		6D5BA0B91B359C5B005C72CC /* External APIs */ = {
 			isa = PBXGroup;
 			children = (
 				6DBA51121B2B8454002ECC3F /* citybik.es-api */,
 			);
-			name = Externals;
+			name = "External APIs";
 			sourceTree = "<group>";
 		};
 		6D5BA0BA1B359CF0005C72CC /* Feedback */ = {
@@ -466,7 +467,7 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		6D80630B1B31BF0900E2F7FF /* Model */ = {
+		6D80630B1B31BF0900E2F7FF /* City Bike Model */ = {
 			isa = PBXGroup;
 			children = (
 				6DDE24641B3DC3A60094E31F /* Model.h */,
@@ -480,6 +481,7 @@
 				6D6DB5221B31DA9200342179 /* Extensions */,
 				6D80630C1B31BF0900E2F7FF /* Supporting Files */,
 			);
+			name = "City Bike Model";
 			path = Model;
 			sourceTree = "<group>";
 		};
