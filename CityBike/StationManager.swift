@@ -7,16 +7,16 @@
 //
 
 import Foundation
-import CBModel
+import Model
 
 class StationManager {
     
-    class func allStationsForSelectedNetworks() -> [CDStation] {
+    class func allStationsForSelectedNetworks() -> [Station] {
         let networkIDs = UserSettings.sharedInstance().getNetworkIDs()
         
-        var stations = [CDStation]()
+        var stations = [Station]()
         for networkID in networkIDs {
-            stations += CDStation.fetchWithAttribute("network.id", value: networkID, context: CoreDataStack.sharedInstance().mainContext) as! [CDStation]
+            stations += Station.fetchWithAttribute("network.id", value: networkID, context: CoreDataStack.sharedInstance().mainContext) as! [Station]
         }
         
         return stations

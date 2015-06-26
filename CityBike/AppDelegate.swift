@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CBModel
+import Model
 import CoreLocation
 
 @UIApplicationMain

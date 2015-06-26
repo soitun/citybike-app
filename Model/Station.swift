@@ -1,5 +1,5 @@
 //
-//  CDStation.swift
+//  Station.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 14/06/15.
@@ -10,15 +10,15 @@ import Foundation
 
 public typealias StationID = String
 
-@objc(CDStation)
-public class CDStation: NSManagedObject {
+@objc(Station)
+public class Station: NSManagedObject {
 
     @NSManaged public var freeBikes: NSNumber
     @NSManaged public var emptySlots: NSNumber
     @NSManaged public var id: StationID
     @NSManaged public var name: String
     @NSManaged public var timestamp: NSDate
-    @NSManaged public var network: CDNetwork
+    @NSManaged public var network: Network
 
     @NSManaged private var latitudeValue: NSNumber
     @NSManaged private var longitudeValue: NSNumber

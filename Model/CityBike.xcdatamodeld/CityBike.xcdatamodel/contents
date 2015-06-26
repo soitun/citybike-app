@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="CDLocation" representedClassName="CDLocation" syncable="YES">
+    <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitudeValue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitudeValue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="network" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDNetwork" inverseName="location" inverseEntity="CDNetwork" syncable="YES"/>
+        <relationship name="network" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Network" inverseName="location" inverseEntity="Network" syncable="YES"/>
     </entity>
-    <entity name="CDNetwork" representedClassName="CDNetwork" syncable="YES">
+    <entity name="Network" representedClassName="Network" syncable="YES">
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="network" inverseEntity="CDLocation" syncable="YES"/>
-        <relationship name="stations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDStation" inverseName="network" inverseEntity="CDStation" syncable="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="network" inverseEntity="Location" syncable="YES"/>
+        <relationship name="stations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Station" inverseName="network" inverseEntity="Station" syncable="YES"/>
     </entity>
-    <entity name="CDRideHistoryDay" representedClassName="CDRideHistoryDay" syncable="YES">
+    <entity name="RideHistoryDay" representedClassName="RideHistoryDay" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDRideHistoryEntry" inverseName="day" inverseEntity="CDRideHistoryEntry" syncable="YES"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RideHistoryEntry" inverseName="day" inverseEntity="RideHistoryEntry" syncable="YES"/>
     </entity>
-    <entity name="CDRideHistoryEntry" representedClassName="CDRideHistoryEntry" syncable="YES">
+    <entity name="RideHistoryEntry" representedClassName="RideHistoryEntry" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDRideHistoryDay" inverseName="entries" inverseEntity="CDRideHistoryDay" syncable="YES"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RideHistoryDay" inverseName="entries" inverseEntity="RideHistoryDay" syncable="YES"/>
     </entity>
-    <entity name="CDStation" representedClassName="CDStation" syncable="YES">
+    <entity name="Station" representedClassName="Station" syncable="YES">
         <attribute name="emptySlots" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="freeBikes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,13 +31,13 @@
         <attribute name="longitudeValue" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="network" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDNetwork" inverseName="stations" inverseEntity="CDNetwork" syncable="YES"/>
+        <relationship name="network" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Network" inverseName="stations" inverseEntity="Network" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDLocation" positionX="-45" positionY="72" width="128" height="120"/>
-        <element name="CDNetwork" positionX="-63" positionY="18" width="128" height="120"/>
-        <element name="CDRideHistoryDay" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="CDRideHistoryEntry" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="CDStation" positionX="-54" positionY="36" width="128" height="165"/>
+        <element name="Location" positionX="-45" positionY="72" width="128" height="120"/>
+        <element name="Network" positionX="-63" positionY="18" width="128" height="120"/>
+        <element name="RideHistoryDay" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="RideHistoryEntry" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Station" positionX="-54" positionY="36" width="128" height="165"/>
     </elements>
 </model>

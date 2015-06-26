@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import CBModel
+import Model
 
 class OrderedNetworksGroup {
     var countryCode: CountryCode
-    var networks: [CDNetwork]
+    var networks: [Network]
     
-    init(countryCode: String, networks: [CDNetwork]) {
+    init(countryCode: String, networks: [Network]) {
         self.countryCode = countryCode
         self.networks = networks
     }
@@ -25,7 +25,7 @@ class OrderedNetworksGroup {
 }
 
 class NetworksSort {
-    class func orderNetworks(networks: [CDNetwork]) -> [OrderedNetworksGroup] {
+    class func orderNetworks(networks: [Network]) -> [OrderedNetworksGroup] {
         /// Store networks groupped by country code
         var orderedGroups = [OrderedNetworksGroup]()
         

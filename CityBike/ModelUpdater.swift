@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-import CBModel
+import Model
 
 class ModelUpdater: CBUpdaterProtocol {
     
@@ -50,10 +50,10 @@ class ModelUpdater: CBUpdaterProtocol {
             let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
             
             for updatedNetwork in updatedNetworks {
-                var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? CDNetwork
+                var network: Network? = Network.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? Network
                 if network == nil {
-                    network = CDNetwork(context: ctx)
-                    network!.location = CDLocation(context: ctx)
+                    network = Network(context: ctx)
+                    network!.location = Location(context: ctx)
                 }
                 
                 network!.fill(updatedNetwork)
@@ -74,10 +74,10 @@ class ModelUpdater: CBUpdaterProtocol {
             let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
             
             for updatedNetwork in updatedNetworks {
-                var network: CDNetwork? = CDNetwork.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? CDNetwork
+                var network: Network? = Network.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? Network
                 if network == nil {
-                    network = CDNetwork(context: ctx)
-                    network!.location = CDLocation(context: ctx)
+                    network = Network(context: ctx)
+                    network!.location = Location(context: ctx)
                 }
                 
                 network!.fill(updatedNetwork)
@@ -85,11 +85,11 @@ class ModelUpdater: CBUpdaterProtocol {
                 
                 /// stations
                 for updatedStation in updatedNetwork.stations {
-                    if let station: CDStation = CDStation.fetchWithAttribute("id", value: updatedStation.id, context: ctx).first as? CDStation {
+                    if let station: Station = Station.fetchWithAttribute("id", value: updatedStation.id, context: ctx).first as? Station {
                         station.fill(updatedStation)
                         
                     } else {
-                        let station: CDStation = CDStation(context: ctx)
+                        let station: Station = Station(context: ctx)
                         station.fill(updatedStation)
                         network!.addStation(station)
                     }
@@ -104,7 +104,7 @@ class ModelUpdater: CBUpdaterProtocol {
     }
 }
 
-private extension CDNetwork {
+private extension Network {
     func fill(updatedNetwork: CBNetwork) {
         company = updatedNetwork.company ?? ""
         id = updatedNetwork.id
@@ -112,7 +112,7 @@ private extension CDNetwork {
     }
 }
 
-private extension CDStation {
+private extension Station {
     func fill(updatedStation: CBStation) {
         freeBikes = updatedStation.freeBikes
         emptySlots = updatedStation.emptySlots
@@ -123,7 +123,7 @@ private extension CDStation {
     }
 }
 
-private extension CDLocation {
+private extension Location {
     func fill(updatedLocation: CBLocation) {
         city = updatedLocation.city
         country = updatedLocation.country

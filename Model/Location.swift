@@ -1,5 +1,5 @@
 //
-//  CDLocation.swift
+//  Location.swift
 //  CityBike
 //
 //  Created by Tomasz Szulc on 14/06/15.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-@objc(CDLocation)
-public class CDLocation: NSManagedObject {
+@objc(Location)
+public class Location: NSManagedObject {
 
     @NSManaged public var city: String
     @NSManaged public var country: String
-    @NSManaged public var network: CDNetwork
+    @NSManaged public var network: Network
     
     @NSManaged private var latitudeValue: NSNumber
     @NSManaged private var longitudeValue: NSNumber

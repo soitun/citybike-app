@@ -8,13 +8,13 @@
 
 import Foundation
 import MapKit
-import CBModel
+import Model
 
 class StationAnnotation: NSObject, Stationable, MKAnnotation {
-    var station: CDStation
+    var station: Station
     var coordinate: CLLocationCoordinate2D { return station.coordinate }
 
-    init(station: CDStation) {
+    init(station: Station) {
         self.title = nil
         self.subtitle = nil
         

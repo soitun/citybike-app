@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import CBModel
+import Model
 
 class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
     
@@ -226,7 +226,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     private func updateMapDetailView(stationID: StationID?) {
         if stationID == nil { return }
         
-        let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
+        let station = Station.fetchWithAttribute("id", value: stationID!, context: CoreDataStack.sharedInstance().mainContext).first as! Station
         selectedStation = station.id
         
         let detailText = "\(station.network.location.city), \(station.network.location.country)"

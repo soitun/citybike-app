@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import CBModel
+import Model
 
 class StationAnnotationView: ObservingAnnotationView {
 
@@ -25,7 +25,7 @@ class StationAnnotationView: ObservingAnnotationView {
         configure(annotation.station)
     }
     
-    func configure(station: CDStation) {
+    func configure(station: Station) {
         var bikes = station.freeBikes.integerValue
         var slots = station.emptySlots.integerValue
         bikesCircle.tintColor = UIColor.colorForValue(bikes, min: 0, max: bikes + slots)
@@ -39,7 +39,7 @@ class StationAnnotationView: ObservingAnnotationView {
     }
     
     override func notificationReceived(notification: NSNotification) {
-        theAnnotation.station = CDStation.fetchWithAttribute("id", value: theAnnotation.station.id, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
+        theAnnotation.station = Station.fetchWithAttribute("id", value: theAnnotation.station.id, context: CoreDataStack.sharedInstance().mainContext).first as! Station
         configure(theAnnotation.station)
     }
 

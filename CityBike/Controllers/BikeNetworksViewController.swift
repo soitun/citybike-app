@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CBModel
+import Model
 
 class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
@@ -66,7 +66,7 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     private func refresAll() {
-        let allNetworks = CDNetwork.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDNetwork]
+        let allNetworks = Network.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [Network]
         self.refreshContent(allNetworks)
     }
     
@@ -77,7 +77,7 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
         ModelUpdater.sharedInstance.forceUpdate()
     }
     
-    private func refreshContent(networksToDisplay: [CDNetwork]) {
+    private func refreshContent(networksToDisplay: [Network]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             self.orderedNetworks = NetworksSort.orderNetworks(networksToDisplay)
             

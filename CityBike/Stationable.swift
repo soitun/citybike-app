@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import CBModel
+import Model
 
 protocol Stationable: class {
-    var station: CDStation {get set}
+    var station: Station {get set}
 }

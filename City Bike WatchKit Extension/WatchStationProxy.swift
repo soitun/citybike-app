@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import CBModel
+import Model
 
 class WatchStationProxy {
-    private let station: CDStation
+    private let station: Station
     var distanceToUser: CLLocationDistance?
     
     var freeBikes: Int { return station.freeBikes.integerValue }
@@ -20,7 +20,7 @@ class WatchStationProxy {
     var updateTimestamp: NSDate { return station.timestamp }
     var coordinate: CLLocationCoordinate2D { return station.coordinate }
     
-    init(station: CDStation) {
+    init(station: Station) {
         self.station = station
     }
 }

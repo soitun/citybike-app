@@ -27,12 +27,11 @@ class StopwatchInterfaceController: WKInterfaceController {
         refreshButtonState()
         
         WormholeNotificationSystem.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
-            self.start(UserSettings.sharedInstance().getStartRideDate()!)
+            dispatch_async(dispatch_get_main_queue()) { self.start(UserSettings.sharedInstance().getStartRideDate()!) }
         })
         
         WormholeNotificationSystem.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
-            /// should be on the main thread.
-            self.stop()
+            dispatch_async(dispatch_get_main_queue()) { self.stop() }
         })
     }
     

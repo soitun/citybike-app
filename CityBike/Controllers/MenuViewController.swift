@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CBModel
+import Model
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -52,7 +52,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc private func refreshProvidedBy() {
-        let networksCount = CDNetwork.fetchAll(CoreDataStack.sharedInstance().mainContext).count
+        let networksCount = Network.fetchAll(CoreDataStack.sharedInstance().mainContext).count
         if networksCount == 0 {
             self.providedByLabel.text = NSLocalizedString("Provided by", comment: "")
         

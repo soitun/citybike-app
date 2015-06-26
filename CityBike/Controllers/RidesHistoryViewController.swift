@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import CBModel
+import Model
 
 class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var noItemsLabel: UILabel!
     
-    private var history = [CDRideHistoryDay]()
+    private var history = [RideHistoryDay]()
     private var dateFormatter = NSDateFormatter()
     private var dateTimeFormatter = NSDateFormatter()
     
@@ -40,7 +40,7 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.history = CDRideHistoryDay.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [CDRideHistoryDay]
+        self.history = RideHistoryDay.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [RideHistoryDay]
         self.tableView.reloadData()
         
         self.noItemsLabel.hidden = self.history.count > 0
@@ -67,7 +67,7 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
         
         var sum: NSTimeInterval = 0
         for entry in day.entries {
-            sum += (entry as! CDRideHistoryEntry).duration.doubleValue
+            sum += (entry as! RideHistoryEntry).duration.doubleValue
         }
         
         header.detailLabel.text = sum.stringTimeRepresentationStyle1
@@ -79,7 +79,7 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let entry = self.history[indexPath.section].entries[indexPath.row] as! CDRideHistoryEntry
+        let entry = self.history[indexPath.section].entries[indexPath.row] as! RideHistoryEntry
         
         let cell = tableView.dequeueReusableCellWithIdentifier(SubtitleCell.Identifier) as! SubtitleCell
         cell.label?.text = entry.duration.doubleValue.stringTimeRepresentationStyle1

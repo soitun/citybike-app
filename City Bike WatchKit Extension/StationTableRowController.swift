@@ -8,7 +8,7 @@
 
 import Foundation
 import WatchKit
-import CBModel
+import Model
 
 class StationTableRowController: NSObject {
     @IBOutlet weak var freeBikesCircleImage: WKInterfaceImage!

@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D8063091B31BF0900E2F7FF"
-               BuildableName = "CBModel.framework"
-               BlueprintName = "CBModel"
+               BuildableName = "Model.framework"
+               BlueprintName = "Model"
                ReferencedContainer = "container:CityBike.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D8063091B31BF0900E2F7FF"
-            BuildableName = "CBModel.framework"
-            BlueprintName = "CBModel"
+            BuildableName = "Model.framework"
+            BlueprintName = "Model"
             ReferencedContainer = "container:CityBike.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D8063091B31BF0900E2F7FF"
-            BuildableName = "CBModel.framework"
-            BlueprintName = "CBModel"
+            BuildableName = "Model.framework"
+            BlueprintName = "Model"
             ReferencedContainer = "container:CityBike.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

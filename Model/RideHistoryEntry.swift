@@ -8,10 +8,10 @@
 
 import Foundation
 
-@objc(CDRideHistoryEntry)
-public class CDRideHistoryEntry: NSManagedObject {
+@objc(RideHistoryEntry)
+public class RideHistoryEntry: NSManagedObject {
 
     @NSManaged public var duration: NSNumber
     @NSManaged public var date: NSDate
-    @NSManaged public var day: CDRideHistoryDay
+    @NSManaged public var day: RideHistoryDay
 }

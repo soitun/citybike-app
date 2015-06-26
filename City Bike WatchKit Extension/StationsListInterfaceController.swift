@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-import CBModel
+import Model
 import CoreLocation
 
 private enum RowType: String {
@@ -93,7 +93,7 @@ class StationsListInterfaceController: WKInterfaceController {
             reloadWithWarning(.CannotObtainUserLocation)
 
         } else {
-            var stations = StationManager.allStationsForSelectedNetworks() as [CDStation]
+            var stations = StationManager.allStationsForSelectedNetworks() as [Station]
             if stations.count == 0 {
                 reloadWithWarning(.NoStations)
                 
@@ -109,7 +109,7 @@ class StationsListInterfaceController: WKInterfaceController {
         row.configure(warning)
     }
 
-    private func reloadTableWithStations(stations: [CDStation], userLocation: CLLocation) {
+    private func reloadTableWithStations(stations: [Station], userLocation: CLLocation) {
         proxies = createStationProxiesFromStations(stations, userLocation: userLocation)
         sortProxies(&proxies)
         
@@ -164,7 +164,7 @@ class StationsListInterfaceController: WKInterfaceController {
         }
     }
     
-    private func createStationProxiesFromStations(stations: [CDStation], userLocation: CLLocation) -> [WatchStationProxy] {
+    private func createStationProxiesFromStations(stations: [Station], userLocation: CLLocation) -> [WatchStationProxy] {
         var stationProxies = [WatchStationProxy]()
         
         for station in stations {

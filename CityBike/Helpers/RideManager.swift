@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CBModel
+import Model
 
 class RideManager {
     
@@ -37,15 +37,15 @@ class RideManager {
         let startDayAtMidnight = NSCalendar.autoupdatingCurrentCalendar().dateFromComponents(components)!
         
         /// Create entry for this ride session
-        let entry: CDRideHistoryEntry = CDRideHistoryEntry(context:CoreDataStack.sharedInstance().mainContext)
+        let entry: RideHistoryEntry = RideHistoryEntry(context:CoreDataStack.sharedInstance().mainContext)
         entry.date = self.stopwatch.startDate
         entry.duration = duration
         
         /// Check if there is day which can store this entry, if not crreate one
-        if let day = CDRideHistoryDay.fetchWithAttribute("date", value: startDayAtMidnight, context: CoreDataStack.sharedInstance().mainContext).first as? CDRideHistoryDay {
+        if let day = RideHistoryDay.fetchWithAttribute("date", value: startDayAtMidnight, context: CoreDataStack.sharedInstance().mainContext).first as? RideHistoryDay {
             day.addEntry(entry)
         } else {
-            var day: CDRideHistoryDay = CDRideHistoryDay(context: CoreDataStack.sharedInstance().mainContext)
+            var day: RideHistoryDay = RideHistoryDay(context: CoreDataStack.sharedInstance().mainContext)
             day.date = startDayAtMidnight
             day.addEntry(entry)
         }
