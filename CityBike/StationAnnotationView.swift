@@ -10,37 +10,60 @@ import UIKit
 import MapKit
 import Model
 
-class StationAnnotationView: ObservingAnnotationView {
+class StationAnnotationView: MKAnnotationView {
 
     @IBOutlet private var bikesCircle: UIImageView!
     @IBOutlet private var bikesLabel: UILabel!
     @IBOutlet private var customView: UIView!
 
     private var previousFreeBikes = 0
+    var stationProxy: StationProxy!
 
-    
-    override init(annotation: Stationable, reuseIdentifier: String!) {
+    override init!(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        self.stationProxy = (annotation as! StationAnnotation).stationProxy
         configureUI()
-        configure(annotation.station)
+        configure(stationProxy)
+        observe()
     }
     
-    func configure(station: Station) {
-        var bikes = station.freeBikes.integerValue
-        var slots = station.emptySlots.integerValue
-        bikesCircle.tintColor = UIColor.colorForValue(bikes, min: 0, max: bikes + slots)
+    
+    private func observe() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("notificationReceived:"), name: stationProxy.id, object: nil)
+    }
+    
+    private func finishObserving() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    deinit {
+        finishObserving()
+    }
+
+    
+    func configure(proxy: StationProxy) {
+        bikesCircle.tintColor = UIColor.colorForValue(proxy.freeBikes, min: 0, max: proxy.totalSlots)
+        bikesLabel.text = "\(proxy.freeBikes)/\(proxy.totalSlots)"
         
-        bikesLabel.text = "\(bikes)/\(bikes + slots)"
-        
-        if previousFreeBikes != bikes {
-            previousFreeBikes = bikes
+        if previousFreeBikes != proxy.freeBikes {
+            previousFreeBikes = proxy.freeBikes
             bikesCircle.bounce(0.1)
         }
     }
     
-    override func notificationReceived(notification: NSNotification) {
-        theAnnotation.station = Station.fetchWithAttribute("id", value: theAnnotation.station.id, context: CoreDataStack.sharedInstance().mainContext).first as! Station
-        configure(theAnnotation.station)
+    func notificationReceived(notification: NSNotification) {
+        if self.annotation == nil {
+//            println("Cannot update!")
+            finishObserving()
+            return
+        }
+        
+        if let station = Station.fetchWithAttribute("id", value: stationProxy.id, context: CoreDataStack.sharedInstance().mainContext).first as? Station {
+            let proxy = StationProxy(station: station)
+            (self.annotation as! StationAnnotation).stationProxy = proxy
+            configure(proxy)
+//            println("update! \(self)")
+        }
     }
 
     // MARK: Private

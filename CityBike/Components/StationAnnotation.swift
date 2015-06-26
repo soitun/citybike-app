@@ -10,17 +10,17 @@ import Foundation
 import MapKit
 import Model
 
-class StationAnnotation: NSObject, Stationable, MKAnnotation {
-    var station: Station
-    var coordinate: CLLocationCoordinate2D { return station.coordinate }
+class StationAnnotation: NSObject, MKAnnotation {
 
-    init(station: Station) {
+    var stationProxy: StationProxy
+    var coordinate: CLLocationCoordinate2D { return stationProxy.coordinate }
+
+    init(stationProxy: StationProxy) {
         self.title = nil
         self.subtitle = nil
         
-        self.station = station
+        self.stationProxy = stationProxy
     }
-    
     
     
     /// Hide these properties, I don't need them.

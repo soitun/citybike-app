@@ -40,6 +40,7 @@
 		6D6801A11B28E8E2009DE824 /* DefaultHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019C1B28E8E2009DE824 /* DefaultHeader.xib */; };
 		6D6801A31B28E8E2009DE824 /* RightDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019E1B28E8E2009DE824 /* RightDetailHeader.xib */; };
 		6D6DB5291B31DD6B00342179 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DB5281B31DD6B00342179 /* NSManagedObject+Extension.swift */; };
+		6D7955A21B3DE27800CAA7DF /* StationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7955A11B3DE27800CAA7DF /* StationProxy.swift */; };
 		6D8063211B31BF0A00E2F7FF /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* Model.framework */; };
 		6D8063221B31BF0A00E2F7FF /* Model.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D80630A1B31BF0900E2F7FF /* Model.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6D87CE301B39DA3E0089D894 /* WatchStationProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D87CE2F1B39DA3E0089D894 /* WatchStationProxy.swift */; };
@@ -51,8 +52,6 @@
 		6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6D8DC0CF1B36A5FB00B80C63 /* StationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0CE1B36A5FB00B80C63 /* StationTableRowController.swift */; };
 		6D8DC0D11B36B1B500B80C63 /* UpdateTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0D01B36B1B500B80C63 /* UpdateTableRowController.swift */; };
-		6D95DCDD1B3C7F5A003A8974 /* ObservingAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCDC1B3C7F5A003A8974 /* ObservingAnnotationView.swift */; };
-		6D95DCDF1B3C83DE003A8974 /* Stationable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCDE1B3C83DE003A8974 /* Stationable.swift */; };
 		6D95DCE11B3C8555003A8974 /* WormholeNotificationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */; };
 		6D95DCE21B3C855E003A8974 /* WormholeNotificationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */; };
 		6D9EFA321B386A6000A96BE9 /* CoordinateRegionSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EFA311B386A6000A96BE9 /* CoordinateRegionSerializable.swift */; };
@@ -202,6 +201,7 @@
 		6D68019C1B28E8E2009DE824 /* DefaultHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultHeader.xib; path = Resources/DefaultHeader.xib; sourceTree = "<group>"; };
 		6D68019E1B28E8E2009DE824 /* RightDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RightDetailHeader.xib; path = Resources/RightDetailHeader.xib; sourceTree = "<group>"; };
 		6D6DB5281B31DD6B00342179 /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		6D7955A11B3DE27800CAA7DF /* StationProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationProxy.swift; sourceTree = "<group>"; };
 		6D80630A1B31BF0900E2F7FF /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D80630D1B31BF0900E2F7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D87CE2F1B39DA3E0089D894 /* WatchStationProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchStationProxy.swift; sourceTree = "<group>"; };
@@ -215,8 +215,6 @@
 		6D8DC0C01B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D8DC0CE1B36A5FB00B80C63 /* StationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableRowController.swift; sourceTree = "<group>"; };
 		6D8DC0D01B36B1B500B80C63 /* UpdateTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableRowController.swift; sourceTree = "<group>"; };
-		6D95DCDC1B3C7F5A003A8974 /* ObservingAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservingAnnotationView.swift; sourceTree = "<group>"; };
-		6D95DCDE1B3C83DE003A8974 /* Stationable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stationable.swift; sourceTree = "<group>"; };
 		6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WormholeNotificationSystem.swift; sourceTree = "<group>"; };
 		6D9EFA311B386A6000A96BE9 /* CoordinateRegionSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateRegionSerializable.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideManager.swift; path = Helpers/RideManager.swift; sourceTree = "<group>"; };
@@ -385,7 +383,6 @@
 				6D5FB3FC1B34A99300AB9143 /* MapDetailView.xib */,
 				6D5FB3FA1B349F7C00AB9143 /* StopwatchPopover.swift */,
 				6D5FB3F81B349DC300AB9143 /* StopwatchPopover.xib */,
-				6D95DCDC1B3C7F5A003A8974 /* ObservingAnnotationView.swift */,
 				6D4855621B3C4B5800CE8A5E /* StationAnnotationView.swift */,
 				6D4855601B3C48C800CE8A5E /* StationAnnotationView.xib */,
 			);
@@ -433,9 +430,9 @@
 				6DF07F391B2DD89E00A8F796 /* NetworksSort.swift */,
 				6DA595461B24F3920055D3D6 /* RideManager.swift */,
 				6D28345F1B24E89000E361A3 /* RideStopwatch.swift */,
-				6D95DCDE1B3C83DE003A8974 /* Stationable.swift */,
 				6DF07F2D1B2D71DD00A8F796 /* StationAnnotation.swift */,
 				6DCFEB581B3735B4002D24C8 /* StationManager.swift */,
+				6D7955A11B3DE27800CAA7DF /* StationProxy.swift */,
 				6DCFEB451B36EF8E002D24C8 /* UserSettings.swift */,
 				6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */,
 				6DD460A01B20890B0070E163 /* Extensions */,
@@ -905,6 +902,7 @@
 				6DD460A41B208A040070E163 /* UIColor+CustomColors.swift in Sources */,
 				6D9EFA321B386A6000A96BE9 /* CoordinateRegionSerializable.swift in Sources */,
 				6D2834601B24E89000E361A3 /* RideStopwatch.swift in Sources */,
+				6D7955A21B3DE27800CAA7DF /* StationProxy.swift in Sources */,
 				6D2834541B24925400E361A3 /* RidesHistoryViewController.swift in Sources */,
 				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
 				6DCFEB461B36EF8E002D24C8 /* UserSettings.swift in Sources */,
@@ -933,13 +931,11 @@
 				6DC344DC1B242A2000C29408 /* DefaultCell.swift in Sources */,
 				6D28345C1B24B0A100E361A3 /* FeedbackMailComposeViewController.swift in Sources */,
 				6DC344D51B23C57300C29408 /* GettingStartedStopwatchViewController.swift in Sources */,
-				6D95DCDF1B3C83DE003A8974 /* Stationable.swift in Sources */,
 				6DC344E11B242B6E00C29408 /* MenuViewController.swift in Sources */,
 				6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */,
 				6DC344CD1B233B9E00C29408 /* CustomButton.swift in Sources */,
 				6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */,
 				6DCFEB5C1B373A85002D24C8 /* AppleWatchEvent.swift in Sources */,
-				6D95DCDD1B3C7F5A003A8974 /* ObservingAnnotationView.swift in Sources */,
 				6D95DCE11B3C8555003A8974 /* WormholeNotificationSystem.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* NetworksSort.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* SubtitleCell.swift in Sources */,

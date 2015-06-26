@@ -94,11 +94,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         /// find new stations to show on the map
         for station in stations {
-            /// refresh annotations
-            NSNotificationCenter.defaultCenter().postNotificationName(station.id, object: nil)
-
-            if annotationsOnMap.filter({$0.station.id == station.id}).first == nil {
-                annotationsToAdd.append(StationAnnotation(station: station))
+            if annotationsOnMap.filter({$0.stationProxy.id == station.id}).first == nil {
+                let newAnnotation = StationAnnotation(stationProxy: StationProxy(station: station))
+                annotationsToAdd.append(newAnnotation)
             }
         }
         
@@ -107,7 +105,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         /// find stations to remove from the map and remove them
         var annotationsToRemove = [StationAnnotation]()
         for annotation in annotationsOnMap {
-            if stations.filter({$0.id == annotation.station.id}).first == nil {
+            if stations.filter({$0.id == annotation.stationProxy.id}).first == nil {
                 annotationsToRemove.append(annotation)
             }
         }
@@ -119,6 +117,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         println("added \(annotationsToRemove.count) annotations")
         mapView.addAnnotations(annotationsToAdd)
+        
+        for station in stations {
+            /// refresh annotations
+            NSNotificationCenter.defaultCenter().postNotificationName(station.id, object: nil)
+        }
         
         println("refreshing ended\n---")
     }
@@ -219,7 +222,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         view.bounce(0.1)
         if let annotation = (view.annotation as? StationAnnotation) {
-            updateMapDetailView(annotation.station.id)
+            updateMapDetailView(annotation.stationProxy.id)
         }
     }
     
@@ -252,5 +255,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
+    }
+}
+
+extension StationProxy {
+    convenience init(station: Station) {
+        self.init(id: station.id, freeBikes: station.freeBikes.integerValue, totalSlots: station.freeBikes.integerValue + station.emptySlots.integerValue, coordinate: station.coordinate)
     }
 }
