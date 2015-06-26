@@ -139,9 +139,9 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
             if let currentlySelectedIndexPath = selectedIndexPath {
                 if let cell = tableView.cellForRowAtIndexPath(currentlySelectedIndexPath) {
                     cell.accessoryType = .None
-                    selectedNetworkIDs.removeAll(keepCapacity: false)
                 }
                 
+                selectedNetworkIDs.removeAll(keepCapacity: false)
                 selectedIndexPath = nil
 
                 if currentlySelectedIndexPath == indexPath {
