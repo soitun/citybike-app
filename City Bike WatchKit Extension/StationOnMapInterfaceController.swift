@@ -24,8 +24,8 @@ class StationOnMapInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
         
-        map.addAnnotation(context.userLocation.coordinate, withPinColor: .Green)
-        map.addAnnotation(context.proxy.coordinate, withPinColor: .Red)
+        map.addAnnotation(context.userLocation.coordinate, withImageNamed: "user-pin", centerOffset: CGPointZero)
+        map.addAnnotation(context.proxy.coordinate, withPinColor: WKInterfaceMapPinColor.Green)
         map.setRegion(MKCoordinateRegion.regionForCoordinates([context.userLocation.coordinate, context.proxy.coordinate]))
     }
 }
