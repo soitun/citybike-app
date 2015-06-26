@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     private func updateUI() {
-        UINavigationBar.appearance().tintColor = UIColor.flamePeaColor()
+        UINavigationBar.appearance().tintColor = UIColor.havelockBlue()
         
         var fontAttributes = [
             NSForegroundColorAttributeName: UIColor.blackColor(),

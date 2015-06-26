@@ -71,8 +71,8 @@ class CBMenuRidesHistoryViewController: UIViewController, UITableViewDelegate, U
         }
         
         header.detailLabel.text = sum.stringTimeRepresentationStyle1
-        header.label.textColor = UIColor.flamePeaColor()
-        header.detailLabel.textColor = UIColor.flamePeaColor()
+        header.label.textColor = UIColor.havelockBlue()
+        header.detailLabel.textColor = UIColor.havelockBlue()
         header.backgroundView = UIView()
         header.backgroundView?.backgroundColor = UIColor.concreteColor()
         return header

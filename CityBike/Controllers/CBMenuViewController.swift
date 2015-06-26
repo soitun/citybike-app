@@ -121,7 +121,7 @@ class CBMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CBDefaultHeader.Identifier) as! CBDefaultHeader
         header.label.text = self.headerTitles()[section].uppercaseString
-        header.label.textColor = UIColor.flamePeaColor()
+        header.label.textColor = UIColor.havelockBlue()
         header.backgroundView = UIView()
         header.backgroundView?.backgroundColor = UIColor.concreteColor()
         return header

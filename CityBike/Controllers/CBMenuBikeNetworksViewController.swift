@@ -147,7 +147,7 @@ class CBMenuBikeNetworksViewController: UIViewController, UITableViewDelegate, U
         func createHeader(countryName: String) -> CBDefaultHeader {
             let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(CBDefaultHeader.Identifier) as! CBDefaultHeader
             header.label.text = countryName.uppercaseString
-            header.label.textColor = UIColor.flamePeaColor()
+            header.label.textColor = UIColor.havelockBlue()
             header.backgroundView = UIView()
             header.backgroundView?.backgroundColor = UIColor.concreteColor()
             return header
