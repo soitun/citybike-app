@@ -23,9 +23,6 @@ class CBMapDetailView: UIView {
     @IBOutlet private weak var bikesImageView: UIImageView!
     @IBOutlet private weak var bikesLabel: UILabel!
 
-    @IBOutlet private weak var slotsImageView: UIImageView!
-    @IBOutlet private weak var slotsLabel: UILabel!
-
     @IBOutlet private weak var distanceContainer: UIView!
     @IBOutlet weak var distanceLabel: UILabel!
     
@@ -50,12 +47,6 @@ class CBMapDetailView: UIView {
     }
     
     func update(text: String, detailText: String, freeBikes: Int, freeSlots: Int, distance: Float, date: NSDate) {
-        func colorForValue(value: Int, min: Int, max: Int) -> UIColor {
-            if value > max { return UIColor.plentyColor() }
-            else if value == 0 { return UIColor.noneColor() }
-            else { return UIColor.fewColor() }
-        }
-        
         self.labelTop.text = text.uppercaseString
         self.labelDetails.text = detailText.uppercaseString
         
@@ -68,16 +59,9 @@ class CBMapDetailView: UIView {
         
         if freeBikes != previousBikes {
             previousBikes = freeBikes
-            self.bikesImageView.tintColor = colorForValue(freeBikes, 0, 5)
-            self.bikesLabel.text = "\(freeBikes)"
+            self.bikesImageView.tintColor = UIColor.colorForValue(freeBikes, min: 0, max: freeBikes + freeSlots)
+            self.bikesLabel.text = "\(freeBikes)/\(freeBikes + freeSlots)"
             self.bikesImageView.bounce(0.1)
-        }
-        
-        if freeSlots != previousSlots {
-            previousSlots = freeSlots
-            self.slotsImageView.tintColor = colorForValue(freeSlots, 0, 5)
-            self.slotsLabel.text = "\(freeSlots)"
-            self.slotsImageView.bounce(0.1)
         }
         
         self.labelThird.text = "UPDATED \(date.updatedWhileAgoTextualRepresentation())".uppercaseString

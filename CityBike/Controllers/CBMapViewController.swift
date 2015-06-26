@@ -24,34 +24,33 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     @IBOutlet private weak var mapDetailView: CBMapDetailView!
     @IBOutlet private weak var mapDetailViewBottomConstraint: NSLayoutConstraint!
     
-    private var stopwatchManager = CBRideManager()
-    private var mapUpdater = CBMapUpdater()
+    private var stopwatchManager = RideManager()
     private var selectedStation: StationID?
     private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CBModelUpdater.sharedInstance.start()
+        ModelUpdater.sharedInstance.start()
         locationManager.requestAlwaysAuthorization()
         
-        self.mapDetailView.delegate = self
+        mapDetailView.delegate = self
         
-        self.noInternetLabel.text = NSLocalizedString("No internet connection", comment: "")
-        self.noInternetContainer.makeRounded()
-        self.noInternetContainer.changeVisibility(false, animated: false)
+        noInternetLabel.text = NSLocalizedString("No internet connection", comment: "")
+        noInternetContainer.makeRounded()
+        noInternetContainer.changeVisibility(false, animated: false)
         
         listenForWormholeNotifications()
     }
     
     private func listenForWormholeNotifications() {
-        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
+        WormholeNotificationSystem.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
             if self.stopwatchManager.isGoing == false {
-                self.startStopwatch(CBUserSettings.sharedInstance().getStartRideDate()!, animated: true)
+                self.startStopwatch(UserSettings.sharedInstance().getStartRideDate()!, animated: true)
             }
         })
         
-        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
+        WormholeNotificationSystem.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
             if self.stopwatchManager.isGoing == true {
                 self.stopStopwatch()
             }
@@ -60,14 +59,13 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.runStopwatchIfNeeded()
-        self.registerObservers()
-        
-        self.mapUpdater.update(self.mapView, updatedStations: CDStationManager.allStationsForSelectedNetworks())
+        runStopwatchIfNeeded()
+        registerObservers()
+        refreshContent()
        
         /// Show last saved region
-        if let savedRegion = CBUserSettings.sharedInstance().getMapRegion() {
-            self.mapView.setRegion(savedRegion, animated: false)
+        if let savedRegion = UserSettings.sharedInstance().getMapRegion() {
+            mapView.setRegion(savedRegion, animated: false)
         }
     }
     
@@ -82,7 +80,47 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     @IBAction func locateMePressed(sender: AnyObject) {
-        self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000), animated: true)
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 2000, 2000), animated: true)
+    }
+    
+    private func refreshContent() {
+        println("refresh map")
+        
+        let stations = StationManager.allStationsForSelectedNetworks()
+        
+        var annotationsToAdd = [StationAnnotation]()
+        var annotationsOnMap = mapView.annotations.filter({$0 is StationAnnotation}) as! [StationAnnotation]
+        
+        /// find new stations to show on the map
+        for station in stations {
+            station.freeBikes = station.freeBikes.integerValue + 1
+            /// refresh annotations
+            NSNotificationCenter.defaultCenter().postNotificationName(station.id, object: nil)
+
+            if annotationsOnMap.filter({$0.station.id == station.id}).first == nil {
+                annotationsToAdd.append(StationAnnotation(station: station))
+            }
+        }
+        
+        println("refreshed \(stations.count) stations")
+        
+        /// find stations to remove from the map and remove them
+        var annotationsToRemove = [StationAnnotation]()
+        for annotation in annotationsOnMap {
+            if stations.filter({$0.id == annotation.station.id}).first == nil {
+                annotationsToRemove.append(annotation)
+            }
+        }
+        
+        
+        /// refresh UI
+        println("removed \(annotationsToRemove.count) annotations")
+        mapView.removeAnnotations(annotationsToRemove)
+        
+        println("added \(annotationsToRemove.count) annotations")
+        mapView.addAnnotations(annotationsToAdd)
+        
+        println("refreshing ended\n---")
     }
 
     /// MARK: Notifications
@@ -92,7 +130,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
                 self.noInternetContainer.changeVisibility(true, animated: true)
                 
             } else {
-                self.mapUpdater.update(self.mapView, updatedStations: CDStationManager.allStationsForSelectedNetworks())
+                self.refreshContent()
                 self.noInternetContainer.changeVisibility(false, animated: true)
                 
                 self.updateMapDetailView(self.selectedStation)
@@ -108,26 +146,26 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     /// MARK: Stopwatch
     @IBAction func stopwatchReadyPressed(sender: AnyObject) {
-        self.startStopwatch(NSDate(), animated: true)
+        startStopwatch(NSDate(), animated: true)
     }
     
     private func runStopwatchIfNeeded() {
         /// Check if stopwatch should be turned on
-        if let startDate = CBUserSettings.sharedInstance().getStartRideDate() {
-            self.startStopwatch(startDate, animated: false)
+        if let startDate = UserSettings.sharedInstance().getStartRideDate() {
+            startStopwatch(startDate, animated: false)
             
         } else {
-            self.stopwatchPopover.changeVisibility(false, animated: false)
+            stopwatchPopover.changeVisibility(false, animated: false)
         }
     }
     
     private func startStopwatch(startDate: NSDate, animated: Bool) {
-        self.stopwatchManager.start(startDate, updateBlock: { (duration) -> Void in
+        stopwatchManager.start(startDate, updateBlock: { (duration) -> Void in
             self.stopwatchPopover.label.text = duration.stringTimeRepresentationStyle2
         })
         
-        self.switchStopwatchButtons(presentReady: false)
-        self.stopwatchPopover.changeVisibility(true, animated: animated)
+        switchStopwatchButtons(presentReady: false)
+        stopwatchPopover.changeVisibility(true, animated: animated)
     }
     
     private func switchStopwatchButtons(#presentReady: Bool) {
@@ -146,13 +184,13 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     }
     
     @IBAction func stopwatchDonePressed(sender: AnyObject) {
-        self.stopStopwatch()
+        stopStopwatch()
     }
     
     private func stopStopwatch() {
-        self.switchStopwatchButtons(presentReady: true)
-        self.stopwatchPopover.changeVisibility(false, animated: true)
-        self.stopwatchManager.stop()
+        switchStopwatchButtons(presentReady: true)
+        stopwatchPopover.changeVisibility(false, animated: true)
+        stopwatchManager.stop()
     }
     
     @IBAction func findPressed(sender: AnyObject) {
@@ -162,30 +200,26 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     /// MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if !(annotation is CBAnnotation) { return nil }
+        if (annotation is StationAnnotation) == false { return nil }
         
-        let cbAnnotation = (annotation as! CBAnnotation)
-        let view = self.mapUpdater.viewForAnnotation(cbAnnotation)
-        
-        let station = CDStation.fetchWithAttribute("id", value: cbAnnotation.stationProxy.id, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
-        view.configure(station)
-        return view
+        let stationAnnotation = (annotation as! StationAnnotation)
+        return StationAnnotationView(annotation: stationAnnotation, reuseIdentifier: "StationAnnotationView")
     }
     
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
-        self.updateMapDetailView(self.selectedStation)
+        updateMapDetailView(self.selectedStation)
     }
     
     func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
-        CBUserSettings.sharedInstance().setMapRegion(mapView.region)
+        UserSettings.sharedInstance().setMapRegion(mapView.region)
     }
     
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
         mapView.deselectAnnotation(view.annotation, animated: false)
         
         view.bounce(0.1)
-        if let annotation = (view.annotation as? CBAnnotation) {
-            self.updateMapDetailView(annotation.stationProxy.id)
+        if let annotation = (view.annotation as? StationAnnotation) {
+            updateMapDetailView(annotation.station.id)
         }
     }
     
@@ -193,7 +227,7 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
         if stationID == nil { return }
         
         let station = CDStation.fetchWithAttribute("id", value: stationID!, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
-        self.selectedStation = station.id
+        selectedStation = station.id
         
         let detailText = "\(station.network.location.city), \(station.network.location.country)"
         
@@ -202,9 +236,9 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
             distanceInMeters = userLocation.distanceFromLocation(CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude))
         }
         
-        self.mapDetailView.update(station.name, detailText: detailText, freeBikes: station.freeBikes.integerValue, freeSlots: station.emptySlots.integerValue, distance: Float(distanceInMeters), date: station.timestamp)
+        mapDetailView.update(station.name, detailText: detailText, freeBikes: station.freeBikes.integerValue, freeSlots: station.emptySlots.integerValue, distance: Float(distanceInMeters), date: station.timestamp)
         
-        self.mapDetailViewBottomConstraint.constant = 0
+        mapDetailViewBottomConstraint.constant = 0
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })
@@ -213,8 +247,8 @@ class CBMapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewD
     
     /// MARK: CBMapDetailViewDelegate
     func mapDetailViewDidPressClose(view: CBMapDetailView) {
-        self.selectedStation = nil
-        self.mapDetailViewBottomConstraint.constant = -CGRectGetHeight(self.mapDetailView.frame)
+        selectedStation = nil
+        mapDetailViewBottomConstraint.constant = -CGRectGetHeight(self.mapDetailView.frame)
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })

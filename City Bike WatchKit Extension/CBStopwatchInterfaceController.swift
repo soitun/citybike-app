@@ -14,7 +14,7 @@ class CBStopwatchInterfaceController: WKInterfaceController {
     @IBOutlet weak var button: WKInterfaceButton!
     @IBOutlet weak var timeLabel: WKInterfaceLabel!
     
-    private var stopwatchManager = CBRideManager()
+    private var stopwatchManager = RideManager()
     
     
     // MARK: Life cycle
@@ -26,11 +26,11 @@ class CBStopwatchInterfaceController: WKInterfaceController {
         super.willActivate()
         refreshButtonState()
         
-        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
-            self.start(CBUserSettings.sharedInstance().getStartRideDate()!)
+        WormholeNotificationSystem.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStarted.rawValue, listener: { _ in
+            self.start(UserSettings.sharedInstance().getStartRideDate()!)
         })
         
-        CBWormhole.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
+        WormholeNotificationSystem.sharedInstance.listenForMessageWithIdentifier(CBWormholeNotification.StopwatchStopped.rawValue, listener: { _ in
             /// should be on the main thread.
             self.stop()
         })
@@ -43,7 +43,7 @@ class CBStopwatchInterfaceController: WKInterfaceController {
     
     // MARK: Private
     private func refreshButtonState() {
-        if let startDate = CBUserSettings.sharedInstance().getStartRideDate() {
+        if let startDate = UserSettings.sharedInstance().getStartRideDate() {
             start(startDate)
         } else {
             stop()

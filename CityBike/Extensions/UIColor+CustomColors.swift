@@ -48,4 +48,8 @@ extension UIColor {
     class func whiteLilac() -> UIColor {
         return UIColor(red:0.91, green:0.91, blue:0.91, alpha:1)
     }
+    
+    class func havelockBlue() -> UIColor {
+        return UIColor(red:0.29, green:0.56, blue:0.89, alpha:1)
+    }
 }
