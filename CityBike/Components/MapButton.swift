@@ -11,11 +11,11 @@ import UIKit
 class MapButton: CustomButton {
 
     final override func makePressedStyle() {
-        self.alpha = 0.8
-        self.bounce(0.1)
+        alpha = 0.8
+        bounce(0.1)
     }
     
     final override func makeNormalStyle() {
-        self.alpha = 1
+        alpha = 1
     }
 }

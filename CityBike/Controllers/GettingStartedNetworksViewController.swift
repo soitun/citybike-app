@@ -14,6 +14,6 @@ class GettingStartedNetworksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.textLabel.text = NSLocalizedString("You have to select at least one city bike network. Networks are grouped by country to make it easy to select.", comment: "")
+        textLabel.text = NSLocalizedString("You have to select at least one city bike network. Networks are grouped by country to make it easy to select.", comment: "")
     }
 }

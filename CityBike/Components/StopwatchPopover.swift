@@ -19,8 +19,8 @@ class StopwatchPopover: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.containerView.makeRounded()
-        self.label.textColor = UIColor.noneColor()
+        containerView.makeRounded()
+        label.textColor = UIColor.noneColor()
     }
 
 }

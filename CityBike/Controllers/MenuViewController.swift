@@ -18,24 +18,24 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.tableFooterView = UIView()
-        self.tableView.separatorColor = UIColor.concreteColor()
-        self.tableView.registerNib(UINib(nibName: RightDetailCell.Identifier, bundle: nil), forCellReuseIdentifier: RightDetailCell.Identifier)
-        self.tableView.registerNib(UINib(nibName: SubtitleCell.Identifier, bundle: nil), forCellReuseIdentifier: SubtitleCell.Identifier)
-        self.tableView.registerNib(UINib(nibName: DefaultCell.Identifier, bundle: nil), forCellReuseIdentifier: DefaultCell.Identifier)
-        self.tableView.registerNib(UINib(nibName: DefaultHeader.Identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: DefaultHeader.Identifier)
+        tableView.tableFooterView = UIView()
+        tableView.separatorColor = UIColor.concreteColor()
+        tableView.registerNib(UINib(nibName: RightDetailCell.Identifier, bundle: nil), forCellReuseIdentifier: RightDetailCell.Identifier)
+        tableView.registerNib(UINib(nibName: SubtitleCell.Identifier, bundle: nil), forCellReuseIdentifier: SubtitleCell.Identifier)
+        tableView.registerNib(UINib(nibName: DefaultCell.Identifier, bundle: nil), forCellReuseIdentifier: DefaultCell.Identifier)
+        tableView.registerNib(UINib(nibName: DefaultHeader.Identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: DefaultHeader.Identifier)
         
         let attr = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
         let attrText = NSAttributedString(string: "CityBikes API", attributes: attr)
-        self.cityBikesButton.titleLabel?.attributedText = attrText
-        self.cityBikesButton.setTitleColor(UIColor.jumboColor(), forState: UIControlState.Normal)
+        cityBikesButton.titleLabel?.attributedText = attrText
+        cityBikesButton.setTitleColor(UIColor.jumboColor(), forState: UIControlState.Normal)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
+        tableView.reloadData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshProvidedBy", name: CBSyncManagerNotification.DidUpdateNetworks.rawValue, object: nil)
-        self.refreshProvidedBy()
+        refreshProvidedBy()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -48,16 +48,16 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func donePressed(sender: AnyObject) {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @objc private func refreshProvidedBy() {
         let networksCount = Network.fetchAll(CoreDataStack.sharedInstance().mainContext).count
         if networksCount == 0 {
-            self.providedByLabel.text = NSLocalizedString("Provided by", comment: "")
+            providedByLabel.text = NSLocalizedString("Provided by", comment: "")
         
         } else {
-            self.providedByLabel.text = String.localizedStringWithFormat("%d networks provided by", networksCount)
+            providedByLabel.text = String.localizedStringWithFormat("%d networks provided by", networksCount)
         }
     }
     
@@ -147,10 +147,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if indexPath.section == Section.Settings.rawValue && indexPath.row == 0 {
-            self.performSegueWithIdentifier("BikeNetworks", sender: nil)
+            performSegueWithIdentifier("BikeNetworks", sender: nil)
             
         } else if indexPath.section == Section.Statistics.rawValue && indexPath.row == 0 {
-            self.performSegueWithIdentifier("RidesHistory", sender: nil)
+            performSegueWithIdentifier("RidesHistory", sender: nil)
             
         } else if indexPath.section == Section.HelpUs.rawValue && indexPath.row == 0 {
             FeedbackMailComposeViewController.presentInViewController(self)

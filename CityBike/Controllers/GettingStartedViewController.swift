@@ -24,23 +24,23 @@ class GettingStartedViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.finalBackgroundImageView.alpha = 0
-        self.finalLogoImageView.alpha = 0
+        finalBackgroundImageView.alpha = 0
+        finalLogoImageView.alpha = 0
         
-        self.pageControl.alpha = 0
-        self.pageControl.numberOfPages = self.tutorialPages().count
-        self.scrollView.alpha = 0
+        pageControl.alpha = 0
+        pageControl.numberOfPages = self.tutorialPages().count
+        scrollView.alpha = 0
        
-        self.thanksButton.alpha = 0
-        self.thanksButton.enabled = false
-        self.thanksButton.makeStyleEndGettingStarted()
+        thanksButton.alpha = 0
+        thanksButton.enabled = false
+        thanksButton.makeStyleEndGettingStarted()
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.logoContainerBottomConstraint.constant = CGRectGetHeight(self.view.frame) - 40.0
+        logoContainerBottomConstraint.constant = CGRectGetHeight(self.view.frame) - 40.0
         UIView.animateWithDuration(0.7, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             self.finalBackgroundImageView.alpha = 1
             self.startLogoImageView.alpha = 0
@@ -71,12 +71,12 @@ class GettingStartedViewController: UIViewController, UIScrollViewDelegate {
             let view = vc.view
             view.setTranslatesAutoresizingMaskIntoConstraints(false)
             
-            self.scrollView.addSubview(view)
+            scrollView.addSubview(view)
             
             let centerXConstraint = NSLayoutConstraint(item: view, attribute: .CenterX, relatedBy: .Equal, toItem: self.scrollView, attribute: .CenterX, multiplier: 1, constant: CGFloat(idx) * svWidth)
             let centerYConstraint = NSLayoutConstraint(item: view, attribute: .CenterY, relatedBy: .Equal, toItem: self.scrollView, attribute: .CenterY, multiplier: 1, constant: 0)
             
-            self.scrollView.addConstraints([centerXConstraint, centerYConstraint])
+            scrollView.addConstraints([centerXConstraint, centerYConstraint])
             
             idx++
         }
@@ -85,7 +85,7 @@ class GettingStartedViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func thanksPressed(sender: AnyObject) {
-        self.performSegueWithIdentifier("Map", sender: nil)
+        performSegueWithIdentifier("Map", sender: nil)
         UserSettings.sharedInstance().setDisplayedGettingStarted(true)
     }
     
@@ -94,11 +94,11 @@ class GettingStartedViewController: UIViewController, UIScrollViewDelegate {
         let offsetX = scrollView.contentOffset.x
         let svWidth = CGRectGetWidth(self.scrollView.frame)
         
-        self.pageControl.currentPage = Int(offsetX / svWidth)
+        pageControl.currentPage = Int(offsetX / svWidth)
         
         /// Enable and show thanks buton
-        if self.thanksButton.enabled == false && (self.pageControl.currentPage + 1) == self.tutorialPages().count {
-            self.thanksButton.enabled = true
+        if thanksButton.enabled == false && (self.pageControl.currentPage + 1) == self.tutorialPages().count {
+            thanksButton.enabled = true
             UIView.animateWithDuration(0.25, animations: {
                 self.thanksButton.alpha = 1
             })

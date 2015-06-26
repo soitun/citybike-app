@@ -31,7 +31,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ModelUpdater.sharedInstance.start()
         locationManager.requestAlwaysAuthorization()
         
         mapDetailView.delegate = self
@@ -59,6 +58,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        ModelUpdater.sharedInstance.setSelectedNetworkIds(UserSettings.sharedInstance().getNetworkIDs())
+        ModelUpdater.sharedInstance.start()
         runStopwatchIfNeeded()
         registerObservers()
         refreshContent()
@@ -232,7 +233,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         let detailText = "\(station.network.location.city), \(station.network.location.country)"
         
         var distanceInMeters = 0.0
-        if let userLocation = self.mapView.userLocation.location {
+        if let userLocation = mapView.userLocation.location {
             distanceInMeters = userLocation.distanceFromLocation(CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude))
         }
         
@@ -248,7 +249,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     /// MARK: CBMapDetailViewDelegate
     func mapDetailViewDidPressClose(view: MapDetailView) {
         selectedStation = nil
-        mapDetailViewBottomConstraint.constant = -CGRectGetHeight(self.mapDetailView.frame)
+        mapDetailViewBottomConstraint.constant = -CGRectGetHeight(mapDetailView.frame)
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.view.layoutIfNeeded()
         })

@@ -56,6 +56,7 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
         saveSelectedNetworks()
+        ModelUpdater.sharedInstance.setSelectedNetworkIds(UserSettings.sharedInstance().getNetworkIDs())
     }
     
     @IBAction func backPressed(sender: AnyObject) {

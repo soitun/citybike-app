@@ -41,7 +41,7 @@ class FeedbackMailComposeViewController: MFMailComposeViewController, UINavigati
     /// MARK: MFMAilComposeViewControllerDelegate
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         if result.value == MFMailComposeResultFailed.value {
-            self.showFailure(error.localizedDescription)
+            showFailure(error.localizedDescription)
             
         } else {
             controller.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)

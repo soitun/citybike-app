@@ -32,7 +32,7 @@ class MapDetailView: UIView {
     
     
     @IBAction func closePressed(sender: AnyObject) {
-        self.delegate?.mapDetailViewDidPressClose(self)
+        delegate?.mapDetailViewDidPressClose(self)
     }
     
     override func awakeAfterUsingCoder(aDecoder: NSCoder) -> AnyObject? {
@@ -41,29 +41,29 @@ class MapDetailView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.distanceContainer.makeRounded()
-        self.distanceContainer.backgroundColor = UIColor.plentyColor()
-        self.distanceContainer.layer.cornerRadius = (CGRectGetHeight(self.distanceContainer.frame) / CGFloat(2.0))
+        distanceContainer.makeRounded()
+        distanceContainer.backgroundColor = UIColor.plentyColor()
+        distanceContainer.layer.cornerRadius = (CGRectGetHeight(distanceContainer.frame) / CGFloat(2.0))
     }
     
     func update(text: String, detailText: String, freeBikes: Int, freeSlots: Int, distance: Float, date: NSDate) {
-        self.labelTop.text = text.uppercaseString
-        self.labelDetails.text = detailText.uppercaseString
+        labelTop.text = text.uppercaseString
+        labelDetails.text = detailText.uppercaseString
         
         let newDistance = distance / 1000.0
         if fabs(newDistance - previousDistance) > 0.05 {
             previousDistance = newDistance
-            self.distanceLabel.text = String(format: "%0.2fkm", newDistance)
-            self.distanceContainer.bounce(0.1)
+            distanceLabel.text = String(format: "%0.2fkm", newDistance)
+            distanceContainer.bounce(0.1)
         }
         
         if freeBikes != previousBikes {
             previousBikes = freeBikes
-            self.bikesImageView.tintColor = UIColor.colorForValue(freeBikes, min: 0, max: freeBikes + freeSlots)
-            self.bikesLabel.text = "\(freeBikes)/\(freeBikes + freeSlots)"
-            self.bikesImageView.bounce(0.1)
+            bikesImageView.tintColor = UIColor.colorForValue(freeBikes, min: 0, max: freeBikes + freeSlots)
+            bikesLabel.text = "\(freeBikes)/\(freeBikes + freeSlots)"
+            bikesImageView.bounce(0.1)
         }
         
-        self.labelThird.text = "UPDATED \(date.updatedWhileAgoTextualRepresentation())".uppercaseString
+        labelThird.text = "UPDATED \(date.updatedWhileAgoTextualRepresentation())".uppercaseString
     }
 }

@@ -41,6 +41,10 @@ class ModelUpdater: CBUpdaterProtocol {
         syncManager.forceUpdate()
     }
     
+    func setSelectedNetworkIds(ids: [CBNetworkType]) {
+        syncManager.setSelectedNetworkIDs(ids)
+    }
+    
     
     /// MARK: - CBUpdaterProtocol
     func updateNetworks(updatedNetworks: [CBNetwork], completion:() -> Void) {
