@@ -39,7 +39,7 @@ class StationAnnotationView: ObservingAnnotationView {
     }
     
     override func notificationReceived(notification: NSNotification) {
-        theAnnotation.station.managedObjectContext?.refreshObject(theAnnotation.station, mergeChanges: true)
+        theAnnotation.station = CDStation.fetchWithAttribute("id", value: theAnnotation.station.id, context: CoreDataStack.sharedInstance().mainContext).first as! CDStation
         configure(theAnnotation.station)
     }
 

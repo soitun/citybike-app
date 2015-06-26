@@ -430,16 +430,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-big" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-6n-yGM" userLabel="map-big">
                                 <rect key="frame" x="0.0" y="28" width="320" height="326"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-big" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-ff-z6I" userLabel="pin-big">
-                                <rect key="frame" x="108" y="69" width="104" height="60"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free bikes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-0M-pqF" userLabel="free-bikes-label">
-                                <rect key="frame" x="91" y="122" width="58" height="24"/>
-                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free slots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-bh-jlt" userLabel="free-slots-label">
-                                <rect key="frame" x="173" y="122" width="54" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of free bikes in station" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bz3-0M-pqF" userLabel="free-bikes-label">
+                                <rect key="frame" x="69" y="186" width="182" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -467,31 +459,33 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle-big" translatesAutoresizingMaskIntoConstraints="NO" id="04N-Zl-FbE" userLabel="none-circle">
                                 <rect key="frame" x="225" y="225" width="30" height="31"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin-big" translatesAutoresizingMaskIntoConstraints="NO" id="JKn-ff-z6I" userLabel="pin-big">
+                                <rect key="frame" x="120" y="118" width="81" height="60"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="25e-RR-5ib" firstAttribute="top" secondItem="JKn-ff-z6I" secondAttribute="bottom" constant="96" id="10b-rl-mpL"/>
                             <constraint firstItem="Cbw-rI-51l" firstAttribute="centerX" secondItem="04N-Zl-FbE" secondAttribute="centerX" id="BL5-GU-Edp"/>
                             <constraint firstAttribute="centerX" secondItem="Yw3-6n-yGM" secondAttribute="centerX" id="C7u-wt-Xq8"/>
                             <constraint firstItem="25e-RR-5ib" firstAttribute="centerY" secondItem="04N-Zl-FbE" secondAttribute="centerY" id="DhX-zN-SPq"/>
                             <constraint firstItem="3P7-MJ-oTc" firstAttribute="centerX" secondItem="zc4-ec-6lV" secondAttribute="centerX" id="Gh1-hl-1i3"/>
                             <constraint firstAttribute="centerX" secondItem="hcq-3e-PHP" secondAttribute="centerX" id="ILG-Fu-VLk"/>
+                            <constraint firstAttribute="trailing" secondItem="Bz3-0M-pqF" secondAttribute="trailing" constant="69" id="JEq-zy-9Q5"/>
                             <constraint firstItem="3P7-MJ-oTc" firstAttribute="top" secondItem="zc4-ec-6lV" secondAttribute="bottom" constant="5" id="Jkh-D3-0g4"/>
                             <constraint firstAttribute="centerY" secondItem="Yw3-6n-yGM" secondAttribute="centerY" constant="7" id="LJx-vZ-nl0"/>
-                            <constraint firstItem="Bz3-0M-pqF" firstAttribute="centerX" secondItem="JKn-ff-z6I" secondAttribute="centerX" constant="-40" id="M4O-t7-sF7"/>
-                            <constraint firstItem="Bz3-0M-pqF" firstAttribute="centerY" secondItem="JKn-ff-z6I" secondAttribute="centerY" constant="35" id="OTg-hm-tq7"/>
                             <constraint firstItem="Cbw-rI-51l" firstAttribute="top" secondItem="04N-Zl-FbE" secondAttribute="bottom" constant="5" id="OUk-Kt-mrn"/>
-                            <constraint firstItem="Yw3-6n-yGM" firstAttribute="centerX" secondItem="JKn-ff-z6I" secondAttribute="centerX" id="OpL-Ry-wFH"/>
+                            <constraint firstItem="Yw3-6n-yGM" firstAttribute="top" secondItem="JKn-ff-z6I" secondAttribute="bottom" constant="-150" id="PcZ-tZ-9Oo"/>
                             <constraint firstItem="04N-Zl-FbE" firstAttribute="leading" secondItem="25e-RR-5ib" secondAttribute="trailing" constant="50" id="T4u-pO-56h"/>
                             <constraint firstItem="25e-RR-5ib" firstAttribute="leading" secondItem="zc4-ec-6lV" secondAttribute="trailing" constant="50" id="UXI-DZ-Lhw"/>
-                            <constraint firstItem="jWh-bh-jlt" firstAttribute="centerX" secondItem="JKn-ff-z6I" secondAttribute="centerX" constant="40" id="YXf-vN-xI3"/>
+                            <constraint firstItem="Bz3-0M-pqF" firstAttribute="top" secondItem="JKn-ff-z6I" secondAttribute="bottom" constant="8" id="VUN-vt-gHG"/>
+                            <constraint firstItem="25e-RR-5ib" firstAttribute="top" secondItem="Bz3-0M-pqF" secondAttribute="bottom" constant="15" id="ZPL-wO-zkn"/>
                             <constraint firstItem="zc4-ec-6lV" firstAttribute="centerY" secondItem="25e-RR-5ib" secondAttribute="centerY" id="elc-07-bLj"/>
-                            <constraint firstItem="jWh-bh-jlt" firstAttribute="centerY" secondItem="JKn-ff-z6I" secondAttribute="centerY" constant="35" id="gXe-JD-GqE"/>
+                            <constraint firstItem="JKn-ff-z6I" firstAttribute="leading" secondItem="Yw3-6n-yGM" secondAttribute="trailing" constant="-200" id="hBK-uL-2wr"/>
+                            <constraint firstItem="25e-RR-5ib" firstAttribute="centerX" secondItem="JKn-ff-z6I" secondAttribute="centerX" constant="-0.5" id="n9E-Si-gBd"/>
+                            <constraint firstItem="Bz3-0M-pqF" firstAttribute="leading" secondItem="oGc-EW-veU" secondAttribute="leading" constant="69" id="qtz-Mp-Iqf"/>
                             <constraint firstItem="bVG-Ku-FUl" firstAttribute="top" secondItem="25e-RR-5ib" secondAttribute="bottom" constant="5" id="sG4-tf-beJ"/>
-                            <constraint firstItem="Yw3-6n-yGM" firstAttribute="centerY" secondItem="JKn-ff-z6I" secondAttribute="centerY" constant="92" id="ssJ-73-AfV"/>
                             <constraint firstAttribute="centerY" secondItem="hcq-3e-PHP" secondAttribute="centerY" id="upg-DK-jFY"/>
                             <constraint firstItem="bVG-Ku-FUl" firstAttribute="centerX" secondItem="25e-RR-5ib" secondAttribute="centerX" id="xYy-HK-y8E"/>
-                            <constraint firstItem="25e-RR-5ib" firstAttribute="centerX" secondItem="JKn-ff-z6I" secondAttribute="centerX" id="yoG-p0-iec"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -500,7 +494,6 @@
                         <outlet property="fewCircleImageView" destination="25e-RR-5ib" id="6qB-af-Eqx"/>
                         <outlet property="fewLabel" destination="bVG-Ku-FUl" id="pkA-RR-sxX"/>
                         <outlet property="freeBikesLabel" destination="Bz3-0M-pqF" id="QSE-8B-aXC"/>
-                        <outlet property="freeSlotsLabel" destination="jWh-bh-jlt" id="qft-bk-BUI"/>
                         <outlet property="manyCircleImageView" destination="zc4-ec-6lV" id="u5q-nf-0tI"/>
                         <outlet property="manyLabel" destination="3P7-MJ-oTc" id="mca-7K-dUe"/>
                         <outlet property="noneCircleImageView" destination="04N-Zl-FbE" id="iu2-xA-Khf"/>
@@ -711,7 +704,7 @@ You can check your rides history in menu.</string>
         <image name="launch-screen-bg" width="320" height="568"/>
         <image name="map-big" width="320" height="326"/>
         <image name="menu-big" width="93" height="80"/>
-        <image name="pin-big" width="104" height="60"/>
+        <image name="pin-big" width="81" height="60"/>
         <image name="stopwatch-big" width="79" height="80"/>
         <image name="white-blurred-bg-big" width="320" height="360"/>
     </resources>

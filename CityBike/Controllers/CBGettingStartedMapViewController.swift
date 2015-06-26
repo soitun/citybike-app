@@ -11,7 +11,6 @@ import UIKit
 class CBGettingStartedMapViewController: UIViewController {
 
     @IBOutlet private weak var freeBikesLabel: UILabel!
-    @IBOutlet private weak var freeSlotsLabel: UILabel!
     
     @IBOutlet private weak var manyLabel: UILabel!
     @IBOutlet private weak var fewLabel: UILabel!
@@ -25,8 +24,7 @@ class CBGettingStartedMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.freeBikesLabel.text = NSLocalizedString("free bikes", comment: "")
-        self.freeSlotsLabel.text = NSLocalizedString("free slots", comment: "")
+        self.freeBikesLabel.text = NSLocalizedString("number of free bikes in station", comment: "")
         
         self.manyLabel.text = NSLocalizedString("Many", comment: "")
         self.fewLabel.text = NSLocalizedString("Few", comment: "")
