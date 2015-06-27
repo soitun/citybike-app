@@ -35,7 +35,7 @@ class FeedbackMailComposeViewController: MFMailComposeViewController, UINavigati
     }
     
     private func showFailure(error: String) {
-        UIAlertView(title: NSLocalizedString("Feedback", comment: ""), message: error, delegate: nil, cancelButtonTitle: NSLocalizedString("Close", comment: "")).show()
+        UIAlertView(title: NSLocalizedString("feedback", comment: ""), message: error, delegate: nil, cancelButtonTitle: NSLocalizedString("ok", comment: "")).show()
     }
     
     /// MARK: MFMAilComposeViewControllerDelegate

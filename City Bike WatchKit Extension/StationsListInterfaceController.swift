@@ -28,6 +28,7 @@ class StationsListInterfaceController: WKInterfaceController {
     // MARK: Life-cycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        self.setTitle(NSLocalizedString("bikes", comment: ""))
     }
 
     override func willActivate() {
@@ -52,7 +53,7 @@ class StationsListInterfaceController: WKInterfaceController {
     // MARK: Private methods
     private func fetchData() {
         WKInterfaceController.openParentApplication(["request": AppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
-            println("Fetched Data")
+//            println("Fetched Data")
             println(dict)
             
             if let dict = dict as? [String: AnyObject] {
@@ -145,8 +146,6 @@ class StationsListInterfaceController: WKInterfaceController {
                 let proxy = proxies[rowIdx]
                 row.configure(proxy)
                 
-                println("proxy timestamp: \(proxy.updateTimestamp), \(proxy.name)")
-
                 /// check recent timestamp
                 if recentTimestamp.laterDate(proxy.updateTimestamp) == proxy.updateTimestamp {
                     recentTimestamp = proxy.updateTimestamp
@@ -178,7 +177,6 @@ class StationsListInterfaceController: WKInterfaceController {
         var stationProxies = [WatchStationProxy]()
         
         for station in stations {
-            println("station timestamp: \(station.timestamp), \(station.name)")
             var proxy = WatchStationProxy(station: station)
             stationProxies.append(proxy)
             

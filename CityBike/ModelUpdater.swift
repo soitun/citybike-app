@@ -48,8 +48,6 @@ class ModelUpdater: CBUpdaterProtocol {
     
     /// MARK: - CBUpdaterProtocol
     func updateNetworks(updatedNetworks: [CBNetwork], completion:() -> Void) {
-        println("Sync networks")
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
             
@@ -71,9 +69,7 @@ class ModelUpdater: CBUpdaterProtocol {
         })
     }
     
-    func updateNetworksWithStations(updatedNetworks: [CBNetwork], completion:() -> Void) {
-        println("Sync networks and stations")
-        
+    func updateNetworksWithStations(updatedNetworks: [CBNetwork], completion:() -> Void) {        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
             let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
             

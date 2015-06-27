@@ -53,7 +53,6 @@ class StationAnnotationView: MKAnnotationView {
     
     func notificationReceived(notification: NSNotification) {
         if self.annotation == nil {
-//            println("Cannot update!")
             finishObserving()
             return
         }
@@ -62,7 +61,6 @@ class StationAnnotationView: MKAnnotationView {
             let proxy = StationProxy(station: station)
             (self.annotation as! StationAnnotation).stationProxy = proxy
             configure(proxy)
-//            println("update! \(self)")
         }
     }
 

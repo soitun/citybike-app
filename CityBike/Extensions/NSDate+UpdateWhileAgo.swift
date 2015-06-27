@@ -16,7 +16,7 @@ extension NSDate {
         
         if tc.hours == 0 && tc.minutes == 0 {
             if tc.seconds < 30 {
-                return NSLocalizedString("Now", comment: "")
+                return NSLocalizedString("now", comment: "")
             } else {
                 return String.localizedStringWithFormat("%d seconds ago", tc.seconds)
             }

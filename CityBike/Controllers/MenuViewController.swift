@@ -54,10 +54,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc private func refreshProvidedBy() {
         let networksCount = Network.fetchAll(CoreDataStack.sharedInstance().mainContext).count
         if networksCount == 0 {
-            providedByLabel.text = NSLocalizedString("Provided by", comment: "")
+            providedByLabel.text = NSLocalizedString("content-provided-by", comment: "")
         
         } else {
-            providedByLabel.text = String.localizedStringWithFormat("%d networks provided by", networksCount)
+            providedByLabel.text = String.localizedStringWithFormat(NSLocalizedString("content-provided-by-(%d)", comment: ""), networksCount)
         }
     }
     
@@ -82,27 +82,30 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch Section(rawValue: indexPath.section)! {
         case .Statistics:
             let cell = tableView.dequeueReusableCellWithIdentifier(DefaultCell.Identifier) as! DefaultCell
-            cell.label.text = NSLocalizedString("Rides History", comment: "") + " 🏁 🚴🏼"
+            cell.label.text = NSLocalizedString("rides-history", comment: "") + " 🏁 🚴🏼"
             cell.accessoryType = .DisclosureIndicator
             return cell
             
         case .Settings:
             let cell = tableView.dequeueReusableCellWithIdentifier(RightDetailCell.Identifier) as! RightDetailCell
-            cell.label.text = NSLocalizedString("City Bike Networks", comment: "")
-            cell.detailLabel.text = String.localizedStringWithFormat("%d Selected", UserSettings.sharedInstance().getNetworkIDs().count)
+            cell.label.text = NSLocalizedString("city-bike-networks", comment: "")
+            cell.detailLabel.text = ""
+            
+            // This will be used when multi-selection is supported
+//            String.localizedStringWithFormat("%d Selected", UserSettings.sharedInstance().getNetworkIDs().count)
             cell.accessoryType = .DisclosureIndicator
             return cell
             
         case .HelpUs:
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(SubtitleCell.Identifier) as! SubtitleCell
-                cell.label.text = NSLocalizedString("Send Feedback", comment: "") + " ✉️"
-                cell.detailLabel.text = NSLocalizedString("We’d love to hear your feedback!", comment: "")
+                cell.label.text = NSLocalizedString("send-feedback", comment: "") + " ✉️"
+                cell.detailLabel.text = NSLocalizedString("send-feedback-subtitle", comment: "")
                 return cell
                 
             } else if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(DefaultCell.Identifier) as! DefaultCell
-                cell.label.text = NSLocalizedString("Rate the app", comment: "") + " ⭐️⭐️⭐️⭐️⭐️"
+                cell.label.text = NSLocalizedString("rate-the-app", comment: "") + " ⭐️⭐️⭐️⭐️⭐️"
                 return cell
             }
         }
@@ -112,9 +115,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func headerTitles() -> [String] {
         return [
-            NSLocalizedString("Statistics", comment: ""),
-            NSLocalizedString("Settings", comment: ""),
-            NSLocalizedString("Help Us", comment: "")
+            NSLocalizedString("statistics", comment: ""),
+            NSLocalizedString("settings", comment: ""),
+            NSLocalizedString("help-us", comment: "")
         ]
     }
     

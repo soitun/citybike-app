@@ -1,0 +1,79 @@
+/*
+ Localizable.strings
+ CityBike
+ 
+ Created by Tomasz Szulc on 27/06/15.
+ Copyright (c) 2015 Tomasz Szulc. All rights reserved.
+ */
+
+"no-city-bike-networks" = "Brak sieci rowerowych";
+
+"feedback" = "Feedback";
+
+"ok" = "Ok";
+
+"bikes-available" = "Dostępne rowery";
+
+"many" = "Wiele";
+
+"few" = "Kilka";
+
+"none" = "Brak";
+
+"that-is-easy-thanks" = "To proste, dzięki!";
+
+"getting-started-networks" = "Musisz wybrać co najmniej jedną sieć rowerową. Sieci są zgrupowane w krajach";
+
+"getting-started-stopwatch" = "Śledź ile czasu spędzasz na rowerze.\n Historię przejażdżek możesz przeglądać w widoku historii w menu.";
+
+"connectivity-issue" = "Problem z połączeniem";
+
+"content-provided-by" = "Dane dostarczone przez";
+
+"content-provided-by-(%d)" = "Dane dostarczone przez (%d)";
+
+"rides-history" = "Historia przejażdżek";
+
+"empty-history" = "Brak wpisów";
+
+"city-bike-networks" = "Sieci rowerowe";
+
+"send-feedback" = "Wyślij Feedback";
+
+"send-feedback-subtitle" = "Uwielbiamy dostawać Feedback!";
+
+"rate-the-app" = "Oceń aplikację";
+
+"statistics" = "Statystyki";
+
+"settings" = "Ustawienia";
+
+"help-us" = "Pomóż nam";
+
+
+/**
+ Apple Watch
+ */
+"bikes" = "Rowery";
+
+"stopwatch" = "Stoper";
+
+"no-stations" = "BRAK STACJI";
+
+"no-stations-suggestion" = "Nie wybrano żadnych stacji. Otwórz aplikację na iPhone i wybierz jakąś sieć.";
+
+"location-services" = "USŁUGI LOKALIZACJI";
+
+"location-services-suggestion" = "Aby wyświetlić najbliższe stacje rowerowe oraz odgległość do nich, aplikacja potrzebuje dostęp do usług lokalizacji. Jeśli to twoje pierwsze uruchomienie otwórz aplikację na iPhone oraz pozwól na użycie lokalizacji, jeśli nie, musisz dać dostęp do lokalizacji przez Ustawienia systemu.";
+
+"current-location" = "TWOJE POŁOŻENIE";
+
+"getting-your-location" = "Ustalanie położenia...";
+
+"updating" = "AKTUALIZACJA";
+
+"getting-newest-data" = "Pobieranie najnowszych informacji...";
+
+"now" = "Teraz";
+
+"recently-updated" = "OSTATNIA AKTUALIZACJA";

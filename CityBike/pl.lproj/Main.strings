@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Many"; ObjectID = "3P7-MJ-oTc"; */
+"3P7-MJ-oTc.text" = "Many";
+
+/* Class = "UINavigationItem"; title = "Menu"; ObjectID = "3u7-yH-175"; */
+"3u7-yH-175.title" = "Menu";
+
+/* Class = "UILabel"; text = "number of free bikes in station"; ObjectID = "Bz3-0M-pqF"; */
+"Bz3-0M-pqF.text" = "number of free bikes in station";
+
+/* Class = "UILabel"; text = "None"; ObjectID = "Cbw-rI-51l"; */
+"Cbw-rI-51l.text" = "None";
+
+/* Class = "UILabel"; text = "Track how much time  you spend cycling.\nYou can check your rides history in menu."; ObjectID = "DgG-vP-VuI"; */
+"DgG-vP-VuI.text" = "Track how much time  you spend cycling.\nYou can check your rides history in menu.";
+
+/* Class = "UINavigationItem"; title = "Rides History"; ObjectID = "Fpx-3H-AOD"; */
+"Fpx-3H-AOD.title" = "Rides History";
+
+/* Class = "UILabel"; text = "No Rides History"; ObjectID = "GNf-4d-OfA"; */
+"GNf-4d-OfA.text" = "No Rides History";
+
+/* Class = "UILabel"; text = "No internet label"; ObjectID = "KOM-vQ-GWz"; */
+"KOM-vQ-GWz.text" = "No internet label";
+
+/* Class = "UINavigationItem"; title = "City Bike Networks"; ObjectID = "Vuv-KB-fsF"; */
+"Vuv-KB-fsF.title" = "City Bike Networks";
+
+/* Class = "UIButton"; normalTitle = "CityBikes API"; ObjectID = "XBn-eB-NGb"; */
+"XBn-eB-NGb.normalTitle" = "CityBikes API";
+
+/* Class = "UIButton"; normalTitle = "That's easy, thanks!"; ObjectID = "YTI-W0-tBf"; */
+"YTI-W0-tBf.normalTitle" = "That's easy, thanks!";
+
+/* Class = "UILabel"; text = "No City Bike Networks"; ObjectID = "Z2x-UD-a1X"; */
+"Z2x-UD-a1X.text" = "No City Bike Networks";
+
+/* Class = "UILabel"; text = "Few"; ObjectID = "bVG-Ku-FUl"; */
+"bVG-Ku-FUl.text" = "Few";
+
+/* Class = "UILabel"; text = "150 networks provided by"; ObjectID = "fcM-Vh-5LW"; */
+"fcM-Vh-5LW.text" = "150 networks provided by";
+
+/* Class = "UILabel"; text = "You have to select at least one city bike network. Networks are grouped by country to make it easy to select."; ObjectID = "hCj-rm-AbN"; */
+"hCj-rm-AbN.text" = "You have to select at least one city bike network. Networks are grouped by country to make it easy to select.";

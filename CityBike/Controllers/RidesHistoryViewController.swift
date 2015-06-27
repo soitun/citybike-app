@@ -21,29 +21,31 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
-       
-        self.dateTimeFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        self.dateTimeFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        navigationItem.title = NSLocalizedString("rides-history", comment: "")
         
-        self.tableView.tableFooterView = UIView()
+        dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
+       
+        dateTimeFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateTimeFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        
+        tableView.tableFooterView = UIView()
 
-        self.tableView.registerNib(UINib(nibName: SubtitleCell.Identifier, bundle: nil), forCellReuseIdentifier: SubtitleCell.Identifier)
-        self.tableView.registerNib(UINib(nibName: RightDetailHeader.Identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: RightDetailHeader.Identifier)
-        self.tableView.separatorColor = UIColor.concreteColor()
+        tableView.registerNib(UINib(nibName: SubtitleCell.Identifier, bundle: nil), forCellReuseIdentifier: SubtitleCell.Identifier)
+        tableView.registerNib(UINib(nibName: RightDetailHeader.Identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: RightDetailHeader.Identifier)
+        tableView.separatorColor = UIColor.concreteColor()
 
-        self.noItemsLabel.text = NSLocalizedString("Empty History", comment: "")
-        self.noItemsLabel.textColor = UIColor.whiteLilac()
-        self.noItemsLabel.hidden = true
+        noItemsLabel.text = NSLocalizedString("empty-history", comment: "")
+        noItemsLabel.textColor = UIColor.whiteLilac()
+        noItemsLabel.hidden = true
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.history = RideHistoryDay.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [RideHistoryDay]
-        self.tableView.reloadData()
+        history = RideHistoryDay.fetchAll(CoreDataStack.sharedInstance().mainContext) as! [RideHistoryDay]
+        tableView.reloadData()
         
-        self.noItemsLabel.hidden = self.history.count > 0
+        noItemsLabel.hidden = self.history.count > 0
     }
     
     @IBAction func backPressed(sender: AnyObject) {
@@ -52,18 +54,18 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
     
     /// MARK: UITableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.history.count
+        return history.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.history[section].entries.count
+        return history[section].entries.count
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(RightDetailHeader.Identifier) as! RightDetailHeader
         
         let day = self.history[section]
-        header.label.text = self.dateFormatter.stringFromDate(day.date)
+        header.label.text = dateFormatter.stringFromDate(day.date)
         
         var sum: NSTimeInterval = 0
         for entry in day.entries {
@@ -83,7 +85,7 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCellWithIdentifier(SubtitleCell.Identifier) as! SubtitleCell
         cell.label?.text = entry.duration.doubleValue.stringTimeRepresentationStyle1
-        cell.detailLabel.text = self.dateTimeFormatter.stringFromDate(entry.date)
+        cell.detailLabel.text = dateTimeFormatter.stringFromDate(entry.date)
         return cell
     }
     

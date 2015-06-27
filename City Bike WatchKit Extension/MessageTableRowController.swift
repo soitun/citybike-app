@@ -33,25 +33,25 @@ class MessageTableRowController: NSObject {
     
     private func configureForNoStations() {
         icon.setTintColor(UIColor.noneColor())
-        titleLabel.setText(NSLocalizedString("NO STATIONS", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("No stations selected. Open iPhone app and select some city bike network first.", comment: ""))
+        titleLabel.setText(NSLocalizedString("no-stations", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("no-stations-suggestion", comment: ""))
     }
     
     private func configureForLocationServicesDisabled() {
         icon.setTintColor(UIColor.noneColor())
-        titleLabel.setText(NSLocalizedString("LOCATION SERVICES", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("To show you nearest bike stations and approximate distance to them app needs access to Location Services. If this is your first launch please go to iPhone app to accept permissions, otherwise go to system Settings.", comment: ""))
+        titleLabel.setText(NSLocalizedString("location-services", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("location-services-suggestion", comment: ""))
     }
     
     private func configureForCannotObtainUserLocation() {
         icon.setTintColor(UIColor.plentyColor())
-        titleLabel.setText(NSLocalizedString("CURRENT LOCATION", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("Getting your location...", comment: ""))
+        titleLabel.setText(NSLocalizedString("current-location", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("getting-your-location", comment: ""))
     }
     
     private func configurForFetchingData() {
         icon.setTintColor(UIColor.plentyColor())
-        titleLabel.setText(NSLocalizedString("UPDATING", comment: ""))
-        detailTextLabel.setText(NSLocalizedString("Getting newest data...", comment: ""))
+        titleLabel.setText(NSLocalizedString("updating", comment: ""))
+        detailTextLabel.setText(NSLocalizedString("getting-newest-data", comment: ""))
     }
 }

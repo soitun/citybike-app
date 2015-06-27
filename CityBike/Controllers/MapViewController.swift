@@ -35,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         mapDetailView.delegate = self
         
-        noInternetLabel.text = NSLocalizedString("No internet connection", comment: "")
+        noInternetLabel.text = NSLocalizedString("connectivity-issue", comment: "")
         noInternetContainer.makeRounded()
         noInternetContainer.changeVisibility(false, animated: false)
         
@@ -85,8 +85,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     }
     
     private func refreshContent() {
-        println("refresh map")
-        
         let stations = StationManager.allStationsForSelectedNetworks()
         
         var annotationsToAdd = [StationAnnotation]()
@@ -100,8 +98,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
             }
         }
         
-        println("refreshed \(stations.count) stations")
-        
         /// find stations to remove from the map and remove them
         var annotationsToRemove = [StationAnnotation]()
         for annotation in annotationsOnMap {
@@ -112,18 +108,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         
         /// refresh UI
-        println("removed \(annotationsToRemove.count) annotations")
         mapView.removeAnnotations(annotationsToRemove)
-        
-        println("added \(annotationsToRemove.count) annotations")
         mapView.addAnnotations(annotationsToAdd)
         
         for station in stations {
             /// refresh annotations
             NSNotificationCenter.defaultCenter().postNotificationName(station.id, object: nil)
         }
-        
-        println("refreshing ended\n---")
     }
 
     /// MARK: Notifications

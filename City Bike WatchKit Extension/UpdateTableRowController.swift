@@ -14,7 +14,7 @@ class UpdateTableRowController: NSObject {
     @IBOutlet weak var dateLabel: WKInterfaceLabel!
 
     func configure(date: NSDate) {
-        titleLabel.setText(NSLocalizedString("RECENTLY UPDATED", comment: ""))
+        titleLabel.setText(NSLocalizedString("recently-updated", comment: ""))
         dateLabel.setText(date.updatedWhileAgoTextualRepresentation())
     }
 }

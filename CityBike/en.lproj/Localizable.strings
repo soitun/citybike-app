@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  CityBike
+
+  Created by Tomasz Szulc on 27/06/15.
+  Copyright (c) 2015 Tomasz Szulc. All rights reserved.
+*/
+
+"No City Bike Networks" = "No City Bike Networks"
+
+"Feedback" = "Feedback"
+
+"Close" = "Close"
+
+"Bikes available" = "Bikes available"
+
+"Many" = "Many"
+
+"Few" = "Many"
+
+"None" = "None"
+
+"getting-started-networks" = "You have to select at least one city bike network. Networks are grouped by country to make it easy to select."
+
+"getting-started-stopwatch" = "Track how much time you spend cycling.\n You can check your rides history in menu."
+
+"Connectivity issue" = "Connectivity issue"
+
+"Provided by" = "Provided by"
+
+"Rides History" = "Rides History"
+
+"City Bike Networks" = "City Bike Networks"
+
+"Send Feedback" = "Send Feedback"
+
+"We’d love to hear your feedback!" = "We’d love to hear your feedback!"
+
+"Rate the app" = "Rate the app"
+
+"Statistics" = "Statistics"
+
+"Settings" = "Settings"
+
+"Help Us" = "Help Us"
+
+
+
+// APPLE WATCH
+"NO STATIONS" = "NO STATIONS"
+
+"no-stations-suggestion" = "No stations selected. Open iPhone app and select some city bike network first."
+
+"LOCATION SERVICES" = "LOCATION SERVICES"
+
+"location-services-suggestion" = "To show you nearest bike stations and approximate distance to them app needs access to Location Services. If this is your first launch please go to iPhone app to accept permissions, otherwise go to system Settings."
+
+"CURRENT LOCATION" = "CURRENT LOCATION"
+
+"Getting your location..." = "Getting your location..."
+
+"UPDATING" = "UPDATING"
+
+"Getting newest data..." = "Getting newest data..."
+
+"Now" = "Now"
+
+"Empty History" = "Empty History"
+
+"RECENTLY UPDATED" = "RECENTLY UPDATED"

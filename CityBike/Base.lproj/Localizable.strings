@@ -1,0 +1,184 @@
+/* 
+  Localizable.strings
+  CityBike
+
+  Created by Tomasz Szulc on 27/06/15.
+  Copyright (c) 2015 Tomasz Szulc. All rights reserved.
+*/
+
+/*
+ Displayed in the Networks view when there is no networks available, because of some internet problem or because networks are downloading right now."
+ */
+"no-city-bike-networks" = "No City Bike Networks";
+
+/**
+ Placed in alert saying that device cannot send emails.
+ */
+"feedback" = "Feedback";
+
+/**
+ Displayed in alert saying that device cannot send emails,
+ */
+"ok" = "Ok";
+
+/**
+ First screen of getting started flow, user see it under pin which contains number of available bikes. It use used to show user: "hey, this number means - Bikes available".
+ */
+"bikes-available" = "Bikes available";
+
+/**
+ Many bikes.
+ */
+"many" = "Many";
+
+/**
+ Few bikes.
+ */
+"few" = "Few";
+
+/**
+ No bikes.
+ */
+"none" = "None";
+
+/**
+ Finish of getting started phase - user tap this button and end getting started.
+ */
+"that-is-easy-thanks" = "That's easy, thanks!";
+
+/**
+ Displayed on getting started view when there is mention about networks and that user have to select one.
+ */
+"getting-started-networks" = "You have to select at least one city bike network. Networks are grouped by country.";
+
+/**
+ Displayed on getting started view when there is description of stopwatch functionality.
+ */
+"getting-started-stopwatch" = "Track how much time you spend cycling.\n You can check your rides history in menu.";
+
+/**
+ Displayed when problem with connection occurs - displayed only on map view.
+ */
+"connectivity-issue" = "Connectivity issue";
+
+/**
+ This is displayed above link to citibyk.es site when there is no networks available yet in the app.
+ */
+"content-provided-by" = "Content provided by";
+
+/**
+ Displayed as above but in the case when networks are available suffixed with number of networks.
+ */
+"content-provided-by-(%d)" = "Content provided by (%d)";
+
+/**
+ Title of menu option and view with history of rides.
+ */
+"rides-history" = "Rides History";
+
+/**
+ Displayed in History Rides view when there is no history yet.
+ */
+"empty-history" = "Empty History";
+
+/**
+ Displayed as menu option and title of view when user can select netowkrs.
+ */
+"city-bike-networks" = "City Bike Networks";
+
+/**
+ Displayed as menu option.
+ */
+"send-feedback" = "Send Feedback";
+
+/**
+ Displayed as subtitle of "Send Feedback" menu option.
+ */
+"send-feedback-subtitle" = "We’d love to hear your feedback!";
+
+/**
+ Displayed as option in menu.
+ */
+"rate-the-app" = "Rate the app";
+
+/**
+ Header of menu section which contains e.g. rides history
+ */
+"statistics" = "Statistics";
+
+/**
+ Header of menu with e.g. city bike networks
+ */
+"settings" = "Settings";
+
+/**
+ Header of menu with e.g. Send Feedback option
+ */
+"help-us" = "Help Us";
+
+
+
+/** 
+ Apple Watch
+ */
+
+
+/**
+ Title of view with stations and bikes availability.
+ */
+"bikes" = "Bikes";
+
+/**
+ Title of view with stopwatch.
+ */
+"stopwatch" = "Stopwatch";
+
+/**
+ Title of "No Stations" message - uppercase.
+ */
+"no-stations" = "NO STATIONS";
+
+/**
+ Description of "No Stations" message.
+ */
+"no-stations-suggestion" = "No stations selected. Open iPhone app and select some city bike network first.";
+
+/**
+ Title of "LOCATION SERVICES" message - uppercase.
+ */
+"location-services" = "LOCATION SERVICES";
+
+/**
+ Description of "Location Services" message.
+ */
+"location-services-suggestion" = "To show you nearest bike stations and approximate distance to them app needs access to Location Services. If this is your first launch please go to iPhone app to accept permissions, otherwise go to system Settings.";
+
+/**
+ Title of "Current Action" message - uppercase.
+ */
+"current-location" = "CURRENT LOCATION";
+
+/**
+ Description of "Current Action" message.
+ */
+"getting-your-location" = "Getting your location...";
+
+/**
+ Title of "Updating" message - uppercase.
+ */
+"updating" = "UPDATING";
+
+/**
+ Description of "Updating" message.
+ */
+"getting-newest-data" = "Getting newest data...";
+
+/**
+ Specifies when update was performed recently. If it was in close distance of time to "now" app displays it.
+ */
+"now" = "Now";
+
+/**
+ Displayed in the latest row of bike stations. Title of row which displays time of latest update".
+ */
+"recently-updated" = "RECENTLY UPDATED";

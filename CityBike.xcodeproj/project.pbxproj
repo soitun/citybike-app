@@ -29,6 +29,8 @@
 		6D4855661B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4855641B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift */; };
 		6D4855681B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4855671B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift */; };
 		6D4855691B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4855671B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift */; };
+		6D5003F01B3EA0A000A54B36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D5003F31B3EA0A000A54B36 /* Localizable.strings */; };
+		6D5003F11B3EA0A000A54B36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D5003F31B3EA0A000A54B36 /* Localizable.strings */; };
 		6D5BA0B61B359822005C72CC /* UIView+XIBLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5BA0B51B359822005C72CC /* UIView+XIBLoading.swift */; };
 		6D5BA0B81B359849005C72CC /* UIView+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5BA0B71B359849005C72CC /* UIView+Dynamic.swift */; };
 		6D5FB3F71B34849E00AB9143 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FB3F61B34849E00AB9143 /* MapButton.swift */; };
@@ -178,7 +180,7 @@
 		6D0EBE631B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6D20FF3B1B36D6D300C5F4A0 /* City Bike WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "City Bike WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		6D28344F1B243C2200E361A3 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = CustomCell.swift; path = Components/CustomCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6D2834511B2443F800E361A3 /* BikeNetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BikeNetworksViewController.swift; path = Controllers/BikeNetworksViewController.swift; sourceTree = "<group>"; };
+		6D2834511B2443F800E361A3 /* BikeNetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = BikeNetworksViewController.swift; path = Controllers/BikeNetworksViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6D2834531B24925400E361A3 /* RidesHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RidesHistoryViewController.swift; path = Controllers/RidesHistoryViewController.swift; sourceTree = "<group>"; };
 		6D2834571B24A71C00E361A3 /* RightDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightDetailHeader.swift; path = Components/RightDetailHeader.swift; sourceTree = "<group>"; };
 		6D2834591B24AB3100E361A3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controllers/MapViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,11 @@
 		6D4855621B3C4B5800CE8A5E /* StationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationAnnotationView.swift; sourceTree = "<group>"; };
 		6D4855641B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+AnnotationCircle.swift"; path = "../UIColor+AnnotationCircle.swift"; sourceTree = "<group>"; };
 		6D4855671B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+UpdateWhileAgo.swift"; sourceTree = "<group>"; };
+		6D5003E71B3EA04700A54B36 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6D5003E81B3EA04700A54B36 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
+		6D5003E91B3EA04700A54B36 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Interface.strings; sourceTree = "<group>"; };
+		6D5003F21B3EA0A000A54B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
+		6D5003F51B3EA0A400A54B36 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; lineEnding = 0; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 		6D5BA0B51B359822005C72CC /* UIView+XIBLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+XIBLoading.swift"; sourceTree = "<group>"; };
 		6D5BA0B71B359849005C72CC /* UIView+Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Dynamic.swift"; sourceTree = "<group>"; };
 		6D5FB3F61B34849E00AB9143 /* MapButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapButton.swift; path = Components/MapButton.swift; sourceTree = "<group>"; };
@@ -338,7 +345,9 @@
 				6D0EBE591B2033FB003ED872 /* AppDelegate.swift */,
 				6D5BA0AF1B359683005C72CC /* Features */,
 				6D5BA0B31B359772005C72CC /* Services */,
-				6D0EBE7C1B20387B003ED872 /* Resources */,
+				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
+				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
+				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
 				6D0EBE571B2033FB003ED872 /* Supporting Files */,
 				6DCFEB561B3704D8002D24C8 /* Bridging-Header.h */,
 			);
@@ -349,19 +358,10 @@
 		6D0EBE571B2033FB003ED872 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D5003F31B3EA0A000A54B36 /* Localizable.strings */,
 				6D0EBE581B2033FB003ED872 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6D0EBE7C1B20387B003ED872 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */,
-				6D0EBE5D1B2033FB003ED872 /* Main.storyboard */,
-				6D0EBE601B2033FB003ED872 /* Images.xcassets */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		6D5BA0AF1B359683005C72CC /* Features */ = {
@@ -766,6 +766,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 6D0EBE4B1B2033FB003ED872;
 			productRefGroup = 6D0EBE551B2033FB003ED872 /* Products */;
@@ -786,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */,
+				6D5003F01B3EA0A000A54B36 /* Localizable.strings in Resources */,
 				6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */,
 				6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */,
 				6DDE24551B3DBEE70094E31F /* DefaultCell.xib in Resources */,
@@ -811,6 +813,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE2F0271B3B61B30058EE7C /* Images.xcassets in Resources */,
+				6D5003F11B3EA0A000A54B36 /* Localizable.strings in Resources */,
 				6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */,
 				6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */,
 			);
@@ -1026,6 +1029,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D0EBE5E1B2033FB003ED872 /* Base */,
+				6D5003E81B3EA04700A54B36 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1034,14 +1038,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D0EBE631B2033FB003ED872 /* Base */,
+				6D5003E71B3EA04700A54B36 /* pl */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		6D5003F31B3EA0A000A54B36 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D5003F21B3EA0A000A54B36 /* Base */,
+				6D5003F51B3EA0A400A54B36 /* pl */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		6D8DC0BD1B369DDD00B80C63 /* Interface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6D8DC0BE1B369DDD00B80C63 /* Base */,
+				6D5003E91B3EA04700A54B36 /* pl */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";

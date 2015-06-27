@@ -1,0 +1,30 @@
+
+/* Class = "WKInterfaceLabel"; text = "0.8km"; ObjectID = "1f5-JL-5TX"; */
+"1f5-JL-5TX.text" = "0.8km";
+
+/* Class = "WKInterfaceLabel"; text = "RECENTLY UPDATED"; ObjectID = "21X-6e-k47"; */
+"21X-6e-k47.text" = "RECENTLY UPDATED";
+
+/* Class = "WKInterfaceController"; title = "Stopwatch"; ObjectID = "2KQ-60-rdq"; */
+"2KQ-60-rdq.title" = "Stopwatch";
+
+/* Class = "WKInterfaceController"; title = "Bikes"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "Bikes";
+
+/* Class = "WKInterfaceLabel"; text = "Go to your iPhone and select some city bike networks."; ObjectID = "FU8-Gm-ShN"; */
+"FU8-Gm-ShN.text" = "Go to your iPhone and select some city bike networks.";
+
+/* Class = "WKInterfaceLabel"; text = "STACJA 01 FLOATING ARENA"; ObjectID = "SR8-Q2-njj"; */
+"SR8-Q2-njj.text" = "STACJA 01 FLOATING ARENA";
+
+/* Class = "WKInterfaceLabel"; text = "NO STATIONS"; ObjectID = "bxe-hx-0EK"; */
+"bxe-hx-0EK.text" = "NO STATIONS";
+
+/* Class = "WKInterfaceLabel"; text = "21/06/2015 14:21:33"; ObjectID = "elW-hQ-oSG"; */
+"elW-hQ-oSG.text" = "21/06/2015 14:21:33";
+
+/* Class = "WKInterfaceLabel"; text = "10 of 20"; ObjectID = "srX-no-60x"; */
+"srX-no-60x.text" = "10 of 20";
+
+/* Class = "WKInterfaceLabel"; text = "00:00:00"; ObjectID = "wXw-vN-1mi"; */
+"wXw-vN-1mi.text" = "00:00:00";

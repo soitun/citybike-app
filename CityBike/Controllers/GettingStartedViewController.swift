@@ -34,6 +34,7 @@ class GettingStartedViewController: UIViewController, UIScrollViewDelegate {
         thanksButton.alpha = 0
         thanksButton.enabled = false
         thanksButton.makeStyleEndGettingStarted()
+        thanksButton.setTitle(NSLocalizedString("that-is-easy-thanks", comment: ""), forState: .Normal)
     }
     
     
