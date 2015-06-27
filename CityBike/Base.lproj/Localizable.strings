@@ -174,11 +174,6 @@
 "getting-newest-data" = "Getting newest data...";
 
 /**
- Specifies when update was performed recently. If it was in close distance of time to "now" app displays it.
- */
-"now" = "Now";
-
-/**
  Displayed in the latest row of bike stations. Title of row which displays time of latest update".
  */
 "recently-updated" = "RECENTLY UPDATED";
