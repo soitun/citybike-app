@@ -11,12 +11,15 @@ import Model
 
 class StationManager {
     
-    class func allStationsForSelectedNetworks() -> [Station] {
+    class func allStationsForSelectedNetworks(resetContext: Bool = false) -> [Station] {
         let networkIDs = UserSettings.sharedInstance().getNetworkIDs()
+        let context = CoreDataStack.sharedInstance().mainContext
+        
+        if resetContext { context.reset() }
         
         var stations = [Station]()
         for networkID in networkIDs {
-            stations += Station.fetchWithAttribute("network.id", value: networkID, context: CoreDataStack.sharedInstance().mainContext) as! [Station]
+            stations += Station.fetchWithAttribute("network.id", value: networkID, context: context) as! [Station]
         }
         
         return stations

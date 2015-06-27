@@ -6,23 +6,23 @@
 //
 
 import Foundation
-
+import CoreData
 
 public typealias CoreDataModelStoreType = String
 
 public struct CoreDataModel {
     let name: String
     let bundle: NSBundle
-    
-    public init(name: String, bundle: NSBundle) {
+    let sharedGroup: String
+
+    public init(name: String, bundle: NSBundle, sharedGroup: String) {
         self.name = name
         self.bundle = bundle
+        self.sharedGroup = sharedGroup
     }
 }
 
 public class CoreDataStack: NSObject {
-    
-    let sharedAppGroup: String = "group.com.tomaszszulc.CityBike"
     
     private var model: CoreDataModel
     private var storeType: CoreDataModelStoreType
@@ -41,13 +41,6 @@ public class CoreDataStack: NSObject {
     }
     
     public class func sharedInstance() -> CoreDataStack {
-        /// This is workaround for core data configuration (for now)
-        if Static.instance == nil {
-            let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self))
-            let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
-            CoreDataStack.setSharedInstance(cdStack)
-        }
-        
         return Static.instance
     }
     
@@ -85,7 +78,7 @@ public class CoreDataStack: NSObject {
         
         let coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
 
-        let sharedContainerURL: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.sharedAppGroup)!
+        let sharedContainerURL: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier(self.model.sharedGroup)!
         let storeURL = sharedContainerURL.URLByAppendingPathComponent("\(self.model.name).sqlite")
         
         var error: NSError? = nil

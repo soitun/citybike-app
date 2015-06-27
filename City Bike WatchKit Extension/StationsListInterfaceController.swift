@@ -23,6 +23,8 @@ class StationsListInterfaceController: WKInterfaceController {
     private var userLocation: CLLocation?
     private var displayedFetchingData = false
     
+    private var displayedWarning: MessageType?
+    
     // MARK: Life-cycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -93,18 +95,24 @@ class StationsListInterfaceController: WKInterfaceController {
             reloadWithWarning(.CannotObtainUserLocation)
 
         } else {
-            var stations = StationManager.allStationsForSelectedNetworks() as [Station]
+            var stations = StationManager.allStationsForSelectedNetworks(resetContext: true) as [Station]
             if stations.count == 0 {
                 reloadWithWarning(.NoStations)
                 
             } else if stations.count > 0 {
+                self.displayedWarning = nil
                 reloadTableWithStations(stations, userLocation: userLocation!)
             }
         }
     }
     
-    private func reloadWithWarning(warning: CBMessageType) {
-        table.setNumberOfRows(1, withRowType: RowType.Warning.rawValue)
+    private func reloadWithWarning(warning: MessageType) {
+        if let messageType = self.displayedWarning where messageType == warning {
+            return
+        }
+        
+        self.displayedWarning = warning
+        table.setRowTypes([RowType.Warning.rawValue])
         var row = table.rowControllerAtIndex(0) as! MessageTableRowController
         row.configure(warning)
     }
@@ -137,6 +145,8 @@ class StationsListInterfaceController: WKInterfaceController {
                 let proxy = proxies[rowIdx]
                 row.configure(proxy)
                 
+                println("proxy timestamp: \(proxy.updateTimestamp), \(proxy.name)")
+
                 /// check recent timestamp
                 if recentTimestamp.laterDate(proxy.updateTimestamp) == proxy.updateTimestamp {
                     recentTimestamp = proxy.updateTimestamp
@@ -168,6 +178,7 @@ class StationsListInterfaceController: WKInterfaceController {
         var stationProxies = [WatchStationProxy]()
         
         for station in stations {
+            println("station timestamp: \(station.timestamp), \(station.name)")
             var proxy = WatchStationProxy(station: station)
             stationProxies.append(proxy)
             

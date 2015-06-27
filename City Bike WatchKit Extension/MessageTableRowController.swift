@@ -9,7 +9,7 @@
 import Foundation
 import WatchKit
 
-enum CBMessageType {
+enum MessageType {
     case NoStations
     case LocationServicesDisabled
     case CannotObtainUserLocation
@@ -22,7 +22,7 @@ class MessageTableRowController: NSObject {
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     @IBOutlet weak var detailTextLabel: WKInterfaceLabel!
     
-    func configure(type: CBMessageType) {
+    func configure(type: MessageType) {
         switch type {
         case .NoStations: configureForNoStations()
         case .LocationServicesDisabled: configureForLocationServicesDisabled()

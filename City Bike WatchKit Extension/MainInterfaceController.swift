@@ -8,18 +8,25 @@
 
 import WatchKit
 import Foundation
-
+import CoreData
 
 class MainInterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         configureUserSettings()
+        configureCoreData()
     }
 
     override func willActivate() {
         super.willActivate()
         WKInterfaceController.reloadRootControllersWithNames(["StationsListInterfaceController", "StopwatchInterfaceController"], contexts: nil)
+    }
+    
+    private func configureCoreData() {
+        let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self), sharedGroup: Constant.AppSharedGroup.rawValue)
+        let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
+        CoreDataStack.setSharedInstance(cdStack)
     }
     
     private func configureUserSettings() {
