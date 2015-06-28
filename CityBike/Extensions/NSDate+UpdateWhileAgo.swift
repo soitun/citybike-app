@@ -16,16 +16,15 @@ extension NSDate {
         
         if tc.hours == 0 && tc.minutes == 0 {
             if tc.seconds < 30 {
-                return NSLocalizedString("now", comment: "")
+                return I18N.localizedString("now")
+                
             } else {
-                return String.localizedStringWithFormat("%d seconds ago", tc.seconds)
+                return String(format:I18N.localizedExpressionString("time-seconds", value: tc.seconds), tc.seconds)
             }
         } else if tc.hours == 0 {
-            let minuteText = (tc.minutes == 1) ? "minute" : "minutes"
-            return String.localizedStringWithFormat("%d %@ ago", tc.minutes, minuteText)
+            return String(format:I18N.localizedExpressionString("time-minutes", value: tc.minutes), tc.minutes)
         } else if tc.hours <= 2 {
-            let hourText = (tc.hours == 1) ? "hour" : "hours"
-            return String.localizedStringWithFormat("%d %@ ago", tc.hours, hourText)
+            return String(format:I18N.localizedExpressionString("time-hours", value: tc.hours), tc.hours)
         } else {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle

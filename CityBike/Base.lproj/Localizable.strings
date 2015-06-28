@@ -177,3 +177,49 @@
  Displayed in the latest row of bike stations. Title of row which displays time of latest update".
  */
 "recently-updated" = "RECENTLY UPDATED";
+
+
+/**
+Update Time
+*/
+
+/**
+Updated 4 minutes ago
+*/
+"updated" = "Updated";
+
+/**
+Updated now
+*/
+"now" = "Now";
+
+/** 
+1 second
+*/
+"time-seconds{ie:%d=1}" = "%d second ago";
+
+/** 
+more than 1 second
+*/
+"time-seconds{exp:(^[^1])|(^\\d{2,})}" = "%d seconds ago";
+
+/**
+1 minute
+*/
+"time-minutes{ie:%d=1}" = "%d minutes ago";
+
+/**
+more than 1 minute
+*/
+"time-minutes{exp:(^[^1])|(^\\d{2,})}" = "%d minutes ago";
+
+/**
+1 hour
+*/
+"time-hours{ie:%d=1}" = "%d hours ago";
+
+/** 
+more than one hour
+*/
+"time-hours{exp:(^[^1])|(^\\d{2,})}" = "%d hours ago";
+

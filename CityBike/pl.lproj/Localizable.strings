@@ -75,3 +75,25 @@
 "getting-newest-data" = "Pobieranie najnowszych informacji...";
 
 "recently-updated" = "OSTATNIA AKTUALIZACJA";
+
+
+/**
+Update Time
+*/
+
+"updated" = "Zakutalizowano";
+"now" = "Teraz";
+
+"time-seconds{ie:%d=1}" = "%d sekundę temu";
+"time-seconds{exp:(((?!1).[2-4]{1})$)|(^[2-4]$)}" = "%d sekundy temu";
+"time-seconds{exp:(.*(?=1).[0-9]$)|(^[05-9]$)|(.*(?!1).[0156789])}" = "%d sekund temu";
+
+"time-minutes{ie:%d=1}" = "%d minutę temu";
+"time-minutes{exp:(((?!1).[2-4]{1})$)|(^[2-4]$)}" = "%d minuty temu";
+"time-minutes{exp:(.*(?=1).[0-9]$)|(^[05-9]$)|(.*(?!1).[0156789])}" = "%d minut temu";
+
+"time-hours{ie:%d=1}" = "%d godzinę temu";
+"time-hours{exp:(((?!1).[2-4]{1})$)|(^[2-4]$)}" = "%d godziny temu";
+"time-hours{exp:(.*(?=1).[0-9]$)|(^[05-9]$)|(.*(?!1).[0156789])}" = "%d godzin temu";
+
+

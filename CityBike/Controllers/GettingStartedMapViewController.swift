@@ -24,11 +24,11 @@ class GettingStartedMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        freeBikesLabel.text = NSLocalizedString("bikes-available", comment: "")
+        freeBikesLabel.text = I18N.localizedString("bikes-available")
         
-        manyLabel.text = NSLocalizedString("many", comment: "")
-        fewLabel.text = NSLocalizedString("few", comment: "")
-        noneLabel.text = NSLocalizedString("none", comment: "")
+        manyLabel.text = I18N.localizedString("many")
+        fewLabel.text = I18N.localizedString("few")
+        noneLabel.text = I18N.localizedString("none")
         
         manyCircleImageView.tintColor = UIColor.plentyColor()
         fewCircleImageView.tintColor = UIColor.fewColor()
