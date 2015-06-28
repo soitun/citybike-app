@@ -206,7 +206,7 @@ more than 1 second
 /**
 1 minute
 */
-"time-minutes{one}" = "%d minutes ago";
+"time-minutes{one}" = "%d minute ago";
 
 /**
 more than 1 minute
@@ -216,7 +216,7 @@ more than 1 minute
 /**
 1 hour
 */
-"time-hours{one}" = "%d hours ago";
+"time-hours{one}" = "%d hour ago";
 
 /** 
 more than one hour
