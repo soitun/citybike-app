@@ -35,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         mapDetailView.delegate = self
         
-        noInternetLabel.text = I18N.localizedString("connectivity-issue")
+        noInternetLabel.text = I18n.localizedString("connectivity-issue")
         noInternetContainer.makeRounded()
         noInternetContainer.changeVisibility(false, animated: false)
         

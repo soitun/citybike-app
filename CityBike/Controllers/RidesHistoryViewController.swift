@@ -21,7 +21,7 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = I18N.localizedString("rides-history")
+        navigationItem.title = I18n.localizedString("rides-history")
         
         dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
        
@@ -34,7 +34,7 @@ class RidesHistoryViewController: UIViewController, UITableViewDelegate, UITable
         tableView.registerNib(UINib(nibName: RightDetailHeader.Identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: RightDetailHeader.Identifier)
         tableView.separatorColor = UIColor.concreteColor()
 
-        noItemsLabel.text = I18N.localizedString("empty-history")
+        noItemsLabel.text = I18n.localizedString("empty-history")
         noItemsLabel.textColor = UIColor.whiteLilac()
         noItemsLabel.hidden = true
     }

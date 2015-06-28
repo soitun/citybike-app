@@ -25,7 +25,7 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = I18N.localizedString("city-bike-networks")
+        self.navigationItem.title = I18n.localizedString("city-bike-networks")
         
         selectedNetworkIDs = UserSettings.sharedInstance().getNetworkIDs()
         
@@ -40,7 +40,7 @@ class BikeNetworksViewController: UIViewController, UITableViewDelegate, UITable
 
         searchBar.barTintColor = UIColor.concreteColor()
 
-        noItemsLabel.text = I18N.localizedString("no-city-bike-networks")
+        noItemsLabel.text = I18n.localizedString("no-city-bike-networks")
         noItemsLabel.textColor = UIColor.whiteLilac()
         noItemsLabel.hidden = true
         noItemsIndicator.color = UIColor.whiteLilac()

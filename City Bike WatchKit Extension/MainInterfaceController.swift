@@ -14,7 +14,7 @@ class MainInterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        I18N(bundle: NSBundle(forClass: StationManager.self))
+        I18n(bundle: NSBundle(forClass: StationManager.self))
         configureUserSettings()
         configureCoreData()
     }

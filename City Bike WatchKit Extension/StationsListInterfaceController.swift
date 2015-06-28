@@ -28,7 +28,7 @@ class StationsListInterfaceController: WKInterfaceController {
     // MARK: Life-cycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        self.setTitle(I18N.localizedString("bikes"))
+        self.setTitle(I18n.localizedString("bikes"))
     }
 
     override func willActivate() {

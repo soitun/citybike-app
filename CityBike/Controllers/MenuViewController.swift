@@ -54,10 +54,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc private func refreshProvidedBy() {
         let networksCount = Network.fetchAll(CoreDataStack.sharedInstance().mainContext).count
         if networksCount == 0 {
-            providedByLabel.text = I18N.localizedString("content-provided-by")
+            providedByLabel.text = I18n.localizedString("content-provided-by")
         
         } else {
-            providedByLabel.text = String.localizedStringWithFormat(I18N.localizedString("content-provided-by-(%d)"), networksCount)
+            providedByLabel.text = String.localizedStringWithFormat(I18n.localizedString("content-provided-by-(%d)"), networksCount)
         }
     }
     
@@ -82,13 +82,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         switch Section(rawValue: indexPath.section)! {
         case .Statistics:
             let cell = tableView.dequeueReusableCellWithIdentifier(DefaultCell.Identifier) as! DefaultCell
-            cell.label.text = I18N.localizedString("rides-history") + " 🏁 🚴🏼"
+            cell.label.text = I18n.localizedString("rides-history") + " 🏁 🚴🏼"
             cell.accessoryType = .DisclosureIndicator
             return cell
             
         case .Settings:
             let cell = tableView.dequeueReusableCellWithIdentifier(RightDetailCell.Identifier) as! RightDetailCell
-            cell.label.text = I18N.localizedString("city-bike-networks")
+            cell.label.text = I18n.localizedString("city-bike-networks")
             cell.detailLabel.text = ""
             
             // This will be used when multi-selection is supported
@@ -99,13 +99,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         case .HelpUs:
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(SubtitleCell.Identifier) as! SubtitleCell
-                cell.label.text = I18N.localizedString("send-feedback") + " ✉️"
-                cell.detailLabel.text = I18N.localizedString("send-feedback-subtitle")
+                cell.label.text = I18n.localizedString("send-feedback") + " ✉️"
+                cell.detailLabel.text = I18n.localizedString("send-feedback-subtitle")
                 return cell
                 
             } else if indexPath.row == 1 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(DefaultCell.Identifier) as! DefaultCell
-                cell.label.text = I18N.localizedString("rate-the-app") + " ⭐️⭐️⭐️⭐️⭐️"
+                cell.label.text = I18n.localizedString("rate-the-app") + " ⭐️⭐️⭐️⭐️⭐️"
                 return cell
             }
         }
@@ -115,9 +115,9 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func headerTitles() -> [String] {
         return [
-            I18N.localizedString("statistics"),
-            I18N.localizedString("settings"),
-            I18N.localizedString("help-us")
+            I18n.localizedString("statistics"),
+            I18n.localizedString("settings"),
+            I18n.localizedString("help-us")
         ]
     }
     

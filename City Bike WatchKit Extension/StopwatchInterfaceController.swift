@@ -20,7 +20,7 @@ class StopwatchInterfaceController: WKInterfaceController {
     // MARK: Life cycle
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        self.setTitle(I18N.localizedString("stopwatch"))
+        self.setTitle(I18n.localizedString("stopwatch"))
     }
 
     override func willActivate() {

@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     private func configureApp() {
         if configured == false {
             configured = true
-            I18N(bundle: NSBundle.mainBundle())
+            I18n(bundle: NSBundle.mainBundle())
             configureUserSettings()
             configureCoreData()
             configureWormhole()

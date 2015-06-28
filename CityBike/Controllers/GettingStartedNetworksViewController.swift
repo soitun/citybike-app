@@ -14,6 +14,6 @@ class GettingStartedNetworksViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textLabel.text = I18N.localizedString("getting-started-networks")
+        textLabel.text = I18n.localizedString("getting-started-networks")
     }
 }

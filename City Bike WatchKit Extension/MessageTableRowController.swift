@@ -33,25 +33,25 @@ class MessageTableRowController: NSObject {
     
     private func configureForNoStations() {
         icon.setTintColor(UIColor.noneColor())
-        titleLabel.setText(I18N.localizedString("no-stations"))
-        detailTextLabel.setText(I18N.localizedString("no-stations-suggestion"))
+        titleLabel.setText(I18n.localizedString("no-stations"))
+        detailTextLabel.setText(I18n.localizedString("no-stations-suggestion"))
     }
     
     private func configureForLocationServicesDisabled() {
         icon.setTintColor(UIColor.noneColor())
-        titleLabel.setText(I18N.localizedString("location-services"))
-        detailTextLabel.setText(I18N.localizedString("location-services-suggestion"))
+        titleLabel.setText(I18n.localizedString("location-services"))
+        detailTextLabel.setText(I18n.localizedString("location-services-suggestion"))
     }
     
     private func configureForCannotObtainUserLocation() {
         icon.setTintColor(UIColor.plentyColor())
-        titleLabel.setText(I18N.localizedString("current-location"))
-        detailTextLabel.setText(I18N.localizedString("getting-your-location"))
+        titleLabel.setText(I18n.localizedString("current-location"))
+        detailTextLabel.setText(I18n.localizedString("getting-your-location"))
     }
     
     private func configurForFetchingData() {
         icon.setTintColor(UIColor.plentyColor())
-        titleLabel.setText(I18N.localizedString("updating"))
-        detailTextLabel.setText(I18N.localizedString("getting-newest-data"))
+        titleLabel.setText(I18n.localizedString("updating"))
+        detailTextLabel.setText(I18n.localizedString("getting-newest-data"))
     }
 }

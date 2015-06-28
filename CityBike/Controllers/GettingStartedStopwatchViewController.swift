@@ -14,6 +14,6 @@ class GettingStartedStopwatchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textLabel.text = I18N.localizedString("getting-started-stopwatch")
+        textLabel.text = I18n.localizedString("getting-started-stopwatch")
     }
 }

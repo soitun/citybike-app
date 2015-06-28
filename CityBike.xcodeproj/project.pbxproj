@@ -12,6 +12,48 @@
 		6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE5D1B2033FB003ED872 /* Main.storyboard */; };
 		6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE601B2033FB003ED872 /* Images.xcassets */; };
 		6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */; };
+		6D10A5EA1B40A3A30062EDC4 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D71B40A3A30062EDC4 /* Expression.swift */; };
+		6D10A5EB1B40A3A30062EDC4 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D71B40A3A30062EDC4 /* Expression.swift */; };
+		6D10A5EC1B40A3A30062EDC4 /* ExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D81B40A3A30062EDC4 /* ExpressionMatcher.swift */; };
+		6D10A5ED1B40A3A30062EDC4 /* ExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D81B40A3A30062EDC4 /* ExpressionMatcher.swift */; };
+		6D10A5EE1B40A3A30062EDC4 /* ExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D91B40A3A30062EDC4 /* ExpressionParser.swift */; };
+		6D10A5EF1B40A3A30062EDC4 /* ExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D91B40A3A30062EDC4 /* ExpressionParser.swift */; };
+		6D10A5F01B40A3A30062EDC4 /* InequalityExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DA1B40A3A30062EDC4 /* InequalityExpressionMatcher.swift */; };
+		6D10A5F11B40A3A30062EDC4 /* InequalityExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DA1B40A3A30062EDC4 /* InequalityExpressionMatcher.swift */; };
+		6D10A5F21B40A3A30062EDC4 /* InequalityExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DB1B40A3A30062EDC4 /* InequalityExpressionParser.swift */; };
+		6D10A5F31B40A3A30062EDC4 /* InequalityExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DB1B40A3A30062EDC4 /* InequalityExpressionParser.swift */; };
+		6D10A5F41B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DC1B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift */; };
+		6D10A5F51B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DC1B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift */; };
+		6D10A5F61B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */; };
+		6D10A5F71B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */; };
+		6D10A5F81B40A3A30062EDC4 /* InequalitySign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */; };
+		6D10A5F91B40A3A30062EDC4 /* InequalitySign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */; };
+		6D10A5FA1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */; };
+		6D10A5FB1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */; };
+		6D10A5FC1B40A3A30062EDC4 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */; };
+		6D10A5FD1B40A3A30062EDC4 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */; };
+		6D10A5FE1B40A3A30062EDC4 /* LocalizableFilesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */; };
+		6D10A5FF1B40A3A30062EDC4 /* LocalizableFilesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */; };
+		6D10A6001B40A3A30062EDC4 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E21B40A3A30062EDC4 /* Regex.swift */; };
+		6D10A6011B40A3A30062EDC4 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E21B40A3A30062EDC4 /* Regex.swift */; };
+		6D10A6021B40A3A30062EDC4 /* RegexExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E31B40A3A30062EDC4 /* RegexExpressionMatcher.swift */; };
+		6D10A6031B40A3A30062EDC4 /* RegexExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E31B40A3A30062EDC4 /* RegexExpressionMatcher.swift */; };
+		6D10A6041B40A3A30062EDC4 /* RegexExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E41B40A3A30062EDC4 /* RegexExpressionParser.swift */; };
+		6D10A6051B40A3A30062EDC4 /* RegexExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E41B40A3A30062EDC4 /* RegexExpressionParser.swift */; };
+		6D10A6061B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */; };
+		6D10A6071B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */; };
+		6D10A6081B40A3A30062EDC4 /* Swifternalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */; };
+		6D10A6091B40A3A30062EDC4 /* Swifternalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */; };
+		6D10A60A1B40A3A30062EDC4 /* TranslablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */; };
+		6D10A60B1B40A3A30062EDC4 /* TranslablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */; };
+		6D10A60C1B40A3A30062EDC4 /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E91B40A3A30062EDC4 /* ValueType.swift */; };
+		6D10A60D1B40A3A30062EDC4 /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E91B40A3A30062EDC4 /* ValueType.swift */; };
+		6D10A6111B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */; };
+		6D10A6121B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */; };
+		6D10A6131B40A3AE0062EDC4 /* SharedExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A60F1B40A3AE0062EDC4 /* SharedExpression.swift */; };
+		6D10A6141B40A3AE0062EDC4 /* SharedExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A60F1B40A3AE0062EDC4 /* SharedExpression.swift */; };
+		6D10A6151B40A3AE0062EDC4 /* SharedPolishExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A6101B40A3AE0062EDC4 /* SharedPolishExpression.swift */; };
+		6D10A6161B40A3AE0062EDC4 /* SharedPolishExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A6101B40A3AE0062EDC4 /* SharedPolishExpression.swift */; };
 		6D20FF3C1B36D90600C5F4A0 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD460A31B208A040070E163 /* UIColor+CustomColors.swift */; };
 		6D2834501B243C2200E361A3 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28344F1B243C2200E361A3 /* CustomCell.swift */; };
 		6D2834521B2443F800E361A3 /* BikeNetworksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834511B2443F800E361A3 /* BikeNetworksViewController.swift */; };
@@ -38,32 +80,6 @@
 		6D5FB3FB1B349F7C00AB9143 /* StopwatchPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FB3FA1B349F7C00AB9143 /* StopwatchPopover.swift */; };
 		6D5FB3FD1B34A99300AB9143 /* MapDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5FB3FC1B34A99300AB9143 /* MapDetailView.xib */; };
 		6D5FB3FF1B34AB8D00AB9143 /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5FB3FE1B34AB8D00AB9143 /* MapDetailView.swift */; };
-		6D6283611B3F702800E65FCD /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283521B3F702800E65FCD /* Expression.swift */; };
-		6D6283621B3F702800E65FCD /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283521B3F702800E65FCD /* Expression.swift */; };
-		6D6283631B3F702800E65FCD /* ExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283531B3F702800E65FCD /* ExpressionMatcher.swift */; };
-		6D6283641B3F702800E65FCD /* ExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283531B3F702800E65FCD /* ExpressionMatcher.swift */; };
-		6D6283651B3F702800E65FCD /* ExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283541B3F702800E65FCD /* ExpressionParser.swift */; };
-		6D6283661B3F702800E65FCD /* ExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283541B3F702800E65FCD /* ExpressionParser.swift */; };
-		6D6283671B3F702800E65FCD /* InequalityExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283551B3F702800E65FCD /* InequalityExpressionMatcher.swift */; };
-		6D6283681B3F702800E65FCD /* InequalityExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283551B3F702800E65FCD /* InequalityExpressionMatcher.swift */; };
-		6D6283691B3F702800E65FCD /* InequalityExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283561B3F702800E65FCD /* InequalityExpressionParser.swift */; };
-		6D62836A1B3F702800E65FCD /* InequalityExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283561B3F702800E65FCD /* InequalityExpressionParser.swift */; };
-		6D62836B1B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283571B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift */; };
-		6D62836C1B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283571B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift */; };
-		6D62836D1B3F702800E65FCD /* InequalityExtendedExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283581B3F702800E65FCD /* InequalityExtendedExpressionParser.swift */; };
-		6D62836E1B3F702800E65FCD /* InequalityExtendedExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283581B3F702800E65FCD /* InequalityExtendedExpressionParser.swift */; };
-		6D62836F1B3F702800E65FCD /* InequalitySign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283591B3F702800E65FCD /* InequalitySign.swift */; };
-		6D6283701B3F702800E65FCD /* InequalitySign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283591B3F702800E65FCD /* InequalitySign.swift */; };
-		6D6283731B3F702800E65FCD /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835B1B3F702800E65FCD /* Regex.swift */; };
-		6D6283741B3F702800E65FCD /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835B1B3F702800E65FCD /* Regex.swift */; };
-		6D6283751B3F702800E65FCD /* RegexExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835C1B3F702800E65FCD /* RegexExpressionMatcher.swift */; };
-		6D6283761B3F702800E65FCD /* RegexExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835C1B3F702800E65FCD /* RegexExpressionMatcher.swift */; };
-		6D6283771B3F702800E65FCD /* RegexExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835D1B3F702800E65FCD /* RegexExpressionParser.swift */; };
-		6D6283781B3F702800E65FCD /* RegexExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835D1B3F702800E65FCD /* RegexExpressionParser.swift */; };
-		6D6283791B3F702800E65FCD /* Swifternalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835F1B3F702800E65FCD /* Swifternalization.swift */; };
-		6D62837A1B3F702800E65FCD /* Swifternalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D62835F1B3F702800E65FCD /* Swifternalization.swift */; };
-		6D62837B1B3F702800E65FCD /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283601B3F702800E65FCD /* ValueType.swift */; };
-		6D62837C1B3F702800E65FCD /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6283601B3F702800E65FCD /* ValueType.swift */; };
 		6D68019A1B28E323009DE824 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6801991B28E323009DE824 /* NavigationBar.swift */; };
 		6D6801A11B28E8E2009DE824 /* DefaultHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019C1B28E8E2009DE824 /* DefaultHeader.xib */; };
 		6D6801A31B28E8E2009DE824 /* RightDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D68019E1B28E8E2009DE824 /* RightDetailHeader.xib */; };
@@ -96,18 +112,6 @@
 		6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51181B2B8465002ECC3F /* CBService.swift */; };
 		6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51191B2B8465002ECC3F /* CBStation.swift */; };
 		6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */; };
-		6DBB6C731B404626002F39A3 /* InternalPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C6D1B404626002F39A3 /* InternalPatterns.swift */; };
-		6DBB6C741B404626002F39A3 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C6E1B404626002F39A3 /* KeyValue.swift */; };
-		6DBB6C751B404626002F39A3 /* LocalizableFilesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C6F1B404626002F39A3 /* LocalizableFilesLoader.swift */; };
-		6DBB6C761B404626002F39A3 /* SharedExpressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C701B404626002F39A3 /* SharedExpressions.swift */; };
-		6DBB6C771B404626002F39A3 /* SharedExpressionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C711B404626002F39A3 /* SharedExpressionsConfigurator.swift */; };
-		6DBB6C781B404626002F39A3 /* TranslablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C721B404626002F39A3 /* TranslablePair.swift */; };
-		6DBB6C791B40462E002F39A3 /* InternalPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C6D1B404626002F39A3 /* InternalPatterns.swift */; };
-		6DBB6C7A1B404631002F39A3 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C6E1B404626002F39A3 /* KeyValue.swift */; };
-		6DBB6C7B1B404638002F39A3 /* LocalizableFilesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C6F1B404626002F39A3 /* LocalizableFilesLoader.swift */; };
-		6DBB6C7C1B40463A002F39A3 /* SharedExpressions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C701B404626002F39A3 /* SharedExpressions.swift */; };
-		6DBB6C7D1B40463D002F39A3 /* SharedExpressionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C711B404626002F39A3 /* SharedExpressionsConfigurator.swift */; };
-		6DBB6C7E1B40463F002F39A3 /* TranslablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB6C721B404626002F39A3 /* TranslablePair.swift */; };
 		6DC344CD1B233B9E00C29408 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CC1B233B9E00C29408 /* CustomButton.swift */; };
 		6DC344CF1B23B37C00C29408 /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CE1B23B37C00C29408 /* GettingStartedViewController.swift */; };
 		6DC344D11B23BCDB00C29408 /* GettingStartedMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344D01B23BCDB00C29408 /* GettingStartedMapViewController.swift */; };
@@ -216,6 +220,28 @@
 		6D0EBE5E1B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D0EBE601B2033FB003ED872 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D0EBE631B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6D10A5D71B40A3A30062EDC4 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Submodules/Swifternalization/Swifternalization/Expression.swift; sourceTree = "<group>"; };
+		6D10A5D81B40A3A30062EDC4 /* ExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpressionMatcher.swift; path = Submodules/Swifternalization/Swifternalization/ExpressionMatcher.swift; sourceTree = "<group>"; };
+		6D10A5D91B40A3A30062EDC4 /* ExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpressionParser.swift; path = Submodules/Swifternalization/Swifternalization/ExpressionParser.swift; sourceTree = "<group>"; };
+		6D10A5DA1B40A3A30062EDC4 /* InequalityExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalityExpressionMatcher.swift; path = Submodules/Swifternalization/Swifternalization/InequalityExpressionMatcher.swift; sourceTree = "<group>"; };
+		6D10A5DB1B40A3A30062EDC4 /* InequalityExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalityExpressionParser.swift; path = Submodules/Swifternalization/Swifternalization/InequalityExpressionParser.swift; sourceTree = "<group>"; };
+		6D10A5DC1B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalityExtendedExpressionMatcher.swift; path = Submodules/Swifternalization/Swifternalization/InequalityExtendedExpressionMatcher.swift; sourceTree = "<group>"; };
+		6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalityExtendedExpressionParser.swift; path = Submodules/Swifternalization/Swifternalization/InequalityExtendedExpressionParser.swift; sourceTree = "<group>"; };
+		6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalitySign.swift; path = Submodules/Swifternalization/Swifternalization/InequalitySign.swift; sourceTree = "<group>"; };
+		6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternalPatterns.swift; path = Submodules/Swifternalization/Swifternalization/InternalPatterns.swift; sourceTree = "<group>"; };
+		6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValue.swift; path = Submodules/Swifternalization/Swifternalization/KeyValue.swift; sourceTree = "<group>"; };
+		6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableFilesLoader.swift; path = Submodules/Swifternalization/Swifternalization/LocalizableFilesLoader.swift; sourceTree = "<group>"; };
+		6D10A5E21B40A3A30062EDC4 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Submodules/Swifternalization/Swifternalization/Regex.swift; sourceTree = "<group>"; };
+		6D10A5E31B40A3A30062EDC4 /* RegexExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegexExpressionMatcher.swift; path = Submodules/Swifternalization/Swifternalization/RegexExpressionMatcher.swift; sourceTree = "<group>"; };
+		6D10A5E41B40A3A30062EDC4 /* RegexExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegexExpressionParser.swift; path = Submodules/Swifternalization/Swifternalization/RegexExpressionParser.swift; sourceTree = "<group>"; };
+		6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedExpressionsConfigurator.swift; path = Submodules/Swifternalization/Swifternalization/SharedExpressionsConfigurator.swift; sourceTree = "<group>"; };
+		6D10A5E61B40A3A30062EDC4 /* Swifternalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swifternalization.h; path = Submodules/Swifternalization/Swifternalization/Swifternalization.h; sourceTree = "<group>"; };
+		6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swifternalization.swift; path = Submodules/Swifternalization/Swifternalization/Swifternalization.swift; sourceTree = "<group>"; };
+		6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TranslablePair.swift; path = Submodules/Swifternalization/Swifternalization/TranslablePair.swift; sourceTree = "<group>"; };
+		6D10A5E91B40A3A30062EDC4 /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueType.swift; path = Submodules/Swifternalization/Swifternalization/ValueType.swift; sourceTree = "<group>"; };
+		6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedBaseExpression.swift; path = "Submodules/Swifternalization/Swifternalization/Shared Expressions/SharedBaseExpression.swift"; sourceTree = "<group>"; };
+		6D10A60F1B40A3AE0062EDC4 /* SharedExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedExpression.swift; path = "Submodules/Swifternalization/Swifternalization/Shared Expressions/SharedExpression.swift"; sourceTree = "<group>"; };
+		6D10A6101B40A3AE0062EDC4 /* SharedPolishExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedPolishExpression.swift; path = "Submodules/Swifternalization/Swifternalization/Shared Expressions/SharedPolishExpression.swift"; sourceTree = "<group>"; };
 		6D20FF3B1B36D6D300C5F4A0 /* City Bike WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "City Bike WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		6D28344F1B243C2200E361A3 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = CustomCell.swift; path = Components/CustomCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6D2834511B2443F800E361A3 /* BikeNetworksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = BikeNetworksViewController.swift; path = Controllers/BikeNetworksViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -243,20 +269,6 @@
 		6D5FB3FA1B349F7C00AB9143 /* StopwatchPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopwatchPopover.swift; path = Components/StopwatchPopover.swift; sourceTree = "<group>"; };
 		6D5FB3FC1B34A99300AB9143 /* MapDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapDetailView.xib; sourceTree = "<group>"; };
 		6D5FB3FE1B34AB8D00AB9143 /* MapDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapDetailView.swift; path = Components/MapDetailView.swift; sourceTree = "<group>"; };
-		6D6283521B3F702800E65FCD /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
-		6D6283531B3F702800E65FCD /* ExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressionMatcher.swift; sourceTree = "<group>"; };
-		6D6283541B3F702800E65FCD /* ExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressionParser.swift; sourceTree = "<group>"; };
-		6D6283551B3F702800E65FCD /* InequalityExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InequalityExpressionMatcher.swift; sourceTree = "<group>"; };
-		6D6283561B3F702800E65FCD /* InequalityExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InequalityExpressionParser.swift; sourceTree = "<group>"; };
-		6D6283571B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InequalityExtendedExpressionMatcher.swift; sourceTree = "<group>"; };
-		6D6283581B3F702800E65FCD /* InequalityExtendedExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InequalityExtendedExpressionParser.swift; sourceTree = "<group>"; };
-		6D6283591B3F702800E65FCD /* InequalitySign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InequalitySign.swift; sourceTree = "<group>"; };
-		6D62835B1B3F702800E65FCD /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		6D62835C1B3F702800E65FCD /* RegexExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexExpressionMatcher.swift; sourceTree = "<group>"; };
-		6D62835D1B3F702800E65FCD /* RegexExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexExpressionParser.swift; sourceTree = "<group>"; };
-		6D62835E1B3F702800E65FCD /* Swifternalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swifternalization.h; sourceTree = "<group>"; };
-		6D62835F1B3F702800E65FCD /* Swifternalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifternalization.swift; sourceTree = "<group>"; };
-		6D6283601B3F702800E65FCD /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueType.swift; sourceTree = "<group>"; };
 		6D630EF41B36CB380002FF3C /* CityBike.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CityBike.entitlements; sourceTree = "<group>"; };
 		6D6801991B28E323009DE824 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = Components/NavigationBar.swift; sourceTree = "<group>"; };
 		6D68019C1B28E8E2009DE824 /* DefaultHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultHeader.xib; path = Resources/DefaultHeader.xib; sourceTree = "<group>"; };
@@ -288,12 +300,6 @@
 		6DBA51181B2B8465002ECC3F /* CBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBService.swift; path = "Submodules/citybik.es-api/CBService.swift"; sourceTree = "<group>"; };
 		6DBA51191B2B8465002ECC3F /* CBStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStation.swift; path = "Submodules/citybik.es-api/CBStation.swift"; sourceTree = "<group>"; };
 		6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUpdater.swift; sourceTree = "<group>"; };
-		6DBB6C6D1B404626002F39A3 /* InternalPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalPatterns.swift; sourceTree = "<group>"; };
-		6DBB6C6E1B404626002F39A3 /* KeyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValue.swift; sourceTree = "<group>"; };
-		6DBB6C6F1B404626002F39A3 /* LocalizableFilesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableFilesLoader.swift; sourceTree = "<group>"; };
-		6DBB6C701B404626002F39A3 /* SharedExpressions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedExpressions.swift; sourceTree = "<group>"; };
-		6DBB6C711B404626002F39A3 /* SharedExpressionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedExpressionsConfigurator.swift; sourceTree = "<group>"; };
-		6DBB6C721B404626002F39A3 /* TranslablePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslablePair.swift; sourceTree = "<group>"; };
 		6DC344CC1B233B9E00C29408 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Components/CustomButton.swift; sourceTree = "<group>"; };
 		6DC344CE1B23B37C00C29408 /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GettingStartedViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		6DC344D01B23BCDB00C29408 /* GettingStartedMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GettingStartedMapViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -422,6 +428,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6D10A5D61B40A36A0062EDC4 /* Swifternalization */ = {
+			isa = PBXGroup;
+			children = (
+				6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */,
+				6D10A60F1B40A3AE0062EDC4 /* SharedExpression.swift */,
+				6D10A6101B40A3AE0062EDC4 /* SharedPolishExpression.swift */,
+				6D10A5D71B40A3A30062EDC4 /* Expression.swift */,
+				6D10A5D81B40A3A30062EDC4 /* ExpressionMatcher.swift */,
+				6D10A5D91B40A3A30062EDC4 /* ExpressionParser.swift */,
+				6D10A5DA1B40A3A30062EDC4 /* InequalityExpressionMatcher.swift */,
+				6D10A5DB1B40A3A30062EDC4 /* InequalityExpressionParser.swift */,
+				6D10A5DC1B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift */,
+				6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */,
+				6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */,
+				6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */,
+				6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */,
+				6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */,
+				6D10A5E21B40A3A30062EDC4 /* Regex.swift */,
+				6D10A5E31B40A3A30062EDC4 /* RegexExpressionMatcher.swift */,
+				6D10A5E41B40A3A30062EDC4 /* RegexExpressionParser.swift */,
+				6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */,
+				6D10A5E61B40A3A30062EDC4 /* Swifternalization.h */,
+				6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */,
+				6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */,
+				6D10A5E91B40A3A30062EDC4 /* ValueType.swift */,
+			);
+			name = Swifternalization;
+			sourceTree = "<group>";
+		};
 		6D5BA0AF1B359683005C72CC /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,7 +538,7 @@
 		6D5BA0B91B359C5B005C72CC /* External APIs */ = {
 			isa = PBXGroup;
 			children = (
-				6D6283511B3F700D00E65FCD /* Swifternalization */,
+				6D10A5D61B40A36A0062EDC4 /* Swifternalization */,
 				6DBA51121B2B8454002ECC3F /* citybik.es-api */,
 			);
 			name = "External APIs";
@@ -515,34 +550,6 @@
 				6D28345B1B24B0A100E361A3 /* FeedbackMailComposeViewController.swift */,
 			);
 			name = Feedback;
-			sourceTree = "<group>";
-		};
-		6D6283511B3F700D00E65FCD /* Swifternalization */ = {
-			isa = PBXGroup;
-			children = (
-				6DBB6C6D1B404626002F39A3 /* InternalPatterns.swift */,
-				6DBB6C6E1B404626002F39A3 /* KeyValue.swift */,
-				6DBB6C6F1B404626002F39A3 /* LocalizableFilesLoader.swift */,
-				6DBB6C701B404626002F39A3 /* SharedExpressions.swift */,
-				6DBB6C711B404626002F39A3 /* SharedExpressionsConfigurator.swift */,
-				6DBB6C721B404626002F39A3 /* TranslablePair.swift */,
-				6D6283521B3F702800E65FCD /* Expression.swift */,
-				6D6283531B3F702800E65FCD /* ExpressionMatcher.swift */,
-				6D6283541B3F702800E65FCD /* ExpressionParser.swift */,
-				6D6283551B3F702800E65FCD /* InequalityExpressionMatcher.swift */,
-				6D6283561B3F702800E65FCD /* InequalityExpressionParser.swift */,
-				6D6283571B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift */,
-				6D6283581B3F702800E65FCD /* InequalityExtendedExpressionParser.swift */,
-				6D6283591B3F702800E65FCD /* InequalitySign.swift */,
-				6D62835B1B3F702800E65FCD /* Regex.swift */,
-				6D62835C1B3F702800E65FCD /* RegexExpressionMatcher.swift */,
-				6D62835D1B3F702800E65FCD /* RegexExpressionParser.swift */,
-				6D62835E1B3F702800E65FCD /* Swifternalization.h */,
-				6D62835F1B3F702800E65FCD /* Swifternalization.swift */,
-				6D6283601B3F702800E65FCD /* ValueType.swift */,
-			);
-			name = Swifternalization;
-			path = Submodules/Swifternalization/Swifternalization;
 			sourceTree = "<group>";
 		};
 		6D6DB5221B31DA9200342179 /* Extensions */ = {
@@ -986,74 +993,76 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D2834621B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift in Sources */,
+				6D10A5FE1B40A3A30062EDC4 /* LocalizableFilesLoader.swift in Sources */,
 				6DC344D11B23BCDB00C29408 /* GettingStartedMapViewController.swift in Sources */,
-				6D6283771B3F702800E65FCD /* RegexExpressionParser.swift in Sources */,
 				6D5BA0B81B359849005C72CC /* UIView+Dynamic.swift in Sources */,
 				6D28345E1B24B5E100E361A3 /* UIDevice+ModelNames.swift in Sources */,
 				6DC344D31B23C01300C29408 /* GettingStartedNetworksViewController.swift in Sources */,
 				6DC344E61B242D6400C29408 /* DefaultHeader.swift in Sources */,
-				6D62836B1B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift in Sources */,
-				6D6283631B3F702800E65FCD /* ExpressionMatcher.swift in Sources */,
-				6D62837B1B3F702800E65FCD /* ValueType.swift in Sources */,
-				6D6283651B3F702800E65FCD /* ExpressionParser.swift in Sources */,
-				6DBB6C771B404626002F39A3 /* SharedExpressionsConfigurator.swift in Sources */,
-				6D6283691B3F702800E65FCD /* InequalityExpressionParser.swift in Sources */,
+				6D10A5F41B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift in Sources */,
+				6D10A6111B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */,
+				6D10A5EC1B40A3A30062EDC4 /* ExpressionMatcher.swift in Sources */,
+				6D10A5EE1B40A3A30062EDC4 /* ExpressionParser.swift in Sources */,
+				6D10A5F21B40A3A30062EDC4 /* InequalityExpressionParser.swift in Sources */,
 				6DD460A41B208A040070E163 /* UIColor+CustomColors.swift in Sources */,
 				6D9EFA321B386A6000A96BE9 /* CoordinateRegionSerializable.swift in Sources */,
+				6D10A6151B40A3AE0062EDC4 /* SharedPolishExpression.swift in Sources */,
+				6D10A6131B40A3AE0062EDC4 /* SharedExpression.swift in Sources */,
 				6D2834601B24E89000E361A3 /* RideStopwatch.swift in Sources */,
-				6DBB6C751B404626002F39A3 /* LocalizableFilesLoader.swift in Sources */,
+				6D10A6041B40A3A30062EDC4 /* RegexExpressionParser.swift in Sources */,
 				6D7955A21B3DE27800CAA7DF /* StationProxy.swift in Sources */,
 				6D2834541B24925400E361A3 /* RidesHistoryViewController.swift in Sources */,
 				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
 				6DCFEB461B36EF8E002D24C8 /* UserSettings.swift in Sources */,
+				6D10A6081B40A3A30062EDC4 /* Swifternalization.swift in Sources */,
 				6D5FB3FB1B349F7C00AB9143 /* StopwatchPopover.swift in Sources */,
-				6D6283791B3F702800E65FCD /* Swifternalization.swift in Sources */,
 				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,
 				6DCFEB511B370349002D24C8 /* Constant.swift in Sources */,
 				6D5FB3F71B34849E00AB9143 /* MapButton.swift in Sources */,
-				6D6283671B3F702800E65FCD /* InequalityExpressionMatcher.swift in Sources */,
+				6D10A5F01B40A3A30062EDC4 /* InequalityExpressionMatcher.swift in Sources */,
 				6DCFEB591B3735B4002D24C8 /* StationManager.swift in Sources */,
+				6D10A6061B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift in Sources */,
 				6D4855681B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift in Sources */,
+				6D10A6001B40A3A30062EDC4 /* Regex.swift in Sources */,
 				6D2834501B243C2200E361A3 /* CustomCell.swift in Sources */,
 				6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */,
 				6DF07F2E1B2D71DD00A8F796 /* StationAnnotation.swift in Sources */,
 				6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */,
 				6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */,
+				6D10A5FA1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */,
 				6D2834521B2443F800E361A3 /* BikeNetworksViewController.swift in Sources */,
+				6D10A5FC1B40A3A30062EDC4 /* KeyValue.swift in Sources */,
 				6D5FB3FF1B34AB8D00AB9143 /* MapDetailView.swift in Sources */,
 				6D28345A1B24AB3100E361A3 /* MapViewController.swift in Sources */,
 				6D2834581B24A71C00E361A3 /* RightDetailHeader.swift in Sources */,
-				6DBB6C781B404626002F39A3 /* TranslablePair.swift in Sources */,
 				6D68019A1B28E323009DE824 /* NavigationBar.swift in Sources */,
 				6DD460A21B20891D0070E163 /* UIView+Styling.swift in Sources */,
-				6D62836D1B3F702800E65FCD /* InequalityExtendedExpressionParser.swift in Sources */,
+				6D10A5F61B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */,
 				6D4855651B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift in Sources */,
 				6D31D1001B221CA50034C27B /* RightDetailCell.swift in Sources */,
 				6DF07F381B2DD78300A8F796 /* FilterNetworks.swift in Sources */,
 				6DC344CF1B23B37C00C29408 /* GettingStartedViewController.swift in Sources */,
-				6D6283731B3F702800E65FCD /* Regex.swift in Sources */,
 				6D0EBE5A1B2033FB003ED872 /* AppDelegate.swift in Sources */,
-				6D6283611B3F702800E65FCD /* Expression.swift in Sources */,
+				6D10A5EA1B40A3A30062EDC4 /* Expression.swift in Sources */,
 				6DC344DC1B242A2000C29408 /* DefaultCell.swift in Sources */,
 				6D28345C1B24B0A100E361A3 /* FeedbackMailComposeViewController.swift in Sources */,
 				6DC344D51B23C57300C29408 /* GettingStartedStopwatchViewController.swift in Sources */,
 				6DC344E11B242B6E00C29408 /* MenuViewController.swift in Sources */,
 				6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */,
-				6D62836F1B3F702800E65FCD /* InequalitySign.swift in Sources */,
+				6D10A5F81B40A3A30062EDC4 /* InequalitySign.swift in Sources */,
 				6DC344CD1B233B9E00C29408 /* CustomButton.swift in Sources */,
 				6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */,
 				6DCFEB5C1B373A85002D24C8 /* AppleWatchEvent.swift in Sources */,
-				6DBB6C761B404626002F39A3 /* SharedExpressions.swift in Sources */,
 				6D95DCE11B3C8555003A8974 /* WormholeNotificationSystem.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* NetworksSort.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* SubtitleCell.swift in Sources */,
+				6D10A60C1B40A3A30062EDC4 /* ValueType.swift in Sources */,
 				6DA595471B24F3920055D3D6 /* RideManager.swift in Sources */,
+				6D10A6021B40A3A30062EDC4 /* RegexExpressionMatcher.swift in Sources */,
 				6D4855631B3C4B5800CE8A5E /* StationAnnotationView.swift in Sources */,
 				6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */,
-				6DBB6C741B404626002F39A3 /* KeyValue.swift in Sources */,
+				6D10A60A1B40A3A30062EDC4 /* TranslablePair.swift in Sources */,
 				6D5BA0B61B359822005C72CC /* UIView+XIBLoading.swift in Sources */,
-				6D6283751B3F702800E65FCD /* RegexExpressionMatcher.swift in Sources */,
-				6DBB6C731B404626002F39A3 /* InternalPatterns.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,7 +1085,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6283641B3F702800E65FCD /* ExpressionMatcher.swift in Sources */,
+				6D10A5ED1B40A3A30062EDC4 /* ExpressionMatcher.swift in Sources */,
 				6DB2CC121B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift in Sources */,
 				6DCFEB5D1B373A85002D24C8 /* AppleWatchEvent.swift in Sources */,
 				6D4855661B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift in Sources */,
@@ -1085,47 +1094,49 @@
 				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
 				6D7955A61B3E893500CAA7DF /* CityBike.xcdatamodeld in Sources */,
 				6DCFEB4F1B36F259002D24C8 /* UserSettings.swift in Sources */,
+				6D10A6141B40A3AE0062EDC4 /* SharedExpression.swift in Sources */,
 				6DB2CC141B3B4FB10055E1BA /* StationOnMapContext.swift in Sources */,
 				6DCFEB621B374164002D24C8 /* MainInterfaceController.swift in Sources */,
-				6DBB6C791B40462E002F39A3 /* InternalPatterns.swift in Sources */,
-				6D62837C1B3F702800E65FCD /* ValueType.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+CustomColors.swift in Sources */,
-				6D6283701B3F702800E65FCD /* InequalitySign.swift in Sources */,
-				6DBB6C7E1B40463F002F39A3 /* TranslablePair.swift in Sources */,
-				6DBB6C7B1B404638002F39A3 /* LocalizableFilesLoader.swift in Sources */,
+				6D10A5F91B40A3A30062EDC4 /* InequalitySign.swift in Sources */,
+				6D10A6011B40A3A30062EDC4 /* Regex.swift in Sources */,
 				6DCFEB641B374610002D24C8 /* RideStopwatch.swift in Sources */,
+				6D10A5FD1B40A3A30062EDC4 /* KeyValue.swift in Sources */,
 				6DCFEB5F1B37412F002D24C8 /* StopwatchInterfaceController.swift in Sources */,
-				6D6283781B3F702800E65FCD /* RegexExpressionParser.swift in Sources */,
 				6DCFEB5A1B3735B4002D24C8 /* StationManager.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* StationsListInterfaceController.swift in Sources */,
-				6D62837A1B3F702800E65FCD /* Swifternalization.swift in Sources */,
-				6D62836E1B3F702800E65FCD /* InequalityExtendedExpressionParser.swift in Sources */,
+				6D10A5F71B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */,
 				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,
 				6D7955A51B3E882300CAA7DF /* CoreDataStack.swift in Sources */,
+				6D10A60D1B40A3A30062EDC4 /* ValueType.swift in Sources */,
+				6D10A6031B40A3A30062EDC4 /* RegexExpressionMatcher.swift in Sources */,
+				6D10A5FF1B40A3A30062EDC4 /* LocalizableFilesLoader.swift in Sources */,
 				6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */,
 				6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */,
 				6D9EFA331B386A9D00A96BE9 /* CoordinateRegionSerializable.swift in Sources */,
 				6D87CE301B39DA3E0089D894 /* WatchStationProxy.swift in Sources */,
-				6D62836A1B3F702800E65FCD /* InequalityExpressionParser.swift in Sources */,
+				6D10A5F31B40A3A30062EDC4 /* InequalityExpressionParser.swift in Sources */,
 				6DCFEB631B374607002D24C8 /* RideManager.swift in Sources */,
 				6D4855691B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift in Sources */,
 				6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */,
 				6D8DC0CF1B36A5FB00B80C63 /* StationTableRowController.swift in Sources */,
-				6D6283741B3F702800E65FCD /* Regex.swift in Sources */,
 				6DCFEB531B3703EE002D24C8 /* Constant.swift in Sources */,
 				6DCFEB651B3746C9002D24C8 /* NSTimeInterval+TextualRepresentation.swift in Sources */,
-				6D6283621B3F702800E65FCD /* Expression.swift in Sources */,
+				6D10A6161B40A3AE0062EDC4 /* SharedPolishExpression.swift in Sources */,
+				6D10A60B1B40A3A30062EDC4 /* TranslablePair.swift in Sources */,
+				6D10A6121B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */,
+				6D10A5FB1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */,
+				6D10A5EB1B40A3A30062EDC4 /* Expression.swift in Sources */,
+				6D10A6071B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift in Sources */,
 				6DFD68FE1B36E11000047D7B /* MessageTableRowController.swift in Sources */,
-				6D6283661B3F702800E65FCD /* ExpressionParser.swift in Sources */,
+				6D10A5EF1B40A3A30062EDC4 /* ExpressionParser.swift in Sources */,
 				6D95DCE21B3C855E003A8974 /* WormholeNotificationSystem.swift in Sources */,
 				6DB2CC101B3B47830055E1BA /* StationOnMapInterfaceController.swift in Sources */,
-				6D6283761B3F702800E65FCD /* RegexExpressionMatcher.swift in Sources */,
 				6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */,
-				6DBB6C7C1B40463A002F39A3 /* SharedExpressions.swift in Sources */,
-				6DBB6C7D1B40463D002F39A3 /* SharedExpressionsConfigurator.swift in Sources */,
-				6D62836C1B3F702800E65FCD /* InequalityExtendedExpressionMatcher.swift in Sources */,
-				6D6283681B3F702800E65FCD /* InequalityExpressionMatcher.swift in Sources */,
-				6DBB6C7A1B404631002F39A3 /* KeyValue.swift in Sources */,
+				6D10A6051B40A3A30062EDC4 /* RegexExpressionParser.swift in Sources */,
+				6D10A5F51B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift in Sources */,
+				6D10A5F11B40A3A30062EDC4 /* InequalityExpressionMatcher.swift in Sources */,
+				6D10A6091B40A3A30062EDC4 /* Swifternalization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
