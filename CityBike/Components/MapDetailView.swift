@@ -64,6 +64,6 @@ class MapDetailView: UIView {
             bikesImageView.bounce(0.1)
         }
         
-        labelThird.text = I18N.localizedString("updated") + " " + "\(date.updatedWhileAgoTextualRepresentation())".uppercaseString
+        labelThird.text = I18N.localizedString("updated") + " " + "\(date.updatedWhileAgoTextualRepresentation())"
     }
 }

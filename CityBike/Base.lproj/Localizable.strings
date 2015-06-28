@@ -191,35 +191,35 @@ Updated 4 minutes ago
 /**
 Updated now
 */
-"now" = "Now";
+"now" = "now";
 
 /** 
 1 second
 */
-"time-seconds{ie:%d=1}" = "%d second ago";
+"time-seconds{one}" = "%d second ago";
 
 /** 
 more than 1 second
 */
-"time-seconds{exp:(^[^1])|(^\\d{2,})}" = "%d seconds ago";
+"time-seconds{other}" = "%d seconds ago";
 
 /**
 1 minute
 */
-"time-minutes{ie:%d=1}" = "%d minutes ago";
+"time-minutes{one}" = "%d minutes ago";
 
 /**
 more than 1 minute
 */
-"time-minutes{exp:(^[^1])|(^\\d{2,})}" = "%d minutes ago";
+"time-minutes{other}" = "%d minutes ago";
 
 /**
 1 hour
 */
-"time-hours{ie:%d=1}" = "%d hours ago";
+"time-hours{one}" = "%d hours ago";
 
 /** 
 more than one hour
 */
-"time-hours{exp:(^[^1])|(^\\d{2,})}" = "%d hours ago";
+"time-hours{other}" = "%d hours ago";
 

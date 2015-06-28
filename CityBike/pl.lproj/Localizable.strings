@@ -82,18 +82,18 @@ Update Time
 */
 
 "updated" = "Zakutalizowano";
-"now" = "Teraz";
+"now" = "teraz";
 
-"time-seconds{ie:%d=1}" = "%d sekundę temu";
-"time-seconds{exp:(((?!1).[2-4]{1})$)|(^[2-4]$)}" = "%d sekundy temu";
-"time-seconds{exp:(.*(?=1).[0-9]$)|(^[05-9]$)|(.*(?!1).[0156789])}" = "%d sekund temu";
+"time-seconds{one}" = "%d sekundę temu";
+"time-seconds{few}" = "%d sekundy temu";
+"time-seconds{many}" = "%d sekund temu";
 
-"time-minutes{ie:%d=1}" = "%d minutę temu";
-"time-minutes{exp:(((?!1).[2-4]{1})$)|(^[2-4]$)}" = "%d minuty temu";
-"time-minutes{exp:(.*(?=1).[0-9]$)|(^[05-9]$)|(.*(?!1).[0156789])}" = "%d minut temu";
+"time-minutes{one}" = "%d minutę temu";
+"time-minutes{few}" = "%d minuty temu";
+"time-minutes{many}" = "%d minut temu";
 
-"time-hours{ie:%d=1}" = "%d godzinę temu";
-"time-hours{exp:(((?!1).[2-4]{1})$)|(^[2-4]$)}" = "%d godziny temu";
-"time-hours{exp:(.*(?=1).[0-9]$)|(^[05-9]$)|(.*(?!1).[0156789])}" = "%d godzin temu";
+"time-hours{one}" = "%d godzinę temu";
+"time-hours{few}" = "%d godziny temu";
+"time-hours{many}" = "%d godzin temu";
 
 
