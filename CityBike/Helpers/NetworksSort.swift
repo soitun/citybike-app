@@ -8,6 +8,7 @@
 
 import Foundation
 import Model
+import CityBikesAPI
 
 class OrderedNetworksGroup {
     var countryCode: CountryCode

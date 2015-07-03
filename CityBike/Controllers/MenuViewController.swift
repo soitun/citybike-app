@@ -9,6 +9,7 @@
 import UIKit
 import Model
 import Swifternalization
+import CityBikesAPI
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

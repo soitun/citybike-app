@@ -12,8 +12,6 @@
 	<dict>
 		<key>12197543E416C4C0093FDCCF0005DE07FC7780F9</key>
 		<string>https://github.com/tomkowz/citybik.es-api.git</string>
-		<key>5E507D4294204C7E5B5C2C4F2C3F2430E61959A1</key>
-		<string>https://github.com/tomkowz/Swifternalization.git</string>
 		<key>9101C61E4CC72802F1C1A5C63CB03681506406C7</key>
 		<string>https://github.com/tomkowz/CityBike-App.git</string>
 		<key>9A606DA4B0305C6C3E721C28A89831FDB54101CB</key>
@@ -25,8 +23,6 @@
 	<dict>
 		<key>12197543E416C4C0093FDCCF0005DE07FC7780F9</key>
 		<string>../../citybike-app/Submodules/citybik.es-api</string>
-		<key>5E507D4294204C7E5B5C2C4F2C3F2430E61959A1</key>
-		<string>../../citybike-app/Submodules/Swifternalization</string>
 		<key>9101C61E4CC72802F1C1A5C63CB03681506406C7</key>
 		<string>..</string>
 		<key>9A606DA4B0305C6C3E721C28A89831FDB54101CB</key>
@@ -63,14 +59,6 @@
 			<string>9A606DA4B0305C6C3E721C28A89831FDB54101CB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Nothing-App</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5E507D4294204C7E5B5C2C4F2C3F2430E61959A1</string>
-			<key>IDESourceControlWCCName</key>
-			<string>Swifternalization</string>
 		</dict>
 	</array>
 </dict>

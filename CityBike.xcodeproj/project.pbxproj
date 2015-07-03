@@ -23,8 +23,6 @@
 		6D2834601B24E89000E361A3 /* RideStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D28345F1B24E89000E361A3 /* RideStopwatch.swift */; };
 		6D2834621B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */; };
 		6D31D1001B221CA50034C27B /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31D0FF1B221CA50034C27B /* RightDetailCell.swift */; };
-		6D4075471B473D6600F2F3F4 /* Swifternalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4075461B473D6600F2F3F4 /* Swifternalization.framework */; };
-		6D4075481B473D6600F2F3F4 /* Swifternalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4075461B473D6600F2F3F4 /* Swifternalization.framework */; };
 		6D4855611B3C48C800CE8A5E /* StationAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4855601B3C48C800CE8A5E /* StationAnnotationView.xib */; };
 		6D4855631B3C4B5800CE8A5E /* StationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4855621B3C4B5800CE8A5E /* StationAnnotationView.swift */; };
 		6D4855651B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4855641B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift */; };
@@ -58,6 +56,12 @@
 		6D8DC0C41B369DDD00B80C63 /* City Bike WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6D8DC0AC1B369DDD00B80C63 /* City Bike WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6D8DC0CF1B36A5FB00B80C63 /* StationTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0CE1B36A5FB00B80C63 /* StationTableRowController.swift */; };
 		6D8DC0D11B36B1B500B80C63 /* UpdateTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8DC0D01B36B1B500B80C63 /* UpdateTableRowController.swift */; };
+		6D8F0B811B4748A000A0D51D /* CityBikesAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8F0B7F1B4748A000A0D51D /* CityBikesAPI.framework */; };
+		6D8F0B821B4748A000A0D51D /* CityBikesAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8F0B7F1B4748A000A0D51D /* CityBikesAPI.framework */; };
+		6D8F0B831B4748A000A0D51D /* Swifternalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8F0B801B4748A000A0D51D /* Swifternalization.framework */; };
+		6D8F0B841B4748A000A0D51D /* Swifternalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8F0B801B4748A000A0D51D /* Swifternalization.framework */; };
+		6D8F0B851B47497100A0D51D /* CityBikesAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8F0B7F1B4748A000A0D51D /* CityBikesAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D8F0B861B47497200A0D51D /* Swifternalization.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8F0B801B4748A000A0D51D /* Swifternalization.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6D95DCE11B3C8555003A8974 /* WormholeNotificationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */; };
 		6D95DCE21B3C855E003A8974 /* WormholeNotificationSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */; };
 		6D9EFA321B386A6000A96BE9 /* CoordinateRegionSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EFA311B386A6000A96BE9 /* CoordinateRegionSerializable.swift */; };
@@ -66,11 +70,6 @@
 		6DB2CC101B3B47830055E1BA /* StationOnMapInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC0F1B3B47830055E1BA /* StationOnMapInterfaceController.swift */; };
 		6DB2CC121B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */; };
 		6DB2CC141B3B4FB10055E1BA /* StationOnMapContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC131B3B4FB10055E1BA /* StationOnMapContext.swift */; };
-		6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
-		6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
-		6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51161B2B8465002ECC3F /* CBNetwork.swift */; };
-		6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51181B2B8465002ECC3F /* CBService.swift */; };
-		6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51191B2B8465002ECC3F /* CBStation.swift */; };
 		6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */; };
 		6DC344CD1B233B9E00C29408 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CC1B233B9E00C29408 /* CustomButton.swift */; };
 		6DC344CF1B23B37C00C29408 /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CE1B23B37C00C29408 /* GettingStartedViewController.swift */; };
@@ -82,13 +81,6 @@
 		6DC344E11B242B6E00C29408 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E01B242B6E00C29408 /* MenuViewController.swift */; };
 		6DC344E61B242D6400C29408 /* DefaultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344E51B242D6400C29408 /* DefaultHeader.swift */; };
 		6DCFEB461B36EF8E002D24C8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB451B36EF8E002D24C8 /* UserSettings.swift */; };
-		6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
-		6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
-		6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */; };
-		6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51151B2B8465002ECC3F /* CBLocation.swift */; };
-		6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51161B2B8465002ECC3F /* CBNetwork.swift */; };
-		6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51181B2B8465002ECC3F /* CBService.swift */; };
-		6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51191B2B8465002ECC3F /* CBStation.swift */; };
 		6DCFEB4F1B36F259002D24C8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB451B36EF8E002D24C8 /* UserSettings.swift */; };
 		6DCFEB511B370349002D24C8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB501B370349002D24C8 /* Constant.swift */; };
 		6DCFEB531B3703EE002D24C8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCFEB501B370349002D24C8 /* Constant.swift */; };
@@ -116,8 +108,6 @@
 		6DDE24681B3DC4310094E31F /* CityBike.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE24661B3DC4310094E31F /* CityBike.xcdatamodeld */; };
 		6DE2F0271B3B61B30058EE7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8DC0C01B369DDD00B80C63 /* Images.xcassets */; };
 		6DF07F2E1B2D71DD00A8F796 /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2D1B2D71DD00A8F796 /* StationAnnotation.swift */; };
-		6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */; };
-		6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F301B2D830500A8F796 /* CBSyncManager.swift */; };
 		6DF07F381B2DD78300A8F796 /* FilterNetworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F371B2DD78300A8F796 /* FilterNetworks.swift */; };
 		6DF07F3A1B2DD89E00A8F796 /* NetworksSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF07F391B2DD89E00A8F796 /* NetworksSort.swift */; };
 		6DFD68FE1B36E11000047D7B /* MessageTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD68FD1B36E11000047D7B /* MessageTableRowController.swift */; };
@@ -156,6 +146,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6D8063221B31BF0A00E2F7FF /* Model.framework in Embed Frameworks */,
+				6D8F0B851B47497100A0D51D /* CityBikesAPI.framework in Embed Frameworks */,
+				6D8F0B861B47497200A0D51D /* Swifternalization.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +183,6 @@
 		6D28345F1B24E89000E361A3 /* RideStopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideStopwatch.swift; path = Helpers/RideStopwatch.swift; sourceTree = "<group>"; };
 		6D2834611B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+TextualRepresentation.swift"; sourceTree = "<group>"; };
 		6D31D0FF1B221CA50034C27B /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = RightDetailCell.swift; path = Components/RightDetailCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		6D4075461B473D6600F2F3F4 /* Swifternalization.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifternalization.framework; path = Carthage/Build/iOS/Swifternalization.framework; sourceTree = "<group>"; };
 		6D4855601B3C48C800CE8A5E /* StationAnnotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StationAnnotationView.xib; sourceTree = "<group>"; };
 		6D4855621B3C4B5800CE8A5E /* StationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationAnnotationView.swift; sourceTree = "<group>"; };
 		6D4855641B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+AnnotationCircle.swift"; path = "../UIColor+AnnotationCircle.swift"; sourceTree = "<group>"; };
@@ -227,17 +218,14 @@
 		6D8DC0C01B369DDD00B80C63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D8DC0CE1B36A5FB00B80C63 /* StationTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableRowController.swift; sourceTree = "<group>"; };
 		6D8DC0D01B36B1B500B80C63 /* UpdateTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UpdateTableRowController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6D8F0B7F1B4748A000A0D51D /* CityBikesAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CityBikesAPI.framework; path = Carthage/Build/iOS/CityBikesAPI.framework; sourceTree = "<group>"; };
+		6D8F0B801B4748A000A0D51D /* Swifternalization.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swifternalization.framework; path = Carthage/Build/iOS/Swifternalization.framework; sourceTree = "<group>"; };
 		6D95DCE01B3C8555003A8974 /* WormholeNotificationSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WormholeNotificationSystem.swift; sourceTree = "<group>"; };
 		6D9EFA311B386A6000A96BE9 /* CoordinateRegionSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinateRegionSerializable.swift; sourceTree = "<group>"; };
 		6DA595461B24F3920055D3D6 /* RideManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RideManager.swift; path = Helpers/RideManager.swift; sourceTree = "<group>"; };
 		6DB2CC0F1B3B47830055E1BA /* StationOnMapInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationOnMapInterfaceController.swift; sourceTree = "<group>"; };
 		6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+RegionForPoints.swift"; sourceTree = "<group>"; };
 		6DB2CC131B3B4FB10055E1BA /* StationOnMapContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationOnMapContext.swift; sourceTree = "<group>"; };
-		6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBJSONParser.swift; path = "Submodules/citybik.es-api/CBJSONParser.swift"; sourceTree = "<group>"; };
-		6DBA51151B2B8465002ECC3F /* CBLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBLocation.swift; path = "Submodules/citybik.es-api/CBLocation.swift"; sourceTree = "<group>"; };
-		6DBA51161B2B8465002ECC3F /* CBNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBNetwork.swift; path = "Submodules/citybik.es-api/CBNetwork.swift"; sourceTree = "<group>"; };
-		6DBA51181B2B8465002ECC3F /* CBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBService.swift; path = "Submodules/citybik.es-api/CBService.swift"; sourceTree = "<group>"; };
-		6DBA51191B2B8465002ECC3F /* CBStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBStation.swift; path = "Submodules/citybik.es-api/CBStation.swift"; sourceTree = "<group>"; };
 		6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUpdater.swift; sourceTree = "<group>"; };
 		6DC344CC1B233B9E00C29408 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Components/CustomButton.swift; sourceTree = "<group>"; };
 		6DC344CE1B23B37C00C29408 /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GettingStartedViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -269,8 +257,6 @@
 		6DDE24641B3DC3A60094E31F /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		6DDE24671B3DC4310094E31F /* CityBike.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityBike.xcdatamodel; sourceTree = "<group>"; };
 		6DF07F2D1B2D71DD00A8F796 /* StationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationAnnotation.swift; path = Components/StationAnnotation.swift; sourceTree = "<group>"; };
-		6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBScheduledDownloader.swift; path = "Submodules/citybik.es-api/CBScheduledDownloader.swift"; sourceTree = "<group>"; };
-		6DF07F301B2D830500A8F796 /* CBSyncManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CBSyncManager.swift; path = "Submodules/citybik.es-api/CBSyncManager.swift"; sourceTree = "<group>"; };
 		6DF07F371B2DD78300A8F796 /* FilterNetworks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FilterNetworks.swift; path = Helpers/FilterNetworks.swift; sourceTree = "<group>"; };
 		6DF07F391B2DD89E00A8F796 /* NetworksSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworksSort.swift; path = Helpers/NetworksSort.swift; sourceTree = "<group>"; };
 		6DFD68FD1B36E11000047D7B /* MessageTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MessageTableRowController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -284,7 +270,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D4075471B473D6600F2F3F4 /* Swifternalization.framework in Frameworks */,
+				6D8F0B831B4748A000A0D51D /* Swifternalization.framework in Frameworks */,
+				6D8F0B811B4748A000A0D51D /* CityBikesAPI.framework in Frameworks */,
 				3AC3F560E715978E7353AFA9 /* libPods.a in Frameworks */,
 				6D8063211B31BF0A00E2F7FF /* Model.framework in Frameworks */,
 			);
@@ -301,7 +288,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D4075481B473D6600F2F3F4 /* Swifternalization.framework in Frameworks */,
+				6D8F0B841B4748A000A0D51D /* Swifternalization.framework in Frameworks */,
+				6D8F0B821B4748A000A0D51D /* CityBikesAPI.framework in Frameworks */,
 				AE8CA4AFF270B133414A1EE2 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +313,6 @@
 				6D80630B1B31BF0900E2F7FF /* City Bike Model */,
 				6D8DC0AD1B369DDD00B80C63 /* City Bike WatchKit Extension */,
 				6D8DC0BA1B369DDD00B80C63 /* City Bike WatchKit App */,
-				6D5BA0B91B359C5B005C72CC /* External APIs */,
 				6D0EBE551B2033FB003ED872 /* Products */,
 				1AA46FD4589E04156EFD982A /* Pods */,
 				A8775754B7360485054AA7FD /* Frameworks */,
@@ -445,14 +432,6 @@
 				6DD460A01B20890B0070E163 /* Extensions */,
 			);
 			name = Services;
-			sourceTree = "<group>";
-		};
-		6D5BA0B91B359C5B005C72CC /* External APIs */ = {
-			isa = PBXGroup;
-			children = (
-				6DBA51121B2B8454002ECC3F /* citybik.es-api */,
-			);
-			name = "External APIs";
 			sourceTree = "<group>";
 		};
 		6D5BA0BA1B359CF0005C72CC /* Feedback */ = {
@@ -575,20 +554,6 @@
 			name = "Station on map";
 			sourceTree = "<group>";
 		};
-		6DBA51121B2B8454002ECC3F /* citybik.es-api */ = {
-			isa = PBXGroup;
-			children = (
-				6DF07F2F1B2D830500A8F796 /* CBScheduledDownloader.swift */,
-				6DF07F301B2D830500A8F796 /* CBSyncManager.swift */,
-				6DBA51141B2B8465002ECC3F /* CBJSONParser.swift */,
-				6DBA51151B2B8465002ECC3F /* CBLocation.swift */,
-				6DBA51161B2B8465002ECC3F /* CBNetwork.swift */,
-				6DBA51181B2B8465002ECC3F /* CBService.swift */,
-				6DBA51191B2B8465002ECC3F /* CBStation.swift */,
-			);
-			name = "citybik.es-api";
-			sourceTree = "<group>";
-		};
 		6DC344D61B23C63A00C29408 /* Getting Started */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,7 +592,8 @@
 		A8775754B7360485054AA7FD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D4075461B473D6600F2F3F4 /* Swifternalization.framework */,
+				6D8F0B7F1B4748A000A0D51D /* CityBikesAPI.framework */,
+				6D8F0B801B4748A000A0D51D /* Swifternalization.framework */,
 				DA90676A2DC38C9EC428943F /* libPods.a */,
 			);
 			name = Frameworks;
@@ -870,16 +836,17 @@
 		};
 		6D4075451B473D2800F2F3F4 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Swifternalization.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/citybikes-api.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
@@ -931,19 +898,14 @@
 				6D2834601B24E89000E361A3 /* RideStopwatch.swift in Sources */,
 				6D7955A21B3DE27800CAA7DF /* StationProxy.swift in Sources */,
 				6D2834541B24925400E361A3 /* RidesHistoryViewController.swift in Sources */,
-				6DF07F311B2D830500A8F796 /* CBScheduledDownloader.swift in Sources */,
 				6DCFEB461B36EF8E002D24C8 /* UserSettings.swift in Sources */,
 				6D5FB3FB1B349F7C00AB9143 /* StopwatchPopover.swift in Sources */,
-				6DBA511F1B2B8465002ECC3F /* CBService.swift in Sources */,
 				6DCFEB511B370349002D24C8 /* Constant.swift in Sources */,
 				6D5FB3F71B34849E00AB9143 /* MapButton.swift in Sources */,
 				6DCFEB591B3735B4002D24C8 /* StationManager.swift in Sources */,
 				6D4855681B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift in Sources */,
 				6D2834501B243C2200E361A3 /* CustomCell.swift in Sources */,
-				6DBA511D1B2B8465002ECC3F /* CBNetwork.swift in Sources */,
 				6DF07F2E1B2D71DD00A8F796 /* StationAnnotation.swift in Sources */,
-				6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */,
-				6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */,
 				6D2834521B2443F800E361A3 /* BikeNetworksViewController.swift in Sources */,
 				6D5FB3FF1B34AB8D00AB9143 /* MapDetailView.swift in Sources */,
 				6D28345A1B24AB3100E361A3 /* MapViewController.swift in Sources */,
@@ -961,14 +923,12 @@
 				6DC344E11B242B6E00C29408 /* MenuViewController.swift in Sources */,
 				6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */,
 				6DC344CD1B233B9E00C29408 /* CustomButton.swift in Sources */,
-				6DBA51201B2B8465002ECC3F /* CBStation.swift in Sources */,
 				6DCFEB5C1B373A85002D24C8 /* AppleWatchEvent.swift in Sources */,
 				6D95DCE11B3C8555003A8974 /* WormholeNotificationSystem.swift in Sources */,
 				6DF07F3A1B2DD89E00A8F796 /* NetworksSort.swift in Sources */,
 				6DC344DA1B2429D400C29408 /* SubtitleCell.swift in Sources */,
 				6DA595471B24F3920055D3D6 /* RideManager.swift in Sources */,
 				6D4855631B3C4B5800CE8A5E /* StationAnnotationView.swift in Sources */,
-				6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */,
 				6D5BA0B61B359822005C72CC /* UIView+XIBLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -996,8 +956,6 @@
 				6DCFEB5D1B373A85002D24C8 /* AppleWatchEvent.swift in Sources */,
 				6D4855661B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift in Sources */,
 				6D8DC0D11B36B1B500B80C63 /* UpdateTableRowController.swift in Sources */,
-				6DCFEB4A1B36F255002D24C8 /* CBJSONParser.swift in Sources */,
-				6DCFEB481B36F255002D24C8 /* CBScheduledDownloader.swift in Sources */,
 				6D7955A61B3E893500CAA7DF /* CityBike.xcdatamodeld in Sources */,
 				6DCFEB4F1B36F259002D24C8 /* UserSettings.swift in Sources */,
 				6DB2CC141B3B4FB10055E1BA /* StationOnMapContext.swift in Sources */,
@@ -1007,22 +965,17 @@
 				6DCFEB5F1B37412F002D24C8 /* StopwatchInterfaceController.swift in Sources */,
 				6DCFEB5A1B3735B4002D24C8 /* StationManager.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* StationsListInterfaceController.swift in Sources */,
-				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,
 				6D7955A51B3E882300CAA7DF /* CoreDataStack.swift in Sources */,
-				6DCFEB4C1B36F255002D24C8 /* CBNetwork.swift in Sources */,
-				6DCFEB4D1B36F255002D24C8 /* CBService.swift in Sources */,
 				6D9EFA331B386A9D00A96BE9 /* CoordinateRegionSerializable.swift in Sources */,
 				6D87CE301B39DA3E0089D894 /* WatchStationProxy.swift in Sources */,
 				6DCFEB631B374607002D24C8 /* RideManager.swift in Sources */,
 				6D4855691B3C669A00CE8A5E /* NSDate+UpdateWhileAgo.swift in Sources */,
-				6DCFEB491B36F255002D24C8 /* CBSyncManager.swift in Sources */,
 				6D8DC0CF1B36A5FB00B80C63 /* StationTableRowController.swift in Sources */,
 				6DCFEB531B3703EE002D24C8 /* Constant.swift in Sources */,
 				6DCFEB651B3746C9002D24C8 /* NSTimeInterval+TextualRepresentation.swift in Sources */,
 				6DFD68FE1B36E11000047D7B /* MessageTableRowController.swift in Sources */,
 				6D95DCE21B3C855E003A8974 /* WormholeNotificationSystem.swift in Sources */,
 				6DB2CC101B3B47830055E1BA /* StationOnMapInterfaceController.swift in Sources */,
-				6DCFEB4B1B36F255002D24C8 /* CBLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
