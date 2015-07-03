@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-
+import Swifternalization
 
 class StopwatchInterfaceController: WKInterfaceController {
     @IBOutlet weak var button: WKInterfaceButton!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swifternalization
 
 protocol CBMapDetailViewDelegate {
     func mapDetailViewDidPressClose(view: MapDetailView)

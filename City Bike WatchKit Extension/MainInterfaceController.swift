@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import CoreData
+import Swifternalization
 
 class MainInterfaceController: WKInterfaceController {
 

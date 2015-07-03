@@ -9,6 +9,7 @@
 import UIKit
 import Model
 import CoreLocation
+import Swifternalization
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {

@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Model
+import Swifternalization
 
 class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swifternalization
 
 class GettingStartedNetworksViewController: UIViewController {
 

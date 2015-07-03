@@ -8,6 +8,7 @@
 
 import UIKit
 import Model
+import Swifternalization
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

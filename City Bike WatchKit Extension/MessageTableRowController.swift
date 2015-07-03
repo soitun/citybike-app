@@ -8,6 +8,7 @@
 
 import Foundation
 import WatchKit
+import Swifternalization
 
 enum MessageType {
     case NoStations

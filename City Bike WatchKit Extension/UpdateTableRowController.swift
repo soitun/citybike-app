@@ -8,6 +8,7 @@
 
 import Foundation
 import WatchKit
+import Swifternalization
 
 class UpdateTableRowController: NSObject {
     @IBOutlet weak var titleLabel: WKInterfaceLabel!

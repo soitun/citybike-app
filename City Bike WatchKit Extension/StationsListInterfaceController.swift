@@ -10,6 +10,7 @@ import WatchKit
 import Foundation
 import Model
 import CoreLocation
+import Swifternalization
 
 private enum RowType: String {
     case Station = "StationTableRowController"
