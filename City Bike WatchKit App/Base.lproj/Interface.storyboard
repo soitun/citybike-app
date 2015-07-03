@@ -57,14 +57,26 @@
                                 <tableRow identifier="UpdateTableRowController" id="arb-RD-KyW" userLabel="UpdateTableRowController" customClass="UpdateTableRowController" customModule="City_Bike_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="32" alignment="left" layout="vertical" spacing="0.0" id="CWL-W1-Q9E" userLabel="content-view">
                                         <items>
-                                            <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
-                                            </label>
-                                            <label width="1" height="14" alignment="left" text="21/06/2015 14:21:33" id="elW-hQ-oSG" userLabel="station-name-label">
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="font" type="system" pointSize="10"/>
-                                            </label>
+                                            <group width="1" alignment="left" id="JdH-t6-bWI">
+                                                <items>
+                                                    <imageView width="15" height="15" alignment="right" verticalAlignment="center" image="refresh" id="1PJ-HF-ei5">
+                                                        <color key="tintColor" red="0.75686274509999996" green="0.7725490196" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </imageView>
+                                                    <group width="1" widthAdjustment="-15" alignment="left" layout="vertical" id="uko-l2-LLm">
+                                                        <items>
+                                                            <label width="1" alignment="left" text="RECENTLY UPDATED" id="21X-6e-k47" userLabel="free-bikes-label">
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <fontDescription key="font" type="boldSystem" pointSize="11"/>
+                                                            </label>
+                                                            <label width="1" height="14" alignment="left" text="21/06/2015 14:21:33" id="elW-hQ-oSG" userLabel="station-name-label">
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                                <edgeInsets key="margins" left="0.0" right="5" top="0.0" bottom="0.0"/>
+                                            </group>
                                         </items>
                                         <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                         <edgeInsets key="margins" left="5" right="0.0" top="2" bottom="0.0"/>

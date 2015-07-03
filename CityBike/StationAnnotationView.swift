@@ -21,6 +21,7 @@ class StationAnnotationView: MKAnnotationView {
 
     override init!(annotation: MKAnnotation!, reuseIdentifier: String!) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        self.bounds = CGRectMake(0, 0, 50, 30)
         self.stationProxy = (annotation as! StationAnnotation).stationProxy
         configureUI()
         configure(stationProxy)
@@ -70,15 +71,8 @@ class StationAnnotationView: MKAnnotationView {
         nib.instantiateWithOwner(self, options: nil).first
         
         if customView != nil {
-            addSubview(customView)
-            customView.setTranslatesAutoresizingMaskIntoConstraints(false)
+            self.addSubview(customView)
         }
-        setTranslatesAutoresizingMaskIntoConstraints(false)
-
-        /// Add constraints to make this view the same size as the custom one
-        let widthConstraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: customView, attribute: .Width, multiplier: 1, constant: 0)
-        let heightConstraint = NSLayoutConstraint(item: self, attribute: .Height, relatedBy: .Equal, toItem: customView, attribute: .Height, multiplier: 1, constant: 0)
-        addConstraints([widthConstraint, heightConstraint])
     }
    
     
