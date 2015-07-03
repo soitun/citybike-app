@@ -12,6 +12,10 @@
 		6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE5D1B2033FB003ED872 /* Main.storyboard */; };
 		6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE601B2033FB003ED872 /* Images.xcassets */; };
 		6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0EBE621B2033FB003ED872 /* LaunchScreen.xib */; };
+		6D104AF31B4732F4002F026D /* InternalPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D104AF11B4732F4002F026D /* InternalPattern.swift */; };
+		6D104AF41B4732F4002F026D /* TranslatablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D104AF21B4732F4002F026D /* TranslatablePair.swift */; };
+		6D104AF51B473306002F026D /* TranslatablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D104AF21B4732F4002F026D /* TranslatablePair.swift */; };
+		6D104AF61B473311002F026D /* InternalPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D104AF11B4732F4002F026D /* InternalPattern.swift */; };
 		6D10A5EA1B40A3A30062EDC4 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D71B40A3A30062EDC4 /* Expression.swift */; };
 		6D10A5EB1B40A3A30062EDC4 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D71B40A3A30062EDC4 /* Expression.swift */; };
 		6D10A5EC1B40A3A30062EDC4 /* ExpressionMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5D81B40A3A30062EDC4 /* ExpressionMatcher.swift */; };
@@ -28,8 +32,6 @@
 		6D10A5F71B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */; };
 		6D10A5F81B40A3A30062EDC4 /* InequalitySign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */; };
 		6D10A5F91B40A3A30062EDC4 /* InequalitySign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */; };
-		6D10A5FA1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */; };
-		6D10A5FB1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */; };
 		6D10A5FC1B40A3A30062EDC4 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */; };
 		6D10A5FD1B40A3A30062EDC4 /* KeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */; };
 		6D10A5FE1B40A3A30062EDC4 /* LocalizableFilesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */; };
@@ -44,8 +46,6 @@
 		6D10A6071B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */; };
 		6D10A6081B40A3A30062EDC4 /* Swifternalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */; };
 		6D10A6091B40A3A30062EDC4 /* Swifternalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */; };
-		6D10A60A1B40A3A30062EDC4 /* TranslablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */; };
-		6D10A60B1B40A3A30062EDC4 /* TranslablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */; };
 		6D10A60C1B40A3A30062EDC4 /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E91B40A3A30062EDC4 /* ValueType.swift */; };
 		6D10A60D1B40A3A30062EDC4 /* ValueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A5E91B40A3A30062EDC4 /* ValueType.swift */; };
 		6D10A6111B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */; };
@@ -220,6 +220,8 @@
 		6D0EBE5E1B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D0EBE601B2033FB003ED872 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6D0EBE631B2033FB003ED872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6D104AF11B4732F4002F026D /* InternalPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternalPattern.swift; path = Submodules/Swifternalization/Swifternalization/InternalPattern.swift; sourceTree = "<group>"; };
+		6D104AF21B4732F4002F026D /* TranslatablePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TranslatablePair.swift; path = Submodules/Swifternalization/Swifternalization/TranslatablePair.swift; sourceTree = "<group>"; };
 		6D10A5D71B40A3A30062EDC4 /* Expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Submodules/Swifternalization/Swifternalization/Expression.swift; sourceTree = "<group>"; };
 		6D10A5D81B40A3A30062EDC4 /* ExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpressionMatcher.swift; path = Submodules/Swifternalization/Swifternalization/ExpressionMatcher.swift; sourceTree = "<group>"; };
 		6D10A5D91B40A3A30062EDC4 /* ExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpressionParser.swift; path = Submodules/Swifternalization/Swifternalization/ExpressionParser.swift; sourceTree = "<group>"; };
@@ -228,7 +230,6 @@
 		6D10A5DC1B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalityExtendedExpressionMatcher.swift; path = Submodules/Swifternalization/Swifternalization/InequalityExtendedExpressionMatcher.swift; sourceTree = "<group>"; };
 		6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalityExtendedExpressionParser.swift; path = Submodules/Swifternalization/Swifternalization/InequalityExtendedExpressionParser.swift; sourceTree = "<group>"; };
 		6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InequalitySign.swift; path = Submodules/Swifternalization/Swifternalization/InequalitySign.swift; sourceTree = "<group>"; };
-		6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InternalPatterns.swift; path = Submodules/Swifternalization/Swifternalization/InternalPatterns.swift; sourceTree = "<group>"; };
 		6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyValue.swift; path = Submodules/Swifternalization/Swifternalization/KeyValue.swift; sourceTree = "<group>"; };
 		6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableFilesLoader.swift; path = Submodules/Swifternalization/Swifternalization/LocalizableFilesLoader.swift; sourceTree = "<group>"; };
 		6D10A5E21B40A3A30062EDC4 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Submodules/Swifternalization/Swifternalization/Regex.swift; sourceTree = "<group>"; };
@@ -237,7 +238,6 @@
 		6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedExpressionsConfigurator.swift; path = Submodules/Swifternalization/Swifternalization/SharedExpressionsConfigurator.swift; sourceTree = "<group>"; };
 		6D10A5E61B40A3A30062EDC4 /* Swifternalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Swifternalization.h; path = Submodules/Swifternalization/Swifternalization/Swifternalization.h; sourceTree = "<group>"; };
 		6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swifternalization.swift; path = Submodules/Swifternalization/Swifternalization/Swifternalization.swift; sourceTree = "<group>"; };
-		6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TranslablePair.swift; path = Submodules/Swifternalization/Swifternalization/TranslablePair.swift; sourceTree = "<group>"; };
 		6D10A5E91B40A3A30062EDC4 /* ValueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueType.swift; path = Submodules/Swifternalization/Swifternalization/ValueType.swift; sourceTree = "<group>"; };
 		6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedBaseExpression.swift; path = "Submodules/Swifternalization/Swifternalization/Shared Expressions/SharedBaseExpression.swift"; sourceTree = "<group>"; };
 		6D10A60F1B40A3AE0062EDC4 /* SharedExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedExpression.swift; path = "Submodules/Swifternalization/Swifternalization/Shared Expressions/SharedExpression.swift"; sourceTree = "<group>"; };
@@ -431,6 +431,8 @@
 		6D10A5D61B40A36A0062EDC4 /* Swifternalization */ = {
 			isa = PBXGroup;
 			children = (
+				6D104AF11B4732F4002F026D /* InternalPattern.swift */,
+				6D104AF21B4732F4002F026D /* TranslatablePair.swift */,
 				6D10A60E1B40A3AE0062EDC4 /* SharedBaseExpression.swift */,
 				6D10A60F1B40A3AE0062EDC4 /* SharedExpression.swift */,
 				6D10A6101B40A3AE0062EDC4 /* SharedPolishExpression.swift */,
@@ -442,7 +444,6 @@
 				6D10A5DC1B40A3A30062EDC4 /* InequalityExtendedExpressionMatcher.swift */,
 				6D10A5DD1B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift */,
 				6D10A5DE1B40A3A30062EDC4 /* InequalitySign.swift */,
-				6D10A5DF1B40A3A30062EDC4 /* InternalPatterns.swift */,
 				6D10A5E01B40A3A30062EDC4 /* KeyValue.swift */,
 				6D10A5E11B40A3A30062EDC4 /* LocalizableFilesLoader.swift */,
 				6D10A5E21B40A3A30062EDC4 /* Regex.swift */,
@@ -451,7 +452,6 @@
 				6D10A5E51B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift */,
 				6D10A5E61B40A3A30062EDC4 /* Swifternalization.h */,
 				6D10A5E71B40A3A30062EDC4 /* Swifternalization.swift */,
-				6D10A5E81B40A3A30062EDC4 /* TranslablePair.swift */,
 				6D10A5E91B40A3A30062EDC4 /* ValueType.swift */,
 			);
 			name = Swifternalization;
@@ -1003,6 +1003,7 @@
 				6D10A6111B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */,
 				6D10A5EC1B40A3A30062EDC4 /* ExpressionMatcher.swift in Sources */,
 				6D10A5EE1B40A3A30062EDC4 /* ExpressionParser.swift in Sources */,
+				6D104AF31B4732F4002F026D /* InternalPattern.swift in Sources */,
 				6D10A5F21B40A3A30062EDC4 /* InequalityExpressionParser.swift in Sources */,
 				6DD460A41B208A040070E163 /* UIColor+CustomColors.swift in Sources */,
 				6D9EFA321B386A6000A96BE9 /* CoordinateRegionSerializable.swift in Sources */,
@@ -1029,7 +1030,6 @@
 				6DF07F2E1B2D71DD00A8F796 /* StationAnnotation.swift in Sources */,
 				6DBA511C1B2B8465002ECC3F /* CBLocation.swift in Sources */,
 				6DBA511B1B2B8465002ECC3F /* CBJSONParser.swift in Sources */,
-				6D10A5FA1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */,
 				6D2834521B2443F800E361A3 /* BikeNetworksViewController.swift in Sources */,
 				6D10A5FC1B40A3A30062EDC4 /* KeyValue.swift in Sources */,
 				6D5FB3FF1B34AB8D00AB9143 /* MapDetailView.swift in Sources */,
@@ -1040,6 +1040,7 @@
 				6D10A5F61B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */,
 				6D4855651B3C636C00CE8A5E /* UIColor+AnnotationCircle.swift in Sources */,
 				6D31D1001B221CA50034C27B /* RightDetailCell.swift in Sources */,
+				6D104AF41B4732F4002F026D /* TranslatablePair.swift in Sources */,
 				6DF07F381B2DD78300A8F796 /* FilterNetworks.swift in Sources */,
 				6DC344CF1B23B37C00C29408 /* GettingStartedViewController.swift in Sources */,
 				6D0EBE5A1B2033FB003ED872 /* AppDelegate.swift in Sources */,
@@ -1061,7 +1062,6 @@
 				6D10A6021B40A3A30062EDC4 /* RegexExpressionMatcher.swift in Sources */,
 				6D4855631B3C4B5800CE8A5E /* StationAnnotationView.swift in Sources */,
 				6DF07F321B2D830500A8F796 /* CBSyncManager.swift in Sources */,
-				6D10A60A1B40A3A30062EDC4 /* TranslablePair.swift in Sources */,
 				6D5BA0B61B359822005C72CC /* UIView+XIBLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1104,6 +1104,7 @@
 				6D10A5FD1B40A3A30062EDC4 /* KeyValue.swift in Sources */,
 				6DCFEB5F1B37412F002D24C8 /* StopwatchInterfaceController.swift in Sources */,
 				6DCFEB5A1B3735B4002D24C8 /* StationManager.swift in Sources */,
+				6D104AF61B473311002F026D /* InternalPattern.swift in Sources */,
 				6D8DC0B11B369DDD00B80C63 /* StationsListInterfaceController.swift in Sources */,
 				6D10A5F71B40A3A30062EDC4 /* InequalityExtendedExpressionParser.swift in Sources */,
 				6DCFEB4E1B36F255002D24C8 /* CBStation.swift in Sources */,
@@ -1123,11 +1124,10 @@
 				6DCFEB531B3703EE002D24C8 /* Constant.swift in Sources */,
 				6DCFEB651B3746C9002D24C8 /* NSTimeInterval+TextualRepresentation.swift in Sources */,
 				6D10A6161B40A3AE0062EDC4 /* SharedPolishExpression.swift in Sources */,
-				6D10A60B1B40A3A30062EDC4 /* TranslablePair.swift in Sources */,
 				6D10A6121B40A3AE0062EDC4 /* SharedBaseExpression.swift in Sources */,
-				6D10A5FB1B40A3A30062EDC4 /* InternalPatterns.swift in Sources */,
 				6D10A5EB1B40A3A30062EDC4 /* Expression.swift in Sources */,
 				6D10A6071B40A3A30062EDC4 /* SharedExpressionsConfigurator.swift in Sources */,
+				6D104AF51B473306002F026D /* TranslatablePair.swift in Sources */,
 				6DFD68FE1B36E11000047D7B /* MessageTableRowController.swift in Sources */,
 				6D10A5EF1B40A3A30062EDC4 /* ExpressionParser.swift in Sources */,
 				6D95DCE21B3C855E003A8974 /* WormholeNotificationSystem.swift in Sources */,
