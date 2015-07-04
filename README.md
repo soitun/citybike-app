@@ -11,7 +11,7 @@ City Bike is great free bike finder.
 App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
 ## Contributing
-Everyone is welcome :) No matter if you're Swift developer or UI/UX sepcialist you can contribute.
+Everyone is welcome :) No matter if you're Swift developer or UI/UX specialist you can contribute.
 
 ## License
 
