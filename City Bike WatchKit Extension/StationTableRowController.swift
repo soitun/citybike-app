@@ -23,11 +23,19 @@ class StationTableRowController: NSObject {
         freeBikesCircleImage.setTintColor(UIColor.colorForValue(proxy.freeBikes, min: 0, max: proxy.allSlots))
         stationNameLabel.setText(proxy.name)
     
+        let usesMetric = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue
         if let distance = proxy.distanceToUser {
-            distanceLabel.setText(String(format: "%0.1fkm", distance / 1000.0))
-            distanceLabel.setHidden(false)
+            if usesMetric == true {
+                distanceLabel.setText(String(format: "%0.2fkm", DistanceConverter(distance).km))
+            } else {
+                distanceLabel.setText(String(format: "%0.2fmi", DistanceConverter(distance).mi))
+            }
         } else {
-            distanceLabel.setHidden(true)
+            if usesMetric == true {
+                distanceLabel.setText("- - km")
+            } else {
+                distanceLabel.setText("- - mi")
+            }
         }
     }
 }

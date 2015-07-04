@@ -70,6 +70,8 @@
 		6DB2CC101B3B47830055E1BA /* StationOnMapInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC0F1B3B47830055E1BA /* StationOnMapInterfaceController.swift */; };
 		6DB2CC121B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */; };
 		6DB2CC141B3B4FB10055E1BA /* StationOnMapContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC131B3B4FB10055E1BA /* StationOnMapContext.swift */; };
+		6DB9F8DE1B47E34C007A44F0 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */; };
+		6DB9F8DF1B47E34C007A44F0 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */; };
 		6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */; };
 		6DC344CD1B233B9E00C29408 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CC1B233B9E00C29408 /* CustomButton.swift */; };
 		6DC344CF1B23B37C00C29408 /* GettingStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC344CE1B23B37C00C29408 /* GettingStartedViewController.swift */; };
@@ -226,6 +228,7 @@
 		6DB2CC0F1B3B47830055E1BA /* StationOnMapInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationOnMapInterfaceController.swift; sourceTree = "<group>"; };
 		6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+RegionForPoints.swift"; sourceTree = "<group>"; };
 		6DB2CC131B3B4FB10055E1BA /* StationOnMapContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationOnMapContext.swift; sourceTree = "<group>"; };
+		6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
 		6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUpdater.swift; sourceTree = "<group>"; };
 		6DC344CC1B233B9E00C29408 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Components/CustomButton.swift; sourceTree = "<group>"; };
 		6DC344CE1B23B37C00C29408 /* GettingStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GettingStartedViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -419,6 +422,7 @@
 				6DCFEB5B1B373A85002D24C8 /* AppleWatchEvent.swift */,
 				6DCFEB501B370349002D24C8 /* Constant.swift */,
 				6D9EFA311B386A6000A96BE9 /* CoordinateRegionSerializable.swift */,
+				6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */,
 				6DF07F371B2DD78300A8F796 /* FilterNetworks.swift */,
 				6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */,
 				6DF07F391B2DD89E00A8F796 /* NetworksSort.swift */,
@@ -888,6 +892,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D2834621B24E8DF00E361A3 /* NSTimeInterval+TextualRepresentation.swift in Sources */,
+				6DB9F8DE1B47E34C007A44F0 /* DistanceConverter.swift in Sources */,
 				6DC344D11B23BCDB00C29408 /* GettingStartedMapViewController.swift in Sources */,
 				6D5BA0B81B359849005C72CC /* UIView+Dynamic.swift in Sources */,
 				6D28345E1B24B5E100E361A3 /* UIDevice+ModelNames.swift in Sources */,
@@ -958,6 +963,7 @@
 				6D8DC0D11B36B1B500B80C63 /* UpdateTableRowController.swift in Sources */,
 				6D7955A61B3E893500CAA7DF /* CityBike.xcdatamodeld in Sources */,
 				6DCFEB4F1B36F259002D24C8 /* UserSettings.swift in Sources */,
+				6DB9F8DF1B47E34C007A44F0 /* DistanceConverter.swift in Sources */,
 				6DB2CC141B3B4FB10055E1BA /* StationOnMapContext.swift in Sources */,
 				6DCFEB621B374164002D24C8 /* MainInterfaceController.swift in Sources */,
 				6D20FF3C1B36D90600C5F4A0 /* UIColor+CustomColors.swift in Sources */,

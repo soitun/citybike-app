@@ -227,12 +227,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
         
         let detailText = "\(station.network.location.city), \(station.network.location.country)"
         
-        var distanceInMeters = 0.0
+        var distanceInMeters: CLLocationDistance? = nil
         if let userLocation = mapView.userLocation.location {
             distanceInMeters = userLocation.distanceFromLocation(CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude))
         }
         
-        mapDetailView.update(station.name, detailText: detailText, freeBikes: station.freeBikes.integerValue, freeSlots: station.emptySlots.integerValue, distance: Float(distanceInMeters), date: station.timestamp)
+        mapDetailView.update(station.name, detailText: detailText, freeBikes: station.freeBikes.integerValue, freeSlots: station.emptySlots.integerValue, distance: (distanceInMeters != nil ? Float(distanceInMeters!) : nil), date: station.timestamp)
         
         mapDetailViewBottomConstraint.constant = 0
         UIView.animateWithDuration(0.2, animations: { () -> Void in

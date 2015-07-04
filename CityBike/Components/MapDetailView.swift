@@ -47,16 +47,32 @@ class MapDetailView: UIView {
         distanceContainer.layer.cornerRadius = (CGRectGetHeight(distanceContainer.frame) / CGFloat(2.0))
     }
     
-    func update(text: String, detailText: String, freeBikes: Int, freeSlots: Int, distance: Float, date: NSDate) {
+    func update(text: String, detailText: String, freeBikes: Int, freeSlots: Int, distance: Float?, date: NSDate) {
         labelTop.text = text.uppercaseString
         labelDetails.text = detailText.uppercaseString
         
-        let newDistance = distance / 1000.0
-        if fabs(newDistance - previousDistance) > 0.05 {
-            previousDistance = newDistance
-            distanceLabel.text = String(format: "%0.2fkm", newDistance)
-            distanceContainer.bounce(0.1)
+        let usesMetric = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem)!.boolValue
+        if let distance = distance {
+            if fabs(distance - previousDistance) > 50.0 {
+                previousDistance = distance
+                
+                if usesMetric == true {
+                    distanceLabel.text = String(format: "%0.2fkm", DistanceConverter(distance).km)
+                } else {
+                    distanceLabel.text = String(format: "%0.2fmi", DistanceConverter(distance).mi)
+                }
+                
+                distanceLabel.hidden = false
+                distanceContainer.bounce(0.1)
+            }
+        } else {
+            if usesMetric == true {
+                distanceLabel.text = "- - km"
+            } else {
+                distanceLabel.text = "- - mi"
+            }
         }
+        
         
         if freeBikes != previousBikes {
             previousBikes = freeBikes
