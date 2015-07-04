@@ -1,4 +1,4 @@
-# ![logo](https://raw.githubusercontent.com/tomkowz/citybike-app/master/Assets/app-store/icon-29.png?token=ACMkyRSSrsQYbbIayys89cR8ZnXR0Pddks5VoI5xwA%3D%3D) City Bike
+## ![logo](https://raw.githubusercontent.com/tomkowz/citybike-app/master/Assets/app-store/icon-29.png?token=ACMkyRSSrsQYbbIayys89cR8ZnXR0Pddks5VoI5xwA%3D%3D) City Bike
 City Bike is great free bike finder.
 
 - Displays list of stations for network that user selected. 
@@ -7,13 +7,13 @@ City Bike is great free bike finder.
 - Apple Watch app presents up to 5 closest stations, displays distance to them and how many free bikes there is.
 - iPhone and Apple Watch have also in-app stopwatch functionality.
 
-# Setup
+## Setup
 App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
-# Contributing
+## Contributing
 Everyone is welcome :) No matter if you're Swift developer or UI/UX sepcialist you can contribute.
 
-# License
+## License
 
 Copyright (c) 2015 Tomasz Szulc
 
