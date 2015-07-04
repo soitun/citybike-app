@@ -6,7 +6,7 @@ Apple Watch app presents up to 5 closest stations, displays distance to them and
 iPhone and Apple Watch have also in-app stopwatch functionality.
 
 # Setup
-App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage0 - Install them if you don't have.
+App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
 # Contributing
 Everyone is welcome :) No matter if you're Swift developer or UI/UX sepcialist you can contribute.
