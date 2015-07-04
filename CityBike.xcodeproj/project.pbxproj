@@ -836,17 +836,17 @@
 		};
 		6D4075451B473D2800F2F3F4 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Swifternalization.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/citybikes-api.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CityBikesAPI.framework",
 			);
 			name = Carthage;
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
@@ -1136,7 +1136,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a627691f-8ace-45a1-8b88-a883d3ed5f8e";
+				PROVISIONING_PROFILE = "b979cb5b-1987-4121-814e-78dc9762effc";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Debug;
@@ -1147,7 +1147,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CityBike/CityBike.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tomasz Szulc (7HTJY423B9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1157,7 +1157,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a627691f-8ace-45a1-8b88-a883d3ed5f8e";
+				PROVISIONING_PROFILE = "b979cb5b-1987-4121-814e-78dc9762effc";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
 			name = Release;
@@ -1181,7 +1181,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e03727d1-9df6-4442-ba5a-a068220ff3fe";
+				PROVISIONING_PROFILE = "88b47229-d296-4e93-b8ab-47a1c8a6b0a1";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1192,7 +1192,7 @@
 		6D8063251B31BF0A00E2F7FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tomasz Szulc (7HTJY423B9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1204,7 +1204,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e03727d1-9df6-4442-ba5a-a068220ff3fe";
+				PROVISIONING_PROFILE = "88b47229-d296-4e93-b8ab-47a1c8a6b0a1";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1230,7 +1230,7 @@
 				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "7508641e-936e-40d9-9f53-8fca5ee486ff";
+				PROVISIONING_PROFILE = "a4841c1e-713f-49cf-beba-91ac538061f6";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
@@ -1241,7 +1241,7 @@
 			baseConfigurationReference = 7F44F0EAB26469FDB30BCF8D /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "City Bike WatchKit Extension/City Bike WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tomasz Szulc (7HTJY423B9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1250,7 +1250,7 @@
 				INFOPLIST_FILE = "City Bike WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "7508641e-936e-40d9-9f53-8fca5ee486ff";
+				PROVISIONING_PROFILE = "a4841c1e-713f-49cf-beba-91ac538061f6";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Bridging-Header.h";
 			};
@@ -1270,7 +1270,7 @@
 				INFOPLIST_FILE = "City Bike WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c2f9f7b2-6cf3-4f5f-b6e3-b23f09a0b334";
+				PROVISIONING_PROFILE = "8febad00-1210-40c3-bb9e-637bb1311b1d";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
@@ -1281,13 +1281,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tomasz Szulc (7U7AAU283A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Tomasz Szulc (7HTJY423B9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				IBSC_MODULE = City_Bike_WatchKit_Extension;
 				INFOPLIST_FILE = "City Bike WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c2f9f7b2-6cf3-4f5f-b6e3-b23f09a0b334";
+				PROVISIONING_PROFILE = "8febad00-1210-40c3-bb9e-637bb1311b1d";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
