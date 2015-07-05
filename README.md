@@ -1,5 +1,5 @@
 ## ![logo](https://raw.githubusercontent.com/tomkowz/citybike-app/master/Assets/app-store/icon-29.png?token=ACMkyRSSrsQYbbIayys89cR8ZnXR0Pddks5VoI5xwA%3D%3D) City Bike
-City Bike is great free bike finder.
+[City Bike](http://citybike.szulctomasz.com) is great free bike finder.
 
 - Displays list of stations for network that user selected. 
 - Displays how many bikes is free and provides details about stations. 
