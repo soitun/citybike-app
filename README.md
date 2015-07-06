@@ -10,6 +10,8 @@
 ## Setup
 App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
+App uses [citybikes-api](https://github.com/tomkowz/citybikes-api) wrapper for communication with backend.
+
 ## Contributing
 Everyone is welcome :) No matter if you're Swift developer or UI/UX specialist you can contribute.
 
