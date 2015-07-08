@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "btn-arrow-left.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "btn-arrow-left@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "btn-arrow-left@3x.png"
+      "filename" : "btn-arrow-left.pdf"
     }
   ],
   "info" : {

@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "annotation-view-cone.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "annotation-view-cone@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "annotation-view-cone@3x.png"
+      "filename" : "annotation-view-cone.pdf"
     }
   ],
   "info" : {

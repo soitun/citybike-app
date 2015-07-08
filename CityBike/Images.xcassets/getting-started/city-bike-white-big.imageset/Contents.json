@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "city-bike-white-big.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "city-bike-white-big@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "city-bike-white-big@3x.png"
+      "filename" : "city-bike-white-big.pdf"
     }
   ],
   "info" : {

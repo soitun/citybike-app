@@ -2,18 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "annotation-view-circle.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "annotation-view-circle@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "annotation-view-circle@3x.png"
+      "filename" : "annotation-view-circle.pdf"
     }
   ],
   "info" : {
