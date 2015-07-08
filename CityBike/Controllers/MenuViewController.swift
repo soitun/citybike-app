@@ -55,12 +55,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc private func refreshProvidedBy() {
         let networksCount = Network.fetchAll(CoreDataStack.sharedInstance().mainContext).count
-        if networksCount == 0 {
-            providedByLabel.text = I18n.localizedString("content-provided-by")
-        
-        } else {
-            providedByLabel.text = String.localizedStringWithFormat(I18n.localizedString("content-provided-by-(%d)"), networksCount)
-        }
+        providedByLabel.text = I18n.localizedString("content-provided-by")
     }
     
     /// MARK: UITableView

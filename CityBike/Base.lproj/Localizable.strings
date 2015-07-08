@@ -67,11 +67,6 @@
 "content-provided-by" = "Content provided by";
 
 /**
- Displayed as above but in the case when networks are available suffixed with number of networks.
- */
-"content-provided-by-(%d)" = "Content provided by (%d)";
-
-/**
  Title of menu option and view with history of rides.
  */
 "rides-history" = "Rides History";
