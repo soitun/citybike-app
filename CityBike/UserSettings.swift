@@ -8,7 +8,7 @@
 
 import Foundation
 import MapKit
-import CityBikesAPI
+import CityBikeAPI
 
 class UserSettings {
     

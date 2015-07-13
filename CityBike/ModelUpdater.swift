@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 import Model
-import CityBikesAPI
+import CityBikeAPI
 
 class ModelUpdater: CBUpdaterProtocol {
     

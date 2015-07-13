@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Model
 import Swifternalization
-import CityBikesAPI
+import CityBikeAPI
 
 class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDelegate {
     

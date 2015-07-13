@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CityBikesAPI
+import CityBikeAPI
 
 struct FilteredNetworksGroupProxy {
     var countryCode: CountryCode
