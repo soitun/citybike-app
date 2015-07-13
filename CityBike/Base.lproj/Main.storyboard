@@ -85,7 +85,11 @@
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-NR-6z0" userLabel="btn-find" customClass="MapButton" customModule="CityBike" customModuleProvider="target">
                                 <rect key="frame" x="211" y="523" width="42" height="42"/>
-                                <state key="normal" image="btn-find">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Pzb-Ge-13B"/>
+                                    <constraint firstAttribute="width" constant="42" id="k1i-5H-Yq8"/>
+                                </constraints>
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -693,7 +697,6 @@ You can check your rides history in menu.</string>
         <image name="background-big" width="320" height="568"/>
         <image name="btn-arrow-down" width="20" height="21"/>
         <image name="btn-arrow-left" width="20" height="20"/>
-        <image name="btn-find" width="42" height="42"/>
         <image name="btn-locate-me" width="42" height="42"/>
         <image name="btn-menu" width="42" height="42"/>
         <image name="btn-stopwatch-done" width="42" height="42"/>
