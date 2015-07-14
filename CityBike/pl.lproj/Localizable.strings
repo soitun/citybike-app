@@ -74,6 +74,12 @@
 
 "recently-updated" = "OSTATNIA AKTUALIZACJA";
 
+"no-internet-title" = "POŁĄCZENIE";
+
+"no-internet-description" = "Brak połączenia z internetem.";
+
+"try-again" = "Ponów";
+
 
 /**
 Update Time

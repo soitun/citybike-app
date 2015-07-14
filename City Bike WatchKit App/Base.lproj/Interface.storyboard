@@ -167,14 +167,56 @@
             <objects>
                 <controller identifier="StationOnMapInterfaceController" id="t6y-U9-qQS" customClass="StationOnMapInterfaceController" customModule="City_Bike_WatchKit_Extension">
                     <items>
-                        <map alignment="left" id="Fao-xk-QdM"/>
+                        <group width="1" height="1" alignment="left" layout="vertical" id="bpV-x7-xbe">
+                            <items>
+                                <table alignment="left" id="3qK-go-9mj">
+                                    <items>
+                                        <tableRow identifier="MessageTableRowController" selectable="NO" id="usA-FJ-Thi" customClass="MessageTableRowController" customModule="City_Bike_WatchKit_Extension">
+                                            <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="NDl-NT-nfn" userLabel="content-view">
+                                                <items>
+                                                    <group alignment="left" spacing="2" id="OAN-P5-nz8" userLabel="top-line">
+                                                        <items>
+                                                            <imageView width="10" height="10" alignment="left" verticalAlignment="center" image="circle" id="4MW-Ow-44a" userLabel="warning-icon"/>
+                                                            <label alignment="left" verticalAlignment="center" text="NO STATIONS" id="gfs-Oe-7ZD" userLabel="title-label">
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <fontDescription key="font" type="boldSystem" pointSize="13"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <label width="1" alignment="left" text="Go to your iPhone and select some city bike networks." numberOfLines="0" id="mVZ-rR-U7W" userLabel="detail-text-label">
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" red="0.039215686270000001" green="0.039215686270000001" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="5" right="5" top="3" bottom="3"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="detailTextLabel" destination="mVZ-rR-U7W" id="vMb-Ad-dFQ"/>
+                                                <outlet property="icon" destination="4MW-Ow-44a" id="gfS-UG-0an"/>
+                                                <outlet property="titleLabel" destination="gfs-Oe-7ZD" id="OsO-wX-cCm"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                                <button width="1" alignment="left" verticalAlignment="bottom" title="Try Again" id="ylG-0T-Hxl">
+                                    <connections>
+                                        <action selector="tryAgainPressed" destination="t6y-U9-qQS" id="xGK-hy-JDm"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <map width="1" alignment="left" id="Fao-xk-QdM"/>
                     </items>
                     <connections>
                         <outlet property="map" destination="Fao-xk-QdM" id="eMA-Qh-kHF"/>
+                        <outlet property="messageGroup" destination="bpV-x7-xbe" id="fWQ-4x-enN"/>
+                        <outlet property="messageTable" destination="3qK-go-9mj" id="c6P-sd-1Rj"/>
+                        <outlet property="tryAgainButton" destination="ylG-0T-Hxl" id="FBf-l6-S0P"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="247" y="704"/>
+            <point key="canvasLocation" x="247" y="780.75"/>
         </scene>
     </scenes>
 </document>

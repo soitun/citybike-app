@@ -113,5 +113,5 @@ class UserSettings {
         let data = NSKeyedArchiver.archivedDataWithRootObject(serialized)
         userDefaults.setObject(data, forKey: CityBikeMapRegion)
         userDefaults.synchronize()
-    }
+    }    
 }

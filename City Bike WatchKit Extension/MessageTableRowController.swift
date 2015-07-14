@@ -15,6 +15,7 @@ enum MessageType {
     case LocationServicesDisabled
     case CannotObtainUserLocation
     case FetchingData
+    case NoInternet
 }
 
 class MessageTableRowController: NSObject {
@@ -29,6 +30,7 @@ class MessageTableRowController: NSObject {
         case .LocationServicesDisabled: configureForLocationServicesDisabled()
         case .CannotObtainUserLocation: configureForCannotObtainUserLocation()
         case .FetchingData: configurForFetchingData()
+        case .NoInternet: configureForNoInternet()
         }
     }
     
@@ -54,5 +56,11 @@ class MessageTableRowController: NSObject {
         icon.setTintColor(UIColor.plentyColor())
         titleLabel.setText(I18n.localizedString("updating"))
         detailTextLabel.setText(I18n.localizedString("getting-newest-data"))
+    }
+    
+    private func configureForNoInternet() {
+        icon.setTintColor(UIColor.noneColor())
+        titleLabel.setText(I18n.localizedString("no-internet-title"))
+        detailTextLabel.setText(I18n.localizedString("no-internet-description"))
     }
 }

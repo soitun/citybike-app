@@ -10,5 +10,6 @@
 #define CityBike_Bridging_Header_h
 
 #import <MMWormhole/MMWormhole.h>
+#import "CBReachability.h"
 
 #endif

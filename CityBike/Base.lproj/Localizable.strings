@@ -173,6 +173,22 @@
  */
 "recently-updated" = "RECENTLY UPDATED";
 
+/**
+ Displayed on watch when entering station detail view without internet connection.
+ */
+"no-internet-title" = "CONNECTION";
+
+/**
+ Message dislpayed when there is no internet connection on the Watch.
+ */
+"no-internet-description" = "It looks like you're not connected to the internet.";
+
+/**
+ Title of button displayed when there is no internet connection.
+ */
+"try-again" = "Try Again";
+
+
 
 /**
 Update Time
