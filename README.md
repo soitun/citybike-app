@@ -10,7 +10,10 @@
 ## Setup
 App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
-App uses [citybikes-api](https://github.com/tomkowz/citybikes-api) wrapper for communication with backend.
+
+## Adnotations
+App uses data from [citybik.es API](http://api.citybik.es/v2/) which is a display layer for [PyBikes](https://github.com/eskerda/pybikes). Contains over 260 bike networks (12 Jun 2015) over the world.
+
 
 ## Contributing
 Everyone is welcome :) No matter if you're Swift developer or UI/UX specialist you can contribute.
