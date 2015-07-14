@@ -14,6 +14,7 @@ import CityBikeAPI
 class ModelUpdater: CBUpdaterProtocol {
     
     private var syncManager: CBSyncManager!
+    private var queue: NSOperationQueue!
     
     class var sharedInstance: ModelUpdater {
         struct Static {
@@ -28,6 +29,10 @@ class ModelUpdater: CBUpdaterProtocol {
     init() {
         syncManager = CBSyncManager()
         syncManager.delegate = self
+        
+        queue = NSOperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        queue.name = "model_updater"
     }
     
     func start() {
@@ -50,57 +55,63 @@ class ModelUpdater: CBUpdaterProtocol {
     /// MARK: - CBUpdaterProtocol
     func updateNetworks(updatedNetworks: [CBNetwork], completion:() -> Void) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
-            
-            for updatedNetwork in updatedNetworks {
-                var network: Network? = Network.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? Network
-                if network == nil {
-                    network = Network(context: ctx)
-                    network!.location = Location(context: ctx)
-                }
-                
-                network!.fill(updatedNetwork)
-                network!.location.fill(updatedNetwork.location)
+            self.queue.addOperationWithBlock {
+                let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
+                ctx.performBlockAndWait({
+                    for updatedNetwork in updatedNetworks {
+                        var network: Network? = Network.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? Network
+                        if network == nil {
+                            network = Network(context: ctx)
+                            network!.location = Location(context: ctx)
+                        }
+                        
+                        network!.fill(updatedNetwork)
+                        network!.location.fill(updatedNetwork.location)
+                    }
+                    
+                    ctx.save(nil)
+                    dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
+                    
+                    completion()
+                })
             }
-            
-            ctx.save(nil)
-            dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
-            
-            completion()
         })
     }
     
     func updateNetworksWithStations(updatedNetworks: [CBNetwork], completion:() -> Void) {        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
-            
-            for updatedNetwork in updatedNetworks {
-                var network: Network? = Network.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? Network
-                if network == nil {
-                    network = Network(context: ctx)
-                    network!.location = Location(context: ctx)
-                }
-                
-                network!.fill(updatedNetwork)
-                network!.location.fill(updatedNetwork.location)
-                
-                /// stations
-                for updatedStation in updatedNetwork.stations {
-                    if let station: Station = Station.fetchWithAttribute("id", value: updatedStation.id, context: ctx).first as? Station {
-                        station.fill(updatedStation)
+            self.queue.addOperationWithBlock {
+                let ctx = CoreDataStack.sharedInstance().createTemporaryContextFromMainContext()
+                ctx.performBlockAndWait({
+                    for updatedNetwork in updatedNetworks {
+                        var network: Network? = Network.fetchWithAttribute("id", value: updatedNetwork.id, context: ctx).first as? Network
+                        if network == nil {
+                            network = Network(context: ctx)
+                            network!.location = Location(context: ctx)
+                        }
                         
-                    } else {
-                        let station: Station = Station(context: ctx)
-                        station.fill(updatedStation)
-                        network!.addStation(station)
+                        network!.fill(updatedNetwork)
+                        network!.location.fill(updatedNetwork.location)
+                        
+                        /// stations
+                        for updatedStation in updatedNetwork.stations {
+                            if let station: Station = Station.fetchWithAttribute("id", value: updatedStation.id, context: ctx).first as? Station {
+                                station.fill(updatedStation)
+                                
+                            } else {
+                                let station: Station = Station(context: ctx)
+                                station.fill(updatedStation)
+                                network!.addStation(station)
+                            }
+                        }
                     }
-                }
+                    
+                    ctx.save(nil)
+                    dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
+                    
+                    completion()
+                })
             }
-            
-            ctx.save(nil)
-            dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
-            
-            completion()
         })
     }
 }
