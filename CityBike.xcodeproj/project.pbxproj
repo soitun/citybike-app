@@ -77,6 +77,8 @@
 		6DB2CC101B3B47830055E1BA /* StationOnMapInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC0F1B3B47830055E1BA /* StationOnMapInterfaceController.swift */; };
 		6DB2CC121B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */; };
 		6DB2CC141B3B4FB10055E1BA /* StationOnMapContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2CC131B3B4FB10055E1BA /* StationOnMapContext.swift */; };
+		6DB399131B54E03500B8F2B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB399161B54E03500B8F2B9 /* InfoPlist.strings */; };
+		6DB399141B54E03500B8F2B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DB399161B54E03500B8F2B9 /* InfoPlist.strings */; };
 		6DB9F8DE1B47E34C007A44F0 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */; };
 		6DB9F8DF1B47E34C007A44F0 /* DistanceConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */; };
 		6DBA51271B2B8D39002ECC3F /* ModelUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */; };
@@ -251,6 +253,8 @@
 		6DB2CC0F1B3B47830055E1BA /* StationOnMapInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationOnMapInterfaceController.swift; sourceTree = "<group>"; };
 		6DB2CC111B3B4F840055E1BA /* MKCoordinateRegion+RegionForPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+RegionForPoints.swift"; sourceTree = "<group>"; };
 		6DB2CC131B3B4FB10055E1BA /* StationOnMapContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationOnMapContext.swift; sourceTree = "<group>"; };
+		6DB399151B54E03500B8F2B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6DB399171B54E03600B8F2B9 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6DB9F8DD1B47E34C007A44F0 /* DistanceConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceConverter.swift; sourceTree = "<group>"; };
 		6DBA51261B2B8D39002ECC3F /* ModelUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelUpdater.swift; sourceTree = "<group>"; };
 		6DC344CC1B233B9E00C29408 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = Components/CustomButton.swift; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 			children = (
 				6D5003F31B3EA0A000A54B36 /* Localizable.strings */,
 				6D0EBE581B2033FB003ED872 /* Info.plist */,
+				6DB399161B54E03500B8F2B9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -853,6 +858,7 @@
 				6D0EBE5F1B2033FB003ED872 /* Main.storyboard in Resources */,
 				6D5003F01B3EA0A000A54B36 /* Localizable.strings in Resources */,
 				6D0EBE641B2033FB003ED872 /* LaunchScreen.xib in Resources */,
+				6DB399131B54E03500B8F2B9 /* InfoPlist.strings in Resources */,
 				6D0EBE611B2033FB003ED872 /* Images.xcassets in Resources */,
 				6DDE24551B3DBEE70094E31F /* DefaultCell.xib in Resources */,
 				6D5FB3FD1B34A99300AB9143 /* MapDetailView.xib in Resources */,
@@ -887,6 +893,7 @@
 				6D5003F11B3EA0A000A54B36 /* Localizable.strings in Resources */,
 				6D8DC0B31B369DDD00B80C63 /* Images.xcassets in Resources */,
 				6D8DC0B71B369DDD00B80C63 /* City Bike WatchKit App.app in Resources */,
+				6DB399141B54E03500B8F2B9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1152,6 +1159,15 @@
 				6D5003E91B3EA04700A54B36 /* pl */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		6DB399161B54E03500B8F2B9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DB399151B54E03500B8F2B9 /* Base */,
+				6DB399171B54E03600B8F2B9 /* pl */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

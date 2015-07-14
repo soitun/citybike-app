@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  CityBike
+
+  Created by Tomasz Szulc on 14/07/15.
+  Copyright (c) 2015 Tomasz Szulc. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "City Bike będzie używał twojego położenia w celu wyświetlenia odległości do stacji rowerowych";
+"NSLocationAlwaysUsageDescription" = "City Bike będzie używał twojego położenia w celu wyświetlenia odległości do stacji rowerowych";
