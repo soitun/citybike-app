@@ -18,8 +18,9 @@ private enum RowType: String {
     case Warning = "MessageTableRowController"
 }
 
-class StationsListInterfaceController: WKInterfaceController {
+class StationsListInterfaceController: WKInterfaceController, CLLocationManagerDelegate {
     @IBOutlet weak var table: WKInterfaceTable!
+    private var locationManager = CLLocationManager()
     private var proxies = [WatchStationProxy]()
     private var userLocation: CLLocation?
     private var displayedFetchingData = false
@@ -43,8 +44,19 @@ class StationsListInterfaceController: WKInterfaceController {
             reloadWithWarning(.FetchingData)
         }
         
-        fetchData()
+        startUpdatingLocation()
+        reloadTableViewData()
     }
+    
+    private func startUpdatingLocation() {
+        println("start")
+        // Request location updates
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        self.locationManager.distanceFilter = 30.0
+    }
+
     
     override func didDeactivate() {
         super.didDeactivate()
@@ -52,31 +64,12 @@ class StationsListInterfaceController: WKInterfaceController {
 
     
     // MARK: Private methods
-    private func fetchData() {
-        WKInterfaceController.openParentApplication(["request": AppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
-//            println("Fetched Data")
-            println(dict)
-            
-            if let dict = dict as? [String: AnyObject] {
-                var latitude = dict["latitude"] as? CLLocationDegrees
-                var longitude = dict["longitude"] as? CLLocationDegrees
-                if latitude != nil && longitude != nil {
-                    self.userLocation = CLLocation(latitude: latitude!, longitude: longitude!)
-                }
-            }
-            
-            if self.userLocation == nil {
-                self.reloadContent(nil)
-                
-                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
-                dispatch_after(delayTime, dispatch_get_main_queue()) {
-                    self.fetchData()
-                }
-                
-            } else {
-                self.reloadContent(self.userLocation)
-            }
-        })
+    private func reloadTableViewData() {
+        if self.userLocation == nil {
+            self.reloadContent(nil)
+        } else {
+            self.reloadContent(self.userLocation)
+        }
     }
     
     private func isLocationServicesEnabled() -> Bool {
@@ -170,7 +163,7 @@ class StationsListInterfaceController: WKInterfaceController {
             self.presentControllerWithName("StationOnMapInterfaceController", context: context)
             
         } else if row is UpdateTableRowController {
-            fetchData()
+            reloadTableViewData()
         }
     }
     
@@ -195,5 +188,16 @@ class StationsListInterfaceController: WKInterfaceController {
             if $0.distanceToUser! == $1.distanceToUser! { return $0.freeBikes > $1.freeBikes }
             else { return $0.distanceToUser! < $1.distanceToUser! }
         })
+    }
+    
+    /// MARK: CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        if let location = locations.first as? CLLocation {
+            userLocation = location
+            println(location)
+            reloadTableViewData()
+            locationManager.stopUpdatingLocation()
+            println("stop")
+        }
     }
 }

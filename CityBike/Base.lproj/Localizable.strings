@@ -49,7 +49,7 @@
 /**
  Displayed on getting started view when there is mention about networks and that user have to select one.
  */
-"getting-started-networks" = "You have to select at least one city bike network. Networks are grouped by country.";
+"getting-started-networks" = "You have to select at least one city bike network. Networks are grouped by country. App will display stations as soon as it download them.";
 
 /**
  Displayed on getting started view when there is description of stopwatch functionality.

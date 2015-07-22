@@ -12,17 +12,14 @@ import CoreLocation
 import Swifternalization
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var locationManager = CLLocationManager()
     private var configured = false
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         configureApp()
-        
-        startUpdatingLocation()
-        
+    
         updateUI()
         showProperViewController()
         return true
@@ -37,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             configureUserSettings()
             configureCoreData()
             configureWormhole()
-            startUpdatingLocation()
         }
     }
     
@@ -58,14 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let cdModel = CoreDataModel(name: "CityBike", bundle:NSBundle(forClass: CoreDataStack.self), sharedGroup: Constant.AppSharedGroup.rawValue)
         let cdStack = CoreDataStack(model: cdModel, storeType: NSSQLiteStoreType, concurrencyType: .MainQueueConcurrencyType)
         CoreDataStack.setSharedInstance(cdStack)
-    }
-    
-    private func startUpdatingLocation() {
-        // Request location updates
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        self.locationManager.distanceFilter = 30.0
     }
     
     // MARK: Other
@@ -107,17 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     // Request data only if calling from the watch
                     ModelUpdater.sharedInstance.start()
                     reply(nil)
-                    
-                case .FetchData:
-                    if let location = self.locationManager.location {
-                        reply(["latitude": location.coordinate.latitude, "longitude": location.coordinate.longitude])
-                    } else {
-                        reply(["user-location": "not available"])
-                    }
                 }
             }
         }
-        
     }
 }
 

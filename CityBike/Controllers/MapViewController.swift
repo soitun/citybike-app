@@ -33,7 +33,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
         mapDetailView.delegate = self
         
