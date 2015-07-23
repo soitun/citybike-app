@@ -16,15 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var configured = false
+    private var taskIdentifier: UIBackgroundTaskIdentifier?
+    private var replyBlock: (([NSObject : AnyObject]!) -> Void)!
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         configureApp()
-    
+        startModelUpdater()
         updateUI()
         showProperViewController()
         return true
     }
     
+    func startModelUpdater() {
+        if ModelUpdater.sharedInstance.started == false {
+            ModelUpdater.sharedInstance.setSelectedNetworkIds(UserSettings.sharedInstance().getNetworkIDs())
+            ModelUpdater.sharedInstance.start()
+        }
+    }
     
     // MARK: Configuration
     private func configureApp() {
@@ -91,13 +99,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let event = AppleWatchEvent(rawValue: rawRequest) {
                 switch event {
                 case .InitialConfiguration:
+                    NSNotificationCenter.defaultCenter().addObserver(self, selector: "modelUpdaterDidFinishUpdate", name: ModelUpdater.Notification.UpdatedNetworksWithStations.rawValue, object: nil)
+                    
                     configureApp()
                     // Request data only if calling from the watch
                     ModelUpdater.sharedInstance.start()
                     reply(nil)
+                
+                case .FetchData:
+                    if taskIdentifier != nil {
+                        reply([:])
+                        return
+                    }
+                    
+                    taskIdentifier = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler({
+                        if self.taskIdentifier != nil {
+                            UIApplication.sharedApplication().endBackgroundTask(self.taskIdentifier!)
+                        }
+                    })
+                    
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                        self.startModelUpdater()
+                        self.replyBlock = reply
+                    }
+                    ModelUpdater.sharedInstance.forceUpdate()
                 }
             }
         }
+    }
+    
+    
+    func modelUpdaterDidFinishUpdate() {
+        if self.taskIdentifier == nil { return }
+        
+        self.replyBlock([:])
+        ModelUpdater.sharedInstance.stop()
+        UIApplication.sharedApplication().endBackgroundTask(self.taskIdentifier!)
+        self.taskIdentifier = UIBackgroundTaskInvalid
+        self.taskIdentifier = nil
     }
 }
 

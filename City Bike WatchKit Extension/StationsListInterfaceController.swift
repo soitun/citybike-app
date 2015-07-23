@@ -44,8 +44,17 @@ class StationsListInterfaceController: WKInterfaceController, CLLocationManagerD
             reloadWithWarning(.FetchingData)
         }
         
+        fetchDataFromCompanionApp()
         startUpdatingLocation()
-        reloadTableViewData()
+        self.reloadTableViewData()
+    }
+    
+    func fetchDataFromCompanionApp() {
+        WKInterfaceController.openParentApplication(["request": AppleWatchEvent.FetchData.rawValue], reply: { (dict, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.reloadTableViewData()
+            })
+        })
     }
     
     private func startUpdatingLocation() {
@@ -163,6 +172,7 @@ class StationsListInterfaceController: WKInterfaceController, CLLocationManagerD
             self.presentControllerWithName("StationOnMapInterfaceController", context: context)
             
         } else if row is UpdateTableRowController {
+            fetchDataFromCompanionApp()
             reloadTableViewData()
         }
     }

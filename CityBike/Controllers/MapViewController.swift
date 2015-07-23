@@ -60,8 +60,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CBMapDetailViewDel
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        ModelUpdater.sharedInstance.setSelectedNetworkIds(UserSettings.sharedInstance().getNetworkIDs())
-        ModelUpdater.sharedInstance.start()
         runStopwatchIfNeeded()
         registerObservers()
         refreshContent()

@@ -10,4 +10,5 @@ import Foundation
 
 enum AppleWatchEvent: String {
     case InitialConfiguration = "InitialConfiguration"
+    case FetchData = "FetchData"
 }

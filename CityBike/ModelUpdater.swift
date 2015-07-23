@@ -13,6 +13,10 @@ import CityBikeAPI
 
 class ModelUpdater: CBUpdaterProtocol {
     
+    enum Notification: String {
+        case UpdatedNetworksWithStations = "UpdatedNetworksWithStations"
+    }
+    
     private var syncManager: CBSyncManager!
     private var queue: NSOperationQueue!
     
@@ -33,6 +37,10 @@ class ModelUpdater: CBUpdaterProtocol {
         queue = NSOperationQueue()
         queue.maxConcurrentOperationCount = 1
         queue.name = "model_updater"
+    }
+    
+    var started: Bool {
+        return syncManager.started
     }
     
     func start() {
@@ -108,7 +116,7 @@ class ModelUpdater: CBUpdaterProtocol {
                     
                     ctx.save(nil)
                     dispatch_async(dispatch_get_main_queue()) { ctx.parentContext?.save(nil) }
-                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(Notification.UpdatedNetworksWithStations.rawValue, object: nil)
                     completion()
                 })
             }
