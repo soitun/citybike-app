@@ -46,7 +46,7 @@ class StationsListInterfaceController: WKInterfaceController, CLLocationManagerD
         
         fetchDataFromCompanionApp()
         startUpdatingLocation()
-        self.reloadTableViewData()
+//        self.reloadTableViewData()
     }
     
     func fetchDataFromCompanionApp() {
