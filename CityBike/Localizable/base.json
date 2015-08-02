@@ -1,0 +1,76 @@
+{
+	"no-city-bike-networks": "No City Bike Networks",
+
+	"feedback": "Feedback",
+
+	"ok": "Ok", 
+
+	"bikes-available": "Bikes available",
+
+	"many": "Many",
+	"few": "Few",
+	"none": "None",
+
+	"that-is-easy-thanks": "That's easy, thanks!",
+
+	"getting-started-networks": "You have to select at least one city bike network. Networks are grouped by country. App will display stations as soon as it download them.",
+	"getting-started-stopwatch": "Track how much time you spend cycling.\n You can check your rides history in menu.",
+
+	"connectivity-issue": "Connectivity issue",
+	"content-provided-by": "Content provided by",
+
+	"rides-history": "Rides History",
+	"empty-history": "Empty History",
+
+	"city-bike-networks": "City Bike Networks",
+
+	"send-feedback": "Send Feedback",
+	"send-feedback-subtitle": "We’d love to hear your feedback!",
+
+	"rate-the-app": "Rate the app",
+	"statistics": "Statistics",
+	"settings": "Settings",
+	"help-us": "Help Us",
+
+	"bikes": "Bikes",
+
+	"stopwatch": "Stopwatch",
+
+	"no-stations": "NO STATIONS",
+
+	"no-stations-suggestion": "No stations selected. Open iPhone app and select some city bike network first.",
+
+	"location-services": "LOCATION SERVICES",
+
+	"location-services-suggestion": "To show you nearest bike stations and approximate distance to them app needs access to Location Services. If this is your first launch please go to iPhone app to accept permissions, otherwise go to system Settings.",
+
+	"current-location": "CURRENT LOCATION",
+	"getting-your-location": "Getting your location...",
+
+	"updating": "UPDATING",
+	"getting-newest-data": "Getting newest data...",
+	"recently-updated": "RECENTLY UPDATED",
+
+	"no-internet-title": "CONNECTION",
+	"no-internet-description": "It looks like you're not connected to the internet.",
+
+	"try-again": "Try Again",
+
+	"updated": "Updated",
+	"now": "now",
+
+	"time-seconds": {
+		"one": "%d second ago",
+		"other": "%d seconds ago"
+	},
+
+	"time-minutes": {
+		"one": "%d minute ago",
+		"other": "%d minutes ago"
+	},
+
+	"time-hours": {
+		"one": "%d hour ago",
+		"other": "%d hours ago"
+	}
+}
