@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureApp() {
         if configured == false {
             configured = true
-            I18n(bundle: NSBundle.mainBundle())
+            I18n.configure()
             configureUserSettings()
             configureCoreData()
             configureWormhole()

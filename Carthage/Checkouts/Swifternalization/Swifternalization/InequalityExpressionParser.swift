@@ -9,10 +9,12 @@
 import Foundation
 
 /**
-Parses inequality expression patterns. e.g. `ie:%d=5`.
+Parses inequality expression patterns. e.g. `ie:x=5`.
 */
 class InequalityExpressionParser: ExpressionParser {
-    /// Pattern of expression.
+    /** 
+    A pattern of expression.
+    */
     let pattern: ExpressionPattern
     
     /**
@@ -30,22 +32,10 @@ class InequalityExpressionParser: ExpressionParser {
     :returns: `ExpressionMatcher` object or nil if pattern cannot be parsed.
     */
     func parse() -> ExpressionMatcher? {
-        if let valueType = valueType(),
-            let sign = sign(),
-            let value = value() {
-                return InequalityExpressionMatcher(valueType: valueType, sign: sign, value: value)
-        } else {
-            return nil
+        if let sign = sign(), let value = value() {
+            return InequalityExpressionMatcher(sign: sign, value: value)
         }
-    }
-    
-    /**
-    Get `ValueType`. Finds only "%d" - Int is only one supported for now.
-    
-    :returns: `ValueType` or nil if value cannot be found.
-    */
-    private func valueType() -> ValueType? {
-        return getValueType("(?<=^ie:)\\S{2}", failureMessage: "Cannot find value type [%d]")
+        return nil
     }
     
     /**
@@ -54,16 +44,16 @@ class InequalityExpressionParser: ExpressionParser {
     :returns: `InequalitySign` or nil if sign cannot be found.
     */
     private func sign() -> InequalitySign? {
-        return getSign("(<=|<|=|>=|>)", failureMessage: "Cannot find any sign")
+        return getSign(ExpressionPatternType.Inequality.rawValue+":x(<=|<|=|>=|>)", failureMessage: "Cannot find any sign", capturingGroupIdx: 1)
     }
     
     /**
-    Get value - Int.
+    Get value - Double.
     
     :returns: value or nil if value cannot be found
     */
-    private func value() -> Int? {
-        return getValue("(\\d+)|(-\\d+)", failureMessage: "Cannot find any value")
+    private func value() -> Double? {
+        return getValue(ExpressionPatternType.Inequality.rawValue+":x[^-\\d]{1,2}(-?\\d+[.]{0,1}[\\d]{0,})", failureMessage: "Cannot find any value", capturingGroupIdx: 1)
     }
     
     
@@ -77,9 +67,9 @@ class InequalityExpressionParser: ExpressionParser {
     
     :returns: A value or nil if value cannot be found.
     */
-    func getValue(regex: String, failureMessage: String) -> Int? {
-        if let value = Regex.firstMatchInString(pattern, pattern: regex)?.toInt() {
-            return value
+    func getValue(regex: String, failureMessage: String, capturingGroupIdx: Int? = nil) -> Double? {
+        if let value = Regex.matchInString(pattern, pattern: regex, capturingGroupIdx: capturingGroupIdx) {
+            return NSString(string: value).doubleValue
         } else {
             println("\(failureMessage), pattern: \(pattern), regex: \(regex)")
             return nil
@@ -94,29 +84,10 @@ class InequalityExpressionParser: ExpressionParser {
     
     :returns: A sign or nil if value cannot be found.
     */
-    func getSign(regex: String, failureMessage: String) -> InequalitySign? {
-        if let rawValue = Regex.firstMatchInString(pattern, pattern: regex),
+    func getSign(regex: String, failureMessage: String, capturingGroupIdx: Int? = nil) -> InequalitySign? {
+        if let rawValue = Regex.matchInString(pattern, pattern: regex, capturingGroupIdx: capturingGroupIdx),
             let sign = InequalitySign(rawValue: rawValue) {
                 return sign
-        } else {
-            println("\(failureMessage), pattern: \(pattern), regex: \(regex)")
-            return nil
-        }
-    }
-    
-    /**
-    Get value type with regex and prints failure message if not found.
-    
-    :param: regex A regular expression.
-    :param: failureMessage A message that is printed out in console on failure.
-    
-    :returns: A value type or nil if value cannot be found.
-    */
-    func getValueType(regex: String, failureMessage: String) -> ValueType? {
-        if let rawValue = Regex.firstMatchInString(pattern, pattern: regex),
-            let value = ValueType(rawValue:rawValue) {
-                return value
-                
         } else {
             println("\(failureMessage), pattern: \(pattern), regex: \(regex)")
             return nil
