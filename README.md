@@ -10,6 +10,9 @@
 ## Setup
 App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
+    pod install
+    carthage update
+
 
 ## Adnotations
 App uses data from [citybik.es API](http://api.citybik.es/v2/) which is a display layer for [PyBikes](https://github.com/eskerda/pybikes). Contains over 260 bike networks (12 Jun 2015) over the world.
