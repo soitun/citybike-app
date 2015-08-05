@@ -10,6 +10,8 @@
 ## Setup
 App uses [CocoaPods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage) - Install them if you don't have.
 
+Use Xcode 6.4
+
     pod install
     carthage update
 
